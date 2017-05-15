@@ -4,6 +4,7 @@
 ## Build generated
 build/
 DerivedData/
+.build/
 
 ## Various settings
 *.pbxuser
@@ -20,3 +21,9 @@ xcuserdata/
 *.moved-aside
 *.xccheckout
 *.xcscmblueprint
+*.xcuserstate
+
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
