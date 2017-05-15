@@ -1,12 +1,7 @@
-# Xcode
-#
-
-## Build generated
 build/
 DerivedData/
 .build/
 
-## Various settings
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -17,10 +12,7 @@ DerivedData/
 !default.perspectivev3
 xcuserdata/
 
-## Other
 *.moved-aside
-*.xccheckout
-*.xcscmblueprint
 *.xcuserstate
 
 *.hmap
