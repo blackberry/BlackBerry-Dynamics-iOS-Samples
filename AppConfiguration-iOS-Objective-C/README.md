@@ -1,11 +1,11 @@
-# TheConfigurator for iOS (Objective-C)
-This sample deomonstrates how to use a custom App Policy uploaded into BlackBerry UEM or Good Control, which can be used to remotely configure an application. After adding this sample to your UEM/GC, you'll need to uploaded the included policy file "The Configurator App Configuration.xml". 
+# The Configurator for iOS (Objective-C)
+This sample demonstrates how to use a custom App Policy uploaded into BlackBerry UEM or Good Control, which can be used to remotely configure an application. After adding this sample to your UEM/GC, you'll need to upload the included policy file "The Configurator App Configuration.xml" as well. 
 For more information refer to the following post on the BlackBerry Developer Blog:[Custom App Policies in BlackBerry Dynamics Applications](http://devblog.blackberry.com/2016/08/custom-app-policies-in-good-dynamics-applications/)
 
 
 ## Requirements
 
-* Xcode 8 or later
+Xcode 8 or later
 
 
 ## Applies to
@@ -33,11 +33,11 @@ iOS 9 or later
 
 1. Download and set up BlackBerry Dynamics Development Environment
 2. Clone the repo to your computer.
-3. Launch Xcode open the project.
+3. Launch Xcode and open the project.
 4. Edit Bundle ID and GD Application ID to your own.
-5. Build, deploy and run on a testing device. 
+5. Build, deploy and run on a testing device. 
 
-For more information on how to develop BlackBerry Dynamics apps, please visit [Get Started with BlackBerry Development Tools](https://community.blackberry.com/community/gdn/get-started) 
+For more information on how to develop BlackBerry Dynamics apps, please visit [Get Started with BlackBerry Development Tools](https://community.blackberry.com/community/gdn/get-started) 
 
 
 ## License
