@@ -1,22 +1,22 @@
-# Sample iOS App for GD SDK
+# BlackBerry Dynamics Sample App for iOS - Objective C
 
-This sample pairs with Good-iOS-Sample to provide examples of an iOS application before and after integrating with the Good Dynamics SDK. This sample provides examples of features commonly used in an application that require modification for integrate with the Good Dynamics SDK, including file storage, SQLite usage and HTTP and socket communication.
+This sample pairs with Basic-iOS-Objective-C as examples of iOS apps before and after integrating with the BlackBerry Dynamics SDK. The two samples demostrate features commonly used in the BlackBerry Dynamics applications; secure file storage, secure database, secure communication (HTTP/S and Socket) and more.
 
 
 ## Requirements
 
-* Xcode 7 or later
-* GD SDK iOS
+* Xcode 8 or later
+* BlackBerry Dynamics SDK for iOS
 
 
 ## Applies to
 
-iOS 8 SDK or later
+iOS 9 SDK or later
 
 
 ## Runtime
 
-iOS 8 or later
+iOS 9 or later
 
 
 ## Author(s)
@@ -30,21 +30,21 @@ iOS 8 or later
 
 ## How To Build and Deploy
 
-1. Clone the repo to your computer.
-2. Launch Xcode open the project.
-3. Edit Bundle ID to your own.
-4. Edit GD Application ID to your own in the info.plist.
+1. Set up BlackBerry Dymaics environment
+2. Clone the repo to your computer.
+3. Launch Xcode and open the project.
+4. Edit Bundle ID to your own
 5. Edit URL identifier and URL Schemes in the info.plist.
-6. Drag and Drop GDAssets.bundle under "GD SDK install folder": 
-Good Technology > Good.platform > Frameworks > GD.framework > Resources > GDAssets.bundle
+6. Edit GD Application ID to your own in the info.plist.
 7. Build, deploy and run on a testing device. 
 
-For more information on how to develop Good Dynamics iOS apps, please visit [Good Developer Network](https://community.good.com/community/gdn) 
+For more information on how to develop BlackBerry Dynamics apps, please visit [BlackBerry Developer Community](https://community.good.com/community/gdn) 
 
 
 ## License
 
-Apache License
+
+Apache 2.0 License
 
 
 ## Disclaimer
