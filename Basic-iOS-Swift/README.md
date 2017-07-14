@@ -19,6 +19,7 @@ iOS 9 or later
 
 ## Author(s)
 
+* Gurjit Ghangura
 * [EunKyung Choi](http://www.twitter.com/echotown)
 
 **Contributing**
