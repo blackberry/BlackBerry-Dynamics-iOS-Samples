@@ -1,4 +1,5 @@
-/* Copyright (c) 2018 BlackBerry Ltd.
+/*
+ * Copyright (c) 2019 BlackBerry Limited. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -11,12 +12,15 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
 
 #import "AppDelegate.h"
 
+#import "InputBlockingHandler.h"
+
 @interface AppDelegate ()
+
+@property (nonatomic, strong) InputBlockingHandler *inputBlockingHandler;
 
 @end
 
@@ -25,6 +29,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.inputBlockingHandler = [InputBlockingHandler new];
+    [self.inputBlockingHandler startHandling];
     return YES;
 }
 
@@ -54,5 +60,9 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+//- (BOOL)application:(UIApplication *)application shouldAllowExtensionPointIdentifier:(UIApplicationExtensionPointIdentifier)extensionPointIdentifier {
+//    return NO;
+//}
 
 @end

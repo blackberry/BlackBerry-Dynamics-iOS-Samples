@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		2473ACFF21943F7300F6323B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2473ACFE21943F7300F6323B /* README.md */; };
+		24BAD9A121F7612A0058416E /* BBDInputBlocker.m in Sources */ = {isa = PBXBuildFile; fileRef = 24BAD9A021F7612A0058416E /* BBDInputBlocker.m */; };
+		24BAD9A821F76E4B0058416E /* NSObject+KeyboardBlocking.m in Sources */ = {isa = PBXBuildFile; fileRef = 24BAD9A721F76E4B0058416E /* NSObject+KeyboardBlocking.m */; };
+		24BAD9AB21F76E5C0058416E /* UIView+FirstResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 24BAD9AA21F76E5C0058416E /* UIView+FirstResponder.m */; };
+		24E5230921FF43F900A278DC /* BBDAutoFillBlockerField+InputBlocking.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E5230821FF43F900A278DC /* BBDAutoFillBlockerField+InputBlocking.m */; };
+		24E5235022005AFB00A278DC /* InputBlockingHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E5234F22005AFB00A278DC /* InputBlockingHandler.m */; };
 		24EEA12121933E28007490A1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EEA12021933E28007490A1 /* AppDelegate.m */; };
 		24EEA12421933E28007490A1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EEA12321933E28007490A1 /* ViewController.m */; };
 		24EEA12721933E28007490A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24EEA12521933E28007490A1 /* Main.storyboard */; };
@@ -19,6 +24,16 @@
 
 /* Begin PBXFileReference section */
 		2473ACFE21943F7300F6323B /* README.md */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = README.md; sourceTree = "<group>"; };
+		24BAD99F21F7612A0058416E /* BBDInputBlocker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBDInputBlocker.h; sourceTree = "<group>"; };
+		24BAD9A021F7612A0058416E /* BBDInputBlocker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBDInputBlocker.m; sourceTree = "<group>"; };
+		24BAD9A621F76E4B0058416E /* NSObject+KeyboardBlocking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+KeyboardBlocking.h"; sourceTree = "<group>"; };
+		24BAD9A721F76E4B0058416E /* NSObject+KeyboardBlocking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KeyboardBlocking.m"; sourceTree = "<group>"; };
+		24BAD9A921F76E5C0058416E /* UIView+FirstResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FirstResponder.h"; sourceTree = "<group>"; };
+		24BAD9AA21F76E5C0058416E /* UIView+FirstResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FirstResponder.m"; sourceTree = "<group>"; };
+		24E5230721FF43F900A278DC /* BBDAutoFillBlockerField+InputBlocking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BBDAutoFillBlockerField+InputBlocking.h"; sourceTree = "<group>"; };
+		24E5230821FF43F900A278DC /* BBDAutoFillBlockerField+InputBlocking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BBDAutoFillBlockerField+InputBlocking.m"; sourceTree = "<group>"; };
+		24E5234E22005AFB00A278DC /* InputBlockingHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputBlockingHandler.h; sourceTree = "<group>"; };
+		24E5234F22005AFB00A278DC /* InputBlockingHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputBlockingHandler.m; sourceTree = "<group>"; };
 		24EEA11C21933E28007490A1 /* AutofillBlocking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutofillBlocking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24EEA11F21933E28007490A1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		24EEA12021933E28007490A1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -44,11 +59,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24BAD99C21F7532F0058416E /* AutoFillBlockingSample */ = {
+			isa = PBXGroup;
+			children = (
+				24EEA11F21933E28007490A1 /* AppDelegate.h */,
+				24EEA12021933E28007490A1 /* AppDelegate.m */,
+				24EEA12221933E28007490A1 /* ViewController.h */,
+				24EEA12321933E28007490A1 /* ViewController.m */,
+				24E5234E22005AFB00A278DC /* InputBlockingHandler.h */,
+				24E5234F22005AFB00A278DC /* InputBlockingHandler.m */,
+				24EEA12521933E28007490A1 /* Main.storyboard */,
+				24EEA12821933E2A007490A1 /* Assets.xcassets */,
+				24EEA12A21933E2A007490A1 /* LaunchScreen.storyboard */,
+				24EEA12D21933E2A007490A1 /* Info.plist */,
+				24EEA12E21933E2A007490A1 /* main.m */,
+			);
+			path = AutoFillBlockingSample;
+			sourceTree = "<group>";
+		};
+		24BAD9A421F768720058416E /* InputBlocking */ = {
+			isa = PBXGroup;
+			children = (
+				24E5230721FF43F900A278DC /* BBDAutoFillBlockerField+InputBlocking.h */,
+				24E5230821FF43F900A278DC /* BBDAutoFillBlockerField+InputBlocking.m */,
+				24BAD99F21F7612A0058416E /* BBDInputBlocker.h */,
+				24BAD9A021F7612A0058416E /* BBDInputBlocker.m */,
+				24BAD9A621F76E4B0058416E /* NSObject+KeyboardBlocking.h */,
+				24BAD9A721F76E4B0058416E /* NSObject+KeyboardBlocking.m */,
+			);
+			path = InputBlocking;
+			sourceTree = "<group>";
+		};
+		24BAD9A521F7687B0058416E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				24BAD9A921F76E5C0058416E /* UIView+FirstResponder.h */,
+				24BAD9AA21F76E5C0058416E /* UIView+FirstResponder.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		24EEA11321933E28007490A1 = {
 			isa = PBXGroup;
 			children = (
 				2473ACFE21943F7300F6323B /* README.md */,
-				24EEA11E21933E28007490A1 /* AutofillBlocking */,
+				24BAD99C21F7532F0058416E /* AutoFillBlockingSample */,
+				24EEA11E21933E28007490A1 /* AutoFillBlocking */,
 				24EEA11D21933E28007490A1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,22 +117,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		24EEA11E21933E28007490A1 /* AutofillBlocking */ = {
+		24EEA11E21933E28007490A1 /* AutoFillBlocking */ = {
 			isa = PBXGroup;
 			children = (
-				24EEA11F21933E28007490A1 /* AppDelegate.h */,
-				24EEA12021933E28007490A1 /* AppDelegate.m */,
-				24EEA12221933E28007490A1 /* ViewController.h */,
-				24EEA12321933E28007490A1 /* ViewController.m */,
 				24EEA13521933E78007490A1 /* BBDAutoFillBlockerField.h */,
 				24EEA13621933E78007490A1 /* BBDAutoFillBlockerField.m */,
-				24EEA12521933E28007490A1 /* Main.storyboard */,
-				24EEA12821933E2A007490A1 /* Assets.xcassets */,
-				24EEA12A21933E2A007490A1 /* LaunchScreen.storyboard */,
-				24EEA12D21933E2A007490A1 /* Info.plist */,
-				24EEA12E21933E2A007490A1 /* main.m */,
+				24BAD9A421F768720058416E /* InputBlocking */,
+				24BAD9A521F7687B0058416E /* Utils */,
 			);
-			path = AutofillBlocking;
+			path = AutoFillBlocking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,10 +199,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24BAD9A121F7612A0058416E /* BBDInputBlocker.m in Sources */,
 				24EEA12421933E28007490A1 /* ViewController.m in Sources */,
 				24EEA12F21933E2A007490A1 /* main.m in Sources */,
 				24EEA13721933E79007490A1 /* BBDAutoFillBlockerField.m in Sources */,
 				24EEA12121933E28007490A1 /* AppDelegate.m in Sources */,
+				24E5235022005AFB00A278DC /* InputBlockingHandler.m in Sources */,
+				24BAD9A821F76E4B0058416E /* NSObject+KeyboardBlocking.m in Sources */,
+				24E5230921FF43F900A278DC /* BBDAutoFillBlockerField+InputBlocking.m in Sources */,
+				24BAD9AB21F76E5C0058416E /* UIView+FirstResponder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,9 +350,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7QTYGGGMUN;
-				INFOPLIST_FILE = AutofillBlocking/Info.plist;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/AutoFillBlockingSample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -316,9 +370,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7QTYGGGMUN;
-				INFOPLIST_FILE = AutofillBlocking/Info.plist;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/AutoFillBlockingSample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
