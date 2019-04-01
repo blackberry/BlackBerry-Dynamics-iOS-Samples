@@ -1,4 +1,5 @@
-/* Copyright (c) 2018 BlackBerry Ltd.
+/*
+ * Copyright (c) 2018 BlackBerry Limited. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -11,12 +12,14 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
 
 #import "BBDAutoFillBlockerField.h"
 
 #import <objc/runtime.h>
+#import "BBDAutoFillBlockerField+InputBlocking.h"
+
+NSString *const BBDEmojiInputBlockedNotification = @"BBDEmojiInputBlockedNotification";
 
 @interface BBDAutoFillBlockerField () <UITextFieldDelegate>
 
@@ -35,10 +38,19 @@
 
 @end
 
+static NSString* const kEmojiLanguageIndentifier = @"emoji";
+
 @implementation BBDAutoFillBlockerField
 
-#pragma mark - Initializers
+#pragma mark - public methods
 
+- (BOOL)bbdSecured
+{
+    return self.bbd_secureTextEntry;
+}
+
+#pragma mark - Initializers
+    
 - (instancetype)init
 {
     self = [super init];
@@ -107,6 +119,16 @@
     if (!self.bbd_secureTextEntry)
     {
         return shouldChange;
+    }
+    
+    // restrict emoji for secured text fields
+    // in fact emoji input returns nil starting from iOS 7
+    NSString *primaryInput = [[textField textInputMode] primaryLanguage];
+    if (!primaryInput || [primaryInput isEqualToString:kEmojiLanguageIndentifier])
+    {
+        [[NSNotificationCenter defaultCenter] postNotificationName:BBDEmojiInputBlockedNotification
+                                                            object:textField];
+        return NO;
     }
     
     if (shouldChange)
@@ -374,3 +396,5 @@
 }
 
 @end
+
+
