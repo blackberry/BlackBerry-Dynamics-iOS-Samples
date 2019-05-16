@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8BA3E4FC22679FC000E1F207 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA3E4FB22679FC000E1F207 /* WebKit.framework */; };
 		8BC133CE1E5CE9460049BB85 /* SocketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC133CD1E5CE9460049BB85 /* SocketViewController.swift */; };
 		8BC133D01E5CE9640049BB85 /* HttpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC133CF1E5CE9640049BB85 /* HttpViewController.swift */; };
 		8BC133D41E5CE9860049BB85 /* DatabaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC133D31E5CE9860049BB85 /* DatabaseViewController.swift */; };
 		8BC133D81E5CE9A10049BB85 /* FileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC133D71E5CE9A10049BB85 /* FileViewController.swift */; };
-		8BDB2D6D1E953742009A78BF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8BE6A5E51E5CE6CB006692EA /* Info.plist */; };
 		8BE6A5BF1E5CE6CB006692EA /* GD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BE6A5BE1E5CE6CB006692EA /* GD.framework */; };
 		8BE6A5C11E5CE6CB006692EA /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BE6A5C01E5CE6CB006692EA /* LocalAuthentication.framework */; };
 		8BE6A5C31E5CE6CB006692EA /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BE6A5C21E5CE6CB006692EA /* CoreTelephony.framework */; };
@@ -21,7 +21,6 @@
 		8BE6A5CB1E5CE6CB006692EA /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BE6A5CA1E5CE6CB006692EA /* MobileCoreServices.framework */; };
 		8BE6A5CE1E5CE6CB006692EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE6A5CD1E5CE6CB006692EA /* AppDelegate.swift */; };
 		8BE6A5D71E5CE6CB006692EA /* GDAssets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8BE6A5D61E5CE6CB006692EA /* GDAssets.bundle */; };
-		8BE6A5DA1E5CE6CB006692EA /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BE6A5D91E5CE6CB006692EA /* libstdc++.6.0.9.tbd */; };
 		8BE6A5DC1E5CE6CB006692EA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BE6A5DB1E5CE6CB006692EA /* libz.tbd */; };
 		8BE6A5DF1E5CE6CB006692EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BE6A5DD1E5CE6CB006692EA /* Main.storyboard */; };
 		8BE6A5E11E5CE6CB006692EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BE6A5E01E5CE6CB006692EA /* Assets.xcassets */; };
@@ -33,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8BA3E4FB22679FC000E1F207 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		8BC133CD1E5CE9460049BB85 /* SocketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketViewController.swift; sourceTree = "<group>"; };
 		8BC133CF1E5CE9640049BB85 /* HttpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpViewController.swift; sourceTree = "<group>"; };
 		8BC133D31E5CE9860049BB85 /* DatabaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseViewController.swift; sourceTree = "<group>"; };
@@ -48,7 +48,6 @@
 		8BE6A5CD1E5CE6CB006692EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BE6A5D21E5CE6CB006692EA /* default.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = default.xcconfig; sourceTree = "<group>"; };
 		8BE6A5D61E5CE6CB006692EA /* GDAssets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GDAssets.bundle; path = System/Library/Frameworks/GD.framework/Resources/GDAssets.bundle; sourceTree = SDKROOT; };
-		8BE6A5D91E5CE6CB006692EA /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		8BE6A5DB1E5CE6CB006692EA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		8BE6A5DE1E5CE6CB006692EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8BE6A5E01E5CE6CB006692EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BA3E4FC22679FC000E1F207 /* WebKit.framework in Frameworks */,
 				8BE6A5C11E5CE6CB006692EA /* LocalAuthentication.framework in Frameworks */,
 				8BE6A5CB1E5CE6CB006692EA /* MobileCoreServices.framework in Frameworks */,
 				8BE6A5C31E5CE6CB006692EA /* CoreTelephony.framework in Frameworks */,
@@ -72,7 +72,6 @@
 				8BE6A5C51E5CE6CB006692EA /* SystemConfiguration.framework in Frameworks */,
 				8BE6A5BF1E5CE6CB006692EA /* GD.framework in Frameworks */,
 				8BE6A5DC1E5CE6CB006692EA /* libz.tbd in Frameworks */,
-				8BE6A5DA1E5CE6CB006692EA /* libstdc++.6.0.9.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +100,7 @@
 		8BE6A5BD1E5CE6CB006692EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8BA3E4FB22679FC000E1F207 /* WebKit.framework */,
 				8BE6A5BE1E5CE6CB006692EA /* GD.framework */,
 				8BE6A5C01E5CE6CB006692EA /* LocalAuthentication.framework */,
 				8BE6A5C21E5CE6CB006692EA /* CoreTelephony.framework */,
@@ -151,7 +151,6 @@
 		8BE6A5D81E5CE6CB006692EA /* Libs */ = {
 			isa = PBXGroup;
 			children = (
-				8BE6A5D91E5CE6CB006692EA /* libstdc++.6.0.9.tbd */,
 				8BE6A5DB1E5CE6CB006692EA /* libz.tbd */,
 			);
 			name = Libs;
@@ -189,7 +188,6 @@
 				TargetAttributes = {
 					8BE6A5BA1E5CE6CB006692EA = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 7QTYGGGMUN;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -199,6 +197,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -223,7 +222,6 @@
 				8BFF5BB11E7ACABC00F31823 /* default.xcconfig in Resources */,
 				8BE6A5E41E5CE6CB006692EA /* LaunchScreen.storyboard in Resources */,
 				8BE6A5D71E5CE6CB006692EA /* GDAssets.bundle in Resources */,
-				8BDB2D6D1E953742009A78BF /* Info.plist in Resources */,
 				8BE6A5EC1E5CE6DE006692EA /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,7 +367,7 @@
 			baseConfigurationReference = 8BE6A5D21E5CE6CB006692EA /* default.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 7QTYGGGMUN;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Dynamics Swift Sample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -378,7 +376,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.waasample.goodapisample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -387,7 +385,7 @@
 			baseConfigurationReference = 8BE6A5D21E5CE6CB006692EA /* default.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 7QTYGGGMUN;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Dynamics Swift Sample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -396,7 +394,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.waasample.goodapisample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

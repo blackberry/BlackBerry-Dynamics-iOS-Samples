@@ -22,9 +22,8 @@ class AppDelegate : UIResponder , UIApplicationDelegate,  GDiOSDelegate {
     var window: UIWindow?
     var started: Bool = false
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        self.window = GDiOS.sharedInstance().getWindow()
         self.started = false
         
         // Show the Good Authentication UI.

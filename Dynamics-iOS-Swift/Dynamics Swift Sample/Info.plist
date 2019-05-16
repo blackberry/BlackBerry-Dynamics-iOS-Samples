@@ -22,11 +22,12 @@
 	<array>
 		<dict>
 			<key>CFBundleURLName</key>
-			<string>com.devsummit.devapp300</string>
+			<string>com.waasample.goodapisample</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.devsummit.devapp300.sc2</string>
-				<string>com.devsummit.devapp300.sc2.1.0.0.0</string>
+				<string>com.waasample.goodapisample.sc2</string>
+				<string>com.waasample.goodapisample.sc3</string>
+				<string>com.waasample.goodapisample.sc2.1.0.0.0</string>
 				<string>com.good.gd.discovery</string>
 			</array>
 		</dict>
@@ -39,6 +40,8 @@
 	<string>1.0.0.0</string>
 	<key>GDConsoleLogger</key>
 	<string>GDFilterNone</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>FaceID can be used to authenticate users without using a password.</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>

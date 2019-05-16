@@ -25,11 +25,11 @@
 		8B07D1BF209B4071007349E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B07D1BE209B4071007349E1 /* Assets.xcassets */; };
 		8B07D1C2209B4071007349E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B07D1C0209B4071007349E1 /* LaunchScreen.storyboard */; };
 		8B6B362220A248C800CBC3D6 /* policy.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8B6B362120A248C800CBC3D6 /* policy.xml */; };
+		8BA3E4F622679C4400E1F207 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA3E4F522679C4400E1F207 /* WebKit.framework */; };
 		8BD5061F20D15E4900546ACF /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 8BD5061E20D15E4900546ACF /* LICENSE */; };
 		8BE5BEFA20BF364C0059216B /* Threat_Detection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BE5BEF920BF35B80059216B /* Threat_Detection.framework */; };
 		8BE5BEFB20BF364C0059216B /* Threat_Detection.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8BE5BEF920BF35B80059216B /* Threat_Detection.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8BE5BEFF20BF36DE0059216B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8BE5BEFE20BF36DE0059216B /* README.md */; };
-		8BE5BF0120BF3ECB0059216B /* policy.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8BE5BF0020BF3ECB0059216B /* policy.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +97,7 @@
 		8B07D1C1209B4071007349E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B07D1C3209B4071007349E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B6B362120A248C800CBC3D6 /* policy.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = policy.xml; sourceTree = "<group>"; };
+		8BA3E4F522679C4400E1F207 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		8BD5061E20D15E4900546ACF /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		8BE5BEF420BF35B80059216B /* Threat Detection.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Threat Detection.xcodeproj"; path = "../Threat-Detection-Reference-Library/Threat Detection.xcodeproj"; sourceTree = "<group>"; };
 		8BE5BEFE20BF36DE0059216B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -108,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BA3E4F622679C4400E1F207 /* WebKit.framework in Frameworks */,
 				8B07D190209B406E007349E1 /* LocalAuthentication.framework in Frameworks */,
 				8B07D1AB209B406E007349E1 /* libz.tbd in Frameworks */,
 				8B07D19A209B406E007349E1 /* MobileCoreServices.framework in Frameworks */,
@@ -147,6 +149,7 @@
 		8B07D18C209B406E007349E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8BA3E4F522679C4400E1F207 /* WebKit.framework */,
 				8B07D18D209B406E007349E1 /* GD.framework */,
 				8B07D18F209B406E007349E1 /* LocalAuthentication.framework */,
 				8B07D191209B406E007349E1 /* CoreTelephony.framework */,
@@ -303,7 +306,6 @@
 				8B07D1AE209B406E007349E1 /* InfoPlist.strings in Resources */,
 				8B07D1A8209B406E007349E1 /* GDAssets.bundle in Resources */,
 				8BD5061F20D15E4900546ACF /* LICENSE in Resources */,
-				8BE5BF0120BF3ECB0059216B /* policy.xml in Resources */,
 				8B07D1C2209B4071007349E1 /* LaunchScreen.storyboard in Resources */,
 				8B07D1BD209B406E007349E1 /* Main.storyboard in Resources */,
 				8BE5BEFF20BF36DE0059216B /* README.md in Resources */,

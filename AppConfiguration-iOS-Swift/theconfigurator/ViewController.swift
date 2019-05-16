@@ -146,7 +146,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     func configureAudioPlayer() throws {
-        try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+        try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
         let backgroundMusicPath = Bundle.main.path(forResource: "CarSound", ofType:"mp3")
         try self.player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: backgroundMusicPath!))
         self.player.delegate = self

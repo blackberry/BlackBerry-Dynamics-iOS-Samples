@@ -26,6 +26,7 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>com.example.blackberry.theconfigurator.swift.sc2</string>
+				<string>com.example.blackberry.theconfigurator.swift.sc3</string>
 				<string>com.example.blackberry.theconfigurator.swift.sc2.1.0.0.0</string>
 				<string>com.good.gd.discovery</string>
 			</array>
@@ -35,6 +36,8 @@
 	<string>1</string>
 	<key>GDApplicationID</key>
 	<string>com.example.blackberry.theconfigurator.swift</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>FaceID can be used to authenticate users without using a password.</string>
 	<key>GDApplicationVersion</key>
 	<string>1.0.0.0</string>
 	<key>LSRequiresIPhoneOS</key>

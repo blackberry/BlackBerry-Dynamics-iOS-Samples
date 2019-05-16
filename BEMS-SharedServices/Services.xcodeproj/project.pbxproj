@@ -27,6 +27,7 @@
 		8B9F16C81FA26EB0001C383A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B9F16C71FA26EB0001C383A /* Assets.xcassets */; };
 		8B9F16CB1FA26EB0001C383A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B9F16C91FA26EB0001C383A /* LaunchScreen.storyboard */; };
 		8B9F16CE1FA26EB0001C383A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9F16CD1FA26EB0001C383A /* main.m */; };
+		8BA3E4F322679BFB00E1F207 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA3E4F222679BFB00E1F207 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		8B9F16CA1FA26EB0001C383A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B9F16CC1FA26EB0001C383A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B9F16CD1FA26EB0001C383A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8BA3E4F222679BFB00E1F207 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BA3E4F322679BFB00E1F207 /* WebKit.framework in Frameworks */,
 				8B9F16A31FA26EB0001C383A /* LocalAuthentication.framework in Frameworks */,
 				8B9F16AD1FA26EB0001C383A /* MobileCoreServices.framework in Frameworks */,
 				8B9F16A51FA26EB0001C383A /* CoreTelephony.framework in Frameworks */,
@@ -101,6 +104,7 @@
 		8B9F169F1FA26EB0001C383A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8BA3E4F222679BFB00E1F207 /* WebKit.framework */,
 				8B1F212220ED4D9C000A0841 /* GDAssets.bundle */,
 				8B8A40E320ED49B0005F6054 /* GD.framework */,
 				8B9F16A21FA26EB0001C383A /* LocalAuthentication.framework */,

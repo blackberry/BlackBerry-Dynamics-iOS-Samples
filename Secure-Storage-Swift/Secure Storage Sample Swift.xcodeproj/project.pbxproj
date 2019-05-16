@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8B2556E31FFC1F500057B05F /* Secure_Storage_Sample_Swift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B2556DF1FFC1F4F0057B05F /* Secure_Storage_Sample_Swift.xcdatamodeld */; };
-		8B2556E51FFC1F500057B05F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B2556E21FFC1F4F0057B05F /* Info.plist */; };
 		8B2556ED1FFC25C90057B05F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B2556EC1FFC25C90057B05F /* Assets.xcassets */; };
 		8B4C780C1FE025140002C854 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B4C780B1FE025140002C854 /* LocalAuthentication.framework */; };
 		8B4C780E1FE025140002C854 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B4C780D1FE025140002C854 /* CoreTelephony.framework */; };
@@ -20,10 +19,10 @@
 		8B4C781B1FE025140002C854 /* SecureCoreDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C781A1FE025140002C854 /* SecureCoreDataVC.swift */; };
 		8B4C78211FE025140002C854 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B4C78201FE025140002C854 /* Entitlements.plist */; };
 		8B4C78241FE025140002C854 /* GDAssets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8B4C78231FE025140002C854 /* GDAssets.bundle */; };
-		8B4C78271FE025140002C854 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B4C78261FE025140002C854 /* libstdc++.6.0.9.tbd */; };
 		8B4C78291FE025140002C854 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B4C78281FE025140002C854 /* libz.tbd */; };
 		8B4C782C1FE025140002C854 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B4C782A1FE025140002C854 /* Main.storyboard */; };
 		8B4C78341FE025140002C854 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B4C78321FE025140002C854 /* LaunchScreen.storyboard */; };
+		8BA3E5002267A14200E1F207 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA3E4FF2267A14200E1F207 /* WebKit.framework */; };
 		8BB101A31FE9914700747912 /* SecureSQLVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB101A21FE9914700747912 /* SecureSQLVC.swift */; };
 		8BB101A51FE9A9E200747912 /* CommonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB101A41FE9A9E200747912 /* CommonVC.swift */; };
 		8BF251F71FE8296D00FA65D7 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF251F61FE8296D00FA65D7 /* CustomTableViewCell.swift */; };
@@ -47,10 +46,10 @@
 		8B4C781F1FE025140002C854 /* default.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = default.xcconfig; sourceTree = "<group>"; };
 		8B4C78201FE025140002C854 /* Entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		8B4C78231FE025140002C854 /* GDAssets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GDAssets.bundle; path = System/Library/Frameworks/GD.framework/Resources/GDAssets.bundle; sourceTree = SDKROOT; };
-		8B4C78261FE025140002C854 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		8B4C78281FE025140002C854 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		8B4C782B1FE025140002C854 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B4C78331FE025140002C854 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8BA3E4FF2267A14200E1F207 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		8BB101A21FE9914700747912 /* SecureSQLVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureSQLVC.swift; sourceTree = "<group>"; };
 		8BB101A41FE9A9E200747912 /* CommonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonVC.swift; sourceTree = "<group>"; };
 		8BF251F61FE8296D00FA65D7 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
@@ -63,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BA3E5002267A14200E1F207 /* WebKit.framework in Frameworks */,
 				8B4C780C1FE025140002C854 /* LocalAuthentication.framework in Frameworks */,
 				8B4C78161FE025140002C854 /* MobileCoreServices.framework in Frameworks */,
 				8B4C780E1FE025140002C854 /* CoreTelephony.framework in Frameworks */,
@@ -70,7 +70,6 @@
 				8B4C78121FE025140002C854 /* CoreData.framework in Frameworks */,
 				8B4C78101FE025140002C854 /* SystemConfiguration.framework in Frameworks */,
 				8B4C78291FE025140002C854 /* libz.tbd in Frameworks */,
-				8B4C78271FE025140002C854 /* libstdc++.6.0.9.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +108,7 @@
 		8B4C78081FE025140002C854 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8BA3E4FF2267A14200E1F207 /* WebKit.framework */,
 				8B4C780B1FE025140002C854 /* LocalAuthentication.framework */,
 				8B4C780D1FE025140002C854 /* CoreTelephony.framework */,
 				8B4C780F1FE025140002C854 /* SystemConfiguration.framework */,
@@ -153,7 +153,6 @@
 		8B4C78251FE025140002C854 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
-				8B4C78261FE025140002C854 /* libstdc++.6.0.9.tbd */,
 				8B4C78281FE025140002C854 /* libz.tbd */,
 			);
 			name = Libs;
@@ -240,7 +239,6 @@
 			files = (
 				8B4C782C1FE025140002C854 /* Main.storyboard in Resources */,
 				8B4C78211FE025140002C854 /* Entitlements.plist in Resources */,
-				8B2556E51FFC1F500057B05F /* Info.plist in Resources */,
 				8BF2A82B201F60A800BFEF1F /* LICENSE in Resources */,
 				8B4C78341FE025140002C854 /* LaunchScreen.storyboard in Resources */,
 				8B2556ED1FFC25C90057B05F /* Assets.xcassets in Resources */,

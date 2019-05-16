@@ -15,7 +15,6 @@
 		8B17301B20BDB3E100DB4F6C /* Constants.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B17301A20BDB3E100DB4F6C /* Constants.h */; };
 		8B471A3820C643F7009C78EE /* TimeNotBefore.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B471A3620C643F7009C78EE /* TimeNotBefore.h */; };
 		8B471A3920C643F7009C78EE /* TimeNotBefore.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B471A3720C643F7009C78EE /* TimeNotBefore.m */; };
-		8B78F347209E6FC80082AEDD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B78F346209E6FC80082AEDD /* Info.plist */; };
 		8BD5062120D15E7900546ACF /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 8BD5062020D15E7900546ACF /* LICENSE */; };
 /* End PBXBuildFile section */
 
@@ -158,7 +157,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BD5062120D15E7900546ACF /* LICENSE in Resources */,
-				8B78F347209E6FC80082AEDD /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

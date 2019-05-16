@@ -59,7 +59,7 @@ class HttpViewController: UIViewController, URLSessionDelegate {
         
         let trimmedStr = str.trimmingCharacters(in: CharacterSet.whitespaces)
         
-        if trimmedStr.characters.count != 0 {
+        if trimmedStr.count != 0 {
             let schemeMarkerRange : NSRange = (trimmedStr as NSString).range(of: "://")
             if schemeMarkerRange.location == NSNotFound {
                 result = NSURL(string: "http://\(trimmedStr)")!

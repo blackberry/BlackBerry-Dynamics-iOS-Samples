@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B8452D2226794E000048774 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B8452D1226794E000048774 /* WebKit.framework */; };
 		F67838F71E6F0AE400599546 /* CarSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F67838F61E6F0AE400599546 /* CarSound.mp3 */; };
 		F6EFBC7A1E5F47A3000B683C /* GD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EFBC791E5F47A3000B683C /* GD.framework */; };
 		F6EFBC7C1E5F47A3000B683C /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EFBC7B1E5F47A3000B683C /* LocalAuthentication.framework */; };
@@ -19,7 +20,6 @@
 		F6EFBC8B1E5F47A3000B683C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EFBC8A1E5F47A3000B683C /* ViewController.swift */; };
 		F6EFBC8F1E5F47A3000B683C /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6EFBC8E1E5F47A3000B683C /* Entitlements.plist */; };
 		F6EFBC921E5F47A3000B683C /* GDAssets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F6EFBC911E5F47A3000B683C /* GDAssets.bundle */; };
-		F6EFBC951E5F47A3000B683C /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EFBC941E5F47A3000B683C /* libstdc++.6.0.9.tbd */; };
 		F6EFBC971E5F47A3000B683C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EFBC961E5F47A3000B683C /* libz.tbd */; };
 		F6EFBC9A1E5F47A3000B683C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6EFBC981E5F47A3000B683C /* Main.storyboard */; };
 		F6EFBC9C1E5F47A3000B683C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6EFBC9B1E5F47A3000B683C /* Assets.xcassets */; };
@@ -27,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B8452D1226794E000048774 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		F67838F61E6F0AE400599546 /* CarSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = CarSound.mp3; path = Resources/CarSound.mp3; sourceTree = "<group>"; };
 		F6EFBC761E5F47A3000B683C /* theconfigurator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = theconfigurator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6EFBC791E5F47A3000B683C /* GD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GD.framework; path = System/Library/Frameworks/GD.framework; sourceTree = SDKROOT; };
@@ -54,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B8452D2226794E000048774 /* WebKit.framework in Frameworks */,
 				F6EFBC7C1E5F47A3000B683C /* LocalAuthentication.framework in Frameworks */,
 				F6EFBC861E5F47A3000B683C /* MobileCoreServices.framework in Frameworks */,
 				F6EFBC7E1E5F47A3000B683C /* CoreTelephony.framework in Frameworks */,
@@ -62,7 +64,6 @@
 				F6EFBC801E5F47A3000B683C /* SystemConfiguration.framework in Frameworks */,
 				F6EFBC7A1E5F47A3000B683C /* GD.framework in Frameworks */,
 				F6EFBC971E5F47A3000B683C /* libz.tbd in Frameworks */,
-				F6EFBC951E5F47A3000B683C /* libstdc++.6.0.9.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +90,7 @@
 		F6EFBC781E5F47A3000B683C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8B8452D1226794E000048774 /* WebKit.framework */,
 				F6EFBC791E5F47A3000B683C /* GD.framework */,
 				F6EFBC7B1E5F47A3000B683C /* LocalAuthentication.framework */,
 				F6EFBC7D1E5F47A3000B683C /* CoreTelephony.framework */,
@@ -175,7 +177,6 @@
 				TargetAttributes = {
 					F6EFBC751E5F47A3000B683C = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = S99QSEYL6F;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -185,6 +186,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -347,8 +349,9 @@
 			baseConfigurationReference = F6EFBC8D1E5F47A3000B683C /* default.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = S99QSEYL6F;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = theconfigurator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-lstdc++",
@@ -356,7 +359,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.blackberry.theconfigurator.swift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -365,8 +368,9 @@
 			baseConfigurationReference = F6EFBC8D1E5F47A3000B683C /* default.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = S99QSEYL6F;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = theconfigurator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-lstdc++",
@@ -374,7 +378,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.blackberry.theconfigurator.swift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

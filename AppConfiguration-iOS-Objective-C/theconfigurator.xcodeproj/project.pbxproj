@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B8452D02267908200048774 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B8452CF2267908200048774 /* WebKit.framework */; };
 		F6EFBC391E5F326C000B683C /* GD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EFBC381E5F326C000B683C /* GD.framework */; };
 		F6EFBC3B1E5F326C000B683C /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EFBC3A1E5F326C000B683C /* LocalAuthentication.framework */; };
 		F6EFBC3D1E5F326C000B683C /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EFBC3C1E5F326C000B683C /* CoreTelephony.framework */; };
@@ -19,7 +20,6 @@
 		F6EFBC4F1E5F326C000B683C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EFBC4E1E5F326C000B683C /* ViewController.m */; };
 		F6EFBC521E5F326C000B683C /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6EFBC511E5F326C000B683C /* Entitlements.plist */; };
 		F6EFBC551E5F326C000B683C /* GDAssets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F6EFBC541E5F326C000B683C /* GDAssets.bundle */; };
-		F6EFBC581E5F326C000B683C /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EFBC571E5F326C000B683C /* libstdc++.6.0.9.tbd */; };
 		F6EFBC5A1E5F326C000B683C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EFBC591E5F326C000B683C /* libz.tbd */; };
 		F6EFBC5D1E5F326C000B683C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6EFBC5B1E5F326C000B683C /* Main.storyboard */; };
 		F6EFBC5F1E5F326C000B683C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6EFBC5E1E5F326C000B683C /* Assets.xcassets */; };
@@ -28,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B8452CF2267908200048774 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		F6EFBC351E5F326C000B683C /* theconfigurator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = theconfigurator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6EFBC381E5F326C000B683C /* GD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GD.framework; path = System/Library/Frameworks/GD.framework; sourceTree = SDKROOT; };
 		F6EFBC3A1E5F326C000B683C /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
@@ -44,7 +45,6 @@
 		F6EFBC501E5F326C000B683C /* default.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = default.xcconfig; sourceTree = "<group>"; };
 		F6EFBC511E5F326C000B683C /* Entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		F6EFBC541E5F326C000B683C /* GDAssets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GDAssets.bundle; path = System/Library/Frameworks/GD.framework/Resources/GDAssets.bundle; sourceTree = SDKROOT; };
-		F6EFBC571E5F326C000B683C /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		F6EFBC591E5F326C000B683C /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		F6EFBC5C1E5F326C000B683C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F6EFBC5E1E5F326C000B683C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B8452D02267908200048774 /* WebKit.framework in Frameworks */,
 				F6EFBC3B1E5F326C000B683C /* LocalAuthentication.framework in Frameworks */,
 				F6EFBC451E5F326C000B683C /* MobileCoreServices.framework in Frameworks */,
 				F6EFBC3D1E5F326C000B683C /* CoreTelephony.framework in Frameworks */,
@@ -66,7 +67,6 @@
 				F6EFBC3F1E5F326C000B683C /* SystemConfiguration.framework in Frameworks */,
 				F6EFBC391E5F326C000B683C /* GD.framework in Frameworks */,
 				F6EFBC5A1E5F326C000B683C /* libz.tbd in Frameworks */,
-				F6EFBC581E5F326C000B683C /* libstdc++.6.0.9.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +93,7 @@
 		F6EFBC371E5F326C000B683C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8B8452CF2267908200048774 /* WebKit.framework */,
 				F6EFBC381E5F326C000B683C /* GD.framework */,
 				F6EFBC3A1E5F326C000B683C /* LocalAuthentication.framework */,
 				F6EFBC3C1E5F326C000B683C /* CoreTelephony.framework */,
@@ -144,7 +145,6 @@
 		F6EFBC561E5F326C000B683C /* Libs */ = {
 			isa = PBXGroup;
 			children = (
-				F6EFBC571E5F326C000B683C /* libstdc++.6.0.9.tbd */,
 				F6EFBC591E5F326C000B683C /* libz.tbd */,
 			);
 			name = Libs;
@@ -190,6 +190,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);

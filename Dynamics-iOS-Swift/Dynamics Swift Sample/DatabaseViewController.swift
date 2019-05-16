@@ -18,7 +18,7 @@ import UIKit
 
 // Add Secure SQLite/GDFileManager
 import GD.SecureStore.File
-import GD.SecureStore.SQLite
+import GD_C.SecureStore.SQLite
 
 class DBViewController: UIViewController {
     

@@ -26,7 +26,7 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>com.waasample.good.GoodAPISample.sc2</string>
-				<string>com.waasample.good.GoodAPISample.sc</string>
+				<string>com.waasample.good.GoodAPISample.sc3</string>
 				<string>com.waasample.good.GoodAPISample.sc2.1.0.0.0</string>
 				<string>com.good.gd.discovery</string>
 			</array>
@@ -45,6 +45,10 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSFaceIDUsageDescription</key>
+	<string>FaceID can be used to authenticate users without using a password.</string>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

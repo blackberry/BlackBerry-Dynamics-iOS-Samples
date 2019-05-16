@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8BA3E4F922679CEF00E1F207 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA3E4F822679CEF00E1F207 /* WebKit.framework */; };
 		DF0B3ABC1CE1865F005FC40B /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0B3ABB1CE1865F005FC40B /* DBManager.m */; };
 		DF0B3AC51CE29787005FC40B /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0B3AC41CE29787005FC40B /* EditViewController.m */; };
 		DF0B3ACB1CE29A8E005FC40B /* DBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0B3ACA1CE29A8E005FC40B /* DBViewController.m */; };
@@ -20,7 +21,6 @@
 		DF5C9B291CE654960054FCE0 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF5C9B241CE654960054FCE0 /* QuickLook.framework */; };
 		DF5C9B2A1CE654960054FCE0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF5C9B251CE654960054FCE0 /* Security.framework */; };
 		DF5C9B2B1CE654960054FCE0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF5C9B261CE654960054FCE0 /* SystemConfiguration.framework */; };
-		DF5C9B2D1CE654C60054FCE0 /* libstdc++.6.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DF5C9B2C1CE654C60054FCE0 /* libstdc++.6.tbd */; };
 		DF5C9B2F1CE654DC0054FCE0 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DF5C9B2E1CE654DC0054FCE0 /* libz.tbd */; };
 		DF5C9B311CE654EB0054FCE0 /* GD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF5C9B301CE654EB0054FCE0 /* GD.framework */; };
 		DF5C9B3E1CEA0C830054FCE0 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5C9B3D1CEA0C830054FCE0 /* RootViewController.m */; };
@@ -37,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8BA3E4F822679CEF00E1F207 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		DF0B3ABA1CE1865F005FC40B /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		DF0B3ABB1CE1865F005FC40B /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
 		DF0B3AC31CE29787005FC40B /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
@@ -53,7 +54,6 @@
 		DF5C9B241CE654960054FCE0 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
 		DF5C9B251CE654960054FCE0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		DF5C9B261CE654960054FCE0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		DF5C9B2C1CE654C60054FCE0 /* libstdc++.6.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.tbd"; path = "usr/lib/libstdc++.6.tbd"; sourceTree = SDKROOT; };
 		DF5C9B2E1CE654DC0054FCE0 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		DF5C9B301CE654EB0054FCE0 /* GD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GD.framework; path = System/Library/Frameworks/GD.framework; sourceTree = SDKROOT; };
 		DF5C9B321CE655E30054FCE0 /* default.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = default.xcconfig; sourceTree = "<group>"; wrapsLines = 1; };
@@ -82,12 +82,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BA3E4F922679CEF00E1F207 /* WebKit.framework in Frameworks */,
 				DF5C9B191CE654260054FCE0 /* CFNetwork.framework in Frameworks */,
 				DF5C9B1E1CE654680054FCE0 /* CoreData.framework in Frameworks */,
 				DF5C9B1F1CE654680054FCE0 /* CoreTelephony.framework in Frameworks */,
 				DF5C9B311CE654EB0054FCE0 /* GD.framework in Frameworks */,
 				DF5C9B2F1CE654DC0054FCE0 /* libz.tbd in Frameworks */,
-				DF5C9B2D1CE654C60054FCE0 /* libstdc++.6.tbd in Frameworks */,
 				DF5C9B271CE654960054FCE0 /* LocalAuthentication.framework in Frameworks */,
 				DF5C9B281CE654960054FCE0 /* MessageUI.framework in Frameworks */,
 				DF5C9B201CE654680054FCE0 /* MobileCoreServices.framework in Frameworks */,
@@ -103,11 +103,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8BA3E4F722679CEF00E1F207 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8BA3E4F822679CEF00E1F207 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DF0B3ABF1CE28F92005FC40B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				DF5C9B2E1CE654DC0054FCE0 /* libz.tbd */,
-				DF5C9B2C1CE654C60054FCE0 /* libstdc++.6.tbd */,
 				DF5C9B301CE654EB0054FCE0 /* GD.framework */,
 				DF5C9B221CE654960054FCE0 /* LocalAuthentication.framework */,
 				DF5C9B231CE654960054FCE0 /* MessageUI.framework */,
@@ -131,6 +138,7 @@
 				DF5C9B321CE655E30054FCE0 /* default.xcconfig */,
 				DF99B0151CE02DA000DF8FEC /* GoodAPISample */,
 				DF99B0141CE02DA000DF8FEC /* Products */,
+				8BA3E4F722679CEF00E1F207 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -219,6 +227,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);

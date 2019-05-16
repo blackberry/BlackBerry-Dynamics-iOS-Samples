@@ -17,7 +17,6 @@
 		8B25570E1FFD70CB0057B05F /* SecureCoreDataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B25570D1FFD70CB0057B05F /* SecureCoreDataVC.m */; };
 		8B2557151FFD70CB0057B05F /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B2557141FFD70CB0057B05F /* Entitlements.plist */; };
 		8B2557181FFD70CB0057B05F /* GDAssets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8B2557171FFD70CB0057B05F /* GDAssets.bundle */; };
-		8B25571B1FFD70CB0057B05F /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B25571A1FFD70CB0057B05F /* libstdc++.6.0.9.tbd */; };
 		8B25571D1FFD70CB0057B05F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B25571C1FFD70CB0057B05F /* libz.tbd */; };
 		8B2557231FFD70CB0057B05F /* Secure_Storage_Sample_Obj_C.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B2557211FFD70CB0057B05F /* Secure_Storage_Sample_Obj_C.xcdatamodeld */; };
 		8B2557281FFD70CB0057B05F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B2557261FFD70CB0057B05F /* LaunchScreen.storyboard */; };
@@ -27,6 +26,7 @@
 		8B2557371FFD74490057B05F /* CommonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2557361FFD74490057B05F /* CommonVC.m */; };
 		8B25573A1FFE770C0057B05F /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2557391FFE770C0057B05F /* CustomTableViewCell.m */; };
 		8B82894E200FB771005DC468 /* SecureSQLVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B82894D200FB771005DC468 /* SecureSQLVC.m */; };
+		8BA3E4FE2267A0D100E1F207 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA3E4FD2267A0D100E1F207 /* WebKit.framework */; };
 		8BF2A82F201F687000BFEF1F /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 8BF2A82E201F687000BFEF1F /* LICENSE */; };
 		8BF2A833201F688700BFEF1F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8BF2A832201F688700BFEF1F /* README.md */; };
 /* End PBXBuildFile section */
@@ -46,7 +46,6 @@
 		8B2557131FFD70CB0057B05F /* default.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = default.xcconfig; sourceTree = "<group>"; };
 		8B2557141FFD70CB0057B05F /* Entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		8B2557171FFD70CB0057B05F /* GDAssets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GDAssets.bundle; path = System/Library/Frameworks/GD.framework/Resources/GDAssets.bundle; sourceTree = SDKROOT; };
-		8B25571A1FFD70CB0057B05F /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		8B25571C1FFD70CB0057B05F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		8B2557221FFD70CB0057B05F /* Secure_Storage_Sample_Obj_C.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Secure_Storage_Sample_Obj_C.xcdatamodel; sourceTree = "<group>"; };
 		8B2557271FFD70CB0057B05F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,6 +59,7 @@
 		8B2557391FFE770C0057B05F /* CustomTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		8B82894C200FB771005DC468 /* SecureSQLVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecureSQLVC.h; sourceTree = "<group>"; };
 		8B82894D200FB771005DC468 /* SecureSQLVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecureSQLVC.m; sourceTree = "<group>"; };
+		8BA3E4FD2267A0D100E1F207 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		8BF2A82E201F687000BFEF1F /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		8BF2A832201F688700BFEF1F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BA3E4FE2267A0D100E1F207 /* WebKit.framework in Frameworks */,
 				8B2556FD1FFD70CB0057B05F /* LocalAuthentication.framework in Frameworks */,
 				8B2557071FFD70CB0057B05F /* MobileCoreServices.framework in Frameworks */,
 				8B2556FF1FFD70CB0057B05F /* CoreTelephony.framework in Frameworks */,
@@ -76,7 +77,6 @@
 				8B2557031FFD70CB0057B05F /* CoreData.framework in Frameworks */,
 				8B2557011FFD70CB0057B05F /* SystemConfiguration.framework in Frameworks */,
 				8B25571D1FFD70CB0057B05F /* libz.tbd in Frameworks */,
-				8B25571B1FFD70CB0057B05F /* libstdc++.6.0.9.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +105,7 @@
 		8B2556F91FFD70CB0057B05F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8BA3E4FD2267A0D100E1F207 /* WebKit.framework */,
 				8B2556FC1FFD70CB0057B05F /* LocalAuthentication.framework */,
 				8B2556FE1FFD70CB0057B05F /* CoreTelephony.framework */,
 				8B2557001FFD70CB0057B05F /* SystemConfiguration.framework */,
@@ -161,7 +162,6 @@
 		8B2557191FFD70CB0057B05F /* Libs */ = {
 			isa = PBXGroup;
 			children = (
-				8B25571A1FFD70CB0057B05F /* libstdc++.6.0.9.tbd */,
 				8B25571C1FFD70CB0057B05F /* libz.tbd */,
 			);
 			name = Libs;
@@ -388,7 +388,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gurjit.ghangura.secureStorageObjC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -408,7 +408,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gurjit.ghangura.secureStorageObjC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
