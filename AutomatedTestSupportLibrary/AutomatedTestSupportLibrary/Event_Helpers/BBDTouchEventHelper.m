@@ -1,24 +1,25 @@
-/* Copyright (c) 2019 BlackBerry Ltd.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- */
+/* Copyright (c) 2017 - 2020 BlackBerry Limited.
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*
+*/
 
 #import "BBDTouchEventHelper.h"
 #import "BBDUITestUtilities.h"
 #import "XCTestCase+Expectations.h"
 #import "BBDUITestCaseRef.h"
 #import "BBDConditionHelper.h"
+#import "XCUIApplication+State.h"
 
 static const NSTimeInterval NO_TIMEOUT = 0.f;
 
@@ -43,6 +44,8 @@ static const NSTimeInterval NO_TIMEOUT = 0.f;
 
 + (BOOL)tapOnItemOfType:(XCUIElementType)type withAccessID:(NSString *)accessID timeout:(NSTimeInterval)timeout forTestCaseRef:(BBDUITestCaseRef *)testCaseRef
 {
+    WAIT_FOR_TESTCASE_USABLE_STATE_WITH_TIMEOUT
+    
     NSLog(
           @"%@ - type = %lu, accessID = %@, type = %f",
           NSStringFromSelector(_cmd),
@@ -54,10 +57,28 @@ static const NSTimeInterval NO_TIMEOUT = 0.f;
     XCUIElement *element = [BBDUITestUtilities findElementOfType:type
                                                 withIndentifier:accessID
                                                     inContainer:testCaseRef.application];
+    NSLog(
+          @"Button found");
+    BOOL tapped = [self tapOnElement:element
+                      forTestCaseRef:testCaseRef
+                             timeout:timeout];
+    NSLog(
+          @"Attempt to tap on button");
+    if (!tapped && testCaseRef.potentialDelegateApplication)
+    {
+        NSLog(
+              @"Attempt to tap on delegate app");
+        
+        element = [BBDUITestUtilities findElementOfType:type
+                                        withIndentifier:accessID
+                                            inContainer:testCaseRef.potentialDelegateApplication];
+        
+        tapped = [self tapOnElement:element
+                     forTestCaseRef:testCaseRef
+                            timeout:timeout];
+    }
     
-    return [self tapOnElement:element
-               forTestCaseRef:testCaseRef
-                      timeout:timeout];
+    return tapped;
 }
 
 + (BOOL)tapOnItemOfType:(XCUIElementType)type containingText:(NSString *)text forTestCaseRef:(BBDUITestCaseRef *)testCaseRef
@@ -70,6 +91,8 @@ static const NSTimeInterval NO_TIMEOUT = 0.f;
 
 + (BOOL)tapOnItemOfType:(XCUIElementType)type containingText:(NSString *)text timeout:(NSTimeInterval)timeout forTestCaseRef:(BBDUITestCaseRef *)testCaseRef
 {
+    WAIT_FOR_TESTCASE_USABLE_STATE_WITH_TIMEOUT
+    
     NSLog(
           @"%@ - type = %lu, accessID = %@, type = %f",
           NSStringFromSelector(_cmd),
@@ -96,6 +119,8 @@ static const NSTimeInterval NO_TIMEOUT = 0.f;
 
 + (BOOL)tapOnRowWithStaticText:(NSString *)staticText timeout:(NSTimeInterval)timeout forTestCaseRef:(BBDUITestCaseRef *)testCaseRef
 {
+    WAIT_FOR_TESTCASE_USABLE_STATE_WITH_TIMEOUT
+    
     NSLog(
           @"%@, accessID = %@, type = %f",
           NSStringFromSelector(_cmd),
@@ -121,6 +146,8 @@ static const NSTimeInterval NO_TIMEOUT = 0.f;
 
 + (BOOL)tapOnRowWithAccessID:(NSString *)accessID timeout:(NSTimeInterval)timeout forTestCaseRef:(BBDUITestCaseRef *)testCaseRef
 {
+    WAIT_FOR_TESTCASE_USABLE_STATE_WITH_TIMEOUT
+    
     NSLog(
           @"%@, accessID = %@, type = %f",
           NSStringFromSelector(_cmd),
@@ -146,6 +173,8 @@ static const NSTimeInterval NO_TIMEOUT = 0.f;
 
 + (BOOL)tapOnRowByIndex:(NSInteger)indexRow timeout:(NSTimeInterval)timeout forTestCaseRef:(BBDUITestCaseRef *)testCaseRef
 {
+    WAIT_FOR_TESTCASE_USABLE_STATE_WITH_TIMEOUT
+    
     NSLog(
           @"%@ - type = %lu, type = %f",
           NSStringFromSelector(_cmd),
@@ -164,6 +193,8 @@ static const NSTimeInterval NO_TIMEOUT = 0.f;
 
 + (BOOL)scrollContainerWithAccessID:(NSString*) accessID toText:(NSString *)text timeout:(NSTimeInterval)timeout forTestCaseRef:(BBDUITestCaseRef *)testCaseRef
 {
+    WAIT_FOR_TESTCASE_USABLE_STATE_WITH_TIMEOUT
+    
     NSLog(
           @"%@ - accessID = %@, text = %@, timeout = %f",
           NSStringFromSelector(_cmd),
@@ -184,17 +215,12 @@ static const NSTimeInterval NO_TIMEOUT = 0.f;
 + (BOOL)tapOnElement:(XCUIElement *)element forTestCaseRef:(BBDUITestCaseRef *)testCaseRef timeout:(NSTimeInterval)timeout
 {
     BOOL success = NO;
-    if (element.exists && element.hittable)
+    
+    if (element.exists)
     {
-        [element tap];
-        success = YES;
-        return success;
-    } if (!success) {
-        XCUICoordinate *elementCoordinate = [element coordinateWithNormalizedOffset:CGVectorMake(0.0, 0.0)];
-        [elementCoordinate tap];
-        success = YES;
-        return success;
+        return [self tapOnElementOrCoordiante:element];
     }
+    
     if (timeout > 0)
     {
         NSLog(@"Target element is not on screen. Wait for appearance...");
@@ -202,20 +228,28 @@ static const NSTimeInterval NO_TIMEOUT = 0.f;
                                                timeout:timeout
                                      failTestOnTimeout:NO
                                                handler:nil];
-        if (element.exists && element.hittable)
-        {
-            [element tap];
-            success = YES;
-            return success;
-        } if (!success) {
-            XCUICoordinate *elementCoordinate = [element coordinateWithNormalizedOffset:CGVectorMake(0.0, 0.0)];
-            [elementCoordinate tap];
-            success = YES;
-            return success;
-        }
+        
+        return [self tapOnElementOrCoordiante:element];
     }
+    
     NSLog(@"Target element not found!\nHierarchy: %@", [testCaseRef.application debugDescription]);
     return success;
+}
+
++ (BOOL)tapOnElementOrCoordiante:(XCUIElement *)element
+{
+    if (!element.exists)
+        return NO;
+    
+    if (element.hittable)
+    {
+        [element tap];
+        return YES;
+    }
+    
+    XCUICoordinate *elementCoordinate = [element coordinateWithNormalizedOffset:CGVectorMake(0.0, 0.0)];
+    [elementCoordinate tap];
+    return YES;
 }
 
 + (BOOL) isVisible:(XCUIElement *)element
@@ -232,6 +266,8 @@ static const NSTimeInterval NO_TIMEOUT = 0.f;
 
 + (BOOL)scrollToRow:(NSString *)textRow collectionViewElement:(XCUIElement *)collectionElement scrollUp:(BOOL)isScrollUp
 {
+    WAIT_FOR_APPLICATION_USABLE_STATE
+     
     BOOL success = NO;
     NSString *lastMidCellID = @"";
     CGRect lastMidCellRect = CGRectZero;

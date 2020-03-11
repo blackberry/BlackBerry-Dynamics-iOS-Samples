@@ -1,18 +1,18 @@
-/* Copyright (c) 2019 BlackBerry Ltd.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- */
+/* Copyright (c) 2017 - 2020 BlackBerry Limited.
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*
+*/
 
 #import "BBDAutomatedTestSupport.h"
 
@@ -28,6 +28,8 @@
 
 @property (nonatomic, strong) BBDUITestCaseRef *testCaseRef;
 @property (nonatomic, strong) BBDMultiAppTestHelper *multiAppHelper;
+@property (nonatomic, strong) NSArray *installedApps;
+
 @end
 
 @implementation BBDAutomatedTestSupport
@@ -40,6 +42,16 @@
         coreAutomation = [[BBDAutomatedTestSupport alloc] init];
     });
     return coreAutomation;
+}
+
+- (void)setInstalledApps:(NSArray *)installedApps
+{
+    _installedApps = installedApps;
+}
+
+- (NSArray *)getInstalledApps
+{
+    return _installedApps;
 }
 
 - (BBDMultiAppTestHelper*) multiAppHelper {
@@ -62,13 +74,25 @@
                                                    forApplication:application];
 }
 
+- (void)setupBBDAutomatedTestSupportWithApplication:(XCUIApplication *)application withPotentialDelegate:(XCUIApplication *)potentialDelegateApplication forTestCase:(XCTestCase *)testcase
+{
+    self.testCaseRef = [[BBDUITestCaseRef alloc] initWithTestCase:testcase
+                                                   forApplication:application
+                                            withPotentialDelegate:potentialDelegateApplication];
+}
+
+- (XCUIApplication*)getCurrentSetupApplication
+{
+    return _testCaseRef.application;
+}
+
 /////////////////////////////////////////////////////////////////////////////////////////
 //>-----------------------------------------------------------------------------------<//
 #pragma mark -                     BBDUITestAppLogic / GDiOS action triggers/handlers
 //>-----------------------------------------------------------------------------------<//
 /////////////////////////////////////////////////////////////////////////////////////////
 
-- (BOOL)waitForIdle:(NSInteger)idleLockInterval
+- (BOOL)waitForIdle:(NSTimeInterval)idleLockInterval
 {
     return [BBDUITestAppLogic waitForIdleLock:idleLockInterval forTestCaseRef:self.testCaseRef];
 }
@@ -138,10 +162,16 @@
                                     forTestCaseRef:self.testCaseRef];
 }
 
-- (BOOL)waitForEasyActivationBiometricLock:(NSTimeInterval)timeout;
+- (BOOL)waitForEasyActivationBiometricLock:(NSTimeInterval)timeout
 {
     return [BBDUITestAppLogic waitForEasyActivationBiometricLock:timeout
                                                   forTestCaseRef:self.testCaseRef];
+}
+
+- (BOOL)waitForReauthenticationBiometricLock:(NSTimeInterval)timeout
+{
+    return [BBDUITestAppLogic waitForEasyReauthenticationBiometricLock:timeout
+                                                        forTestCaseRef:self.testCaseRef];
 }
 
 - (BOOL)waitForContainerWipe:(NSTimeInterval)timeout

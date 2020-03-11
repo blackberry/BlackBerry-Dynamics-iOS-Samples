@@ -1,0 +1,6 @@
+framework module BlackBerryDynamicsAutomatedTestSupportLibrary {
+    umbrella header "AutomatedTestSupportLibrary.h"
+    
+    export *
+    module * { export * }
+}

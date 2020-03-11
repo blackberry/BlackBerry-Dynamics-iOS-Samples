@@ -1,18 +1,18 @@
-/* Copyright (c) 2019 BlackBerry Ltd.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- */
+/* Copyright (c) 2017 - 2020 BlackBerry Limited.
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*
+*/
 
 #ifndef BBDUIAccessibilityIdentifiers_h
 #define BBDUIAccessibilityIdentifiers_h
@@ -20,6 +20,7 @@ static NSString* const BBDActivationEmailFieldID = @"BBDActivationEmailFieldID";
 static NSString* const BBDAccessKeyField1ID = @"BBDAccessKeyField1ID";
 static NSString* const BBDAccessKeyField2ID = @"BBDAccessKeyField2ID";
 static NSString* const BBDAccessKeyField3ID = @"BBDAccessKeyField3ID";
+static NSString* const BBDLearnMoreButtonID = @"BBDLearnMoreButtonID";
 static NSString* const BBDBottomInfoButtonID = @"BBDBottomInfoButtonID";
 static NSString* const BBDSetPasswordFieldID = @"BBDSetPasswordFieldID";
 static NSString* const BBDChangePasswordFieldID = @"BBDChangePasswordFieldID";
@@ -40,6 +41,7 @@ static NSString* const BBDEasyActivationAccessKeyButtonID = @"BBDEasyActivationD
 // Cancel button on the EasyActivationUnlockUI and CertificateSigningRequestUnlockUI
 // Could be used on other UIs as well
 static NSString* const BBDCancelButtonID = @"BBDCancelButtonID";
+static NSString* const BBDLearnMoreMessageID = @"BBDLearnMoreMessageID";
 static NSString* const BBDContainerWipedTitleID = @"BBDContainerWipedTitleID";
 static NSString* const BBDContainerWipedMessageID = @"BBDContainerWipedMessageID";
 // Unlock button on the BlockedUI with the remote lock reason.
@@ -71,6 +73,9 @@ static NSString* const BBDForgotPasswordLearnMoreUI = @"BBDForgotPasswordLearnMo
 static NSString* const BBDDisclaimerUI = @"BBDDisclaimerUI";
 static NSString* const BBDEasyActivationSelectionUI = @"BBDEasyActivationSelectionUI";
 static NSString* const BBDEasyActivationUnlockUI = @"BBDEasyActivationUnlockUI";
+static NSString* const BBDReauthenticationUnlockUI = @"BBDReauthenticationUnlockUI";
+static NSString* const BBDReauthenticationForgotPasswordUI = @"BBDReauthenticationForgotPasswordUI";
+static NSString* const BBDReauthenticationBiometricUnlockUI = @"BBDReauthenticationBiometricUnlockUI";
 static NSString* const BBDEasyActivationBiometricUnlockUI = @"BBDEasyActivationBiometricUnlockUI";
 static NSString* const BBDRetrievingAccessKeyUI = @"BBDRetrievingAccessKeyUI";
 static NSString* const BBDActivationUI = @"BBDActivationUI";

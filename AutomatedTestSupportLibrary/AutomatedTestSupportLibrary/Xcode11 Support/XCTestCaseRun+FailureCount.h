@@ -14,22 +14,10 @@
 *
 */
 
-#import "XCTestExpectation+DetachExpectation.h"
-#import <objc/runtime.h>
+#import <XCTest/XCTest.h>
 
-@implementation XCTestExpectation (DetachExpectation)
+@interface XCTestCaseRun (FailureCount)
 
-- (BOOL)isDetached {
-    NSNumber *isDetached = objc_getAssociatedObject(self, @selector(isDetached));
-    if (!isDetached) {
-        isDetached = [NSNumber numberWithBool:NO];
-    }
-    return [isDetached boolValue];
-}
-
-- (void)setDetached:(BOOL)isDetached {
-    objc_setAssociatedObject(self, @selector(isDetached), [NSNumber numberWithBool:isDetached], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
+- (void)resetFailureCount;
 
 @end

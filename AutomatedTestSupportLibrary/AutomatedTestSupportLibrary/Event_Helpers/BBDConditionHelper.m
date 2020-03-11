@@ -1,24 +1,25 @@
-/* Copyright (c) 2019 BlackBerry Ltd.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- */
+/* Copyright (c) 2017 - 2020 BlackBerry Limited.
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*
+*/
 
 #import "BBDConditionHelper.h"
 #import "XCTestCase+Expectations.h"
 #import "BBDUITestUtilities.h"
 #import "BBDUITestCaseRef.h"
 #import "BBDPublicConstans.h"
+#import "XCUIApplication+State.h"
 
 static const NSTimeInterval NO_TIMEOUT = 0.f;
 
@@ -80,6 +81,8 @@ static const NSTimeInterval NO_TIMEOUT = 0.f;
                            timeout:(NSTimeInterval)timeout
                     forTestCaseRef:(BBDUITestCaseRef *)testCaseRef
 {
+    WAIT_FOR_TESTCASE_USABLE_STATE_WITH_TIMEOUT
+    
     NSLog(
           @"%@ - staticText = %@, timeout = %f",
           NSStringFromSelector(_cmd),
@@ -118,6 +121,8 @@ static const NSTimeInterval NO_TIMEOUT = 0.f;
 + (BOOL)isKeyboardElementHittable:(XCUIElement *)element
                    forTestCaseRef:(BBDUITestCaseRef *)testCaseRef
 {
+    WAIT_FOR_TESTCASE_USABLE_STATE
+    
     BOOL exists = element.exists;
     if (!exists)
     {
@@ -138,8 +143,9 @@ static const NSTimeInterval NO_TIMEOUT = 0.f;
 
 + (BOOL)isKeyboardShown:(BBDUITestCaseRef *)testCaseRef
 {
+    WAIT_FOR_TESTCASE_USABLE_STATE
+    
     XCUIApplication *app = testCaseRef.application;
-
     XCUIElementQuery *hideButtons = [app.keyboards.buttons matchingIdentifier:BBDKeyboardHideButton];
     if (hideButtons.count > 0)
     {
@@ -169,6 +175,8 @@ static const NSTimeInterval NO_TIMEOUT = 0.f;
                              timeout:(NSTimeInterval)timeout
                       forTestCaseRef:(BBDUITestCaseRef *)testCaseRef
 {
+    WAIT_FOR_TESTCASE_USABLE_STATE_WITH_TIMEOUT
+    
     NSLog(
           @"%@ - identifier = %@, type = %lu, timeout = %f",
           NSStringFromSelector(_cmd),
@@ -181,6 +189,33 @@ static const NSTimeInterval NO_TIMEOUT = 0.f;
                                                        withIndentifier:identifier
                                                            inContainer:testCaseRef.application];
 
+    if (targetUIObject.exists)
+    {
+        return YES;
+    }
+    
+    if (timeout > 0)
+    {
+        NSLog(@"Target element is not on screen. Wait for appearance...");
+        [testCaseRef.testCase waitForElementAppearance:targetUIObject
+                                               timeout:timeout
+                                     failTestOnTimeout:NO
+                                               handler:nil];
+    }
+    if (targetUIObject.exists)
+    {
+        return YES;
+    }
+    
+    if (testCaseRef.potentialDelegateApplication == nil)
+    {
+        return NO;
+    }
+    
+    targetUIObject = [BBDUITestUtilities findElementOfType:type
+                                           withIndentifier:identifier
+                                               inContainer:testCaseRef.potentialDelegateApplication];
+    
     if (targetUIObject.exists)
     {
         return YES;

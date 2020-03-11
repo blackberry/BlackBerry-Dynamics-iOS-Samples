@@ -1,12 +1,26 @@
-/*
- * (c) 2017 BlackBerry Limited. All rights reserved.
- *
- */
+/* Copyright (c) 2017 - 2020 BlackBerry Limited.
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*
+*/
 
+#import "XCUIApplication+State.h"
+#import "XCTestCase+Properties.h"
+#import "BBDExpectationsHandler.h"
 #import "XCTestCase+Expectations.h"
+#import "XCTestCaseRun+FailureCount.h"
 #import "XCTestExpectation+DetachExpectation.h"
 
-@import ObjectiveC.runtime;
 
 @implementation XCTestCase(Expectations)
 
@@ -42,16 +56,11 @@
       failTestOnTimeout:(BOOL)failTestOnTimeout
                 handler:(nullable XCWaitCompletionHandler)handler
 {
+    CHECK_FOR_APPLICATION_USABLE_STATE
+    
     NSAssert(targetUIObject, @"Method expects non-null XCUIElement for expectation evaluation");
     
-    if (targetUIObject.exists == exists)
-    {
-        // element exist, no need to wait
-        return;
-    }
-    
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"exists == %d", exists];
-    
     NSLog(@"Creating expectation using predicate: %@", predicate.description);
     // perform async loop, waiting for the object specified to appear
     XCTestExpectation *te = [self expectationForPredicate:predicate
@@ -67,8 +76,10 @@
 - (void)waitForElementGetHittable:(nonnull XCUIElement *)targetUIObject
                           timeout:(NSTimeInterval)timeout
                 failTestOnTimeout:(BOOL)failTestOnTimeout
-                          handler:(nullable XCWaitCompletionHandler)handler {
-
+                          handler:(nullable XCWaitCompletionHandler)handler
+{
+    WAIT_FOR_APPLICATION_USABLE_STATE
+    
     NSAssert(targetUIObject, @"Method expects non-null XCUIElement for expectation evaluation");
 
     if (targetUIObject.hittable)
@@ -92,34 +103,35 @@
     NSLog(@"%@ - timeout = %f, failTestOnTimeout = %@", NSStringFromSelector(_cmd), timeout, failTestOnTimeout ? @"YES" : @"NO");
     
     NSLog(@"Adding expectation to queue...");
-    [[self expectations] addObject:expectation];
+    [BBDExpectationsHandler addExpectation:expectation forTestCase:self];
     
     if (!failTestOnTimeout)
     {
         __weak typeof(self) weakSelf = self;
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(timeout * NSEC_PER_SEC)), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-            if ([[weakSelf expectations] containsObject:expectation])
-            {
-                NSLog(@"Expectation fulfilled manualy to avoid test failing");
-                [expectation fulfill];
-                [[weakSelf expectations] removeObject:expectation];
-            }
+            [BBDExpectationsHandler fullFillExpectation:expectation forTestCase:weakSelf];
         });
     }
     // wait no longer than 'timeout + 1' seconds for the request to go through
     __weak typeof(self) weakSelf = self;
-    [self waitForExpectationsWithTimeout:timeout+1 handler:^(NSError *error) {
-        
-        // remove expectation only if its inside expectations array
-        [[weakSelf expectations] removeObject:expectation];
-        
-        if (error) {
-            NSLog(@"expectation failed");
-        }
-        
-        if (handler)
-            handler(error);
-    }];
+    
+    @try {
+        [self waitForExpectationsWithTimeout:timeout+1 handler:^(NSError *error) {
+            [BBDExpectationsHandler removeExpectation:expectation forTestCase:weakSelf];
+            if (error)
+            {
+                NSLog(@"Expectation failed - %@", error.debugDescription);
+            }
+            if (handler)
+            {
+              handler(error);
+            }
+        }];
+    } @catch (NSException *exception) {
+        NSLog(@"XCTestCase waitForExpectationsWithTimeout exception - %@", exception);
+        [BBDExpectationsHandler clearExpectationsForTestCase:weakSelf];
+        [[weakSelf testCaseRun] resetFailureCount];
+    }
 }
 
 - (nonnull XCTestExpectation *)detachedExpectationForPredicate:(nonnull NSPredicate *)predicate
@@ -161,7 +173,7 @@
         }
     }
     
-    [[self expectations] addObject:expectations];
+    [BBDExpectationsHandler addExpectations:expectations forTestCase:self];
     
     if (!failTestOnTimeout)
     {
@@ -169,7 +181,7 @@
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(timeout * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [weakSelf setSignaled:YES];
             NSLog(@"Expectations fulfilled manualy to avoid test failing");
-            [[weakSelf expectations] removeObjectsInArray:expectations];
+            [BBDExpectationsHandler removeExpectations:expectations forTestCase:weakSelf];
         });
     }
     
@@ -181,7 +193,7 @@
         [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:sleepTime]];
     }
     
-    [[self expectations] removeObjectsInArray:expectations];
+    [BBDExpectationsHandler removeExpectations:expectations forTestCase:self];
     
     if (![self isSignaled]) {
         NSLog(@"expectation failed");
@@ -192,37 +204,5 @@
         handler([NSError errorWithDomain:@"BBDTestCaseErrorDomain" code:-1 userInfo:nil]);
     }
 }
-
-#pragma mark - Adding runtime property
-
-- (NSMutableArray*)expectations {
-    
-    NSMutableArray *array = objc_getAssociatedObject(self, @selector(expectations));
-    
-    if (!array)
-    {
-        array = [NSMutableArray array];
-        [self setExpectations:array];
-    }
-    
-    return array;
-}
-
-- (void)setExpectations: (NSMutableArray*)expectations {
-    objc_setAssociatedObject(self, @selector(expectations), expectations, OBJC_ASSOCIATION_RETAIN);
-}
-
-- (BOOL)isSignaled {
-    NSNumber *isSignaled = objc_getAssociatedObject(self, @selector(isSignaled));
-    if (!isSignaled) {
-        isSignaled = [NSNumber numberWithBool:NO];
-    }
-    return [isSignaled boolValue];
-}
-
-- (void)setSignaled:(BOOL)isSignaled {
-    objc_setAssociatedObject(self, @selector(isSignaled), [NSNumber numberWithBool:isSignaled], OBJC_ASSOCIATION_RETAIN);
-}
-
 
 @end

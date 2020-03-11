@@ -1,27 +1,34 @@
-/* Copyright (c) 2019 BlackBerry Ltd.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- */
+/* Copyright (c) 2017 - 2020 BlackBerry Limited.
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*
+*/
 
 #import "BBDInputEventHelper.h"
 #import "XCTestCase+Expectations.h"
 #import "BBDUITestUtilities.h"
 #import "BBDUITestCaseRef.h"
 #import "BBDPublicConstans.h"
+#import "XCUIApplication+State.h"
+#import "BBDConditionHelper.h"
 
 static const NSTimeInterval NO_TIMEOUT = 0.f;
 static const NSTimeInterval TIMEOUT_5 = 5.f;
+static const NSTimeInterval TIMEOUT_1 = 1.f;
+static const NSTimeInterval PRESS_DURATION = 2.f;
+
+static const CGFloat FOCUS_COORD_OFFSET = 0.4f;
+static const CGFloat LONG_PRESS_COORD_OFFSET = 0.5f;
 
 @implementation BBDInputEventHelper
 
@@ -46,6 +53,8 @@ static const NSTimeInterval TIMEOUT_5 = 5.f;
           timeout:(NSTimeInterval)timeout
    forTestCaseRef:(BBDUITestCaseRef *)testCaseRef
 {
+    WAIT_FOR_TESTCASE_USABLE_STATE_WITH_TIMEOUT
+    
     NSLog(
           @"%@ - text = %@, accessID = %@, type = %lu, timeout = %f",
           NSStringFromSelector(_cmd),
@@ -55,14 +64,30 @@ static const NSTimeInterval TIMEOUT_5 = 5.f;
           timeout
           );
     
-    BOOL success = NO;
+    XCUIElement *element = testCaseRef.application.textFields[accessID].firstMatch;
     
-    XCUIElement *element = [BBDUITestUtilities findElementOfType:type
-                                                withIndentifier:accessID
-                                                    inContainer:testCaseRef.application];
+    if (![self isElementAppeared:element withTimeout:10.f])
+    {
+        return NO;
+    }
     
-    success = [self typeInElement:element text:text timeout:timeout forTestCaseRef:testCaseRef];
+    BOOL success = [self typeInElement:element text:text timeout:timeout forTestCaseRef:testCaseRef];
     
+    return success;
+}
+
++ (BOOL)isElementAppeared:(XCUIElement *)element withTimeout:(NSTimeInterval)timeout
+{
+    NSLog(@"start searching for element with accessibility identifier - %@", element.identifier);
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"exists == true"];
+    XCTNSPredicateExpectation *expectation = [[XCTNSPredicateExpectation alloc] initWithPredicate:predicate object:element];
+    
+    XCTWaiterResult res = [[XCTWaiter new] waitForExpectations:@[expectation] timeout:timeout];
+    
+    BOOL success = res == XCTWaiterResultCompleted;
+    
+    NSLog(@"element with accessibility identifier - %@, XCTWaiterResult - %ld", element.identifier, (long)res);
+    NSLog(@"element with accessibility identifier - %@ is appeared on screen - %@", element.identifier, success == YES ? @"yes" : @"no");
     return success;
 }
 
@@ -80,6 +105,8 @@ static const NSTimeInterval TIMEOUT_5 = 5.f;
           timeout:(NSTimeInterval)timeout
    forTestCaseRef:(BBDUITestCaseRef *)testCaseRef
 {
+    WAIT_FOR_TESTCASE_USABLE_STATE_WITH_TIMEOUT
+    
     NSLog(
           @"%@ - text = %@, staticText = %@, type = %lu, timeout = %f",
           NSStringFromSelector(_cmd),
@@ -116,10 +143,8 @@ static const NSTimeInterval TIMEOUT_5 = 5.f;
 + (BOOL)clearText:(XCUIElement *)el
    forTestCaseRef:(BBDUITestCaseRef *)testCaseRef
 {
-    if ([self isTextEmpty:el])
-    {
-        return YES;
-    }
+    WAIT_FOR_TESTCASE_USABLE_STATE
+    
     if (![self canTypeInElement:el])
     {
         NSLog(@"Can not clear text - element can not be tapped");
@@ -131,17 +156,14 @@ static const NSTimeInterval TIMEOUT_5 = 5.f;
         case XCUIElementTypeTextField:
         case XCUIElementTypeSecureTextField:
         case XCUIElementTypeWebView:
-        {
-            return [self clearTextField:el forTestCaseRef:testCaseRef];
-        }
-            break;
         case XCUIElementTypeTextView:
         {
-            return [self clearTextView:el forTestCaseRef:testCaseRef];
+            return [self clearTextInContainer:el forTestCaseRef:testCaseRef];
         }
-            break;
         default:
+        {
             break;
+        }
     }
     return NO;
 }
@@ -157,32 +179,6 @@ static const NSTimeInterval TIMEOUT_5 = 5.f;
 }
 
 #pragma mark - Utilities
-
-+ (BOOL)isTextEmpty:(XCUIElement *)el
-{
-    NSString *value = el.value;
-    if (!value || [value isEqualToString:@""])
-    {
-        return YES;
-    }
-    
-    return NO;
-}
-
-+ (void)waitForTextClearing:(XCUIElement *)element
-             forTestCaseRef:(BBDUITestCaseRef *)testCaseRef
-{
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(value == %@) OR (value == %@)", nil, @""];
-    
-    XCTestExpectation *te = [testCaseRef.testCase expectationForPredicate:predicate
-                                                      evaluatedWithObject:element
-                                                                  handler:nil];
-    
-    [testCaseRef.testCase waitForExpectation:te
-                                 withTimeout:TIMEOUT_5
-                           failTestOnTimeout:NO
-                                     handler:nil];
-}
 
 + (BOOL)typeInElement:(XCUIElement *)element
                  text:(NSString *)text
@@ -236,68 +232,26 @@ static const NSTimeInterval TIMEOUT_5 = 5.f;
     }
 }
 
-+ (BOOL)clearTextView:(XCUIElement *)textView
-       forTestCaseRef:(BBDUITestCaseRef *)testCaseRef
++ (BOOL)clearTextInContainer:(XCUIElement *)container forTestCaseRef:(BBDUITestCaseRef *)testCaseRef
 {
-    CGVector textFieldVector = CGVectorMake(20, 15);
-    XCUICoordinate *p1 = [[textView coordinateWithNormalizedOffset:CGVectorMake(0, 0)] coordinateWithOffset:textFieldVector];
-    [p1 pressForDuration:4];
-    
-    XCUIElement *selectAllEl = testCaseRef.application.menuItems[BBDTextMenuItemSelectAll];
-    [testCaseRef.testCase waitForElementAppearance:selectAllEl timeout:TIMEOUT_5 failTestOnTimeout:NO handler:nil];
-    if (!selectAllEl.exists)
-    {
-        NSLog(@"Unable to clear text in text view - select all option has not appeared");
-        return NO;
+    // [GD-46641] Since Xcode 11 the 'value' property of the XCUIelement is always nil
+    // That is why we anyway should firstly clear TextField before entering the text.
+    [self bringContainerToFocus:container forTestCaseRef:testCaseRef];
+    XCUIElement *selectAllButton = testCaseRef.application.menuItems[BBDTextMenuItemSelectAll].firstMatch;
+    if (!selectAllButton.exists) {
+        [[container coordinateWithNormalizedOffset:CGVectorMake(LONG_PRESS_COORD_OFFSET, LONG_PRESS_COORD_OFFSET)] pressForDuration:PRESS_DURATION];
+        [testCaseRef.testCase waitForElementAppearance:selectAllButton timeout:TIMEOUT_1 failTestOnTimeout:NO handler:nil];
     }
     
-    [selectAllEl tap];
-    
-    XCUIElement *cutEl = testCaseRef.application.menuItems[BBDTextMenuItemCut];
-    [testCaseRef.testCase waitForElementAppearance:cutEl timeout:TIMEOUT_5 failTestOnTimeout:NO handler:nil];
-    if (!cutEl.exists)
-    {
-        NSLog(@"Unable to clear text in text view - cut option has not appeared");
-        return NO;
+    if (selectAllButton.exists) {
+        // In this case the text field isn't empty and we need to clear it
+        [selectAllButton tap];
+        [testCaseRef.testCase waitForElementDisappearance:selectAllButton timeout:TIMEOUT_1 failTestOnTimeout:NO handler:nil];
+        [container typeText:XCUIKeyboardKeyDelete];
+    } else {
+        [container typeText:XCUIKeyboardKeyDelete];
     }
-    
-    [cutEl tap];
-    
-    [testCaseRef.testCase waitForElementDisappearance:cutEl timeout:TIMEOUT_5 failTestOnTimeout:NO handler:nil];
-    
-    [self waitForTextClearing:textView forTestCaseRef:testCaseRef];
-    
-    return [self isTextEmpty:textView];
-}
-
-+ (BOOL)clearTextField:(XCUIElement *)elText
-        forTestCaseRef:(BBDUITestCaseRef *)testCaseRef
-{
-    [elText tap];
-    
-    NSString *value = (NSString *)elText.value;
-    
-    NSString *stringForClear = [self stringForTextCleaning:value];
-    
-    [self enterLongText:stringForClear element:elText];
-    
-    // Sometimes it may happen that cursor is put in incorrect place after tap action.
-    // Then we may try another approach with coordinate.
-    // We tap at the right bottom corner of text field.
-    // But text field should be focused to make it work,
-    // so the previous approach is also needed.
-    
-    if (![self isTextEmpty:elText])
-    {
-        XCUICoordinate *coordinate = [elText coordinateWithNormalizedOffset:CGVectorMake(0.9, 0.9)];
-        [coordinate tap];
-        
-        [self enterLongText:stringForClear element:elText];
-    }
-    
-    [self waitForTextClearing:elText forTestCaseRef:testCaseRef];
-    
-    return [self isTextEmpty:elText];
+    return !selectAllButton.exists;
 }
 
 + (void)enterLongText:(NSString *)string
@@ -312,6 +266,16 @@ static const NSTimeInterval TIMEOUT_5 = 5.f;
         NSRange typeRange = NSMakeRange(i, typeNum);
         [el typeText:[string substringWithRange:typeRange]];
     }
+}
+
+// Before the cleaning a text the TextContainer should be in a focus
+// Single tap doesn't work properly for changing a focus between the
+// TextContainers (BBDActivationUI is an example), so double tap is used instead
++ (void)bringContainerToFocus:(XCUIElement *)container forTestCaseRef:(BBDUITestCaseRef *)testCaseRef
+{
+    XCUIElement *keyBoard = testCaseRef.application.keyboards.firstMatch;
+    [[container coordinateWithNormalizedOffset:CGVectorMake(FOCUS_COORD_OFFSET, FOCUS_COORD_OFFSET)] doubleTap];
+    [testCaseRef.testCase waitForElementAppearance:keyBoard timeout:PRESS_DURATION failTestOnTimeout:NO handler:nil];
 }
 
 @end
