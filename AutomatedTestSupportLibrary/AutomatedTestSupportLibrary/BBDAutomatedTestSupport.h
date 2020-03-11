@@ -1,18 +1,18 @@
-/* Copyright (c) 2019 BlackBerry Ltd.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- */
+/* Copyright (c) 2017 - 2020 BlackBerry Limited.
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*
+*/
 
 @import Foundation;
 @import XCTest;
@@ -32,6 +32,20 @@
  * @return singleton instance of BBDAutomatedTestSupport
  */
 + (instancetype)sharedInstance;
+
+/**
+ * Set apps list that were installed by DeepTest before test starts.
+ * This method was added as a part of EasyActivation flow changes.
+ */
+- (void)setInstalledApps:(NSArray *)installedApps;
+
+/**
+ * Get apps list that were installed by DeepTest before test starts.
+ * This method was added as a part of EasyActivation flow changes.
+ * 
+ * @return apps list
+ */
+- (NSArray *)getInstalledApps;
 
 /**
  * Fetches BBDProvisionData instance from JSON file by given location.
@@ -77,6 +91,27 @@
  */
 - (void)setupBBDAutomatedTestSupportWithApplication:(XCUIApplication *)application forTestCase:(XCTestCase *)testcase;
 
+
+/**
+ * Basic setup of automated test framework.
+ * This method should be called for every time new XCUIApplication or XCTestCase object was created under UITest target
+ *
+ * @param application
+ * instance of target XCUIApplication object
+ *
+ * @param potentialDelegateApplication
+ * instance of target XCUIApplication object
+ *
+ * @param testcase
+ * instance of XCTestCase object
+ *
+ */
+- (void)setupBBDAutomatedTestSupportWithApplication:(XCUIApplication *)application withPotentialDelegate:(XCUIApplication *)potentialDelegateApplication forTestCase:(XCTestCase *)testcase;
+
+
+/// Returns the application ats is currently configured for.
+- (XCUIApplication*)getCurrentSetupApplication;
+
 /////////////////////////////////////////////////////////////////////////////////////////
 //>-----------------------------------------------------------------------------------<//
 #pragma mark -                    BBDUITestAppLogic / GDiOS action triggers/handlers
@@ -91,7 +126,7 @@
  *
  * @return YES, if app requires to enter password after idle timeout, otherwise returns NO
  */
-- (BOOL)waitForIdle:(NSInteger)idleLockInterval;
+- (BOOL)waitForIdle:(NSTimeInterval)idleLockInterval;
 
 /**
  * Checks that GD has sent the  GD Authorized callback (which needs to be sent before app code can run)
@@ -213,6 +248,17 @@
  * @return YES, if biometric easy activation unlock screen with biometric popup appeared, otherwise NO.
  */
 - (BOOL)waitForEasyActivationBiometricLock:(NSTimeInterval)timeout;
+
+/**
+ * Synchronously waits for biometric reauthentication to confirm screen presence with Touch ID/Face ID popup.
+ * Target application should be provisioned before.
+ *
+ * @param timeout
+ * The amount of time within which biometric eauthentication to confirm unlock screen with popup should appear
+ *
+ * @return YES, if biometric eauthentication to confirm unlock screen with biometric popup appeared, otherwise NO.
+ */
+- (BOOL)waitForReauthenticationBiometricLock:(NSTimeInterval)timeout;
 
 /**
  * Synchronously waits for wipe/block screen presence.

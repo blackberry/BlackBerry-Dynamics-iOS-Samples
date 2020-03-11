@@ -14,22 +14,21 @@
 *
 */
 
-#import "XCTestExpectation+DetachExpectation.h"
-#import <objc/runtime.h>
+#import "XCTestCaseRun+FailureCount.h"
 
-@implementation XCTestExpectation (DetachExpectation)
+static NSString * const kFailureCountKey        = @"failureCount";
+static NSString * const kInternalTestRunKey     = @"internalTestRun";
 
-- (BOOL)isDetached {
-    NSNumber *isDetached = objc_getAssociatedObject(self, @selector(isDetached));
-    if (!isDetached) {
-        isDetached = [NSNumber numberWithBool:NO];
-    }
-    return [isDetached boolValue];
+@implementation XCTestCaseRun (FailureCount)
+
+- (id)internalTestRunObject
+{
+    return [self valueForKey:kInternalTestRunKey];
 }
 
-- (void)setDetached:(BOOL)isDetached {
-    objc_setAssociatedObject(self, @selector(isDetached), [NSNumber numberWithBool:isDetached], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)resetFailureCount
+{
+    [[self internalTestRunObject] setValue:@0 forKey:kFailureCountKey];
 }
-
 
 @end

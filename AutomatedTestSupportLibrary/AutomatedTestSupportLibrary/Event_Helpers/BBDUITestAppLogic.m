@@ -1,18 +1,18 @@
-/* Copyright (c) 2019 BlackBerry Ltd.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- */
+/* Copyright (c) 2017 - 2020 BlackBerry Limited.
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*
+*/
 
 #import "BBDUITestAppLogic.h"
 #import "BBDConditionHelper.h"
@@ -24,8 +24,14 @@
 #import "BBDUITestUtilities.h"
 #import "XCTestCase+Expectations.h"
 #import "XCUIDevice+BiometricsHelpers.h"
+#import "BBDAutomatedTestSupport.h"
+#import "BBDExpectationsHandler.h"
+#import "XCUIApplication+State.h"
 
-static const NSTimeInterval SPLASH_UI_APPEARANCE_TIMEOUT            = 2.f;
+#define XCTLAssertTrue(expression, ...) \
+    _XCTPrimitiveAssertTrue(testCaseRef.testCase, expression, @#expression, __VA_ARGS__)
+
+static const NSTimeInterval SPLASH_UI_APPEARANCE_TIMEOUT            = 3.f;
 static const NSTimeInterval PROVISION_TIMEOUT                       = 60.f;
 static const NSTimeInterval APEARANCE_TIMEOUT                       = 20.f;
 static const NSTimeInterval VALIDATION_TIMEOUT                      = 5.f;
@@ -323,6 +329,21 @@ static const NSString* CLIENT_CERTIFICATE_TITLE = @"Client Certificate";
         NSLog(@"Provising screen didn't appear after timeout: %f\nHierarchy: %@", APEARANCE_TIMEOUT, [testCaseRef.application  debugDescription]);
         return NO;
     }
+    
+    // Handle a tip on the keyboard swipe option
+    if (@available(iOS 13, *))
+    {
+        NSPredicate* predicate = [NSPredicate predicateWithFormat: @"value CONTAINS[c] 'Speed up'"];
+        
+        XCUIElement* container = [testCaseRef.application.otherElements containingPredicate:predicate].firstMatch;
+        
+        if ([container exists])
+        {
+            [container.buttons[@"Continue"].firstMatch tap];
+        }
+    }
+    
+    
     BOOL emailEntered =  [BBDInputEventHelper  enterText:email
                                             inViewOfType:XCUIElementTypeTextField
                                             withAccessID:BBDActivationEmailFieldID
@@ -423,41 +444,90 @@ static const NSString* CLIENT_CERTIFICATE_TITLE = @"Client Certificate";
     return NO;
 }
 
++ (BOOL)skipEAOldFlow:(BBDUITestCaseRef *)testCaseRef
+{
+    NSLog(@"Looking for EasyActivationSelection (Old EA flow)");
+    if (testCaseRef.application.exists && testCaseRef.application.state != XCUIApplicationStateRunningForeground)
+    {
+        NSLog(@"Could not skip Old EA flow. %@", [testCaseRef.application invalidStateDescription]);
+        return NO;
+    }
+    
+    if ([BBDConditionHelper isScreenShown:BBDEasyActivationSelectionUI forTestCaseRef:testCaseRef])
+    {
+        XCUIElement *eaScreen = [BBDUITestUtilities findElementOfType:XCUIElementTypeAny withIndentifier:BBDEasyActivationSelectionUI inContainer:testCaseRef.application];
+        XCTLAssertTrue([BBDTouchEventHelper tapOnItemOfType:XCUIElementTypeButton withAccessID:BBDEasyActivationAccessKeyButtonID forTestCaseRef:testCaseRef],
+                       @"Could not tap on BBDEasyActivationAccessKeyButtonID to show BBDActivationUI for Manual Provisioning");
+        [testCaseRef.testCase waitForElementDisappearance:eaScreen timeout:VALIDATION_TIMEOUT failTestOnTimeout:YES handler:nil];
+        NSLog(@"Successfully skipped Old EA flow with delegate - %@", testCaseRef.application);
+        return YES;
+    }
+    
+    return NO;
+}
+
++ (BOOL)skipEANewFlow:(BBDUITestCaseRef *)testCaseRef
+{
+    BOOL skipped = NO;
+    NSLog(@"Looking for EasyActivationUnlock (New EA Flow)");
+    XCUIApplication *appToBeProvisioned = testCaseRef.application;
+    NSArray *apps = [[BBDAutomatedTestSupport sharedInstance] getInstalledApps];
+    NSLog(@"Apps: %@", apps);
+    for (NSString *delegateID in apps)
+    {
+        XCUIApplication *delegateApp = [[XCUIApplication alloc] initWithBundleIdentifier:delegateID];
+        NSLog(@"New EA Flow: checking app %@, app state: %lu", delegateID, delegateApp.state);
+        if (delegateApp.exists && delegateApp.state == XCUIApplicationStateRunningForeground)
+        {
+            testCaseRef.application = delegateApp;
+            NSLog(@"Looking for EasyActivationUnlock in app %@", delegateID);
+            if ([BBDConditionHelper isScreenShown:BBDEasyActivationUnlockUI timeout:VALIDATION_TIMEOUT forTestCaseRef:testCaseRef])
+            {
+                XCUIElement *eaScreen = [BBDUITestUtilities findElementOfType:XCUIElementTypeAny withIndentifier:BBDEasyActivationUnlockUI inContainer:testCaseRef.application];
+                XCTLAssertTrue([BBDTouchEventHelper tapOnItemOfType:XCUIElementTypeButton withAccessID:BBDCancelButtonID forTestCaseRef:testCaseRef],
+                               @"Could not tap BBDCancelButtonID on BBDEasyActivationUnlockUI for potential EA delegate - %@", delegateApp);
+                [testCaseRef.testCase waitForElementDisappearance:eaScreen timeout:VALIDATION_TIMEOUT failTestOnTimeout:YES handler:nil];
+                NSLog(@"Successfully skipped New EA flow with delegate - %@", delegateApp);
+                skipped = YES;
+                break;
+            }
+        }
+    }
+    
+    testCaseRef.application = appToBeProvisioned;
+    return skipped;
+}
+
 + (BOOL)waitForProvisionScreenForTestCaseRef:(BBDUITestCaseRef *)testCaseRef
 {
     // Wait for splash screen appearance.
     // In GD-40469 was observed the issue with LoadingUI appearance
     // after loginOrProvisionBBDApp call.
-    BOOL splashScreenAppeared = [BBDConditionHelper isScreenShown:BBDLoadingUI
-                                                          timeout:SPLASH_UI_APPEARANCE_TIMEOUT
-                                                   forTestCaseRef:testCaseRef];
+
+    if ([testCaseRef.application waitForState:XCUIApplicationStateRunningBackground timeout:1.f])
+    {
+        [testCaseRef.application waitForUsableState];
+    }
     
-    if (!splashScreenAppeared) {
+    if (testCaseRef.application.state == XCUIApplicationStateRunningForeground && ![BBDConditionHelper isScreenShown:BBDLoadingUI timeout:SPLASH_UI_APPEARANCE_TIMEOUT forTestCaseRef:testCaseRef])
+    {
         NSLog(@"Splash screen didn't appear");
     }
     
-    BOOL splashScreenDisappeared = [self waitForSplashScreenDisappearForTestCaseRef:testCaseRef];
-    
-    if (!splashScreenDisappeared) {
+    if (testCaseRef.application.state == XCUIApplicationStateRunningForeground && ![self waitForSplashScreenDisappearForTestCaseRef:testCaseRef])
+    {
         NSLog(@"Splash screen didn't disappear");
         return NO;
     }
-    BOOL isEasyActivationScreen = [BBDConditionHelper isScreenShown:BBDEasyActivationSelectionUI
-                                                     forTestCaseRef:testCaseRef];
-    if (isEasyActivationScreen)
+
+    [testCaseRef.application waitForState:XCUIApplicationStateRunningBackground timeout:1.f];
+    NSLog(@"app state: %lu", testCaseRef.application.state);
+    if (![self skipEANewFlow:testCaseRef] && ![self skipEAOldFlow:testCaseRef])
     {
-        BOOL isEasyActivationScreenDismissed = [BBDTouchEventHelper tapOnItemOfType:XCUIElementTypeButton
-                                                                       withAccessID:BBDEasyActivationAccessKeyButtonID
-                                                                     forTestCaseRef:testCaseRef];
-        
-        isEasyActivationScreen = [BBDConditionHelper isScreenShown:BBDEasyActivationSelectionUI
-                                                    forTestCaseRef:testCaseRef];
-        if (!isEasyActivationScreenDismissed || isEasyActivationScreen)
-        {
-            return NO;
-        }
+        NSLog(@"Could not skip EA flow");
     }
-    return [BBDConditionHelper isScreenShown:BBDActivationUI forTestCaseRef:testCaseRef];
+    
+    return [BBDConditionHelper isScreenShown:BBDActivationUI timeout:VALIDATION_TIMEOUT forTestCaseRef:testCaseRef];
 }
 
 + (BOOL)waitForSplashScreenDisappearForTestCaseRef:(BBDUITestCaseRef *)testCaseRef
@@ -630,48 +700,42 @@ static const NSString* CLIENT_CERTIFICATE_TITLE = @"Client Certificate";
     return [self waitForBiometricLock:timeout forTestCaseRef:testCaseRef withUnlockScreenID:BBDEasyActivationBiometricUnlockUI];
 }
 
++ (BOOL)waitForEasyReauthenticationBiometricLock:(NSTimeInterval)timeout forTestCaseRef:(BBDUITestCaseRef *)testCaseRef
+{
+    return [self waitForBiometricLock:timeout forTestCaseRef:testCaseRef withUnlockScreenID:BBDReauthenticationBiometricUnlockUI];
+}
+
 + (BOOL)waitForBiometricLock:(NSTimeInterval)timeout forTestCaseRef:(BBDUITestCaseRef *)testCaseRef withUnlockScreenID:(NSString *)unlockScreenID;
 {
     //need to wait for FaceID authorization prompt, only applicable for FaceID
     if (testCaseRef.device.supportedBiometryType == BBDBiometryTypeFaceID) {
         [self waitForFaceIDAuthorizationPrompt:FACE_ID_AUTHORIZATION_PROMPT_TIMEOUT];
     }
-
-    // wait for XCUIApplicationStateRunningBackground of XCUIApplication
-    // when biometric popup is shown,
-    // XCUIApplication state will be changed to XCUIApplicationStateRunningBackground
-    SEL waitForStateSelector = NSSelectorFromString(@"waitForState:timeout:");
-    BOOL isApiAvailable = [XCUIApplication instancesRespondToSelector:waitForStateSelector];
-    NSAssert(isApiAvailable, @"BBDUITestAppLogic:waitForBiometricLockForTestCaseRef:withUnlockScreenID: only supported from Xcode 9 and higher");
-    XCUIApplication *targetApp = testCaseRef.application;
-    // call "waitForState:timeout:" using NSInvocation.
-    NSMethodSignature *signature = [targetApp methodSignatureForSelector:waitForStateSelector];
-    NSInvocation *invocation = [NSInvocation
-                                invocationWithMethodSignature:signature];
-    invocation.target = targetApp;
-    invocation.selector = waitForStateSelector;
-    NSUInteger appStateArg = 3; // XCUIApplicationStateRunningBackground
-    [invocation setArgument:&appStateArg atIndex:2];
-    [invocation setArgument:&timeout atIndex:3];
-    [invocation invoke];
-    BOOL isSuccess;
-    [invocation getReturnValue:&isSuccess];
-
-    if (!isSuccess) {
-        NSLog(@"Biometric popup has not appeared");
-        return isSuccess;
+    
+    if (![NSProcessInfo.processInfo isOperatingSystemAtLeastVersion:(NSOperatingSystemVersion){13,0,0}]) {
+        NSLog(@"Device runs iOS 12 or earlier, check biometric pop-up.\n");
+        XCUIApplication *targetApp = testCaseRef.application;
+        XCUIApplicationState appState = XCUIApplicationStateRunningBackground;
+        
+        return [targetApp waitForState:appState timeout:timeout] /*&& [BBDConditionHelper isScreenShown:unlockScreenID forTestCaseRef:testCaseRef]*/;;
+    } else {
+        NSLog(@"Device runs iOS 13 or higher, check biometric pop-up.\n");
+        XCUIApplication *systemView = [[XCUIApplication alloc] initWithBundleIdentifier:@"com.apple.springboard"];
+        XCUIElement *biometriscAllowAlert;
+        
+        if (testCaseRef.device.supportedBiometryType == BBDBiometryTypeFaceID)
+        {
+            NSLog(@"Handle alert for FaceID\n");
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:
+                                      @"label CONTAINS [c] %@", @"Face ID"];
+            biometriscAllowAlert = [systemView.images containingPredicate:predicate].firstMatch;
+        } else
+        {
+            NSLog(@"Handle alert for TouchID\n");
+            biometriscAllowAlert = [systemView.images matchingIdentifier:@"TouchID"].firstMatch;
+        }
+        return [biometriscAllowAlert waitForExistenceWithTimeout:timeout];
     }
-
-    isSuccess = [BBDConditionHelper isScreenShown:unlockScreenID
-                                   forTestCaseRef:testCaseRef];
-
-    if (!isSuccess)
-    {
-        NSLog(@"Biometric unlock screen has not appeared");
-        NSLog(@"Hierarchy: %@", [testCaseRef.application  debugDescription]);
-        return isSuccess;
-    }
-    return isSuccess;
 }
 
 + (BOOL)unLockBBDAppUsingData:(BBDProvisionData *)provisionData withAuthType:(BBDAuthType)authType forTestCaseRef:(BBDUITestCaseRef *)testCaseRef

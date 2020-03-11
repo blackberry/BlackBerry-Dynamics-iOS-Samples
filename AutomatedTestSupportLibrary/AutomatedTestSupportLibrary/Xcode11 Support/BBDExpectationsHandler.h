@@ -16,11 +16,15 @@
 
 #import <XCTest/XCTest.h>
 
-//This category is used by ATS sources internally.
-//No need to call this method directly from tests.
-@interface XCTestExpectation (DetachExpectation)
+@interface BBDExpectationsHandler : NSObject
 
-- (BOOL)isDetached;
-- (void)setDetached:(BOOL)isDetached;
++ (void)clearExpectationsForTestCase:(XCTestCase *)testCase;
++ (void)fullFillExpectation:(XCTestExpectation *)expectation forTestCase:(XCTestCase *)testCase;
+
++ (void)addExpectation:(XCTestExpectation *)expectation forTestCase:(XCTestCase *)testCase;
++ (void)addExpectations:(NSArray<XCTestExpectation *> *)expectations forTestCase:(XCTestCase *)testCase;
+
++ (void)removeExpectation:(XCTestExpectation *)expectation forTestCase:(XCTestCase *)testCase;
++ (void)removeExpectations:(NSArray<XCTestExpectation *> *)expectations forTestCase:(XCTestCase *)testCase;
 
 @end
