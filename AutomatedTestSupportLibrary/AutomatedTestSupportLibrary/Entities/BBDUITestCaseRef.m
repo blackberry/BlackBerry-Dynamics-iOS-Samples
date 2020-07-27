@@ -15,6 +15,7 @@
 */
 
 #import "BBDUITestCaseRef.h"
+#import "XCUIApplication+State.h"
 #import "BBDExpectationsHandler.h"
 
 @implementation BBDUITestCaseRef
@@ -22,7 +23,7 @@
 - (void)setApplication:(XCUIApplication *)application
 {
     [BBDExpectationsHandler clearExpectationsForTestCase:self.testCase];
-    _application = application;
+    _application = [[GDUIApplication alloc] initWithBundleIdentifier:application.getBundleId];
 }
 
 - (instancetype)initWithTestCase:(XCTestCase *)testCase forApplication:(XCUIApplication *)application
@@ -38,7 +39,7 @@
     self = [super init];
     if (self) {
         _testCase = testCase;
-        _application = application;
+        _application = [[GDUIApplication alloc] initWithBundleIdentifier:[application getBundleId]];
         _potentialDelegateApplication = delegateApplication;
         _options = BBDTestOptionNone;
         _device = [XCUIDevice sharedDevice];

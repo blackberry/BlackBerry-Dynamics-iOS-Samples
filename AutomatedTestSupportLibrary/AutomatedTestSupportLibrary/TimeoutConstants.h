@@ -1,4 +1,4 @@
-/* Copyright (c) 2017 - 2020 BlackBerry Limited.
+/* Copyright (c) 2020 BlackBerry Limited.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -14,10 +14,9 @@
 *
 */
 
-#import <XCTest/XCTest.h>
+#ifndef TimeoutConstants_h
+#define TimeoutConstants_h
 
-@interface XCTestCaseRun (FailureCount)
+static NSTimeInterval const TIMEOUT_5 = 5.f;
 
-- (void)resetFailureCount;
-
-@end
+#endif /* TimeoutConstants_h */

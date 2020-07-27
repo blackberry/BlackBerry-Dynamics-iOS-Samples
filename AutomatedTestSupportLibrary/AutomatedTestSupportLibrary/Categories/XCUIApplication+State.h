@@ -18,17 +18,21 @@
 #import "BBDAutomatedTestSupport.h"
 
 #define WAIT_FOR_TESTCASE_USABLE_STATE                                                                                  \
-    NSAssert([testCaseRef.application waitForUsableState], [testCaseRef.application invalidStateDescription]);
+    testCaseRef.application.expectedState = GDUIApplicationStateForeground;                                             \
+    NSAssert([testCaseRef.application waitForUsableState], [testCaseRef.application invalidStateDescription]);          \
 
 #define WAIT_FOR_TESTCASE_USABLE_STATE_WITH_TIMEOUT                                                                     \
+    testCaseRef.application.expectedState = GDUIApplicationStateForeground;                                             \
     NSAssert([testCaseRef.application waitForUsableState:timeout], [testCaseRef.application invalidStateDescription]);
 
 #define WAIT_FOR_APPLICATION_USABLE_STATE                                                                               \
-    XCUIApplication *application = [[BBDAutomatedTestSupport sharedInstance] getCurrentSetupApplication];               \
+    GDUIApplication *application = [[BBDAutomatedTestSupport sharedInstance] getCurrentSetupApplication];               \
+    application.expectedState = GDUIApplicationStateForeground;                                                         \
     NSAssert([application waitForUsableState], [application invalidStateDescription]);
 
 #define CHECK_FOR_APPLICATION_USABLE_STATE                                                                              \
-    XCUIApplication *application = [[BBDAutomatedTestSupport sharedInstance] getCurrentSetupApplication];               \
+    GDUIApplication *application = [[BBDAutomatedTestSupport sharedInstance] getCurrentSetupApplication];               \
+    application.expectedState = GDUIApplicationStateAny;                                                                \
     BOOL appInUsableState = [application waitForUsableState:timeout];                                                   \
     if (!appInUsableState && !exists)                                                                                   \
     {                                                                                                                   \
@@ -41,8 +45,25 @@
 
 @interface XCUIApplication (State)
 
+/**
+ * Performs waiting application to become in active state.
+ */
 - (BOOL)waitForUsableState;
+
+/**
+ * Performs waiting application to become in active state.
+ * @param timeout - maximum time to wait for usable state.
+ */
 - (BOOL)waitForUsableState:(NSTimeInterval)timeout;
+
+/**
+ * Returns a string error about invalid state of application.
+ */
 - (NSString *)invalidStateDescription;
+
+/**
+ * Returns bundle identifier of current application.
+ */
+- (NSString *)getBundleId;
 
 @end

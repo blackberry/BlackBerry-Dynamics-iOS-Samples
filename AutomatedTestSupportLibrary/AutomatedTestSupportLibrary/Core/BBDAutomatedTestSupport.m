@@ -81,9 +81,14 @@
                                             withPotentialDelegate:potentialDelegateApplication];
 }
 
-- (XCUIApplication*)getCurrentSetupApplication
+- (GDUIApplication*)getCurrentSetupApplication
 {
     return _testCaseRef.application;
+}
+
+- (BBDUITestCaseRef*)getCurrentSetupTestCaseRef
+{
+    return _testCaseRef;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -95,6 +100,11 @@
 - (BOOL)waitForIdle:(NSTimeInterval)idleLockInterval
 {
     return [BBDUITestAppLogic waitForIdleLock:idleLockInterval forTestCaseRef:self.testCaseRef];
+}
+
+- (void)explicitWait:(NSTimeInterval)interval forTestCase:(XCTestCase *)testCase
+{
+    [BBDUITestAppLogic explicitWait:interval forTestCase:testCase];
 }
 
 // Helper method which checks that GD has sent the  GD Authorized callback (which needs to be sent before app code can run)
@@ -138,8 +148,13 @@
 
 - (BOOL)enterEmailAccessKey
 {
+    return [self enterEmailActivationPassword];
+}
+
+- (BOOL)enterEmailActivationPassword
+{
     return [self enterEmail:self.provisionData.email
-                  accessKey:self.provisionData.accessKey];
+         activationPassword:self.provisionData.activationPassword];
 }
 
 - (BOOL)waitForBlock:(NSTimeInterval)timeout
@@ -293,8 +308,20 @@
 
 - (BOOL)enterEmail:(NSString *)email accessKey:(NSString *)accessKey
 {
+    return [self enterEmail:email activationPassword:accessKey];
+}
+- (BOOL)enterEmail:(NSString *)email activationPassword:(NSString *)activationPassword
+{
     return [BBDUITestAppLogic enterEmail:email
-                               accessKey:accessKey
+                      activationPassword:activationPassword
+                          forTestCaseRef:self.testCaseRef];
+}
+
+- (BOOL)enterEmail:(NSString *)email activationPassword:(NSString *)activationPassword activationURL:(NSString *)activationURL
+{
+    return [BBDUITestAppLogic enterEmail:email
+                      activationPassword:activationPassword
+                           activationURL:activationURL
                           forTestCaseRef:self.testCaseRef];
 }
 

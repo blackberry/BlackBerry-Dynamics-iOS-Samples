@@ -129,8 +129,16 @@
         }];
     } @catch (NSException *exception) {
         NSLog(@"XCTestCase waitForExpectationsWithTimeout exception - %@", exception);
-        [BBDExpectationsHandler clearExpectationsForTestCase:weakSelf];
-        [[weakSelf testCaseRun] resetFailureCount];
+        GDUIApplication *application = [[BBDAutomatedTestSupport sharedInstance] getCurrentSetupApplication];
+        if ([application hasUsableState])
+        {
+            [BBDExpectationsHandler clearExpectationsForTestCase:weakSelf];
+            [[weakSelf testCaseRun] resetFailureCount];
+        }
+        else
+        {
+            @throw exception;
+        }
     }
 }
 

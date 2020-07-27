@@ -53,3 +53,5 @@ FOUNDATION_EXPORT const unsigned char iOS_ATSLVersionString[];
 #import <BlackBerryDynamicsAutomatedTestSupportLibrary/XCUIDevice+BiometricsHelpers.h>
 #import <BlackBerryDynamicsAutomatedTestSupportLibrary/XCUIDevice+TouchIDHelpers.h>
 #import <BlackBerryDynamicsAutomatedTestSupportLibrary/XCUIDevice+HardwareKeyboardHelpers.h>
+
+#import <BlackBerryDynamicsAutomatedTestSupportLibrary/ActivationTypeUI.h>

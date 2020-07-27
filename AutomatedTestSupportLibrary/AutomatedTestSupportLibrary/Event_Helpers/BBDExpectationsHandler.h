@@ -18,13 +18,45 @@
 
 @interface BBDExpectationsHandler : NSObject
 
+/**
+ * Clears all the expectations for the given XCTestCase object.
+ * @param testCase XCTestCase obejct to clear expectations.
+ */
 + (void)clearExpectationsForTestCase:(XCTestCase *)testCase;
+
+/**
+ * Fulfills the expectations for the given XCTestCase object.
+ * @param expectation expectation to be fulfilled.
+ * @param testCase associated to the expectations XCTestCase object.
+ */
 + (void)fullFillExpectation:(XCTestExpectation *)expectation forTestCase:(XCTestCase *)testCase;
 
+/**
+ * Adds the XCTestExpectation to the given XCTestCase.
+ * @param expectation expectation that should be added.
+ * @param testCase XCTestCase object to be associated with the given expectation.
+ */
 + (void)addExpectation:(XCTestExpectation *)expectation forTestCase:(XCTestCase *)testCase;
+
+/**
+ * Adds the XCTestExpectations to the given XCTestCase.
+ * @param expectations expectations that should be added.
+ * @param testCase XCTestCase object to be associated with the given expectations.
+ */
 + (void)addExpectations:(NSArray<XCTestExpectation *> *)expectations forTestCase:(XCTestCase *)testCase;
 
+/**
+ * Removes the XCTestExpectations from the given XCTestCase.
+ * @param expectation expectation that should be removed.
+ * @param testCase XCTestCase object that is associated with the given expectation.
+ */
 + (void)removeExpectation:(XCTestExpectation *)expectation forTestCase:(XCTestCase *)testCase;
+
+/**
+ * Removes the XCTestExpectations from the given XCTestCase.
+ * @param expectations expectations that should be removed.
+ * @param testCase XCTestCase object that is associated with the given expectations.
+ */
 + (void)removeExpectations:(NSArray<XCTestExpectation *> *)expectations forTestCase:(XCTestCase *)testCase;
 
 @end

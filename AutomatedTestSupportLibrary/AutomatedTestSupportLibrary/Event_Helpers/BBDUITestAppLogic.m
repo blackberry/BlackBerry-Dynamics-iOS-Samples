@@ -27,6 +27,9 @@
 #import "BBDAutomatedTestSupport.h"
 #import "BBDExpectationsHandler.h"
 #import "XCUIApplication+State.h"
+#import "ActivationTypeUI.h"
+#import "AdvancedSettingsUI.h"
+#import "LegacyActivationTypeUI.h"
 
 #define XCTLAssertTrue(expression, ...) \
     _XCTPrimitiveAssertTrue(testCaseRef.testCase, expression, @#expression, __VA_ARGS__)
@@ -67,7 +70,7 @@ static const NSString* CLIENT_CERTIFICATE_TITLE = @"Client Certificate";
 + (BOOL)internalProvisionBBDAppUsingData:(BBDProvisionData *)provisionData withAuthType:(BBDAuthType)authType forTestCaseRef:(BBDUITestCaseRef *)testCaseRef
 {
     BOOL emailAndPasswordEntered = [self enterEmail:provisionData.email
-                                          accessKey:provisionData.accessKey
+                                 activationPassword:provisionData.activationPassword
                                      forTestCaseRef:testCaseRef];
     
     if (!emailAndPasswordEntered)
@@ -260,7 +263,12 @@ static const NSString* CLIENT_CERTIFICATE_TITLE = @"Client Certificate";
 
 + (BOOL)enterEmail:(NSString *)email accessKey:(NSString *)accessKey forTestCaseRef:(BBDUITestCaseRef *)testCaseRef
 {
-    return [self enterEmail:email accessKey:accessKey forScreenType:BBDActivationUI forTestCaseRef:testCaseRef];
+    return [self enterEmail:email activationPassword:accessKey forTestCaseRef:testCaseRef];
+}
+
++ (BOOL)enterEmail:(NSString *)email activationPassword:(NSString *)activationPassword forTestCaseRef:(BBDUITestCaseRef *)testCaseRef
+{
+    return [self enterEmail:email activationPassword:activationPassword forScreenType:BBDActivationUI forTestCaseRef:testCaseRef];
 }
 
 + (BOOL)waitForIdleLock:(NSTimeInterval)idleLockInteval forTestCaseRef:(BBDUITestCaseRef *)testCaseRef
@@ -319,8 +327,57 @@ static const NSString* CLIENT_CERTIFICATE_TITLE = @"Client Certificate";
     return YES;
 }
 
-+ (BOOL)enterEmail:(NSString *)email accessKey:(NSString *)accessKey forScreenType:(NSString *) screenType forTestCaseRef:(BBDUITestCaseRef *)testCaseRef
++ (BOOL)enterEmail:(NSString *)email accessKey:(NSString *)accessKey forScreenType:(NSString *) screenType forTestCaseRef:(BBDUITestCaseRef *)testCaseRef DEPRECATED_ATTRIBUTE
 {
+    return [BBDUITestAppLogic enterEmail:email activationPassword:accessKey forScreenType:screenType forTestCaseRef:testCaseRef];
+}
+
++ (BOOL)enterEmail:(NSString *)email activationPassword:(NSString *)activationPassword activationURL:(NSString *)activationURL forTestCaseRef:(BBDUITestCaseRef *)testCaseRef
+{
+    BOOL advancedScreen = [BBDConditionHelper isScreenShown:BBDAdvancedSettingsUI
+                                                    timeout:VALIDATION_TIMEOUT
+                                             forTestCaseRef:testCaseRef];
+    if (!advancedScreen) {
+        BOOL provisionScreenShown = [BBDConditionHelper isScreenShown:BBDActivationUI
+                                                              timeout:APEARANCE_TIMEOUT
+                                                       forTestCaseRef:testCaseRef];
+        if (!provisionScreenShown)
+        {
+            NSLog(@"Provising screen didn't appear after timeout: %f\nHierarchy: %@", APEARANCE_TIMEOUT, [testCaseRef.application  debugDescription]);
+            return NO;
+        }
+        
+        ActivationTypeUI *activationUI = [[ActivationTypeUI alloc] init];
+        
+        if (![activationUI clickBottomInfoButton]) {
+            NSLog(@"Failed to open Advanced Settings UI:\nHierarchy: %@", [testCaseRef.application  debugDescription]);
+            return NO;
+        }
+    }
+    
+    // Handle a tip on the keyboard swipe option
+    if (@available(iOS 13, *))
+    {
+        NSPredicate* predicate = [NSPredicate predicateWithFormat: @"value CONTAINS[c] 'Speed up'"];
+        
+        XCUIElement* container = [testCaseRef.application.otherElements containingPredicate:predicate].firstMatch;
+        
+        if ([container exists])
+        {
+            [container.buttons[@"Continue"].firstMatch tap];
+        }
+    }
+   
+    AdvancedSettingsUI *advancedSettingsUI = [[AdvancedSettingsUI alloc] init];
+    return [advancedSettingsUI startActivationWithEmail:email
+                                     activationPassword:activationPassword
+                                          activationURL:activationURL];
+}
+
+
++ (BOOL)enterEmail:(NSString *)email activationPassword:(NSString *)activationPassword forScreenType:(NSString *) screenType forTestCaseRef:(BBDUITestCaseRef *)testCaseRef
+{
+    
     BOOL provisionScreenShown = [BBDConditionHelper isScreenShown:screenType //double check
                                                           timeout:APEARANCE_TIMEOUT
                                                    forTestCaseRef:testCaseRef];
@@ -343,76 +400,93 @@ static const NSString* CLIENT_CERTIFICATE_TITLE = @"Client Certificate";
         }
     }
     
-    
-    BOOL emailEntered =  [BBDInputEventHelper  enterText:email
-                                            inViewOfType:XCUIElementTypeTextField
-                                            withAccessID:BBDActivationEmailFieldID
-                                                 timeout:APEARANCE_TIMEOUT
-                                          forTestCaseRef:testCaseRef];
-    if (!emailEntered)
+
+    if ([[[LegacyActivationTypeUI alloc] init] isShown])
     {
-        NSLog(@"Email typing failed");
-        return NO;
-    }
-    
-    if(accessKey.length == 15)
-    {
-        BOOL enteredKeyInFirstField =  [BBDInputEventHelper enterText:[accessKey substringWithRange:NSMakeRange(0, 5)]
-                                                         inViewOfType:XCUIElementTypeAny
-                                                         withAccessID:BBDAccessKeyField1ID
-                                                       forTestCaseRef:testCaseRef];
-        if (!enteredKeyInFirstField) {
-            NSLog(@"Access key typing failed\nHierarchy: %@", [testCaseRef.application debugDescription]);
+        NSLog(@"Legacy Activation UI detected. Will treat activation password as access key.");
+        BOOL emailEntered =  [BBDInputEventHelper  enterText:email
+                                                inViewOfType:XCUIElementTypeTextField
+                                                withAccessID:BBDActivationEmailFieldID
+                                                     timeout:APEARANCE_TIMEOUT
+                                              forTestCaseRef:testCaseRef];
+        if (!emailEntered)
+        {
+            NSLog(@"Email typing failed");
             return NO;
         }
         
-        XCUIElement *field2 = [BBDUITestUtilities findElementOfType:XCUIElementTypeAny
-                                                    withIndentifier:BBDAccessKeyField2ID
-                                                        inContainer:testCaseRef.application];
-        if (field2.exists)
+        if(activationPassword.length == 15)
         {
-            [field2 typeText:[accessKey substringWithRange:NSMakeRange(5, 5)]];
+            BOOL enteredKeyInFirstField =  [BBDInputEventHelper enterText:[activationPassword substringWithRange:NSMakeRange(0, 5)]
+                                                             inViewOfType:XCUIElementTypeAny
+                                                             withAccessID:BBDAccessKeyField1ID
+                                                           forTestCaseRef:testCaseRef];
+            if (!enteredKeyInFirstField) {
+                NSLog(@"Access key typing failed\nHierarchy: %@", [testCaseRef.application debugDescription]);
+                return NO;
+            }
             
+            XCUIElement *field2 = [BBDUITestUtilities findElementOfType:XCUIElementTypeAny
+                                                        withIndentifier:BBDAccessKeyField2ID
+                                                            inContainer:testCaseRef.application];
+            if (field2.exists)
+            {
+                [field2 typeText:[activationPassword substringWithRange:NSMakeRange(5, 5)]];
+                
+            } else {
+                NSLog(@"Access key typing failed\nHierarchy: %@", [testCaseRef.application debugDescription]);
+                return NO;
+            }
+            
+            XCUIElement *field3 = [BBDUITestUtilities findElementOfType:XCUIElementTypeAny
+                                                        withIndentifier:BBDAccessKeyField3ID
+                                                            inContainer:testCaseRef.application];
+            if (field3.exists)
+            {
+                [field3 typeText:[activationPassword substringWithRange:NSMakeRange(10, 5)]];
+                if ([testCaseRef.application.buttons[@"Go"] exists])
+                {
+                    [testCaseRef.application.buttons[@"Go"] tap];
+                }
+                else
+                {
+                    [testCaseRef.application.buttons[@"go"] tap];
+                }
+            } else {
+                NSLog(@"Access key typing failed\nHierarchy: %@", [testCaseRef.application debugDescription]);
+                return NO;
+            }
         } else {
-            NSLog(@"Access key typing failed\nHierarchy: %@", [testCaseRef.application debugDescription]);
+            NSLog(@"The amount of characters in the access key is less than 15 characters. Access key typing failed.");
             return NO;
         }
         
-        XCUIElement *field3 = [BBDUITestUtilities findElementOfType:XCUIElementTypeAny
-                                                    withIndentifier:BBDAccessKeyField3ID
-                                                        inContainer:testCaseRef.application];
-        if (field3.exists)
-        {
-            [field3 typeText:[accessKey substringWithRange:NSMakeRange(10, 5)]];
-            [testCaseRef.application.buttons[@"Go"] tap];
-        } else {
-            NSLog(@"Access key typing failed\nHierarchy: %@", [testCaseRef.application debugDescription]);
+        XCUIElement *activationScreen = [BBDUITestUtilities findElementOfType:XCUIElementTypeAny
+                                                              withIndentifier:screenType
+                                                                  inContainer:testCaseRef.application];
+        
+        [testCaseRef.testCase waitForElementDisappearance:activationScreen
+                                                  timeout:VALIDATION_TIMEOUT
+                                        failTestOnTimeout:NO
+                                                  handler:nil];
+        
+        if (activationScreen.exists) {
+            BOOL emailAccesKeyValidationFailed = [BBDConditionHelper isAlertShownWithAccessID:BBDEnterPinEmailErrorAlertID
+                                                                                      timeout:VALIDATION_TIMEOUT
+                                                                               forTestCaseRef:testCaseRef];
+            NSLog(@"Target screen hasn't dissapeared");
+            if (emailAccesKeyValidationFailed)
+                NSLog(@"Checksum check failed");
+            else
+                NSLog(@"Enter email/access key failed!\nHierarchy: %@", [testCaseRef.application debugDescription]);
             return NO;
         }
-    } else {
-        NSLog(@"The amount of characters in the access key is less than 15 characters. Access key typing failed.");
-        return NO;
     }
-    
-    XCUIElement *activationScreen = [BBDUITestUtilities findElementOfType:XCUIElementTypeAny
-                                                          withIndentifier:screenType
-                                                              inContainer:testCaseRef.application];
-    
-    [testCaseRef.testCase waitForElementDisappearance:activationScreen
-                                              timeout:VALIDATION_TIMEOUT
-                                    failTestOnTimeout:NO
-                                              handler:nil];
-    
-    if (activationScreen.exists) {
-        BOOL emailAccesKeyValidationFailed = [BBDConditionHelper isAlertShownWithAccessID:BBDEnterPinEmailErrorAlertID
-                                                                                  timeout:VALIDATION_TIMEOUT
-                                                                           forTestCaseRef:testCaseRef];
-        NSLog(@"Target screen hasn't dissapeared");
-        if (emailAccesKeyValidationFailed)
-            NSLog(@"Checksum check failed");
-        else
-            NSLog(@"Enter email/access key failed!\nHierarchy: %@", [testCaseRef.application debugDescription]);
-        return NO;
+    else
+    {
+        NSLog(@"Acitvation UI with activation password feature detected.");
+        ActivationTypeUI *activationUI = [[ActivationTypeUI alloc] init];
+        return [activationUI startActivationWithEmail:email activationPassword:activationPassword];
     }
     NSLog(@"Email and access key entered");
     return YES;
@@ -470,17 +544,18 @@ static const NSString* CLIENT_CERTIFICATE_TITLE = @"Client Certificate";
 {
     BOOL skipped = NO;
     NSLog(@"Looking for EasyActivationUnlock (New EA Flow)");
-    XCUIApplication *appToBeProvisioned = testCaseRef.application;
+    GDUIApplication *appToBeProvisioned = testCaseRef.application;
     NSArray *apps = [[BBDAutomatedTestSupport sharedInstance] getInstalledApps];
     NSLog(@"Apps: %@", apps);
     for (NSString *delegateID in apps)
     {
-        XCUIApplication *delegateApp = [[XCUIApplication alloc] initWithBundleIdentifier:delegateID];
+        GDUIApplication *delegateApp = [[GDUIApplication alloc] initWithBundleIdentifier:delegateID];
         NSLog(@"New EA Flow: checking app %@, app state: %lu", delegateID, delegateApp.state);
         if (delegateApp.exists && delegateApp.state == XCUIApplicationStateRunningForeground)
         {
             testCaseRef.application = delegateApp;
             NSLog(@"Looking for EasyActivationUnlock in app %@", delegateID);
+            [self explicitWait:1.f forTestCase:testCaseRef.testCase];
             if ([BBDConditionHelper isScreenShown:BBDEasyActivationUnlockUI timeout:VALIDATION_TIMEOUT forTestCaseRef:testCaseRef])
             {
                 XCUIElement *eaScreen = [BBDUITestUtilities findElementOfType:XCUIElementTypeAny withIndentifier:BBDEasyActivationUnlockUI inContainer:testCaseRef.application];
@@ -782,7 +857,7 @@ static const NSString* CLIENT_CERTIFICATE_TITLE = @"Client Certificate";
     if(screenType){
         
         isSuccess = [self enterEmail:provisionData.email
-                           accessKey:provisionData.unlockKey
+                  activationPassword:provisionData.unlockKey
                        forScreenType:screenType
                       forTestCaseRef:testCaseRef];
         
@@ -1013,6 +1088,20 @@ static const NSString* CLIENT_CERTIFICATE_TITLE = @"Client Certificate";
     [[alert.buttons elementBoundByIndex:0] tap];
     
     return isSuccess;
+}
+
++ (void)explicitWait:(NSTimeInterval)interval forTestCase:(XCTestCase *)testCase
+{
+    XCTestExpectation *expectation = [testCase expectationWithDescription:@"Explicit wait"];
+    NSLog(@"Started waiting for %f seconds", interval);
+    // Fulfilling expactation 1 second earlier than time interval expires to avoid a possible race condition.
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)((interval - 1.f) * NSEC_PER_SEC)),
+    dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        [expectation fulfill];
+    });
+
+    [testCase waitForExpectationsWithTimeout:interval handler:nil];
+    NSLog(@"Finished waiting for %f seconds", interval);
 }
 
 #pragma mark - Private

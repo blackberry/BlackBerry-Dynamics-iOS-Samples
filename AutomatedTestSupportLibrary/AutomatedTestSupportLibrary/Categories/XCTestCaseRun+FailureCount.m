@@ -28,7 +28,18 @@ static NSString * const kInternalTestRunKey     = @"internalTestRun";
 
 - (void)resetFailureCount
 {
-    [[self internalTestRunObject] setValue:@0 forKey:kFailureCountKey];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+    if ([self respondsToSelector:@selector(setFailureCount:)])
+    {
+        // for Xcode 11.4 and higher
+        [self performSelector:@selector(setFailureCount:) withObject:0];
+    }
+#pragma clang diagnostic pop
+    else
+    {
+        [[self internalTestRunObject] setValue:@0 forKey:kFailureCountKey];
+    }
 }
 
 @end

@@ -17,6 +17,8 @@
 #import "XCUIApplication+State.h"
 
 static const NSTimeInterval APP_STATE_WAITING_TIMEOUT = 5.0f;
+static const NSString *APPLICATION_IMPL = @"applicationImpl";
+static const NSString *BUNDLE_ID = @"bundleID";
 
 @implementation XCUIApplication (State)
 
@@ -57,6 +59,11 @@ static const NSTimeInterval APP_STATE_WAITING_TIMEOUT = 5.0f;
 - (NSString *)invalidStateDescription
 {
     return [NSString stringWithFormat:@"The application \"%@\" should Be Running in Foreground to detect element appearance (Сurrent state is %@).", self, [self stringState]];
+}
+
+- (NSString *)getBundleId
+{
+    return [[self valueForKey: APPLICATION_IMPL] valueForKey:BUNDLE_ID];
 }
 
 @end
