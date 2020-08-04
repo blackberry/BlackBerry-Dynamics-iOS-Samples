@@ -119,9 +119,51 @@
  * instance of BBDUITestCaseRef class
  * which properties should have references to XCUIApplication and XCTestCase objects to be tested
  *
+ * @deprecated
+ * accessKey is not renamed into activationPassword
+ *
  * @return YES, if data was successfully typed, otherwise NO.
  */
-+ (BOOL)enterEmail:(NSString *)email accessKey:(NSString *)accessKey forTestCaseRef:(BBDUITestCaseRef *)testCaseRef;
++ (BOOL)enterEmail:(NSString *)email accessKey:(NSString *)accessKey forTestCaseRef:(BBDUITestCaseRef *)testCaseRef DEPRECATED_ATTRIBUTE;
+
+/**
+ * Method which inputs email using email and access key for activation screen.
+ * Checks any alert presence during testing, interacts with textfield for input and buttons for next steps.
+ *
+ * @param email
+ * Email address which is used for activation
+ *
+ * @param activationPassword
+ * Provisioned Activation Password
+ *
+ * @param activationURL
+ * Activation URL needed for provisioning
+ *
+ * @param testCaseRef
+ * instance of BBDUITestCaseRef class
+ * which properties should have references to XCUIApplication and XCTestCase objects to be tested
+ *
+ * @return YES, if data was successfully typed, otherwise NO.
+*/
++ (BOOL)enterEmail:(NSString *)email activationPassword:(NSString *)activationPassword activationURL:(NSString *)activationURL forTestCaseRef:(BBDUITestCaseRef *)testCaseRef;
+
+/**
+ * Method which inputs email using email and access key for activation screen.
+ * Checks any alert presence during testing, interacts with textfield for input and buttons for next steps.
+ *
+ * @param email
+ * Email address which is used for activation
+ *
+ * @param activationPassword
+ * Provisioned Activation Password
+ *
+ * @param testCaseRef
+ * instance of BBDUITestCaseRef class
+ * which properties should have references to XCUIApplication and XCTestCase objects to be tested
+ *
+ * @return YES, if data was successfully typed, otherwise NO.
+*/
++ (BOOL)enterEmail:(NSString *)email activationPassword:(NSString *)activationPassword forTestCaseRef:(BBDUITestCaseRef *)testCaseRef;
 
 /**
  * Synchronously waits for biometric unlock screen presence with Touch ID/Face ID popup.
@@ -303,6 +345,14 @@
 + (BOOL)processPKSC12CertificateDefinitionWithName:(NSString *)name
                                           password:(NSString *)password
                                     forTestCaseRef:(BBDUITestCaseRef *)testCaseRef;
+
+/**
+ * Explicit wait for specified time interval.
+ *
+ * @param interval time to wait
+ * @param testCase instance of XCTestCase to wait for
+ */
++ (void)explicitWait:(NSTimeInterval)interval forTestCase:(XCTestCase *)testCase;
 
 @end
 

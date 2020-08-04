@@ -178,8 +178,6 @@ static const CGFloat LONG_PRESS_COORD_OFFSET = 0.5f;
     return resString;
 }
 
-#pragma mark - Utilities
-
 + (BOOL)typeInElement:(XCUIElement *)element
                  text:(NSString *)text
               timeout:(NSTimeInterval)timeout
@@ -205,6 +203,8 @@ static const CGFloat LONG_PRESS_COORD_OFFSET = 0.5f;
     NSLog(@"Typing in element failed!\nHierarchy: %@", [testCaseRef.application  debugDescription]);
     return NO;
 }
+
+#pragma mark - Utilities
 
 + (BOOL)tapAndTypeText:(NSString *)text forElement:(XCUIElement *) element
 {

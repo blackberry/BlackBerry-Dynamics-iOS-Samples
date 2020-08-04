@@ -1,4 +1,4 @@
-/* Copyright (c) 2017 - 2020 BlackBerry Limited.
+/* Copyright (c) 2020 BlackBerry Limited.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -14,17 +14,20 @@
 *
 */
 
-#import <XCTest/XCTest.h>
+#ifndef AbstractBBDUI_h
+#define AbstractBBDUI_h
 
-@interface XCTestCase (Properties)
+#import "BBDUITestCaseRef.h"
 
-- (void)removeAllExpectations;
-- (XCTestCaseRun *)testCaseRun;
+@interface AbstractBBDUI : NSObject
 
-- (BOOL)isSignaled;
-- (void)setSignaled:(BOOL)isSignaled;
+@property (readonly, getter=getScreenId) NSString* screenId;
+@property (readonly) BBDUITestCaseRef* testCaseRef;
+@property (readonly) XCUIElement* uiElement;
 
-- (NSMutableArray *)expectations;
-- (void)setExpectations:(NSMutableArray *)expectations;
+- (instancetype)initWithId:(NSString *)screenId;
+- (instancetype)init;
 
 @end
+
+#endif /* AbstractBBDUI_h */

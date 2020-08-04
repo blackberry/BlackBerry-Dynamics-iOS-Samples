@@ -128,6 +128,26 @@
    forTestCaseRef:(BBDUITestCaseRef *)testCaseRef;
 
 /**
+ * Starts text input into the element specified.
+ *
+ * @param element
+ * XCUIElement to type text into
+ *
+ * @param text
+ * text to type
+ *
+ * @param timeout
+ * the amount of time within which expectation must be fulfilled
+ *
+ * @param testCaseRef
+ * instance of BBDUITestCaseRef class  which properties should have references to XCUIApplication and XCTestCase objects to be tested
+ */
++ (BOOL)typeInElement:(XCUIElement *)element
+                 text:(NSString *)text
+              timeout:(NSTimeInterval)timeout
+       forTestCaseRef:(BBDUITestCaseRef *)testCaseRef;
+
+/**
  * Clears current text input of XCUIElement and paste a new text.
  *
  * @param text

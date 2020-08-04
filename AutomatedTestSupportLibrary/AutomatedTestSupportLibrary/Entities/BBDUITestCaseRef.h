@@ -17,11 +17,15 @@
 @import Foundation;
 @import XCTest;
 
+#ifndef BBDUITestCaseRef_h
+#define BBDUITestCaseRef_h
+
+#import "GDUIApplication.h"
 #import "BBDPublicConstans.h"
 
 @interface BBDUITestCaseRef : NSObject
 
-@property (nonatomic, weak) XCUIApplication *application;
+@property (nonatomic, strong) GDUIApplication *application;
 @property (nonatomic, weak) XCUIApplication *potentialDelegateApplication;
 @property (nonatomic, weak) XCUIDevice *device;
 @property (nonatomic, weak) XCTestCase *testCase;
@@ -68,3 +72,5 @@
            withPotentialDelegate:(XCUIApplication *)delegateApplication;
 
 @end
+
+#endif /*BBDUITestCaseRef_h*/

@@ -18,9 +18,11 @@
 @import ObjectiveC.runtime;
 
 static NSString * const kTestCaseRun               = @"testCaseRun";
-static NSString * const kTestExpectationsKey       = @"expectations";
 static NSString * const kCurrentWaiterObjectKey    = @"currentWaiter";
 static NSString * const kInternalImplementationKey = @"internalImplementation";
+static NSString * const kExpectationsKey           = @"_expectations";
+static NSString * const kShouldIgnoreSubsequentFailuresKey = @"shouldIgnoreSubsequentFailures";
+static NSString * const kHasReportedFailuresToTestCaseRunKey = @"_hasReportedFailuresToTestCaseRun";
 
 @implementation XCTestCase (Properties)
 
@@ -49,7 +51,15 @@ static NSString * const kInternalImplementationKey = @"internalImplementation";
 
 - (XCTestCaseRun *)testCaseRun
 {
-    return [[self internalImpl] valueForKey:kTestCaseRun];
+    if ([self respondsToSelector:@selector(testRun)])
+    {
+        // for Xcode 11.4 and higher
+        return [self performSelector:@selector(testRun)];
+    }
+    else
+    {
+        return [[self internalImpl] valueForKey:kTestCaseRun];
+    }
 }
 
 - (BOOL)isSignaled
@@ -84,20 +94,45 @@ static NSString * const kInternalImplementationKey = @"internalImplementation";
 
 - (void)resetWaiterObj
 {
-    [[self internalImpl] setValue:nil forKey:kCurrentWaiterObjectKey];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+    if ([self respondsToSelector:@selector(internalImplementation)])
+    {
+        [[self internalImpl] setValue:nil forKey:kCurrentWaiterObjectKey];
+    }
+    else if ([self respondsToSelector:@selector(set_currentWaiter:)])
+    {
+        // for Xcode 11.4 and higher
+        [self performSelector:@selector(set_currentWaiter:) withObject:nil];
+    }
+    else
+    {
+        // for Xcode 12 and higher
+        [self setValue:nil forKey:kCurrentWaiterObjectKey];
+    }
+#pragma clang diagnostic pop
 }
 
 - (void)resetInternalExpectations
 {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
-    [[self internalImpl] performSelector:@selector(resetExpectations)];
+    if ([self respondsToSelector:@selector(internalImplementation)]) {
+        [[self internalImpl] performSelector:@selector(resetExpectations)];
+    }
+    else if ([self respondsToSelector:@selector(_resetExpectations)])
+    {
+        // for Xcode 11.4 and higher
+        [self performSelector:@selector(_resetExpectations)];
+        [self setValue:@NO forKey:kShouldIgnoreSubsequentFailuresKey];
+    }
+    else
+    {
+        // for Xcode 12 and higher
+        [[self valueForKey:kExpectationsKey] removeAllObjects];
+        [self setValue:@NO forKey:kHasReportedFailuresToTestCaseRunKey];
+    }
 #pragma clang diagnostic pop
-}
-
-- (NSMutableArray *)internalExpectations
-{
-    return [[self internalImpl] valueForKey:kTestExpectationsKey];
 }
 
 @end

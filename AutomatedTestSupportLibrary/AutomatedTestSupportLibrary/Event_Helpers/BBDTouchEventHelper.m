@@ -14,6 +14,7 @@
 *
 */
 
+#import "GDUIApplication.h"
 #import "BBDTouchEventHelper.h"
 #import "BBDUITestUtilities.h"
 #import "XCTestCase+Expectations.h"

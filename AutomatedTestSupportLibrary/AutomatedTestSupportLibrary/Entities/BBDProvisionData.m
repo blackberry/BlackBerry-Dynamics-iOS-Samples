@@ -18,6 +18,7 @@
 
 NSString* const GDTestProvisionEmail = @"GD_TEST_PROVISION_EMAIL";
 NSString* const GDTestProvisionAccessKey = @"GD_TEST_PROVISION_ACCESS_KEY";
+NSString* const GDTestActivationPassword = @"GD_TEST_ACTIVATION_PASSWORD";
 NSString* const GDTestProvisionPassword = @"GD_TEST_PROVISION_PASSWORD";
 NSString* const GDTestProvisionUnlockKey = @"GD_TEST_UNLOCK_KEY";
 
@@ -93,7 +94,7 @@ NSString* const GDTestCertificateTypeClientCertificate = @"GD_TEST_CERTIFICATE_T
 
 //basic init method, used as parent for all other, private.
 - (instancetype)initWithEmail:(NSString *)email
-                    accessKey:(NSString *)accessKey
+           activationPassword:(NSString *)activationPassword
                      password:(NSString *)password
                     unlockKey:(NSString*) unlockKey
         certificatesPasswords:(NSArray<NSString*>*) certificatesPasswords
@@ -106,7 +107,7 @@ NSString* const GDTestCertificateTypeClientCertificate = @"GD_TEST_CERTIFICATE_T
 
 
 - (instancetype)initWithEmail:(NSString *)email
-                    accessKey:(NSString *)accessKey
+           activationPassword:(NSString *)activationPassword
                      password:(NSString *)password
                     unlockKey:(NSString*) unlockKey
         certificatesPasswords:(NSArray<NSString*>*) certificatesPasswords
@@ -116,7 +117,8 @@ NSString* const GDTestCertificateTypeClientCertificate = @"GD_TEST_CERTIFICATE_T
     self = [super init];
     if (self) {
         _email     = email;
-        _accessKey = [accessKey stringByReplacingOccurrencesOfString:@" " withString:@""];
+        _accessKey = [activationPassword stringByReplacingOccurrencesOfString:@" " withString:@""];
+        _activationPassword = [activationPassword stringByReplacingOccurrencesOfString:@" " withString:@""];
         _password  = password;
         _unlockKey = [unlockKey stringByReplacingOccurrencesOfString:@" " withString:@""];
         _certificatesPasswords = certificatesPasswords;
@@ -129,9 +131,21 @@ NSString* const GDTestCertificateTypeClientCertificate = @"GD_TEST_CERTIFICATE_T
 - (instancetype)initWithEmail:(NSString *)email
                     accessKey:(NSString *)accessKey
                      password:(NSString *)password
-                    unlockKey:(NSString*) unlockKey{
+                    unlockKey:(NSString*)unlockKey
+{
     return [self initWithEmail:email
-                     accessKey:accessKey
+            activationPassword:accessKey
+                      password:password
+                     unlockKey:unlockKey];
+}
+
+- (instancetype)initWithEmail:(NSString *)email
+           activationPassword:(NSString *)activationPassword
+                     password:(NSString *)password
+                    unlockKey:(NSString*) unlockKey
+{
+    return [self initWithEmail:email
+            activationPassword:activationPassword
                       password:password
                      unlockKey:unlockKey
          certificatesPasswords:nil
@@ -142,7 +156,7 @@ NSString* const GDTestCertificateTypeClientCertificate = @"GD_TEST_CERTIFICATE_T
 - (instancetype)initWithcertificatesPasswords:(NSArray<NSString*>*)certificatesPasswords
 {
     return [self initWithEmail:nil
-                     accessKey:nil
+            activationPassword:nil
                       password:nil
                      unlockKey:nil
          certificatesPasswords:certificatesPasswords
@@ -165,7 +179,22 @@ NSString* const GDTestCertificateTypeClientCertificate = @"GD_TEST_CERTIFICATE_T
     }
     
     NSString* email     = json[GDTestProvisionEmail];
-    NSString* accessKey = json[GDTestProvisionAccessKey];
+    
+    NSString* activationPassword;
+    if ([json objectForKey:GDTestProvisionAccessKey])
+    {
+        activationPassword = json[GDTestProvisionAccessKey];
+    }
+    else if ([json objectForKey:GDTestActivationPassword])
+    {
+        activationPassword = json[GDTestActivationPassword];
+    }
+    else
+    {
+        NSLog(@"Couldn't find any field with the activation password. Will set it empty.");
+        activationPassword = @"";
+    }
+    
     NSString* password  = json[GDTestProvisionPassword];
     NSString* unlockKey = json[GDTestProvisionUnlockKey];
     NSArray<NSString*>* certPasswords= json[GDTestCertificatesPasswords];
@@ -193,7 +222,7 @@ NSString* const GDTestCertificateTypeClientCertificate = @"GD_TEST_CERTIFICATE_T
     }
     
     return  [self initWithEmail:email
-                      accessKey:accessKey
+             activationPassword:activationPassword
                        password:password
                       unlockKey:unlockKey
           certificatesPasswords:certPasswords

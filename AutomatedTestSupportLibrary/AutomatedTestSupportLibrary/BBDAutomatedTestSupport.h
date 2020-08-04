@@ -19,6 +19,9 @@
 
 #import "BBDProvisionData.h"
 #import "BBDPublicConstans.h"
+#import "BBDUITestCaseRef.h"
+#import "ActivationTypeUI.h"
+#import "GDUIApplication.h"
 
 @interface BBDAutomatedTestSupport : NSObject
 
@@ -108,9 +111,15 @@
  */
 - (void)setupBBDAutomatedTestSupportWithApplication:(XCUIApplication *)application withPotentialDelegate:(XCUIApplication *)potentialDelegateApplication forTestCase:(XCTestCase *)testcase;
 
+/**
+ * @return the application ats is currently configured for.
+ */
+- (GDUIApplication *)getCurrentSetupApplication;
 
-/// Returns the application ats is currently configured for.
-- (XCUIApplication*)getCurrentSetupApplication;
+/**
+ * @return BBDUITestCaseRef for which ATS is currently configured.
+ */
+- (BBDUITestCaseRef *)getCurrentSetupTestCaseRef;
 
 /////////////////////////////////////////////////////////////////////////////////////////
 //>-----------------------------------------------------------------------------------<//
@@ -127,6 +136,14 @@
  * @return YES, if app requires to enter password after idle timeout, otherwise returns NO
  */
 - (BOOL)waitForIdle:(NSTimeInterval)idleLockInterval;
+
+/**
+ * Explicit wait for specified time interval.
+ *
+ * @param interval time to wait
+ * @param testCase instance of XCTestCase to wait for
+ */
+- (void)explicitWait:(NSTimeInterval)interval forTestCase:(XCTestCase *)testCase;
 
 /**
  * Checks that GD has sent the  GD Authorized callback (which needs to be sent before app code can run)
@@ -199,9 +216,20 @@
  * Method which inputs email using email and access key provided by provisionData property for activation screen.
  * Checks any alert presence during testing, interacts with textfield for input and buttons for next steps.
  *
+ * @deprecated
+ *  Access Key is now renamed into Activation Password
+ *
  * @return YES, if data was successfully typed, otherwise NO.
  */
-- (BOOL)enterEmailAccessKey;
+- (BOOL)enterEmailAccessKey DEPRECATED_ATTRIBUTE;
+
+/**
+ * Method which inputs email using email and activation password provided by provisionData property for activation screen.
+ * Checks any alert presence during testing, interacts with textfield for input and buttons for next steps.
+ *
+ * @return YES, if data was successfully typed, otherwise NO.
+ */
+- (BOOL)enterEmailActivationPassword;
 
 /**
  * Synchronously waits for block screen presence.
@@ -518,9 +546,44 @@
  * @param accessKey
  * Provisioned Access Key
  *
+ * @deprecated
+ * accessKey is now renamed into activationPassword
+ *
  * @return YES, if data was successfully typed, otherwise NO.
  */
-- (BOOL)enterEmail:(NSString *)email accessKey:(NSString *)accessKey;
+- (BOOL)enterEmail:(NSString *)email accessKey:(NSString *)accessKey DEPRECATED_ATTRIBUTE;
+
+/**
+ * Method which inputs email using email and access key for activation screen.
+ * Checks any alert presence during testing, interacts with textfield for input and buttons for next steps.
+ *
+ * @param email
+ * Email address which is used for activation
+ *
+ * @param activationPassword
+ * Provisioned Activation Password
+ *
+ * @return YES, if data was successfully typed, otherwise NO.
+*/
+- (BOOL)enterEmail:(NSString *)email activationPassword:(NSString *)activationPassword;
+
+/**
+ * Method which inputs email using email, activation password and activation URL for provisioning.
+ * Methods open Advanced settings screen and inputs all data.
+ * Checks any alert presence during testing, interacts with textfield for input and buttons for next steps.
+ *
+ * @param email
+ * Email address which is used for activation
+ *
+ * @param activationPassword
+ * Provisioned Activation Password
+ *
+ * @param activationURL
+ * Activation URL for provisioning
+ *
+ * @return YES, if data was successfully typed, otherwise NO.
+*/
+- (BOOL)enterEmail:(NSString *)email activationPassword:(NSString *)activationPassword activationURL:(NSString *)activationURL;
 
 /**
  * Method which sets container password for first time after activation.

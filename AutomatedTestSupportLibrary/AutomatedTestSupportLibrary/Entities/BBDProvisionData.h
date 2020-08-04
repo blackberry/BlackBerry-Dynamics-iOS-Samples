@@ -18,6 +18,7 @@
 
 extern NSString* const GDTestProvisionEmail;
 extern NSString* const GDTestProvisionAccessKey;
+extern NSString* const GDTestActivationPassword;
 extern NSString* const GDTestProvisionPassword;
 extern NSString* const GDTestProvisionUnlockKey;
 
@@ -31,7 +32,9 @@ typedef NS_ENUM(NSInteger, BBDAuthType) {
 
 @property (nonatomic, strong, readonly) NSString *email;
 
-@property (nonatomic, strong, readonly) NSString *accessKey;
+// Keeping accessKey field for compatibility
+@property (nonatomic, strong, readonly) NSString *accessKey DEPRECATED_ATTRIBUTE;
+@property (nonatomic, strong, readonly) NSString *activationPassword;
 
 @property (nonatomic, strong, readonly) NSString *password;
 
@@ -55,11 +58,38 @@ typedef NS_ENUM(NSInteger, BBDAuthType) {
  * @param unlockKey
  * Key which is used to unlock application when it was locked from GC.
  *
+ * @deprecated
+ * accessKey is now being renamed to activationPassword
+ *
  * @return BBDProvisionData instance, which is used for different purposes,
  * e.g. provisioning test.
  */
 - (instancetype)initWithEmail:(NSString *)email
                     accessKey:(NSString *)accessKey
+                     password:(NSString *)password
+                    unlockKey:(NSString *)unlockKey DEPRECATED_ATTRIBUTE;
+
+/**
+ * Creates BBDProvisionData data instance using explicit data.
+ * This initializer can be used when data was fetched before.
+ *
+ * @param email
+ * Email address which is used for activation
+ *
+ * @param activationPassword
+ * Provisioned Access Key
+ *
+ * @param password
+ * Container password
+ *
+ * @param unlockKey
+ * Key which is used to unlock application when it was locked from GC.
+ *
+ * @return BBDProvisionData instance, which is used for different purposes,
+ * e.g. provisioning test.
+ */
+- (instancetype)initWithEmail:(NSString *)email
+           activationPassword:(NSString *)activationPassword
                      password:(NSString *)password
                     unlockKey:(NSString *)unlockKey;
 

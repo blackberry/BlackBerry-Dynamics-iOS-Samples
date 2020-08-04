@@ -16,6 +16,8 @@
 		56B4EBAC2385724F00E9A101 /* XCUIApplication+State.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B4EBA42385724E00E9A101 /* XCUIApplication+State.m */; };
 		56B4EBAD2385724F00E9A101 /* XCTestCase+Properties.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B4EBA52385724E00E9A101 /* XCTestCase+Properties.m */; };
 		56B4EBAE2385724F00E9A101 /* XCTestCaseRun+FailureCount.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B4EBA62385724F00E9A101 /* XCTestCaseRun+FailureCount.m */; };
+		56FFF38924322172007DBDB8 /* GDUIApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = 56FFF38724322172007DBDB8 /* GDUIApplication.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		56FFF38A24322172007DBDB8 /* GDUIApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 56FFF38824322172007DBDB8 /* GDUIApplication.m */; };
 		582610A221F4CF2D0037F50B /* AutomatedTestSupportLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 5826109421F4CF2D0037F50B /* AutomatedTestSupportLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		582610B621F4CF760037F50B /* BBDPublicConstans.h in Headers */ = {isa = PBXBuildFile; fileRef = 582610AE21F4CF760037F50B /* BBDPublicConstans.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		582610B721F4CF760037F50B /* BBDUIAccessibilityIdentifiers.h in Headers */ = {isa = PBXBuildFile; fileRef = 582610AF21F4CF760037F50B /* BBDUIAccessibilityIdentifiers.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -48,8 +50,15 @@
 		58B58C5B21F4D54900268DC0 /* BBDDragAndDropHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B58C4F21F4D54900268DC0 /* BBDDragAndDropHelper.m */; };
 		58B58C5F21F4D56000268DC0 /* BBDUITestUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B58C5D21F4D56000268DC0 /* BBDUITestUtilities.m */; };
 		58B58C6021F4D56000268DC0 /* BBDUITestUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 58B58C5E21F4D56000268DC0 /* BBDUITestUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6570718224237BEF0055FF24 /* AdvancedSettingsUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6570718124237BEF0055FF24 /* AdvancedSettingsUI.m */; };
 		A4D43EB2227B099300560CA0 /* XCUIDevice+HardwareKeyboardHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = A4D43EB0227B099200560CA0 /* XCUIDevice+HardwareKeyboardHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A4D43EB3227B099300560CA0 /* XCUIDevice+HardwareKeyboardHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D43EB1227B099200560CA0 /* XCUIDevice+HardwareKeyboardHelpers.m */; };
+		C72ED08A2424CB1800989303 /* ActivationTypeUI.h in Headers */ = {isa = PBXBuildFile; fileRef = C7BF618B23E4B1EE006B1A64 /* ActivationTypeUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C72ED08B2424CB4200989303 /* AbstractBBDUI.h in Headers */ = {isa = PBXBuildFile; fileRef = C7BF618A23E4B17C006B1A64 /* AbstractBBDUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C72ED08C2424CB4700989303 /* LegacyActivationTypeUI.h in Headers */ = {isa = PBXBuildFile; fileRef = C77176B723E8200A002927BB /* LegacyActivationTypeUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C77176B923E82023002927BB /* LegacyActivationTypeUI.m in Sources */ = {isa = PBXBuildFile; fileRef = C77176B823E82023002927BB /* LegacyActivationTypeUI.m */; };
+		C7BF618723E4AC10006B1A64 /* ActivationTypeUI.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BF618623E4AC10006B1A64 /* ActivationTypeUI.m */; };
+		C7BF618923E4AC25006B1A64 /* AbstractBBDUI.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BF618823E4AC25006B1A64 /* AbstractBBDUI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +72,8 @@
 		56B4EBA42385724E00E9A101 /* XCUIApplication+State.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "XCUIApplication+State.m"; path = "Xcode11 Support/XCUIApplication+State.m"; sourceTree = "<group>"; };
 		56B4EBA52385724E00E9A101 /* XCTestCase+Properties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "XCTestCase+Properties.m"; path = "Xcode11 Support/XCTestCase+Properties.m"; sourceTree = "<group>"; };
 		56B4EBA62385724F00E9A101 /* XCTestCaseRun+FailureCount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "XCTestCaseRun+FailureCount.m"; path = "Xcode11 Support/XCTestCaseRun+FailureCount.m"; sourceTree = "<group>"; };
+		56FFF38724322172007DBDB8 /* GDUIApplication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GDUIApplication.h; sourceTree = "<group>"; };
+		56FFF38824322172007DBDB8 /* GDUIApplication.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDUIApplication.m; sourceTree = "<group>"; };
 		5826109121F4CF2C0037F50B /* BlackBerryDynamicsAutomatedTestSupportLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BlackBerryDynamicsAutomatedTestSupportLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5826109421F4CF2D0037F50B /* AutomatedTestSupportLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutomatedTestSupportLibrary.h; sourceTree = "<group>"; };
 		5826109521F4CF2D0037F50B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,8 +108,17 @@
 		58B58C4F21F4D54900268DC0 /* BBDDragAndDropHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBDDragAndDropHelper.m; path = AutomatedTestSupportLibrary/Event_Helpers/BBDDragAndDropHelper.m; sourceTree = SOURCE_ROOT; };
 		58B58C5D21F4D56000268DC0 /* BBDUITestUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBDUITestUtilities.m; path = AutomatedTestSupportLibrary/Utilities/BBDUITestUtilities.m; sourceTree = SOURCE_ROOT; };
 		58B58C5E21F4D56000268DC0 /* BBDUITestUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBDUITestUtilities.h; path = AutomatedTestSupportLibrary/Utilities/BBDUITestUtilities.h; sourceTree = SOURCE_ROOT; };
+		657071802423794F0055FF24 /* AdvancedSettingsUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdvancedSettingsUI.h; sourceTree = "<group>"; };
+		6570718124237BEF0055FF24 /* AdvancedSettingsUI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdvancedSettingsUI.m; sourceTree = "<group>"; };
 		A4D43EB0227B099200560CA0 /* XCUIDevice+HardwareKeyboardHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "XCUIDevice+HardwareKeyboardHelpers.h"; path = "Categories/XCUIDevice+HardwareKeyboardHelpers.h"; sourceTree = "<group>"; };
 		A4D43EB1227B099200560CA0 /* XCUIDevice+HardwareKeyboardHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "XCUIDevice+HardwareKeyboardHelpers.m"; path = "Categories/XCUIDevice+HardwareKeyboardHelpers.m"; sourceTree = "<group>"; };
+		C77176B723E8200A002927BB /* LegacyActivationTypeUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LegacyActivationTypeUI.h; sourceTree = "<group>"; };
+		C77176B823E82023002927BB /* LegacyActivationTypeUI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LegacyActivationTypeUI.m; sourceTree = "<group>"; };
+		C77176BB23E87991002927BB /* TimeoutConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeoutConstants.h; sourceTree = "<group>"; };
+		C7BF618623E4AC10006B1A64 /* ActivationTypeUI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivationTypeUI.m; sourceTree = "<group>"; };
+		C7BF618823E4AC25006B1A64 /* AbstractBBDUI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AbstractBBDUI.m; sourceTree = "<group>"; };
+		C7BF618A23E4B17C006B1A64 /* AbstractBBDUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AbstractBBDUI.h; sourceTree = "<group>"; };
+		C7BF618B23E4B1EE006B1A64 /* ActivationTypeUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivationTypeUI.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +135,8 @@
 		56979EF1237562340074F5C7 /* Xcode11 Support */ = {
 			isa = PBXGroup;
 			children = (
+				56FFF38724322172007DBDB8 /* GDUIApplication.h */,
+				56FFF38824322172007DBDB8 /* GDUIApplication.m */,
 				56B4EBA32385724E00E9A101 /* XCUIApplication+State.h */,
 				56B4EBA42385724E00E9A101 /* XCUIApplication+State.m */,
 				56B4EB9F2385724E00E9A101 /* XCTestCase+Properties.h */,
@@ -147,6 +169,7 @@
 		5826109321F4CF2C0037F50B /* AutomatedTestSupportLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				C7BF618523E4AB75006B1A64 /* Screen_Objects */,
 				582610B021F4CF760037F50B /* BBDAutomatedTestSupport.h */,
 				582610AE21F4CF760037F50B /* BBDPublicConstans.h */,
 				582610AF21F4CF760037F50B /* BBDUIAccessibilityIdentifiers.h */,
@@ -225,6 +248,7 @@
 			children = (
 				58B58C5E21F4D56000268DC0 /* BBDUITestUtilities.h */,
 				58B58C5D21F4D56000268DC0 /* BBDUITestUtilities.m */,
+				C77176BB23E87991002927BB /* TimeoutConstants.h */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -234,6 +258,21 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C7BF618523E4AB75006B1A64 /* Screen_Objects */ = {
+			isa = PBXGroup;
+			children = (
+				C7BF618B23E4B1EE006B1A64 /* ActivationTypeUI.h */,
+				C7BF618623E4AC10006B1A64 /* ActivationTypeUI.m */,
+				C7BF618A23E4B17C006B1A64 /* AbstractBBDUI.h */,
+				C7BF618823E4AC25006B1A64 /* AbstractBBDUI.m */,
+				C77176B723E8200A002927BB /* LegacyActivationTypeUI.h */,
+				C77176B823E82023002927BB /* LegacyActivationTypeUI.m */,
+				657071802423794F0055FF24 /* AdvancedSettingsUI.h */,
+				6570718124237BEF0055FF24 /* AdvancedSettingsUI.m */,
+			);
+			path = Screen_Objects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,10 +292,14 @@
 				58B58C5621F4D54900268DC0 /* BBDTouchEventHelper.h in Headers */,
 				582610B721F4CF760037F50B /* BBDUIAccessibilityIdentifiers.h in Headers */,
 				58B58C4021F4D52F00268DC0 /* BBDUITestCaseRef.h in Headers */,
+				C72ED08A2424CB1800989303 /* ActivationTypeUI.h in Headers */,
 				58B58C5121F4D54900268DC0 /* BBDUITestAppLogic.h in Headers */,
 				58B58C3321F4D50400268DC0 /* XCTestExpectation+DetachExpectation.h in Headers */,
 				58B58C6021F4D56000268DC0 /* BBDUITestUtilities.h in Headers */,
+				C72ED08B2424CB4200989303 /* AbstractBBDUI.h in Headers */,
+				C72ED08C2424CB4700989303 /* LegacyActivationTypeUI.h in Headers */,
 				582610B621F4CF760037F50B /* BBDPublicConstans.h in Headers */,
+				56FFF38924322172007DBDB8 /* GDUIApplication.h in Headers */,
 				58B58C3721F4D50400268DC0 /* XCUIDevice+BiometricsHelpers.h in Headers */,
 				58B58C3921F4D50400268DC0 /* XCTestCase+Expectations.h in Headers */,
 				58B58C3621F4D50400268DC0 /* LAContext+BBDBiometryType.h in Headers */,
@@ -342,14 +385,19 @@
 				58B58C4121F4D52F00268DC0 /* BBDUITestCaseRef.m in Sources */,
 				58B58C5721F4D54900268DC0 /* BBDMultiAppTestHelper.m in Sources */,
 				58B58C3821F4D50400268DC0 /* XCTestExpectation+DetachExpectation.m in Sources */,
+				C7BF618923E4AC25006B1A64 /* AbstractBBDUI.m in Sources */,
 				A4D43EB3227B099300560CA0 /* XCUIDevice+HardwareKeyboardHelpers.m in Sources */,
 				58B58C3421F4D50400268DC0 /* XCUIDevice+TouchIDHelpers.m in Sources */,
 				58B58C5921F4D54900268DC0 /* BBDInputEventHelper.m in Sources */,
 				58A244D821F5B284008665FC /* BBDAutomatedTestSupport.m in Sources */,
 				58B58C5321F4D54900268DC0 /* BBDTouchEventHelper.m in Sources */,
+				6570718224237BEF0055FF24 /* AdvancedSettingsUI.m in Sources */,
+				56FFF38A24322172007DBDB8 /* GDUIApplication.m in Sources */,
 				56B4EBAD2385724F00E9A101 /* XCTestCase+Properties.m in Sources */,
 				58B58C5B21F4D54900268DC0 /* BBDDragAndDropHelper.m in Sources */,
 				58B58C5F21F4D56000268DC0 /* BBDUITestUtilities.m in Sources */,
+				C7BF618723E4AC10006B1A64 /* ActivationTypeUI.m in Sources */,
+				C77176B923E82023002927BB /* LegacyActivationTypeUI.m in Sources */,
 				56B4EBAC2385724F00E9A101 /* XCUIApplication+State.m in Sources */,
 				58B58C3521F4D50400268DC0 /* XCUIDevice+BiometricsHelpers.m in Sources */,
 				58B58C3221F4D50400268DC0 /* LAContext+BBDBiometryType.m in Sources */,
@@ -414,7 +462,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -470,7 +518,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -494,7 +542,6 @@
 				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
 				INFOPLIST_FILE = "$(SRCROOT)/AutomatedTestSupportLibrary/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -502,14 +549,13 @@
 				);
 				LIBRARY_SEARCH_PATHS = "";
 				MODULEMAP_FILE = "$(SRCROOT)/$(PROJECT_NAME)/AutomatedTestSupportLibrary.modulemap";
-				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blackberry.automatedtestsupportlibrary;
 				PRODUCT_NAME = BlackBerryDynamicsAutomatedTestSupportLibrary;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "arm64 arm64e armv7 armv7s x86_64";
+				VALID_ARCHS = "arm64 arm64e x86_64";
 			};
 			name = Debug;
 		};
@@ -527,7 +573,6 @@
 				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
 				INFOPLIST_FILE = "$(SRCROOT)/AutomatedTestSupportLibrary/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -535,14 +580,13 @@
 				);
 				LIBRARY_SEARCH_PATHS = "";
 				MODULEMAP_FILE = "$(SRCROOT)/$(PROJECT_NAME)/AutomatedTestSupportLibrary.modulemap";
-				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blackberry.automatedtestsupportlibrary;
 				PRODUCT_NAME = BlackBerryDynamicsAutomatedTestSupportLibrary;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "arm64 arm64e armv7 armv7s x86_64";
+				VALID_ARCHS = "arm64 arm64e x86_64";
 			};
 			name = Release;
 		};
