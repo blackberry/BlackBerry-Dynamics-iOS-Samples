@@ -75,9 +75,9 @@ static NSString* const SYSTEM_SPRINGBOARD_ID = @"com.apple.springboard";
     }
     
     // explicit wait for a few seconds,this is needed because of the rendering of the menu with suggestion apps
-    [NSThread sleepForTimeInterval:TIMEOUT_5];
+    [NSThread sleepForTimeInterval:TIMEOUT_10];
     XCUIElement *el = springboard.icons[secondAppName].firstMatch;
-    sugElExists = sugEl.exists;
+    sugElExists = el.exists;
     if (!sugElExists)
     {
         NSLog(@"App icon is not shown is suggestion menu");
