@@ -64,7 +64,6 @@ static NSString* const BBDDisclaimerAcceptButtonID = @"BBDDisclaimerAcceptButton
 static NSString* const BBDDisclaimerTextViewID = @"BBDDisclaimerTextViewID";
 // Upload Logs UI
 static NSString* const BBDLogsUploadActionButtonID = @"BBDLogsUploadActionButtonID";
-static NSString* const BBDLogsUploadCloseButtonID = @"BBDLogsUploadCloseButtonID";
 static NSString* const BBDLoadingUI = @"BBDLoadingUI";
 static NSString* const BBDNoPasswordNotificationUI = @"BBDNoPasswordNotificationUI";
 static NSString* const BBDLogUploadUI = @"BBDLogUploadUI";
