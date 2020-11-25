@@ -1,0 +1,6 @@
+/*
+ * (c) 2016 BlackBerry Limited. All rights reserved.
+ *
+ */
+
+"NSFaceIDUsageDescription" = "在没有密码的情况下，启用身份验证。";

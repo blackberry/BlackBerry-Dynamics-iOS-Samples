@@ -1,0 +1,6 @@
+/*
+ * (c) 2016 BlackBerry Limited. All rights reserved.
+ *
+ */
+
+"NSFaceIDUsageDescription" = "Permet de s'authentifier sans mot de passe.";
