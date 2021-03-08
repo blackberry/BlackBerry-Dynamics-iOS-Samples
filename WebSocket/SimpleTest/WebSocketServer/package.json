@@ -1,0 +1,10 @@
+{
+  "name": "websocketserver",
+  "version": "1.0.0",
+  "description": "WebSocketServer",
+  "main": "server.js",
+  "license": "SEE LICENSE IN LICENSE",
+  "dependencies": {
+    "ws": "^7.1.1"
+  }
+}
