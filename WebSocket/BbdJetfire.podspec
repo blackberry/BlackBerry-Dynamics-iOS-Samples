@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2020 BlackBerry Limited. All Rights Reserved.
+# Copyright (c) 2021 BlackBerry Limited. All Rights Reserved.
 # Some modifications to the original from https://github.com/acmacalister/jetfire
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,14 +16,14 @@
 #
 
 Pod::Spec.new do |s|
-  s.name         = "BbdJetfire"
-  s.version      = "1.0.0"
-  s.summary      = "BlackBerry Dynamics WebSocket (RFC 6455) client library for iOS."
-  s.homepage     = "https://developers.blackberry.com"
+  s.name         = 'BbdJetfire'
+  s.version      = '1.0.0'
+  s.summary      = 'BlackBerry Dynamics WebSocket (RFC 6455) client library for iOS.'
+  s.homepage     = 'https://developers.blackberry.com'
   s.license      = 'Apache License, Version 2.0'
-  s.author       = { "Volodymyr Taliar" => "vtaliar@blackberry.com" }
-  s.source       = { :git => "https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/blob/master/WebSocket/", :tag => "#{s.version}" }
+  s.author       = { 'Volodymyr Taliar' => 'vtaliar@blackberry.com' }
+  s.source       = { :git => "https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples.git" }
   s.ios.deployment_target = '9.0'
-  s.source_files = '*.{h,m}'
+  s.source_files = 'WebSocket/*.{h,m}'
   s.requires_arc = true
 end
