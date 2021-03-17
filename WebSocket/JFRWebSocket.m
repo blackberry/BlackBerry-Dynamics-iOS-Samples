@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////
 //
-// Copyright (c) 2020 BlackBerry Limited. All Rights Reserved.
+// Copyright (c) 2021 BlackBerry Limited. All Rights Reserved.
 // Some modifications to the original from https://github.com/acmacalister/jetfire
 //
 //  JFRWebSocket.m
@@ -158,23 +158,23 @@ static const size_t  JFRMaxFrameSize        = 32;
     });
 }
 /////////////////////////////////////////////////////////////////////////////
-- (void)disconnect {
-    [self writeError:JFRCloseCodeNormal];
+- (void)disconnect:(GDSocket*)socket {
+    [self writeError:JFRCloseCodeNormal gdSocketID:socket];
 }
 /////////////////////////////////////////////////////////////////////////////
-- (void)writeString:(NSString*)string {
+- (void)writeString:(NSString*)string gdSocketID:(GDSocket *)socket {
     if(string) {
         [self dequeueWrite:[string dataUsingEncoding:NSUTF8StringEncoding]
-                  withCode:JFROpCodeTextFrame];
+                  withCode:JFROpCodeTextFrame forSocketID:socket];
     }
 }
 /////////////////////////////////////////////////////////////////////////////
-- (void)writePing:(NSData*)data {
-    [self dequeueWrite:data withCode:JFROpCodePing];
+- (void)writePing:(NSData*)data gdSocketID:(nonnull GDSocket*)socket {
+    [self dequeueWrite:data withCode:JFROpCodePing forSocketID:socket];
 }
 /////////////////////////////////////////////////////////////////////////////
-- (void)writeData:(NSData*)data {
-    [self dequeueWrite:data withCode:JFROpCodeBinaryFrame];
+- (void)writeData:(NSData*)data gdSocketID:(GDSocket *)socket {
+    [self dequeueWrite:data withCode:JFROpCodeBinaryFrame forSocketID:socket];
 }
 /////////////////////////////////////////////////////////////////////////////
 - (void)addHeader:(NSString*)value forKey:(NSString*)key {
@@ -442,18 +442,18 @@ static const size_t  JFRMaxFrameSize        = 32;
         NSInteger offset = 2; //how many bytes do we need to skip for the header
         if((isMasked  || (JFRRSVMask & buffer[0])) && receivedOpcode != JFROpCodePong) {
             [self doDisconnect:[self errorWithDetail:@"masked and rsv data is not currently supported" code:JFRCloseCodeProtocolError]];
-            [self writeError:JFRCloseCodeProtocolError];
+            [self writeError:JFRCloseCodeProtocolError gdSocketID:nil];
             return;
         }
         BOOL isControlFrame = (receivedOpcode == JFROpCodeConnectionClose || receivedOpcode == JFROpCodePing);
         if(!isControlFrame && (receivedOpcode != JFROpCodeBinaryFrame && receivedOpcode != JFROpCodeContinueFrame && receivedOpcode != JFROpCodeTextFrame && receivedOpcode != JFROpCodePong)) {
             [self doDisconnect:[self errorWithDetail:[NSString stringWithFormat:@"unknown opcode: 0x%x",receivedOpcode] code:JFRCloseCodeProtocolError]];
-            [self writeError:JFRCloseCodeProtocolError];
+            [self writeError:JFRCloseCodeProtocolError gdSocketID:nil];
             return;
         }
         if(isControlFrame && !isFin) {
             [self doDisconnect:[self errorWithDetail:@"control frames can't be fragmented" code:JFRCloseCodeProtocolError]];
-            [self writeError:JFRCloseCodeProtocolError];
+            [self writeError:JFRCloseCodeProtocolError gdSocketID:nil];
             return;
         }
         if(receivedOpcode == JFROpCodeConnectionClose) {
@@ -480,12 +480,12 @@ static const size_t  JFRMaxFrameSize        = 32;
                     }
                 }
             }
-            [self writeError:code];
+            [self writeError:code gdSocketID:nil];
             [self doDisconnect:[self errorWithDetail:@"continue frame before a binary or text frame" code:code]];
             return;
         }
         if(isControlFrame && payloadLen > 125) {
-            [self writeError:JFRCloseCodeProtocolError];
+            [self writeError:JFRCloseCodeProtocolError gdSocketID:nil];
             return;
         }
         NSInteger dataLength = payloadLen;
@@ -525,14 +525,14 @@ static const size_t  JFRMaxFrameSize        = 32;
         }
         if(!isFin && receivedOpcode == JFROpCodeContinueFrame && !response) {
             [self doDisconnect:[self errorWithDetail:@"continue frame before a binary or text frame" code:JFRCloseCodeProtocolError]];
-            [self writeError:JFRCloseCodeProtocolError];
+            [self writeError:JFRCloseCodeProtocolError gdSocketID:nil];
             return;
         }
         BOOL isNew = NO;
         if(!response) {
             if(receivedOpcode == JFROpCodeContinueFrame) {
                 [self doDisconnect:[self errorWithDetail:@"first frame can't be a continue frame" code:JFRCloseCodeProtocolError]];
-                [self writeError:JFRCloseCodeProtocolError];
+                [self writeError:JFRCloseCodeProtocolError gdSocketID:nil];
                 return;
             }
             isNew = YES;
@@ -545,7 +545,7 @@ static const size_t  JFRMaxFrameSize        = 32;
                 response.bytesLeft = dataLength;
             } else {
                 [self doDisconnect:[self errorWithDetail:@"second and beyond of fragment message must be a continue frame" code:JFRCloseCodeProtocolError]];
-                [self writeError:JFRCloseCodeProtocolError];
+                [self writeError:JFRCloseCodeProtocolError gdSocketID:nil];
                 return;
             }
             [response.buffer appendData:data];
@@ -579,11 +579,11 @@ static const size_t  JFRMaxFrameSize        = 32;
     if(response.isFin && response.bytesLeft <= 0) {
         NSData *data = response.buffer;
         if(response.code == JFROpCodePing) {
-            [self dequeueWrite:response.buffer withCode:JFROpCodePong];
+            [self dequeueWrite:response.buffer withCode:JFROpCodePong forSocketID:nil];
         } else if(response.code == JFROpCodeTextFrame) {
             NSString *str = [[NSString alloc] initWithData:response.buffer encoding:NSUTF8StringEncoding];
             if(!str) {
-                [self writeError:JFRCloseCodeEncoding];
+                [self writeError:JFRCloseCodeEncoding gdSocketID:nil];
                 return NO;
             }
             __weak typeof(self) weakSelf = self;
@@ -612,8 +612,8 @@ static const size_t  JFRMaxFrameSize        = 32;
     return NO;
 }
 /////////////////////////////////////////////////////////////////////////////
--(void)dequeueWrite:(NSData*)data withCode:(JFROpCode)code {
-    GDNamedSocket* gdSocket = (GDNamedSocket*) _gdSocket;
+-(void)dequeueWrite:(NSData*)data withCode:(JFROpCode)code forSocketID:socket {
+    GDNamedSocket* gdSocket = socket ? socket : _gdSocket;
     if(!self.isConnected) {
         return;
     }
@@ -686,7 +686,7 @@ static const size_t  JFRMaxFrameSize        = 32;
         __weak typeof(self) weakSelf = self;
         dispatch_async(self.queue, ^{
             weakSelf.didDisconnect = YES;
-            [weakSelf disconnect];
+            [weakSelf disconnect:nil];
             if([weakSelf.delegate respondsToSelector:@selector(websocketDidDisconnect:error:)]) {
                 [weakSelf.delegate websocketDidDisconnect:weakSelf error:error];
             }
@@ -711,15 +711,17 @@ static const size_t  JFRMaxFrameSize        = 32;
     return [[NSError alloc] initWithDomain:@"JFRWebSocket" code:code userInfo:details];
 }
 /////////////////////////////////////////////////////////////////////////////
-- (void)writeError:(uint16_t)code {
+- (void)writeError:(uint16_t)code gdSocketID:socket
+{
+    GDNamedSocket* gdSocket = socket ? socket : _gdSocket;
     uint16_t buffer[1];
     buffer[0] = CFSwapInt16BigToHost(code);
-    [self dequeueWrite:[NSData dataWithBytes:buffer length:sizeof(uint16_t)] withCode:JFROpCodeConnectionClose];
+    [self dequeueWrite:[NSData dataWithBytes:buffer length:sizeof(uint16_t)] withCode:JFROpCodeConnectionClose forSocketID:gdSocket];
 }
 /////////////////////////////////////////////////////////////////////////////
 - (void)dealloc {
     if(self.isConnected) {
-        [self disconnect];
+        [self disconnect:nil];
     }
 }
 /////////////////////////////////////////////////////////////////////////////

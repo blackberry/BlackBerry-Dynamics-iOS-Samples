@@ -5,7 +5,7 @@ BlackBerry Dynamics WebSocket library
 
 ## Prerequisites
 #### Install BlackBerry Dynamics SDK for iOS
-BlackBerry Dynamics WebSocket library is dependent on BlackBerry Dynamics SDK for iOS. Check environment requirements [here](https://docs.blackberry.com/en/development-tools/blackberry-dynamics-sdk-ios) and go through installation [guide](https://docs.blackberry.com/en/development-tools/blackberry-dynamics-sdk-ios/8_0/blackberry-dynamics-sdk-ios-devguide/What-is-the-BlackBerry-Dynamics-SDK).
+BlackBerry Dynamics WebSocket library is dependent on BlackBerry Dynamics SDK for iOS ("Dynamic" Framework). Check environment requirements [here](https://docs.blackberry.com/en/development-tools/blackberry-dynamics-sdk-ios) and go through installation [guide](https://docs.blackberry.com/en/development-tools/blackberry-dynamics-sdk-ios/9_0/blackberry-dynamics-sdk-ios-devguide/What-is-the-BlackBerry-Dynamics-SDK).
  
 > For details on BlackBerry Dynamics please see https://www.blackberry.com/dynamics
 
@@ -96,13 +96,13 @@ The delegate methods give you a simple way to handle data from the server, but h
 ### writeData
 
 ```objc
-[self.socket writeData:[NSData data]]; // write some NSData over the socket!
+[self.socket writeData:[NSData data] gdSocketID:self.socket.socketID]; // write some NSData over the socket!
 ```
 
 ### writePing
 
 ```objc
-[self.socket writePing:[NSData data]]; // write some NSData ping over the socket!
+[self.socket writePing:[NSData data] gdSocketID:self.socket.socketID]; // write some NSData ping over the socket!
 ```
 
 ### writeString
@@ -110,13 +110,13 @@ The delegate methods give you a simple way to handle data from the server, but h
 The writeString method is the same as writeData, but sends text/string.
 
 ```objc
-[self.socket writeString:@"Hi Server!"]; //example on how to write text over the socket!
+[self.socket writeString:@"Hi Server!" gdSocketID:self.socket.socketID]; //example on how to write text over the socket!
 ```
 
 ### disconnect
 
 ```objc
-[self.socket disconnect];
+[self.socket disconnect:self.socket.socketID];
 ```
 
 ### isConnected
