@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////
 //
-// Copyright (c) 2020 BlackBerry Limited. All Rights Reserved.
+// Copyright (c) 2021 BlackBerry Limited. All Rights Reserved.
 // Some modifications to the original from https://github.com/acmacalister/jetfire
 //
 //  JFRWebSocket.h
@@ -23,7 +23,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
 #import <Foundation/Foundation.h>
-#import <GD/GDNETiOS.h>
+#import <BlackBerryDynamics/GD/GDNETiOS.h>
 
 @class JFRWebSocket;
 
@@ -65,8 +65,8 @@
 
 @interface JFRWebSocket : NSObject
 
-@property(nonatomic,weak, nullable)id<JFRWebSocketDelegate>delegate;
-@property(nonatomic, readonly, nonnull) NSURL *url;
+@property (nonatomic,weak, nullable)id<JFRWebSocketDelegate>delegate;
+@property (nonatomic, readonly, nonnull) NSURL *url;
 @property (nonatomic, nonnull) GDSocket * gdSocket;
 @property (nonatomic, nonnull) NSNumber * socketID;
 
@@ -85,26 +85,30 @@
 
 /**
  disconnect to the host. This sends the close Connection opcode to terminate cleanly.
+ @param socket that socket that should be disconnected.
  */
-- (void)disconnect;
+- (void)disconnect:(nullable GDSocket*)socket;
 
 /**
  write binary based data to the socket.
  @param data the binary data to write.
+ @param socket the socket to write data to.
  */
-- (void)writeData:(nonnull NSData*)data;
+- (void)writeData:(nullable NSData*)data gdSocketID:(nonnull GDSocket*)socket;
 
 /**
  write text based data to the socket.
  @param string the string to write.
+ @param socket the socket to write string to.
  */
-- (void)writeString:(nonnull NSString*)string;
+- (void)writeString:(nullable NSString*)string gdSocketID:(nonnull GDSocket*)socket;
 
 /**
  write ping to the socket.
  @param data the binary data to write (if desired).
+ @param socket the socket to write ping to.
  */
-- (void)writePing:(nonnull NSData*)data;
+- (void)writePing:(nonnull NSData*)data gdSocketID:(nonnull GDSocket*)socket;
 
 /**
  Add a header to send along on the the HTTP connect.
