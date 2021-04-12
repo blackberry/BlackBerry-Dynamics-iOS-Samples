@@ -55,6 +55,13 @@
 -(void)websocket:(nonnull JFRWebSocket*)socket didReceiveMessage:(nonnull NSString*)string;
 
 /**
+ The websocket got a text based message.
+ @param socket is the current socket object.
+ @param error is the errorthat has been returned.
+ */
+-(void)websocket:(nonnull JFRWebSocket*)socket didReceiveError:(nonnull NSError*)error;
+
+/**
  The websocket got a binary based message.
  @param socket is the current socket object.
  @param data   is the binary based data that has been returned.
