@@ -3,11 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		369CF1EB2497675F00D13EA8 /* GD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369CF1EA2497675F00D13EA8 /* GD.framework */; };
+		368C70182615F52D00E144B2 /* BlackBerryCerticom.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 368C70152615F52D00E144B2 /* BlackBerryCerticom.xcframework */; };
+		368C701A2615F52D00E144B2 /* BlackBerryCerticomSBGSE.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 368C70172615F52D00E144B2 /* BlackBerryCerticomSBGSE.xcframework */; };
+		368C701D2615F55F00E144B2 /* BlackBerryCerticom.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 368C70152615F52D00E144B2 /* BlackBerryCerticom.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		368C701E2615F55F00E144B2 /* BlackBerryCerticomSBGSE.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 368C70172615F52D00E144B2 /* BlackBerryCerticomSBGSE.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		368C70212615FBB500E144B2 /* BlackBerryDynamics.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 368C70162615F52D00E144B2 /* BlackBerryDynamics.xcframework */; };
+		368C70222615FBDB00E144B2 /* BlackBerryDynamics.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 368C70162615F52D00E144B2 /* BlackBerryDynamics.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		369CF1ED2497675F00D13EA8 /* DeviceCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369CF1EC2497675F00D13EA8 /* DeviceCheck.framework */; };
 		369CF1EF2497675F00D13EA8 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369CF1EE2497675F00D13EA8 /* LocalAuthentication.framework */; };
 		369CF1F12497675F00D13EA8 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369CF1F02497675F00D13EA8 /* CoreTelephony.framework */; };
@@ -22,8 +27,6 @@
 		369CF2062497675F00D13EA8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 369CF2052497675F00D13EA8 /* ViewController.m */; };
 		369CF2092497675F00D13EA8 /* SimpleTestGDiOSDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 369CF2082497675F00D13EA8 /* SimpleTestGDiOSDelegate.m */; };
 		369CF20D2497675F00D13EA8 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 369CF20C2497675F00D13EA8 /* Entitlements.plist */; };
-		369CF2102497675F00D13EA8 /* GDAssets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 369CF20F2497675F00D13EA8 /* GDAssets.bundle */; };
-		369CF2132497675F00D13EA8 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 369CF2122497675F00D13EA8 /* libz.tbd */; };
 		369CF2162497675F00D13EA8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 369CF2142497675F00D13EA8 /* InfoPlist.strings */; };
 		369CF2252497675F00D13EA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 369CF2232497675F00D13EA8 /* Main.storyboard */; };
 		369CF2272497676300D13EA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 369CF2262497676300D13EA8 /* Assets.xcassets */; };
@@ -32,9 +35,26 @@
 		369CF23E24977D8000D13EA8 /* JFRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 369CF23A24977D8000D13EA8 /* JFRWebSocket.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		368C701C2615F55600E144B2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				368C70222615FBDB00E144B2 /* BlackBerryDynamics.xcframework in CopyFiles */,
+				368C701D2615F55F00E144B2 /* BlackBerryCerticom.xcframework in CopyFiles */,
+				368C701E2615F55F00E144B2 /* BlackBerryCerticomSBGSE.xcframework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		368C70152615F52D00E144B2 /* BlackBerryCerticom.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BlackBerryCerticom.xcframework; path = "../../../Downloads/gdsdk-release-dylib-9.0.0.75/BlackBerry_Dynamics_SDK_for_iOS_v9.0.0.75_dylib/Frameworks/BlackBerryCerticom.xcframework"; sourceTree = "<group>"; };
+		368C70162615F52D00E144B2 /* BlackBerryDynamics.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BlackBerryDynamics.xcframework; path = "../../../Downloads/gdsdk-release-dylib-9.0.0.75/BlackBerry_Dynamics_SDK_for_iOS_v9.0.0.75_dylib/Frameworks/BlackBerryDynamics.xcframework"; sourceTree = "<group>"; };
+		368C70172615F52D00E144B2 /* BlackBerryCerticomSBGSE.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BlackBerryCerticomSBGSE.xcframework; path = "../../../Downloads/gdsdk-release-dylib-9.0.0.75/BlackBerry_Dynamics_SDK_for_iOS_v9.0.0.75_dylib/Frameworks/BlackBerryCerticomSBGSE.xcframework"; sourceTree = "<group>"; };
 		369CF1E72497675F00D13EA8 /* SimpleTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		369CF1EA2497675F00D13EA8 /* GD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GD.framework; path = System/Library/Frameworks/GD.framework; sourceTree = SDKROOT; };
 		369CF1EC2497675F00D13EA8 /* DeviceCheck.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeviceCheck.framework; path = System/Library/Frameworks/DeviceCheck.framework; sourceTree = SDKROOT; };
 		369CF1EE2497675F00D13EA8 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		369CF1F02497675F00D13EA8 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -53,8 +73,6 @@
 		369CF2082497675F00D13EA8 /* SimpleTestGDiOSDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleTestGDiOSDelegate.m; sourceTree = "<group>"; };
 		369CF20B2497675F00D13EA8 /* default.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = default.xcconfig; path = ../default.xcconfig; sourceTree = "<group>"; };
 		369CF20C2497675F00D13EA8 /* Entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Entitlements.plist; path = ../Entitlements.plist; sourceTree = "<group>"; };
-		369CF20F2497675F00D13EA8 /* GDAssets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GDAssets.bundle; path = System/Library/Frameworks/GD.framework/Resources/GDAssets.bundle; sourceTree = SDKROOT; };
-		369CF2122497675F00D13EA8 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		369CF2152497675F00D13EA8 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		369CF2172497675F00D13EA8 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		369CF2182497675F00D13EA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -83,14 +101,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				369CF1FD2497675F00D13EA8 /* WebKit.framework in Frameworks */,
-				369CF2132497675F00D13EA8 /* libz.tbd in Frameworks */,
+				368C701A2615F52D00E144B2 /* BlackBerryCerticomSBGSE.xcframework in Frameworks */,
 				369CF1F72497675F00D13EA8 /* MessageUI.framework in Frameworks */,
 				369CF1FF2497675F00D13EA8 /* AVFoundation.framework in Frameworks */,
 				369CF1F12497675F00D13EA8 /* CoreTelephony.framework in Frameworks */,
 				369CF1F52497675F00D13EA8 /* CoreData.framework in Frameworks */,
 				369CF1F32497675F00D13EA8 /* SystemConfiguration.framework in Frameworks */,
-				369CF1EB2497675F00D13EA8 /* GD.framework in Frameworks */,
+				368C70212615FBB500E144B2 /* BlackBerryDynamics.xcframework in Frameworks */,
 				369CF1FB2497675F00D13EA8 /* SafariServices.framework in Frameworks */,
+				368C70182615F52D00E144B2 /* BlackBerryCerticom.xcframework in Frameworks */,
 				369CF1F92497675F00D13EA8 /* MobileCoreServices.framework in Frameworks */,
 				369CF1EF2497675F00D13EA8 /* LocalAuthentication.framework in Frameworks */,
 				369CF1ED2497675F00D13EA8 /* DeviceCheck.framework in Frameworks */,
@@ -120,7 +139,9 @@
 		369CF1E92497675F00D13EA8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				369CF1EA2497675F00D13EA8 /* GD.framework */,
+				368C70152615F52D00E144B2 /* BlackBerryCerticom.xcframework */,
+				368C70172615F52D00E144B2 /* BlackBerryCerticomSBGSE.xcframework */,
+				368C70162615F52D00E144B2 /* BlackBerryDynamics.xcframework */,
 				369CF1EC2497675F00D13EA8 /* DeviceCheck.framework */,
 				369CF1EE2497675F00D13EA8 /* LocalAuthentication.framework */,
 				369CF1F02497675F00D13EA8 /* CoreTelephony.framework */,
@@ -151,8 +172,6 @@
 				369CF2282497676300D13EA8 /* LaunchScreen.storyboard */,
 				369CF22B2497676300D13EA8 /* Info.plist */,
 				369CF22C2497676300D13EA8 /* main.m */,
-				369CF20E2497675F00D13EA8 /* Resources */,
-				369CF2112497675F00D13EA8 /* Libs */,
 				369CF20A2497675F00D13EA8 /* Supporting Files */,
 			);
 			path = SimpleTest;
@@ -168,22 +187,6 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		369CF20E2497675F00D13EA8 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				369CF20F2497675F00D13EA8 /* GDAssets.bundle */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		369CF2112497675F00D13EA8 /* Libs */ = {
-			isa = PBXGroup;
-			children = (
-				369CF2122497675F00D13EA8 /* libz.tbd */,
-			);
-			path = Libs;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -194,6 +197,7 @@
 				369CF1E32497675F00D13EA8 /* Sources */,
 				369CF1E42497675F00D13EA8 /* Frameworks */,
 				369CF1E52497675F00D13EA8 /* Resources */,
+				368C701C2615F55600E144B2 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -255,7 +259,6 @@
 			files = (
 				369CF20D2497675F00D13EA8 /* Entitlements.plist in Resources */,
 				369CF2162497675F00D13EA8 /* InfoPlist.strings in Resources */,
-				369CF2102497675F00D13EA8 /* GDAssets.bundle in Resources */,
 				369CF22A2497676300D13EA8 /* LaunchScreen.storyboard in Resources */,
 				369CF2252497675F00D13EA8 /* Main.storyboard in Resources */,
 				369CF2272497676300D13EA8 /* Assets.xcassets in Resources */,
@@ -438,6 +441,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = SimpleTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -456,6 +460,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = SimpleTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

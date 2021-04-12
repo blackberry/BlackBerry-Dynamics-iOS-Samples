@@ -46,7 +46,8 @@ typedef NS_ENUM(NSUInteger, JFRCloseCode) {
     //1006 reserved.
     JFRCloseCodeEncoding               = 1007,
     JFRCloseCodePolicyViolated         = 1008,
-    JFRCloseCodeMessageTooBig          = 1009
+    JFRCloseCodeMessageTooBig          = 1009,
+    GDSocketServerUnreachable         = -5
 };
 
 typedef NS_ENUM(NSUInteger, JFRInternalErrorCode) {
@@ -299,11 +300,11 @@ static const size_t  JFRMaxFrameSize        = 32;
 #pragma mark - Stream Processing Methods
 
 /////////////////////////////////////////////////////////////////////////////
-- (void)processGDSocketReadStream {
+- (void)processGDSocketReadStream:(GDSocket*)socket {
     @autoreleasepool {
-        uint8_t buffer[BUFFER_MAX];
-        NSMutableData* gdSocketReadData = [_gdSocket.readStream unreadData];
+        NSMutableData* gdSocketReadData = [socket.readStream unreadData];
         NSUInteger length = [gdSocketReadData length];
+        uint8_t buffer[length];
         [gdSocketReadData getBytes:buffer length:length];
         
         if(length > 0) {
@@ -686,7 +687,10 @@ static const size_t  JFRMaxFrameSize        = 32;
         __weak typeof(self) weakSelf = self;
         dispatch_async(self.queue, ^{
             weakSelf.didDisconnect = YES;
-            [weakSelf disconnect:nil];
+            [weakSelf disconnect:self->_gdSocket];
+            if([weakSelf.delegate respondsToSelector:@selector(websocket:didReceiveError:)] && error.code != JFRCloseCodeNormal) {
+                [weakSelf.delegate websocket:weakSelf didReceiveError:error];
+            }
             if([weakSelf.delegate respondsToSelector:@selector(websocketDidDisconnect:error:)]) {
                 [weakSelf.delegate websocketDidDisconnect:weakSelf error:error];
             }
@@ -719,17 +723,11 @@ static const size_t  JFRMaxFrameSize        = 32;
     [self dequeueWrite:[NSData dataWithBytes:buffer length:sizeof(uint16_t)] withCode:JFROpCodeConnectionClose forSocketID:gdSocket];
 }
 /////////////////////////////////////////////////////////////////////////////
-- (void)dealloc {
-    if(self.isConnected) {
-        [self disconnect:nil];
-    }
-}
-/////////////////////////////////////////////////////////////////////////////
 
 #pragma mark - GDSocketDelegate Methods
 
 - (void)onClose:(nonnull id)socket {
-    [self disconnectStream:nil];
+    [self disconnectStream:socket];
 }
 
 - (void)onErr:(int)error inSocket:(nonnull id)socket {
@@ -747,6 +745,10 @@ static const size_t  JFRMaxFrameSize        = 32;
         case GDSocketErrorNetworkUnvailable:
             gdSocketError = [self errorWithDetail:@"GDSocket operation failed because the destination network could not be reached" code:error];
             break;
+
+        case GDSocketServerUnreachable:
+            gdSocketError = [self errorWithDetail:@"GDSocket operation failed, host is unreachable" code:error];
+            break;
             
         default:
             break;
@@ -763,7 +765,7 @@ static const size_t  JFRMaxFrameSize        = 32;
 }
 
 - (void)onRead:(nonnull id)socket {
-    [self processGDSocketReadStream];
+    [self processGDSocketReadStream:socket];
 }
 
 @end

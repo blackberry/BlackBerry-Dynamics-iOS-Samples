@@ -67,7 +67,7 @@
 
 - (IBAction)writeText:(UIBarButtonItem *)sender {
     NSString* str = @"hello there!";
-    [self.socket writeString:str];
+    [self.socket writeString:str gdSocketID:_socket.gdSocket];
 //    NSData* data = [str dataUsingEncoding:NSUTF8StringEncoding];
 //    [self.socket writeData:data];
 //    [self.socket writePing:data];
@@ -76,7 +76,7 @@
 - (IBAction)disconnect:(UIBarButtonItem *)sender {
     if(self.socket.isConnected) {
         sender.title = @"Connect";
-        [self.socket disconnect];
+        [self.socket disconnect:_socket.gdSocket];
     } else {
         sender.title = @"Disconnect";
         [self.socket connect];
