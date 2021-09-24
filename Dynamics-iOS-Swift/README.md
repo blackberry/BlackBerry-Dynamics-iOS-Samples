@@ -1,4 +1,4 @@
-# BlackBerry Dynamics Sample App for iOS - Swfit
+# BlackBerry Dynamics Sample App for iOS - Swift
 
 This sample pairs with Basic-iOS-Swift as examples of iOS apps before and after integrating with the BlackBerry Dynamics SDK. The two samples demostrate features commonly used in the BlackBerry Dynamics applications; secure file storage, secure database, secure communication (HTTP/S and Socket) and more.
 
