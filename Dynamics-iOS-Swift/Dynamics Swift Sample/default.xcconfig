@@ -1,5 +1,1 @@
-
-FIPS_PACKAGE=$(CURRENT_ARCH).sdk
-LDPLUSPLUS=$(HOME)/Library/Application Support/BlackBerry/Good.platform/iOS/FIPS_module/$FIPS_PACKAGE/bin/gd_fipsld
-LD=$(HOME)/Library/Application Support/BlackBerry/Good.platform/iOS/FIPS_module/$FIPS_PACKAGE/bin/gd_fipsld
 ENABLE_BITCODE=NO

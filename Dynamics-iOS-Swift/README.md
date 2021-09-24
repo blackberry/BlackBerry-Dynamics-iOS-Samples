@@ -5,17 +5,17 @@ This sample pairs with Basic-iOS-Swift as examples of iOS apps before and after 
 
 ## Requirements
 
-* Xcode 8 or later
+* Xcode 11 or later
 
 
 ## Applies to
 
-iOS 9 SDK or later
+iOS 13 SDK or later
 
 
 ## Runtime
 
-iOS 9 or later
+iOS 13 or later
 
 
 ## Author(s)
@@ -32,11 +32,12 @@ iOS 9 or later
 
 1. Set up BlackBerry Dymaics environment
 2. Clone the repo to your computer.
-3. Launch Xcode and open the project.
-4. Edit Bundle ID to your own
-5. Edit URL identifier and URL Schemes in the info.plist.
-6. Edit GD Application ID to your own in the info.plist.
-7. Build, deploy and run on a testing device. 
+3. Run pod install to create project workspace.
+4. Launch Xcode and open the project.
+5. Edit Bundle ID to your own
+6. Edit URL identifier and URL Schemes in the info.plist.
+7. Edit GD Application ID to your own in the info.plist.
+8. Build, deploy and run on a testing device. 
 
 For more information on how to develop BlackBerry Dynamics iOS apps, please visit [BlackBerry Developer Community](https://community.blackberry.com/community/gdn) 
 
