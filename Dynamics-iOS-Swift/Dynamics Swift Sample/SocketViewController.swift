@@ -15,7 +15,7 @@
  */
 
 import UIKit
-import GD.SecureCommunication
+import BlackBerryDynamics.SecureCommunication
 
 
 class SocketViewController: UIViewController, GDSocketDelegate {

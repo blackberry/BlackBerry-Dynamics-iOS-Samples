@@ -17,7 +17,7 @@
 import Foundation
 import UIKit
 import SwiftUI
-import GD.Runtime
+import BlackBerryDynamics.Runtime
 
 class AppDelegate : NSObject, UIApplicationDelegate, GDiOSDelegate {
 

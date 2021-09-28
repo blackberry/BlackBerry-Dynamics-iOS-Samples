@@ -17,7 +17,7 @@
 import SwiftUI
 
 // Add Secure SQLite/GDFileManager
-import GD.SecureStore.File
+import BlackBerryDynamics.SecureStore.File
 import GD_C.SecureStore.SQLite
 
 class DBController: ObservableObject {

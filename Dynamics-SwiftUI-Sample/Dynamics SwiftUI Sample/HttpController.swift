@@ -15,8 +15,8 @@
  */
 
 import SwiftUI
-//Include GD Libraries
-import GD.AuthenticationToken
+//Include BlackBerryDynamics Libraries
+import BlackBerryDynamics.AuthenticationToken
 
 class HttpController: NSObject, ObservableObject, URLSessionDelegate {
 

@@ -15,7 +15,7 @@
  */
 
 import SwiftUI
-import GD.SecureCommunication
+import BlackBerryDynamics.SecureCommunication
 
 
 class SocketController: ObservableObject, GDSocketDelegate {

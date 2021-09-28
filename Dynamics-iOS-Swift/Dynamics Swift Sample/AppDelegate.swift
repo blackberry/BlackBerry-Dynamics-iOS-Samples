@@ -15,7 +15,7 @@
  */
 
 import UIKit
-import GD.Runtime
+import BlackBerryDynamics.Runtime
 
 //This extention is used to resign the Keyboard when the user touches anywhere on the screen
 extension UIViewController {

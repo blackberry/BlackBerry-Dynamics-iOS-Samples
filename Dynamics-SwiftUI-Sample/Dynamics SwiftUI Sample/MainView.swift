@@ -15,7 +15,7 @@
  */
 
 import SwiftUI
-import GD.Runtime
+import BlackBerryDynamics.Runtime
 
 #if canImport(UIKit)
 extension View {

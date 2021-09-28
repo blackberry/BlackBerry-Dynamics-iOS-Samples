@@ -15,8 +15,8 @@
  */
 
 import UIKit
-//Include GD Libraries
-import GD.AuthenticationToken
+//Include BlackBerryDynamics Libraries
+import BlackBerryDynamics.AuthenticationToken
 
 class HttpViewController: UIViewController, URLSessionDelegate {
     

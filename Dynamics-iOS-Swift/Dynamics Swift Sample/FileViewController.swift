@@ -16,7 +16,7 @@
 
 import UIKit
 //Use GDFileManager file
-import GD.SecureStore.File
+import BlackBerryDynamics.SecureStore.File
 
 class FileViewController: UIViewController {
     
