@@ -13,6 +13,7 @@
 		6D30986226B9E40D003DCFF2 /* SocketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D30986126B9E40D003DCFF2 /* SocketController.swift */; };
 		6D4B51F326BDDC23008043A3 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D4B51F226BDDC23008043A3 /* Entitlements.plist */; };
 		6D72F99B26BB5154004CEDC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D72F99A26BB5154004CEDC6 /* AppDelegate.swift */; };
+		6D833E712718C75B001FEBDE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D833E702718C75B001FEBDE /* InfoPlist.strings */; };
 		6D9A380726C5A5B80033FA90 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6D9A380626C5A5B80033FA90 /* README.md */; };
 		6DB97E3E26B47E810029B91B /* Dynamics_SwiftUI_SampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB97E3D26B47E810029B91B /* Dynamics_SwiftUI_SampleApp.swift */; };
 		6DB97E4026B47E810029B91B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB97E3F26B47E810029B91B /* MainView.swift */; };
@@ -32,6 +33,7 @@
 		6D30986126B9E40D003DCFF2 /* SocketController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketController.swift; sourceTree = "<group>"; };
 		6D4B51F226BDDC23008043A3 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		6D72F99A26BB5154004CEDC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6D833E702718C75B001FEBDE /* InfoPlist.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		6D9A380626C5A5B80033FA90 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6DB97E3A26B47E810029B91B /* Dynamics SwiftUI Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dynamics SwiftUI Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DB97E3D26B47E810029B91B /* Dynamics_SwiftUI_SampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamics_SwiftUI_SampleApp.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				6D30986126B9E40D003DCFF2 /* SocketController.swift */,
 				6DB97E5226B49F4F0029B91B /* SocketView.swift */,
 				6D9A380826C5A5BE0033FA90 /* Supporting FIles */,
+				6D833E702718C75B001FEBDE /* InfoPlist.strings */,
 			);
 			path = "Dynamics SwiftUI Sample";
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				6DB97E4526B47E820029B91B /* Preview Assets.xcassets in Resources */,
 				6D9A380726C5A5B80033FA90 /* README.md in Resources */,
 				6DB97E4226B47E820029B91B /* Assets.xcassets in Resources */,
+				6D833E712718C75B001FEBDE /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,7 +323,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -376,7 +380,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -397,7 +401,7 @@
 				ENABLE_BITCODE = NO;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Dynamics SwiftUI Sample/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -420,7 +424,7 @@
 				ENABLE_BITCODE = NO;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Dynamics SwiftUI Sample/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
