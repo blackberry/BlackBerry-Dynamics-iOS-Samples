@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6D3404D626B34AF90096C409 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3404D526B34AF90096C409 /* CoreServices.framework */; };
+		6D833E6F2718C6DB001FEBDE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D833E6E2718C6DB001FEBDE /* InfoPlist.strings */; };
 		8BA3E4FC22679FC000E1F207 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA3E4FB22679FC000E1F207 /* WebKit.framework */; };
 		8BC133CE1E5CE9460049BB85 /* SocketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC133CD1E5CE9460049BB85 /* SocketViewController.swift */; };
 		8BC133D01E5CE9640049BB85 /* HttpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC133CF1E5CE9640049BB85 /* HttpViewController.swift */; };
@@ -24,15 +25,15 @@
 		8BE6A5E11E5CE6CB006692EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BE6A5E01E5CE6CB006692EA /* Assets.xcassets */; };
 		8BE6A5E41E5CE6CB006692EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BE6A5E21E5CE6CB006692EA /* LaunchScreen.storyboard */; };
 		8BE6A5EC1E5CE6DE006692EA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BE6A5EB1E5CE6DE006692EA /* Default-568h@2x.png */; };
-		8BFF5BB11E7ACABC00F31823 /* default.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 8BE6A5D21E5CE6CB006692EA /* default.xcconfig */; };
 		8BFF5BB31E7ACBED00F31823 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8BFF5BB21E7ACBED00F31823 /* Entitlements.plist */; };
-		8BFF5BC01E7AF10200F31823 /* ReadMe.md in Sources */ = {isa = PBXBuildFile; fileRef = 8BFF5BBF1E7AF10200F31823 /* ReadMe.md */; };
+		8BFF5BC01E7AF10200F31823 /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = 8BFF5BBF1E7AF10200F31823 /* ReadMe.md */; };
 		9417C92DA6E8DADC9DBF09AD /* Pods_Dynamics_Swift_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE7F2607B1F2EDB529C6B51 /* Pods_Dynamics_Swift_Sample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6D3404D326B34AEE0096C409 /* CoreSpotlight.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreSpotlight.framework; path = System/Library/Frameworks/CoreSpotlight.framework; sourceTree = SDKROOT; };
 		6D3404D526B34AF90096C409 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		6D833E6E2718C6DB001FEBDE /* InfoPlist.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		8BA3E4FB22679FC000E1F207 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		8BC133CD1E5CE9460049BB85 /* SocketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketViewController.swift; sourceTree = "<group>"; };
 		8BC133CF1E5CE9640049BB85 /* HttpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpViewController.swift; sourceTree = "<group>"; };
@@ -46,7 +47,6 @@
 		8BE6A5C81E5CE6CB006692EA /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		8BE6A5CA1E5CE6CB006692EA /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		8BE6A5CD1E5CE6CB006692EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8BE6A5D21E5CE6CB006692EA /* default.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = default.xcconfig; sourceTree = "<group>"; };
 		8BE6A5DB1E5CE6CB006692EA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		8BE6A5DE1E5CE6CB006692EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8BE6A5E01E5CE6CB006692EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -131,6 +131,7 @@
 				8BE6A5D51E5CE6CB006692EA /* Resources */,
 				8BE6A5D81E5CE6CB006692EA /* Libs */,
 				8BE6A5D11E5CE6CB006692EA /* Supporting Files */,
+				6D833E6E2718C6DB001FEBDE /* InfoPlist.strings */,
 			);
 			path = "Dynamics Swift Sample";
 			sourceTree = "<group>";
@@ -138,7 +139,6 @@
 		8BE6A5D11E5CE6CB006692EA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8BE6A5D21E5CE6CB006692EA /* default.xcconfig */,
 				8BFF5BB21E7ACBED00F31823 /* Entitlements.plist */,
 			);
 			name = "Supporting Files";
@@ -230,10 +230,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BFF5BC01E7AF10200F31823 /* ReadMe.md in Resources */,
 				8BFF5BB31E7ACBED00F31823 /* Entitlements.plist in Resources */,
+				6D833E6F2718C6DB001FEBDE /* InfoPlist.strings in Resources */,
 				8BE6A5DF1E5CE6CB006692EA /* Main.storyboard in Resources */,
 				8BE6A5E11E5CE6CB006692EA /* Assets.xcassets in Resources */,
-				8BFF5BB11E7ACABC00F31823 /* default.xcconfig in Resources */,
 				8BE6A5E41E5CE6CB006692EA /* LaunchScreen.storyboard in Resources */,
 				8BE6A5EC1E5CE6DE006692EA /* Default-568h@2x.png in Resources */,
 			);
@@ -297,7 +298,6 @@
 				8BC133D01E5CE9640049BB85 /* HttpViewController.swift in Sources */,
 				8BC133D41E5CE9860049BB85 /* DatabaseViewController.swift in Sources */,
 				8BC133CE1E5CE9460049BB85 /* SocketViewController.swift in Sources */,
-				8BFF5BC01E7AF10200F31823 /* ReadMe.md in Sources */,
 				8BC133D81E5CE9A10049BB85 /* FileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,7 +366,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -412,7 +412,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -428,8 +428,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "Dynamics Swift Sample/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -438,7 +439,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.waasample.goodapisample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -448,8 +449,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "Dynamics Swift Sample/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -458,7 +460,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.waasample.goodapisample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

@@ -26,16 +26,14 @@ extension UIViewController {
 
 @UIApplicationMain
 class AppDelegate : UIResponder , UIApplicationDelegate,  GDiOSDelegate {
-    var window: UIWindow?
     var good: GDiOS?
     var started: Bool = false
 
 
 
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
     //Call BlackBerry Dynamics to authorise the app
-    self.window = GDiOS.sharedInstance().getWindow()
     self.good = GDiOS.sharedInstance()
          
     self.good!.delegate = self
@@ -140,7 +138,7 @@ func onAuthorized(anEvent:GDAppEvent ) {
             if !self.started {
                 //Show the User UI
                 self.started = true
-                self.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tabBarController")
+                UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tabBarController")
             }
         default:
             assert(false, "Authorized startup with an error")

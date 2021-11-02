@@ -19,7 +19,7 @@ import BlackBerryDynamics.SecureCommunication
 
 
 class SocketViewController: UIViewController, GDSocketDelegate {
-    
+    var httpStr = ""
     var gdSocket = GDSocket()
     
     @IBOutlet weak var statusLabel: UILabel!
@@ -42,6 +42,9 @@ class SocketViewController: UIViewController, GDSocketDelegate {
         
         let nsstring : NSString = NSString.init(string: self.ipAddressText.text!)
         
+        //format HTTP request and open/send data through GDSocket
+        self.httpStr = "GET http://\(self.ipAddressText.text!)/ HTTP/1.1\r\nHost:\(self.ipAddressText.text!):\(self.portText.text!)\r\nConnection: close\r\n\r\n"
+        
         gdSocket = GDSocket(nsstring.utf8String!, onPort: intCast, andUseSSL: false)
         
         gdSocket.delegate = self
@@ -63,9 +66,8 @@ class SocketViewController: UIViewController, GDSocketDelegate {
     func onOpen(_ socket: Any) {
         print("DEBUG: Socket open. Loading stream...")
         
-         //format HTTP request and open/send data through GDSocket
-        
-        let httpString = "GET http://\(self.ipAddressText.text!)/ HTTP/1.1\r\nHost:\(self.ipAddressText.text!):\(self.portText.text!)\r\nConnection: close\r\n\r\n" as NSString
+        //format HTTP request and open/send data through GDSocket
+        let httpString = self.httpStr as NSString
         
         print(httpString)
         
@@ -87,7 +89,7 @@ class SocketViewController: UIViewController, GDSocketDelegate {
         let str = gSocket.readStream?.unreadDataAsString()
         
         DispatchQueue.main.async {
-            self.dataRecievedTextVIew.text = str as String!
+            self.dataRecievedTextVIew.text = str! as String
         }
         gSocket.disconnect()
         
@@ -114,6 +116,9 @@ class SocketViewController: UIViewController, GDSocketDelegate {
             break
         case .serviceTimeOut:
             errorStr = " GDSocketErrorServiceTimeOut"
+            break
+        default:
+            errorStr = " GDSocketErrorUnknown"
             break
         }
         
