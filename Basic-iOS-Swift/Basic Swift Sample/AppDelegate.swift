@@ -15,6 +15,7 @@
  */
 
 import UIKit
+import CoreData
 
 //This extention is used to resign the Keyboard when the user touches anywhere on the screen
 extension UIViewController {
@@ -55,6 +56,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    lazy var persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "CoreDataExample")
+        container.loadPersistentStores(completionHandler:  {(storeDescription, error) in
+            if let error = error as NSError? {
+                
+                fatalError("Unable to initalize persistant container \(error), \(error.userInfo)")
+            }
+        })
+        return container
+    }()
 
 
 }
