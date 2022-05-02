@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Scan Activation QR Code</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -24,12 +26,12 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>com.blackberry.WKWebViewDemo</string>
+			<string>com.ios.WKWebViewDemo</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.blackberry.WKWebViewDemo.sc2</string>
-				<string>com.blackberry.WKWebViewDemo.sc2.1.0.0.0</string>
-				<string>com.blackberry.WKWebViewDemo.sc3</string>
+				<string>com.ios.WKWebViewDemo.sc2</string>
+				<string>com.ios.WKWebViewDemo.sc2.1.0.0.0</string>
+				<string>com.ios.WKWebViewDemo.sc3</string>
 				<string>com.good.gd.discovery</string>
 			</array>
 		</dict>
@@ -38,14 +40,14 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.blackberry.WKWebViewDemo</string>
+				<string>com.ios.WKWebViewDemo</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>GDApplicationID</key>
-	<string>com.company.wkwebviewdemo</string>
+	<string>com.ios.wkwebviewdemo</string>
 	<key>GDApplicationVersion</key>
 	<string>1.0.0.0</string>
 	<key>GDLibraryMode</key>

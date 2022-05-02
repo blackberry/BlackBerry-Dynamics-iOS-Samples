@@ -17,7 +17,7 @@
 
 import Foundation
 import UIKit
-import GD.Runtime
+import BlackBerryDynamics.Runtime
 
 class WKWebViewDemoGDiOSDelegate : NSObject , GDiOSDelegate {
 
