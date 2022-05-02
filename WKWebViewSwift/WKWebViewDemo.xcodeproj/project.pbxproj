@@ -3,25 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1833D7E5245176460099987E /* FileListTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1833D7E4245176460099987E /* FileListTableVC.swift */; };
 		1833D7E7245177510099987E /* WKWebViewPreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1833D7E6245177510099987E /* WKWebViewPreviewVC.swift */; };
-		18FEF7E02450A8DA002D6C29 /* GD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18FEF7DF2450A8DA002D6C29 /* GD.framework */; };
 		18FEF7E22450A8DA002D6C29 /* DeviceCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18FEF7E12450A8DA002D6C29 /* DeviceCheck.framework */; };
 		18FEF7E42450A8DA002D6C29 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18FEF7E32450A8DA002D6C29 /* LocalAuthentication.framework */; };
 		18FEF7E62450A8DA002D6C29 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18FEF7E52450A8DA002D6C29 /* CoreTelephony.framework */; };
 		18FEF7E82450A8DA002D6C29 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18FEF7E72450A8DA002D6C29 /* SystemConfiguration.framework */; };
 		18FEF7EA2450A8DA002D6C29 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18FEF7E92450A8DA002D6C29 /* CoreData.framework */; };
 		18FEF7EC2450A8DA002D6C29 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18FEF7EB2450A8DA002D6C29 /* MessageUI.framework */; };
-		18FEF7EE2450A8DA002D6C29 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18FEF7ED2450A8DA002D6C29 /* MobileCoreServices.framework */; };
 		18FEF7F02450A8DA002D6C29 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18FEF7EF2450A8DA002D6C29 /* WebKit.framework */; };
 		18FEF7F32450A8DA002D6C29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FEF7F22450A8DA002D6C29 /* AppDelegate.swift */; };
-		18FEF7F72450A8DA002D6C29 /* WKWebViewDemoGDiOSDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FEF7F62450A8DA002D6C29 /* WKWebViewDemoGDiOSDelegate.swift */; };
 		18FEF7FB2450A8DA002D6C29 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18FEF7FA2450A8DA002D6C29 /* Entitlements.plist */; };
-		18FEF7FE2450A8DA002D6C29 /* GDAssets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 18FEF7FD2450A8DA002D6C29 /* GDAssets.bundle */; };
 		18FEF8012450A8DA002D6C29 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18FEF8002450A8DA002D6C29 /* libz.tbd */; };
 		18FEF8042450A8DA002D6C29 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18FEF8022450A8DA002D6C29 /* InfoPlist.strings */; };
 		18FEF8132450A8DA002D6C29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18FEF8112450A8DA002D6C29 /* Main.storyboard */; };
@@ -32,6 +28,10 @@
 		18FEF83C2450AA47002D6C29 /* GDURLSchemeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FEF83B2450AA47002D6C29 /* GDURLSchemeHandler.swift */; };
 		18FEF83F2450ABF9002D6C29 /* sample.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 18FEF83E2450ABF9002D6C29 /* sample.pdf */; };
 		18FEF8412450AC12002D6C29 /* sample.docx in Resources */ = {isa = PBXBuildFile; fileRef = 18FEF8402450AC12002D6C29 /* sample.docx */; };
+		1A98520C275FBBB300251FE0 /* WKWebViewDemoGDiOSDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A98520B275FBBB300251FE0 /* WKWebViewDemoGDiOSDelegate.swift */; };
+		1A98521027610C9800251FE0 /* websites.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A98520F27610C9800251FE0 /* websites.json */; };
+		1ABDCFD0275AA7E0007D0CC3 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABDCFCF275AA7E0007D0CC3 /* CoreServices.framework */; };
+		3B6E5840FDC0B1BF24C2BC53 /* Pods_WKWebViewDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 850ACFBE6477E51D6308585B /* Pods_WKWebViewDemo.framework */; };
 		8BC02AD0247C10B900F4962C /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BC02ACF247C10B900F4962C /* SafariServices.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,10 +66,8 @@
 		18FEF7ED2450A8DA002D6C29 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		18FEF7EF2450A8DA002D6C29 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		18FEF7F22450A8DA002D6C29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		18FEF7F62450A8DA002D6C29 /* WKWebViewDemoGDiOSDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewDemoGDiOSDelegate.swift; sourceTree = "<group>"; };
 		18FEF7F92450A8DA002D6C29 /* default.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = default.xcconfig; path = ../default.xcconfig; sourceTree = "<group>"; };
 		18FEF7FA2450A8DA002D6C29 /* Entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Entitlements.plist; path = ../Entitlements.plist; sourceTree = "<group>"; };
-		18FEF7FD2450A8DA002D6C29 /* GDAssets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GDAssets.bundle; path = System/Library/Frameworks/GD.framework/Resources/GDAssets.bundle; sourceTree = SDKROOT; };
 		18FEF8002450A8DA002D6C29 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		18FEF8032450A8DA002D6C29 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		18FEF8052450A8DA002D6C29 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -97,7 +95,16 @@
 		18FEF83B2450AA47002D6C29 /* GDURLSchemeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDURLSchemeHandler.swift; sourceTree = "<group>"; };
 		18FEF83E2450ABF9002D6C29 /* sample.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sample.pdf; sourceTree = "<group>"; };
 		18FEF8402450AC12002D6C29 /* sample.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample.docx; sourceTree = "<group>"; };
+		1A98520B275FBBB300251FE0 /* WKWebViewDemoGDiOSDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKWebViewDemoGDiOSDelegate.swift; sourceTree = "<group>"; };
+		1A98520F27610C9800251FE0 /* websites.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = websites.json; sourceTree = "<group>"; };
+		1ABDCFCF275AA7E0007D0CC3 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		1ABDCFE1275AA89C007D0CC3 /* BlackBerryCerticom.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BlackBerryCerticom.xcframework; path = Pods/BlackBerryDynamics/Frameworks/BlackBerryCerticom.xcframework; sourceTree = "<group>"; };
+		1ABDCFE7275AA8A2007D0CC3 /* BlackBerryCerticomSBGSE.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BlackBerryCerticomSBGSE.xcframework; path = Pods/BlackBerryDynamics/Frameworks/BlackBerryCerticomSBGSE.xcframework; sourceTree = "<group>"; };
+		1ABDCFEC275AA8A5007D0CC3 /* BlackBerryDynamics.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BlackBerryDynamics.xcframework; path = Pods/BlackBerryDynamics/Frameworks/BlackBerryDynamics.xcframework; sourceTree = "<group>"; };
+		5728F5796C27D1355E7A5F46 /* Pods-WKWebViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WKWebViewDemo.debug.xcconfig"; path = "Target Support Files/Pods-WKWebViewDemo/Pods-WKWebViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		850ACFBE6477E51D6308585B /* Pods_WKWebViewDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WKWebViewDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BC02ACF247C10B900F4962C /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		966E937494C34E5C8E3FF468 /* Pods-WKWebViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WKWebViewDemo.release.xcconfig"; path = "Target Support Files/Pods-WKWebViewDemo/Pods-WKWebViewDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,14 +115,14 @@
 				8BC02AD0247C10B900F4962C /* SafariServices.framework in Frameworks */,
 				18FEF7EC2450A8DA002D6C29 /* MessageUI.framework in Frameworks */,
 				18FEF7E62450A8DA002D6C29 /* CoreTelephony.framework in Frameworks */,
+				1ABDCFD0275AA7E0007D0CC3 /* CoreServices.framework in Frameworks */,
 				18FEF7EA2450A8DA002D6C29 /* CoreData.framework in Frameworks */,
 				18FEF7E82450A8DA002D6C29 /* SystemConfiguration.framework in Frameworks */,
-				18FEF7E02450A8DA002D6C29 /* GD.framework in Frameworks */,
 				18FEF7F02450A8DA002D6C29 /* WebKit.framework in Frameworks */,
-				18FEF7EE2450A8DA002D6C29 /* MobileCoreServices.framework in Frameworks */,
 				18FEF7E42450A8DA002D6C29 /* LocalAuthentication.framework in Frameworks */,
 				18FEF7E22450A8DA002D6C29 /* DeviceCheck.framework in Frameworks */,
 				18FEF8012450A8DA002D6C29 /* libz.tbd in Frameworks */,
+				3B6E5840FDC0B1BF24C2BC53 /* Pods_WKWebViewDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +151,7 @@
 				18FEF82C2450A8DC002D6C29 /* WKWebViewDemoUITests */,
 				18FEF7DE2450A8DA002D6C29 /* Frameworks */,
 				18FEF7DD2450A8DA002D6C29 /* Products */,
+				980F0A5713EBC9B22B5D8BF7 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -160,6 +168,10 @@
 		18FEF7DE2450A8DA002D6C29 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1ABDCFEC275AA8A5007D0CC3 /* BlackBerryDynamics.xcframework */,
+				1ABDCFE7275AA8A2007D0CC3 /* BlackBerryCerticomSBGSE.xcframework */,
+				1ABDCFE1275AA89C007D0CC3 /* BlackBerryCerticom.xcframework */,
+				1ABDCFCF275AA7E0007D0CC3 /* CoreServices.framework */,
 				8BC02ACF247C10B900F4962C /* SafariServices.framework */,
 				18FEF7DF2450A8DA002D6C29 /* GD.framework */,
 				18FEF7E12450A8DA002D6C29 /* DeviceCheck.framework */,
@@ -170,6 +182,7 @@
 				18FEF7EB2450A8DA002D6C29 /* MessageUI.framework */,
 				18FEF7ED2450A8DA002D6C29 /* MobileCoreServices.framework */,
 				18FEF7EF2450A8DA002D6C29 /* WebKit.framework */,
+				850ACFBE6477E51D6308585B /* Pods_WKWebViewDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -179,7 +192,7 @@
 			children = (
 				18FEF83D2450ABC5002D6C29 /* Files */,
 				18FEF7F22450A8DA002D6C29 /* AppDelegate.swift */,
-				18FEF7F62450A8DA002D6C29 /* WKWebViewDemoGDiOSDelegate.swift */,
+				1A98520B275FBBB300251FE0 /* WKWebViewDemoGDiOSDelegate.swift */,
 				18FEF83B2450AA47002D6C29 /* GDURLSchemeHandler.swift */,
 				1833D7E4245176460099987E /* FileListTableVC.swift */,
 				1833D7E6245177510099987E /* WKWebViewPreviewVC.swift */,
@@ -207,7 +220,6 @@
 		18FEF7FC2450A8DA002D6C29 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				18FEF7FD2450A8DA002D6C29 /* GDAssets.bundle */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -243,8 +255,18 @@
 			children = (
 				18FEF8402450AC12002D6C29 /* sample.docx */,
 				18FEF83E2450ABF9002D6C29 /* sample.pdf */,
+				1A98520F27610C9800251FE0 /* websites.json */,
 			);
 			path = Files;
+			sourceTree = "<group>";
+		};
+		980F0A5713EBC9B22B5D8BF7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5728F5796C27D1355E7A5F46 /* Pods-WKWebViewDemo.debug.xcconfig */,
+				966E937494C34E5C8E3FF468 /* Pods-WKWebViewDemo.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,9 +276,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18FEF8322450A8DC002D6C29 /* Build configuration list for PBXNativeTarget "WKWebViewDemo" */;
 			buildPhases = (
+				65B20FD8E569A9099FB196CA /* [CP] Check Pods Manifest.lock */,
 				18FEF7D82450A8DA002D6C29 /* Sources */,
 				18FEF7D92450A8DA002D6C29 /* Frameworks */,
 				18FEF7DA2450A8DA002D6C29 /* Resources */,
+				F0F8AB2C2E182C936807DDA7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -310,7 +334,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "BlackBerry Inc.";
 				TargetAttributes = {
 					18FEF7DB2450A8DA002D6C29 = {
@@ -366,7 +390,7 @@
 				18FEF7FB2450A8DA002D6C29 /* Entitlements.plist in Resources */,
 				18FEF8412450AC12002D6C29 /* sample.docx in Resources */,
 				18FEF8042450A8DA002D6C29 /* InfoPlist.strings in Resources */,
-				18FEF7FE2450A8DA002D6C29 /* GDAssets.bundle in Resources */,
+				1A98521027610C9800251FE0 /* websites.json in Resources */,
 				18FEF8182450A8DB002D6C29 /* LaunchScreen.storyboard in Resources */,
 				18FEF8132450A8DA002D6C29 /* Main.storyboard in Resources */,
 				18FEF8152450A8DB002D6C29 /* Assets.xcassets in Resources */,
@@ -390,14 +414,56 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		65B20FD8E569A9099FB196CA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WKWebViewDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0F8AB2C2E182C936807DDA7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WKWebViewDemo/Pods-WKWebViewDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WKWebViewDemo/Pods-WKWebViewDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WKWebViewDemo/Pods-WKWebViewDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		18FEF7D82450A8DA002D6C29 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				18FEF83C2450AA47002D6C29 /* GDURLSchemeHandler.swift in Sources */,
+				1A98520C275FBBB300251FE0 /* WKWebViewDemoGDiOSDelegate.swift in Sources */,
 				1833D7E7245177510099987E /* WKWebViewPreviewVC.swift in Sources */,
-				18FEF7F72450A8DA002D6C29 /* WKWebViewDemoGDiOSDelegate.swift in Sources */,
 				18FEF7F32450A8DA002D6C29 /* AppDelegate.swift in Sources */,
 				1833D7E5245176460099987E /* FileListTableVC.swift in Sources */,
 			);
@@ -478,6 +544,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -500,6 +567,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -525,7 +593,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -539,6 +607,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -561,6 +630,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -580,7 +650,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -593,18 +663,24 @@
 		};
 		18FEF8332450A8DC002D6C29 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 18FEF7F92450A8DA002D6C29 /* default.xcconfig */;
+			baseConfigurationReference = 5728F5796C27D1355E7A5F46 /* Pods-WKWebViewDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7QTYGGGMUN;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = WKWebViewDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_LDFLAGS = "-lz";
-				PRODUCT_BUNDLE_IDENTIFIER = com.blackberry.WKWebViewDemo;
+				OTHER_LDFLAGS = (
+					"-lz",
+					"$(inherited)",
+					"-lstdc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.WKWebViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -613,18 +689,24 @@
 		};
 		18FEF8342450A8DC002D6C29 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 18FEF7F92450A8DA002D6C29 /* default.xcconfig */;
+			baseConfigurationReference = 966E937494C34E5C8E3FF468 /* Pods-WKWebViewDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7QTYGGGMUN;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = WKWebViewDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_LDFLAGS = "-lz";
-				PRODUCT_BUNDLE_IDENTIFIER = com.blackberry.WKWebViewDemo;
+				OTHER_LDFLAGS = (
+					"-lz",
+					"$(inherited)",
+					"-lstdc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.WKWebViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -638,7 +720,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = WKWebViewDemoTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -659,7 +741,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = WKWebViewDemoTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

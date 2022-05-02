@@ -15,10 +15,9 @@
  */
 
 import UIKit
-import GD.Runtime
-import GD.SecureStore.File
-import GD.SecureStore.CoreData
-import GD.SecureStore.File
+import BlackBerryDynamics.Runtime
+import BlackBerryDynamics.SecureStore.File
+import BlackBerryDynamics.SecureStore.CoreData
 import GD_C.SecureStore.SQLite
 
 class SecureSQLVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UITextViewDelegate {

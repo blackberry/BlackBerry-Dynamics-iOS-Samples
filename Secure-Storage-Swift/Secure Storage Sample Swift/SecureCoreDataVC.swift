@@ -15,9 +15,9 @@
  */
 
 import UIKit
-import GD.Runtime
-import GD.SecureStore.File
-import GD.SecureStore.CoreData
+import BlackBerryDynamics.Runtime
+import BlackBerryDynamics.SecureStore.File
+import BlackBerryDynamics.SecureStore.CoreData
 
 class SecureCoreDataVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UITextViewDelegate {
     

@@ -1,4 +1,4 @@
-/* Copyright (c) 2016 BlackBerry Ltd.
+/* Copyright (c) 2021 BlackBerry Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
  */
 
 #import <Foundation/Foundation.h>
-#import <GD/GDiOS.h>
+@import BlackBerryDynamics.Runtime;
 #import "AppGDiOSDelegate.h"
 #import "RootViewController.h"
 #import "AppDelegate.h"
@@ -101,6 +101,16 @@
         case GDAppEventEntitlementsUpdate:
         {
             //A change to the entitlements data has been received.
+            break;
+        }
+        case GDAppEventBackgroundAuthorized:
+        {
+            [self onAuthorized:anEvent];
+            break;
+        }
+        case GDAppEventBackgroundNotAuthorized:
+        {
+            [self onNotAuthorized:anEvent];
             break;
         }
     }

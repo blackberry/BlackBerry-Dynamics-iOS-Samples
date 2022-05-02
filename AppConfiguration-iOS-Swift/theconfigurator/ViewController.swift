@@ -16,7 +16,7 @@
 
 import UIKit
 import AVFoundation
-import GD.Runtime
+import BlackBerryDynamics.Runtime
 
 class ViewController: UIViewController, AVAudioPlayerDelegate {
     
@@ -27,6 +27,11 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var policyVersion: UILabel!
     
     var player: AVAudioPlayer!
+    
+    //Get the current instance of AppDelegate
+    func appDelegate() -> AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,8 +57,18 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     public func refreshUi() {
         
-        //use the application policy retrieved from GC and update UI
-        let appPolicy = GDiOS.sharedInstance().getApplicationPolicy()
+        if let appPolicy = appDelegate().good?.getApplicationPolicy() {
+            if appPolicy.isEmpty {
+                print("DEBUG: App Policy Not Set. Nothing to Refresh.")
+            }
+            else {
+                updateUI(appPolicy: appPolicy)
+            }
+        }
+            
+    }
+    
+    public func updateUI(appPolicy: [String:Any]) {
         let visibleElements: Array<String> = appPolicy["visibleElements"] as! Array<String>
         
         //print the policy as string
@@ -145,8 +160,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         
     }
     
+    
     func configureAudioPlayer() throws {
-        try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+        try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, mode: AVAudioSessionModeDefault)
+        
         let backgroundMusicPath = Bundle.main.path(forResource: "CarSound", ofType:"mp3")
         try self.player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: backgroundMusicPath!))
         self.player.delegate = self

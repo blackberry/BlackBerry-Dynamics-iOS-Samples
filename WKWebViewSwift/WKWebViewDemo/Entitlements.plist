@@ -3,6 +3,6 @@
 <plist version="1.0">
 <dict>
 	<key>application-identifier</key>
-	<string>com.blackberry.WKWebViewDemo</string>
+	<string>com.ios.WKWebViewDemo</string>
 </dict>
 </plist>
