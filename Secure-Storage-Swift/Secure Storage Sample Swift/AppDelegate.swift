@@ -16,21 +16,24 @@
 
 import UIKit
 import CoreData
-import GD.Runtime
-import GD.SecureStore.CoreData
+import BlackBerryDynamics.Runtime
+import BlackBerryDynamics.SecureStore.CoreData
 
 @UIApplicationMain
 class AppDelegate : UIResponder , UIApplicationDelegate, GDiOSDelegate {
     
     var window: UIWindow?
     var hasAuthorized:Bool = false
+    var good: GDiOS?
+    var started: Bool = false
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        // Override point for customization after application launch.
+        self.good = GDiOS.sharedInstance()
+        self.good!.delegate = self
+        self.started = false
         
-        window = GDiOS.sharedInstance().getWindow()
-        GDiOS.sharedInstance().authorize(self)
+        self.good!.authorize()
         
         return true
     }

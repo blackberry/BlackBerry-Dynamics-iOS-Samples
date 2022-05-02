@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Scan QR Code</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -22,12 +24,12 @@
 	<array>
 		<dict>
 			<key>CFBundleURLName</key>
-			<string>com.gurjit.ghangura.secureStorageSwift</string>
+			<string>com.sample.securestorageswift</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.gurjit.ghangura.secureStorageSwift.sc2</string>
-				<string>com.gurjit.ghangura.secureStorageSwift.sc3</string>
-				<string>com.gurjit.ghangura.secureStorageSwift.sc2.1.0.0.0</string>
+				<string>com.sample.securestorageswift.sc2</string>
+				<string>com.sample.securestorageswift.sc3</string>
+				<string>com.sample.securestorageswift.sc2.1.0.0.0</string>
 				<string>com.good.gd.discovery</string>
 			</array>
 		</dict>
@@ -35,7 +37,7 @@
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>GDApplicationID</key>
-	<string>com.gurjit.ghangura.secure</string>
+	<string>com.sample.securestorageswift</string>
 	<key>GDApplicationVersion</key>
 	<string>1.0.0.0</string>
 	<key>GDLibraryMode</key>
