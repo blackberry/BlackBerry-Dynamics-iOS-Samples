@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A6295962745876300E870D1 /* WKWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6295952745876300E870D1 /* WKWebViewViewController.swift */; };
+		1AB174A4274F076A00D36FB5 /* helloworld.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1AB174A3274F076A00D36FB5 /* helloworld.pdf */; };
+		1AB174A7274F0AE600D36FB5 /* DLPUEM.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AB174A6274F0AE600D36FB5 /* DLPUEM.png */; };
+		1AD669872742B01500493B69 /* ColorModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1AD669852742B01500493B69 /* ColorModel.xcdatamodeld */; };
+		1AD669892742B4E400493B69 /* SecureCoreDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD669882742B4E400493B69 /* SecureCoreDataViewController.swift */; };
+		1AD6698C2742BA1B00493B69 /* Color+SecureCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD6698B2742BA1B00493B69 /* Color+SecureCoreData.swift */; };
+		1AD6698E2742BA3C00493B69 /* Color+SecureCoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD6698D2742BA3C00493B69 /* Color+SecureCoreDataProperties.swift */; };
+		1AF81EE9274BD61B00B4B490 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF81EE8274BD61B00B4B490 /* ShareViewController.swift */; };
 		6D3404D626B34AF90096C409 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3404D526B34AF90096C409 /* CoreServices.framework */; };
 		6D833E6F2718C6DB001FEBDE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D833E6E2718C6DB001FEBDE /* InfoPlist.strings */; };
 		8BA3E4FC22679FC000E1F207 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA3E4FB22679FC000E1F207 /* WebKit.framework */; };
@@ -31,6 +39,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A6295952745876300E870D1 /* WKWebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewViewController.swift; sourceTree = "<group>"; };
+		1AB174A3274F076A00D36FB5 /* helloworld.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = helloworld.pdf; sourceTree = "<group>"; };
+		1AB174A6274F0AE600D36FB5 /* DLPUEM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DLPUEM.png; sourceTree = "<group>"; };
+		1AD669862742B01500493B69 /* NotesModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NotesModel.xcdatamodel; sourceTree = "<group>"; };
+		1AD669882742B4E400493B69 /* SecureCoreDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureCoreDataViewController.swift; sourceTree = "<group>"; };
+		1AD6698B2742BA1B00493B69 /* Color+SecureCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+SecureCoreData.swift"; sourceTree = "<group>"; };
+		1AD6698D2742BA3C00493B69 /* Color+SecureCoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+SecureCoreDataProperties.swift"; sourceTree = "<group>"; };
+		1AF81EE8274BD61B00B4B490 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		6D3404D326B34AEE0096C409 /* CoreSpotlight.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreSpotlight.framework; path = System/Library/Frameworks/CoreSpotlight.framework; sourceTree = SDKROOT; };
 		6D3404D526B34AF90096C409 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		6D833E6E2718C6DB001FEBDE /* InfoPlist.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
@@ -80,6 +96,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1AD6698A2742BA0900493B69 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1AD6698B2742BA1B00493B69 /* Color+SecureCoreData.swift */,
+				1AD6698D2742BA3C00493B69 /* Color+SecureCoreDataProperties.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		8BE6A5B21E5CE6CB006692EA = {
 			isa = PBXGroup;
 			children = (
@@ -119,11 +144,15 @@
 		8BE6A5CC1E5CE6CB006692EA /* Dynamics Swift Sample */ = {
 			isa = PBXGroup;
 			children = (
+				1AD6698A2742BA0900493B69 /* Model */,
+				1AD669882742B4E400493B69 /* SecureCoreDataViewController.swift */,
+				1AF81EE8274BD61B00B4B490 /* ShareViewController.swift */,
 				8BE6A5CD1E5CE6CB006692EA /* AppDelegate.swift */,
 				8BC133D71E5CE9A10049BB85 /* FileViewController.swift */,
 				8BC133D31E5CE9860049BB85 /* DatabaseViewController.swift */,
 				8BC133CF1E5CE9640049BB85 /* HttpViewController.swift */,
 				8BC133CD1E5CE9460049BB85 /* SocketViewController.swift */,
+				1A6295952745876300E870D1 /* WKWebViewViewController.swift */,
 				8BE6A5DD1E5CE6CB006692EA /* Main.storyboard */,
 				8BE6A5E01E5CE6CB006692EA /* Assets.xcassets */,
 				8BE6A5E21E5CE6CB006692EA /* LaunchScreen.storyboard */,
@@ -132,6 +161,7 @@
 				8BE6A5D81E5CE6CB006692EA /* Libs */,
 				8BE6A5D11E5CE6CB006692EA /* Supporting Files */,
 				6D833E6E2718C6DB001FEBDE /* InfoPlist.strings */,
+				1AD669852742B01500493B69 /* ColorModel.xcdatamodeld */,
 			);
 			path = "Dynamics Swift Sample";
 			sourceTree = "<group>";
@@ -147,6 +177,8 @@
 		8BE6A5D51E5CE6CB006692EA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1AB174A6274F0AE600D36FB5 /* DLPUEM.png */,
+				1AB174A3274F076A00D36FB5 /* helloworld.pdf */,
 				8BE6A5EB1E5CE6DE006692EA /* Default-568h@2x.png */,
 			);
 			name = Resources;
@@ -203,7 +235,7 @@
 				TargetAttributes = {
 					8BE6A5BA1E5CE6CB006692EA = {
 						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -231,7 +263,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BFF5BC01E7AF10200F31823 /* ReadMe.md in Resources */,
+				1AB174A7274F0AE600D36FB5 /* DLPUEM.png in Resources */,
 				8BFF5BB31E7ACBED00F31823 /* Entitlements.plist in Resources */,
+				1AB174A4274F076A00D36FB5 /* helloworld.pdf in Resources */,
 				6D833E6F2718C6DB001FEBDE /* InfoPlist.strings in Resources */,
 				8BE6A5DF1E5CE6CB006692EA /* Main.storyboard in Resources */,
 				8BE6A5E11E5CE6CB006692EA /* Assets.xcassets in Resources */,
@@ -272,9 +306,9 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Dynamics Swift Sample/Pods-Dynamics Swift Sample-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/BlackBerryDynamics/BlackBerryDynamics.framework/BlackBerryDynamics",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/BlackBerryCerticom/BlackBerryCerticom.framework/BlackBerryCerticom",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/BlackBerryCerticomSBGSE/BlackBerryCerticomSBGSE.framework/BlackBerryCerticomSBGSE",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/BlackBerryDynamics/BlackBerryDynamics/BlackBerryDynamics.framework/BlackBerryDynamics",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/BlackBerryDynamics/BlackBerryDynamics/BlackBerryCerticom.framework/BlackBerryCerticom",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/BlackBerryDynamics/BlackBerryDynamics/BlackBerryCerticomSBGSE.framework/BlackBerryCerticomSBGSE",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -294,11 +328,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A6295962745876300E870D1 /* WKWebViewViewController.swift in Sources */,
+				1AF81EE9274BD61B00B4B490 /* ShareViewController.swift in Sources */,
 				8BE6A5CE1E5CE6CB006692EA /* AppDelegate.swift in Sources */,
+				1AD6698C2742BA1B00493B69 /* Color+SecureCoreData.swift in Sources */,
 				8BC133D01E5CE9640049BB85 /* HttpViewController.swift in Sources */,
 				8BC133D41E5CE9860049BB85 /* DatabaseViewController.swift in Sources */,
+				1AD669872742B01500493B69 /* ColorModel.xcdatamodeld in Sources */,
 				8BC133CE1E5CE9460049BB85 /* SocketViewController.swift in Sources */,
+				1AD669892742B4E400493B69 /* SecureCoreDataViewController.swift in Sources */,
 				8BC133D81E5CE9A10049BB85 /* FileViewController.swift in Sources */,
+				1AD6698E2742BA3C00493B69 /* Color+SecureCoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,6 +467,7 @@
 			baseConfigurationReference = E1693E875AFDCFCAE5870065 /* Pods-Dynamics Swift Sample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "Dynamics Swift Sample/Info.plist";
@@ -439,6 +480,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.waasample.goodapisample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -448,6 +490,7 @@
 			baseConfigurationReference = B977D3F6EF209B61A5CBEEFF /* Pods-Dynamics Swift Sample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "Dynamics Swift Sample/Info.plist";
@@ -460,6 +503,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.waasample.goodapisample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -486,6 +530,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1AD669852742B01500493B69 /* ColorModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1AD669862742B01500493B69 /* NotesModel.xcdatamodel */,
+			);
+			currentVersion = 1AD669862742B01500493B69 /* NotesModel.xcdatamodel */;
+			path = ColorModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8BE6A5B31E5CE6CB006692EA /* Project object */;
 }
