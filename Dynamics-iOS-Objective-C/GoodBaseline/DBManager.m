@@ -1,4 +1,4 @@
-/* Copyright (c) 2016 BlackBerry Ltd.
+/* Copyright (c) 2021 BlackBerry Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,8 +15,7 @@
  */
 
 #import "DBManager.h"
-#import <GD/sqlite3enc.h>
-#import <GD/GDFileManager.h>
+@import GD_C.SecureStore.SQLite;
 
 const char* const SQL_CREATE_TABLE = "CREATE TABLE IF NOT EXISTS contacts (\
                                             id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, \
@@ -127,7 +126,7 @@ const char* const SQL_INSERT = "INSERT INTO contacts (firstName, lastName, email
     self.arrColumnNames = [[NSMutableArray alloc] init];
     
     
-    // Open the database. GD call
+    // Open the database. GD call 
     BOOL openDatabaseResult = sqlite3enc_open([databasePath UTF8String], &sqlite3Database);
     
     if(openDatabaseResult == SQLITE_OK)
