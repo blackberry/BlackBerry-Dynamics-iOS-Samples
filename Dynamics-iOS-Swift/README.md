@@ -5,23 +5,14 @@ This sample pairs with Basic-iOS-Swift as examples of iOS apps before and after 
 
 ## Requirements
 
-* Xcode 12.3 or later
-
-
-## Applies to
-
-iOS 14 SDK or later
-
-
-## Runtime
-
-iOS 14 or later
+* Xcode 13 or later
+* iOS 15 or later
 
 
 ## Author(s)
 
 * [EunKyung Choi](http://www.twitter.com/echotown)
-*[Matthew Falkner](https://www.linkedin.com/in/matthewfalkner/)
+* [Matthew Falkner](https://www.linkedin.com/in/matthewfalkner/)
 
 **Contributing**
 
@@ -41,21 +32,19 @@ iOS 14 or later
 
 **Note:** Bitcode is disabled for the project
 
-For more information on how to develop BlackBerry Dynamics iOS apps, please visit [BlackBerry Developer Community](https://community.blackberry.com/community/gdn) 
+For more information on how to develop BlackBerry Dynamics iOS apps, visit [BlackBerry Dynamics SDK for iOS](https://docs.blackberry.com/en/development-tools/blackberry-dynamics-sdk-ios/) 
 /*Documentation on all keys    */
 
 ## How to test Share Sheet DLP Example
  `ShareViewController.swift`  is updated by `AppDelegate.swift` when changes to the users/app Dynamics Policy Configuration occur. 
  When `GDAppConfigKeyPreventDataLeakageIn` is `true`, the application cannot import data from other applications or services. 
  When `GDAppConfigKeyPreventDataLeakageOut` is `true`, the application cannot share data to other applications. 
- _[Documentaiton](https://developer.blackberry.com/devzone/files/blackberry-dynamics/ios/interface_g_di_o_s.html#a3265c6148406a8850ba673b26e472ece)_
+ _[Documentation](https://developer.blackberry.com/devzone/files/blackberry-dynamics/ios/interface_g_di_o_s.html#a3265c6148406a8850ba673b26e472ece)_
  
- You can test this functionality by create a `BlackBerry Dynamics Profile` under `Policies and Pofiles` in your UEM Console. 
+ You can test this functionality by creating a `BlackBerry Dynamics Profile` under `Policies and Pofiles` in your UEM Console. Configure two profiles. One profile can be named as `Enabled DLP`, and the other,`Disable DLP`. 
  
- I would recommend creating two profiles. One profile would be `Enabled DLP`, and the other would be `Disable DLP`. 
- 
- ![UEM Profile](./Dynamics\ Swift\ Sample/DLPUEM.png)
- 
+ ![DLP Pplicy](./DLP_UEM.png)
+
  You can assign these to your test user which the application is activated with.  
  
  Once assigned you can navigate to the `ShareViewController.swift` on your test device, and attempt to share under both cases. 
