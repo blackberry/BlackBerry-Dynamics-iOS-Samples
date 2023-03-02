@@ -4,6 +4,9 @@ This sample demonstrates the rendering of different file types in WKWebView.
 
 ## Requirements
 
+See [Software Requirements](https://docs.blackberry.com/en/development-tools/blackberry-dynamics-sdk-ios/current/blackberry-dynamics-sdk-ios-devguide/gwj1489687014271/vcw1490294551674) of the BlackBerry Dynamics SDK (iOS) 
+
+
 
 ## How To Build and Deploy
 
