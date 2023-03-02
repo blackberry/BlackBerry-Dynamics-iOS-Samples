@@ -56,7 +56,6 @@
 		1833D7E4245176460099987E /* FileListTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileListTableVC.swift; sourceTree = "<group>"; };
 		1833D7E6245177510099987E /* WKWebViewPreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewPreviewVC.swift; sourceTree = "<group>"; };
 		18FEF7DC2450A8DA002D6C29 /* WKWebViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WKWebViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		18FEF7DF2450A8DA002D6C29 /* GD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GD.framework; path = System/Library/Frameworks/GD.framework; sourceTree = SDKROOT; };
 		18FEF7E12450A8DA002D6C29 /* DeviceCheck.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeviceCheck.framework; path = System/Library/Frameworks/DeviceCheck.framework; sourceTree = SDKROOT; };
 		18FEF7E32450A8DA002D6C29 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		18FEF7E52450A8DA002D6C29 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -66,7 +65,6 @@
 		18FEF7ED2450A8DA002D6C29 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		18FEF7EF2450A8DA002D6C29 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		18FEF7F22450A8DA002D6C29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		18FEF7F92450A8DA002D6C29 /* default.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = default.xcconfig; path = ../default.xcconfig; sourceTree = "<group>"; };
 		18FEF7FA2450A8DA002D6C29 /* Entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Entitlements.plist; path = ../Entitlements.plist; sourceTree = "<group>"; };
 		18FEF8002450A8DA002D6C29 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		18FEF8032450A8DA002D6C29 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -173,7 +171,6 @@
 				1ABDCFE1275AA89C007D0CC3 /* BlackBerryCerticom.xcframework */,
 				1ABDCFCF275AA7E0007D0CC3 /* CoreServices.framework */,
 				8BC02ACF247C10B900F4962C /* SafariServices.framework */,
-				18FEF7DF2450A8DA002D6C29 /* GD.framework */,
 				18FEF7E12450A8DA002D6C29 /* DeviceCheck.framework */,
 				18FEF7E32450A8DA002D6C29 /* LocalAuthentication.framework */,
 				18FEF7E52450A8DA002D6C29 /* CoreTelephony.framework */,
@@ -210,7 +207,6 @@
 		18FEF7F82450A8DA002D6C29 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				18FEF7F92450A8DA002D6C29 /* default.xcconfig */,
 				18FEF7FA2450A8DA002D6C29 /* Entitlements.plist */,
 				18FEF8022450A8DA002D6C29 /* InfoPlist.strings */,
 			);
@@ -667,7 +663,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7QTYGGGMUN;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = WKWebViewDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -676,8 +672,8 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_LDFLAGS = (
-					"-lz",
 					"$(inherited)",
+					"-lz",
 					"-lstdc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.WKWebViewDemo;
@@ -693,7 +689,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7QTYGGGMUN;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = WKWebViewDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -702,8 +698,8 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_LDFLAGS = (
-					"-lz",
 					"$(inherited)",
+					"-lz",
 					"-lstdc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.WKWebViewDemo;
