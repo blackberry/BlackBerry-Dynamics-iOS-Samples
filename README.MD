@@ -34,7 +34,7 @@ You can check out more code samples on our developer site.
 
 **Contribute**
 
-* To contribute to this repository, [signed up as an official contributor](http://blackberry.github.com/howToContribute.html).
+* To contribute to this repository, [sign up as an official contributor](http://blackberry.github.com/howToContribute.html).
 
 ## License
 
