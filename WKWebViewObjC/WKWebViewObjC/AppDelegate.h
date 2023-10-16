@@ -16,7 +16,7 @@
  */
 
 #import <UIKit/UIKit.h>
-@import GD.Runtime;
+@import BlackBerryDynamics.Runtime;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
