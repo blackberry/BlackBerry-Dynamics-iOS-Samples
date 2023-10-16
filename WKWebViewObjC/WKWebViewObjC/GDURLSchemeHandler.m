@@ -16,7 +16,7 @@
  */
 
 #import "GDURLSchemeHandler.h"
-#import <GD/GDFileManager.h>
+#import <BlackBerryDynamics/GD/GDFileManager.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 
 #define kBufferSize (64 * 1024)

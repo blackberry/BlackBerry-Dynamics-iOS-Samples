@@ -15,7 +15,7 @@
  *
  */
 
-@import GD.Runtime;
+@import BlackBerryDynamics.Runtime;
 #import "AppDelegate.h"
 #import "FileListTableVC.h"
 

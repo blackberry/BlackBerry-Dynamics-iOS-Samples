@@ -17,7 +17,7 @@
 
 #import "FileListTableVC.h"
 #import "WKWebViewPreviewVC.h"
-#import <GD/GDFileManager.h>
+#import <BlackBerryDynamics/GD/GDFileManager.h>
 
 @interface FileListTableVC ()
 
