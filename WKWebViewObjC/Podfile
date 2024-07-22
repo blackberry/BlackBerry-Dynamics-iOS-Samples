@@ -1,0 +1,20 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '15.0'
+
+target 'WKWebViewObjC' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for WKWebViewObjC
+  pod 'BlackBerryDynamics'
+  
+  target 'WKWebViewObjCTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'WKWebViewObjCUITests' do
+    # Pods for testing
+  end
+
+end

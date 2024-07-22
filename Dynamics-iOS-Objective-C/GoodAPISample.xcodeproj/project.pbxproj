@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10E4F39D5D8CA56CFB7222E8 /* Pods_GoodAPISample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06C6D4251DD280D19280814 /* Pods_GoodAPISample.framework */; };
+		1A833AEA277114720036C0B2 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A833AE9277114720036C0B2 /* CoreServices.framework */; };
 		8BA3E4F922679CEF00E1F207 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA3E4F822679CEF00E1F207 /* WebKit.framework */; };
 		DF0B3ABC1CE1865F005FC40B /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0B3ABB1CE1865F005FC40B /* DBManager.m */; };
 		DF0B3AC51CE29787005FC40B /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0B3AC41CE29787005FC40B /* EditViewController.m */; };
@@ -14,7 +16,6 @@
 		DF5C9B191CE654260054FCE0 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF5C9B181CE654260054FCE0 /* CFNetwork.framework */; };
 		DF5C9B1E1CE654680054FCE0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF5C9B1A1CE654680054FCE0 /* CoreData.framework */; };
 		DF5C9B1F1CE654680054FCE0 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF5C9B1B1CE654680054FCE0 /* CoreTelephony.framework */; };
-		DF5C9B201CE654680054FCE0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF5C9B1C1CE654680054FCE0 /* MobileCoreServices.framework */; };
 		DF5C9B211CE654680054FCE0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF5C9B1D1CE654680054FCE0 /* QuartzCore.framework */; };
 		DF5C9B271CE654960054FCE0 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF5C9B221CE654960054FCE0 /* LocalAuthentication.framework */; };
 		DF5C9B281CE654960054FCE0 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF5C9B231CE654960054FCE0 /* MessageUI.framework */; };
@@ -22,7 +23,6 @@
 		DF5C9B2A1CE654960054FCE0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF5C9B251CE654960054FCE0 /* Security.framework */; };
 		DF5C9B2B1CE654960054FCE0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF5C9B261CE654960054FCE0 /* SystemConfiguration.framework */; };
 		DF5C9B2F1CE654DC0054FCE0 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DF5C9B2E1CE654DC0054FCE0 /* libz.tbd */; };
-		DF5C9B311CE654EB0054FCE0 /* GD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF5C9B301CE654EB0054FCE0 /* GD.framework */; };
 		DF5C9B3E1CEA0C830054FCE0 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5C9B3D1CEA0C830054FCE0 /* RootViewController.m */; };
 		DF5CA2181CECB02700AF9B4A /* AppGDiOSDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5CA2171CECB02700AF9B4A /* AppGDiOSDelegate.m */; };
 		DF5CA21B1CED506A00AF9B4A /* SocketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5CA21A1CED506A00AF9B4A /* SocketViewController.m */; };
@@ -37,7 +37,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A833AE9277114720036C0B2 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		1AB2566A27711808002B009C /* BlackBerryDynamics.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BlackBerryDynamics.xcframework; path = Pods/BlackBerryDynamics/Frameworks/BlackBerryDynamics.xcframework; sourceTree = "<group>"; };
+		535270D4526445BB498A6C43 /* Pods-GoodAPISample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodAPISample.release.xcconfig"; path = "Target Support Files/Pods-GoodAPISample/Pods-GoodAPISample.release.xcconfig"; sourceTree = "<group>"; };
+		760FE1B8C683227C1A9EE6FE /* Pods-GoodAPISample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodAPISample.debug.xcconfig"; path = "Target Support Files/Pods-GoodAPISample/Pods-GoodAPISample.debug.xcconfig"; sourceTree = "<group>"; };
 		8BA3E4F822679CEF00E1F207 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		B06C6D4251DD280D19280814 /* Pods_GoodAPISample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodAPISample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF0B3ABA1CE1865F005FC40B /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		DF0B3ABB1CE1865F005FC40B /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
 		DF0B3AC31CE29787005FC40B /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
@@ -55,7 +60,6 @@
 		DF5C9B251CE654960054FCE0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		DF5C9B261CE654960054FCE0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		DF5C9B2E1CE654DC0054FCE0 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		DF5C9B301CE654EB0054FCE0 /* GD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GD.framework; path = System/Library/Frameworks/GD.framework; sourceTree = SDKROOT; };
 		DF5C9B321CE655E30054FCE0 /* default.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = default.xcconfig; sourceTree = "<group>"; wrapsLines = 1; };
 		DF5C9B3C1CEA0C830054FCE0 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		DF5C9B3D1CEA0C830054FCE0 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
@@ -86,17 +90,17 @@
 				DF5C9B191CE654260054FCE0 /* CFNetwork.framework in Frameworks */,
 				DF5C9B1E1CE654680054FCE0 /* CoreData.framework in Frameworks */,
 				DF5C9B1F1CE654680054FCE0 /* CoreTelephony.framework in Frameworks */,
-				DF5C9B311CE654EB0054FCE0 /* GD.framework in Frameworks */,
 				DF5C9B2F1CE654DC0054FCE0 /* libz.tbd in Frameworks */,
 				DF5C9B271CE654960054FCE0 /* LocalAuthentication.framework in Frameworks */,
 				DF5C9B281CE654960054FCE0 /* MessageUI.framework in Frameworks */,
-				DF5C9B201CE654680054FCE0 /* MobileCoreServices.framework in Frameworks */,
 				DF5C9B211CE654680054FCE0 /* QuartzCore.framework in Frameworks */,
 				DF5C9B291CE654960054FCE0 /* QuickLook.framework in Frameworks */,
 				DF5C9B2A1CE654960054FCE0 /* Security.framework in Frameworks */,
 				DF5C9B2B1CE654960054FCE0 /* SystemConfiguration.framework in Frameworks */,
 				DF99B0381CE17F6500DF8FEC /* libsqlite3.0.tbd in Frameworks */,
 				DF99B0391CE17F6500DF8FEC /* libsqlite3.tbd in Frameworks */,
+				1A833AEA277114720036C0B2 /* CoreServices.framework in Frameworks */,
+				10E4F39D5D8CA56CFB7222E8 /* Pods_GoodAPISample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,16 +110,27 @@
 		8BA3E4F722679CEF00E1F207 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1AB2566A27711808002B009C /* BlackBerryDynamics.xcframework */,
+				1A833AE9277114720036C0B2 /* CoreServices.framework */,
 				8BA3E4F822679CEF00E1F207 /* WebKit.framework */,
+				B06C6D4251DD280D19280814 /* Pods_GoodAPISample.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9BBA10123BC60A7862336B8A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				760FE1B8C683227C1A9EE6FE /* Pods-GoodAPISample.debug.xcconfig */,
+				535270D4526445BB498A6C43 /* Pods-GoodAPISample.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		DF0B3ABF1CE28F92005FC40B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				DF5C9B2E1CE654DC0054FCE0 /* libz.tbd */,
-				DF5C9B301CE654EB0054FCE0 /* GD.framework */,
 				DF5C9B221CE654960054FCE0 /* LocalAuthentication.framework */,
 				DF5C9B231CE654960054FCE0 /* MessageUI.framework */,
 				DF5C9B241CE654960054FCE0 /* QuickLook.framework */,
@@ -139,6 +154,7 @@
 				DF99B0151CE02DA000DF8FEC /* GoodAPISample */,
 				DF99B0141CE02DA000DF8FEC /* Products */,
 				8BA3E4F722679CEF00E1F207 /* Frameworks */,
+				9BBA10123BC60A7862336B8A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -195,9 +211,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DF99B02D1CE02DA000DF8FEC /* Build configuration list for PBXNativeTarget "GoodAPISample" */;
 			buildPhases = (
+				5533AE7012A880CE1AE8D158 /* [CP] Check Pods Manifest.lock */,
 				DF99B00F1CE02DA000DF8FEC /* Sources */,
 				DF99B0101CE02DA000DF8FEC /* Frameworks */,
 				DF99B0111CE02DA000DF8FEC /* Resources */,
+				910B05050899097A8269FC95 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -214,20 +232,20 @@
 		DF99B00B1CE02DA000DF8FEC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 1320;
 				ORGANIZATIONNAME = waasample;
 				TargetAttributes = {
 					DF99B0121CE02DA000DF8FEC = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 7QTYGGGMUN;
 					};
 				};
 			};
 			buildConfigurationList = DF99B00E1CE02DA000DF8FEC /* Build configuration list for PBXProject "GoodAPISample" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -253,6 +271,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5533AE7012A880CE1AE8D158 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GoodAPISample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		910B05050899097A8269FC95 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoodAPISample/Pods-GoodAPISample-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/BlackBerryDynamics/BlackBerryDynamics/BlackBerryDynamics.framework/BlackBerryDynamics",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/BlackBerryDynamics/BlackBerryDynamics/BlackBerryCerticom.framework/BlackBerryCerticom",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/BlackBerryDynamics/BlackBerryDynamics/BlackBerryCerticomSBGSE.framework/BlackBerryCerticomSBGSE",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BlackBerryDynamics.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BlackBerryCerticom.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BlackBerryCerticomSBGSE.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GoodAPISample/Pods-GoodAPISample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DF99B00F1CE02DA000DF8FEC /* Sources */ = {
@@ -297,18 +362,30 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -330,7 +407,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -341,18 +418,30 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -368,7 +457,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -377,17 +466,21 @@
 		};
 		DF99B02E1CE02DA000DF8FEC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF5C9B321CE655E30054FCE0 /* default.xcconfig */;
+			baseConfigurationReference = 760FE1B8C683227C1A9EE6FE /* Pods-GoodAPISample.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_CXX_LIBRARY = "libstdc++";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				DEVELOPMENT_TEAM = 7QTYGGGMUN;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = GoodBaseline/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-lstdc++",
 					"-lz",
 					"-ObjC",
+					"$(inherited)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.waasample.good.GoodAPISample;
 				PRODUCT_NAME = GoodAPISample;
@@ -397,17 +490,21 @@
 		};
 		DF99B02F1CE02DA000DF8FEC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF5C9B321CE655E30054FCE0 /* default.xcconfig */;
+			baseConfigurationReference = 535270D4526445BB498A6C43 /* Pods-GoodAPISample.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_CXX_LIBRARY = "libstdc++";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				DEVELOPMENT_TEAM = 7QTYGGGMUN;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = GoodBaseline/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-lstdc++",
 					"-lz",
 					"-ObjC",
+					"$(inherited)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.waasample.good.GoodAPISample;
 				PRODUCT_NAME = GoodAPISample;

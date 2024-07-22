@@ -15,8 +15,9 @@
  */
 
 import UIKit
-import GD.Runtime
-
+import CoreData
+import BlackBerryDynamics.Runtime
+import BlackBerryDynamics.SecureStore.CoreData
 //This extention is used to resign the Keyboard when the user touches anywhere on the screen
 extension UIViewController {
     override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -27,15 +28,13 @@ extension UIViewController {
 @UIApplicationMain
 class AppDelegate : UIResponder , UIApplicationDelegate,  GDiOSDelegate {
     var window: UIWindow?
+
     var good: GDiOS?
     var started: Bool = false
 
-
-
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
     //Call BlackBerry Dynamics to authorise the app
-    self.window = GDiOS.sharedInstance().getWindow()
     self.good = GDiOS.sharedInstance()
          
     self.good!.delegate = self
@@ -90,19 +89,28 @@ func handle(_ anEvent: GDAppEvent) {
                 break
                 
             case .remoteSettingsUpdate:
-                //A change to application-related configuration or policy settings.
+                if started {
+                   
+                    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "ShareViewController") as! ShareViewController
+                    self.window?.rootViewController = newViewController
+                    newViewController.refreshUI()
+
+    
+                }
                 break
-                
+          
             case .servicesUpdate:
                 //A change to services-related configuration.
                 break
                   
              case .policyUpdate:
                 if started {
-                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "AppPolicyUpdated"), object: nil)
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "AppPolicyUpdated"), object: nil);
                 }
                 break
-                  
+    
+        
             default:
                 print("handleEvent \(anEvent.message)")
             }
@@ -131,22 +139,87 @@ func onNotAuthorized(anEvent:GDAppEvent ) {
         default: assert(false, "Unhandled not authorized event");
         }
 }
+    
 
     
-func onAuthorized(anEvent:GDAppEvent ) {
-    /* Handle the Good Libraries authorized event. */
-    switch anEvent.code {
-        case .errorNone:
-            if !self.started {
-                //Show the User UI
-                self.started = true
-                self.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tabBarController")
+lazy var applicationDocumentsDirectory: URL = {
+   // The directory the application uses to store the Core Data store file. This code uses a directory named "com.good.example.CoreData1" in the application's documents Application Support directory.
+   let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+   return urls[urls.count-1]
+}()
+
+lazy var managedObjectModel: NSManagedObjectModel = {
+       // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
+       let modelURL = Bundle.main.url(forResource: "ColorModel", withExtension: "momd")!
+       return NSManagedObjectModel(contentsOf: modelURL)!
+}()
+    
+
+lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
+      // The persistent store coordinator for the application. This implementation creates and returns a coordinator, having added the store for the application to it. This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
+      // Create the coordinator and store
+      let coordinator = GDPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
+      let url = self.applicationDocumentsDirectory.appendingPathComponent("SingleViewCoreData.sqlite")
+      var failureReason = "There was an error creating or loading the application's saved data."
+      do {
+          try coordinator.addPersistentStore(ofType: GDEncryptedIncrementalStoreType, configurationName: nil, at: url, options: nil)
+      } catch {
+          // Report any error we got.
+          var dict = [String: AnyObject]()
+          dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data" as AnyObject
+          dict[NSLocalizedFailureReasonErrorKey] = failureReason as AnyObject
+          
+          dict[NSUnderlyingErrorKey] = error as NSError
+          let wrappedError = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
+          // Replace this with code to handle the error appropriately.
+          // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+          NSLog("Unresolved error \(wrappedError), \(wrappedError.userInfo)")
+          abort()
+      }
+      
+      return coordinator
+  }()
+
+    lazy var managedObjectContext: NSManagedObjectContext = {
+        // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.) This property is optional since there are legitimate error conditions that could cause the creation of the context to fail.
+        let coordinator = self.persistentStoreCoordinator
+        var managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+        managedObjectContext.persistentStoreCoordinator = coordinator
+        return managedObjectContext
+    }()
+    
+        
+    func saveContext () {
+        if managedObjectContext.hasChanges {
+                do {
+                    try managedObjectContext.save()
+                } catch {
+                    // Replace this implementation with code to handle the error appropriately.
+                    // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                    let nserror = error as NSError
+                    NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+                    abort()
+                }
             }
-        default:
-            assert(false, "Authorized startup with an error")
-            break
-        }
-}
+    }
+    
+
+
+    
+    func onAuthorized(anEvent:GDAppEvent ) {
+        /* Handle the Good Libraries authorized event. */
+        switch anEvent.code {
+            case .errorNone:
+                if !self.started {
+                    //Show the User UI
+                    self.started = true
+                    UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tabBarController")
+                }
+            default:
+                assert(false, "Authorized startup with an error")
+                break
+            }
+    }
 
 }
                             

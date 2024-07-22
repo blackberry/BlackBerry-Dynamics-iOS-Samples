@@ -1,21 +1,30 @@
 # The Configurator for iOS (Objective-C)
-This sample demonstrates how to use a custom App Policy uploaded into BlackBerry UEM or Good Control, which can be used to remotely configure an application. After adding this sample to your UEM/GC, you'll need to upload the included policy file "The Configurator App Configuration.xml" as well. 
-For more information refer to the following post on the BlackBerry Developer Blog:[Custom App Policies in BlackBerry Dynamics Applications](http://devblog.blackberry.com/2016/08/custom-app-policies-in-good-dynamics-applications/)
+This sample demonstrates how to utilize custom app policies uploaded to BlackBerry UEM. BlackBerry Dynamics app configuration can be used to remotely configure a BlackBerry Dynamics application. After adding this sample to your UEM server, upload the included policy file "The Configurator App Configuration.xml". 
+For more information, refer to the BlackBerry Developer Blog: [Custom App Policies in BlackBerry Dynamics Applications](http://devblog.blackberry.com/2016/08/custom-app-policies-in-good-dynamics-applications/)
+
 
 
 ## Requirements
 
-Xcode 8 or later
+See [Software Requirements](https://docs.blackberry.com/en/development-tools/blackberry-dynamics-sdk-ios/current/blackberry-dynamics-sdk-ios-devguide/gwj1489687014271/vcw1490294551674) of the BlackBerry Dynamics SDK (iOS) 
 
 
-## Applies to
 
-iOS 9 SDK or later
+## How To Build and Deploy
 
+1. Set up BlackBerry Dynamics Development Environment.
+2. Clone the repo. 
+3. Run `pod install` to create project workspace.
+4. Launch Xcode and open the project.
+5. Edit the *Bundle Identifier* to your own. 
+6. Edit the *URL identifier* and *URL Schemes* according to your own in the *info.plist*. See [Declaring a URL type to support BlackBerry Dynamics features](https://docs.blackberry.com/en/development-tools/blackberry-dynamics-sdk-ios/current/blackberry-dynamics-sdk-ios-devguide/gwj1489687014271/rhn1489778136320)
+7. Edit the *GDApplicationID* to your own in the *info.plist*.  
+8. Add *BlackBerry Dynamics App entitlement* and *BlackBerry Dynamics entitlment version* to your UEM server. See [Add an internal BlackBerry Dynamics app entitlement](https://docs.blackberry.com/en/endpoint-management/blackberry-uem/current/administration/blackberry-dynamics/Adding-Dynamics-apps/zjx1471960344735) 
+9. Assign the app entitlement to a user in your UEM server. 
+10. Build, deploy and run on a testing device.
 
-## Runtime
+For more information on how to develop BlackBerry Dynamics apps, refer to [Get Started with BlackBerry Dynamics](https://developers.blackberry.com/us/en/resources/get-started/blackberry-dynamics-getting-started) 
 
-iOS 9 or later
 
 
 ## Author(s)
@@ -24,25 +33,11 @@ iOS 9 or later
 * Gurjit Ghangura
 
 
-**Contributing**
-
-* To contribute code to this repository you must be [signed up as an official contributor](http://blackberry.github.com/howToContribute.html).
-
-
-## How To Build and Deploy
-
-1. Download and set up BlackBerry Dynamics Development Environment
-2. Clone the repo to your computer.
-3. Launch Xcode and open the project.
-4. Edit Bundle ID and GD Application ID to your own.
-5. Build, deploy and run on a testing device. 
-
-For more information on how to develop BlackBerry Dynamics apps, please visit [Get Started with BlackBerry Development Tools](https://community.blackberry.com/community/gdn/get-started) 
-
 
 ## License
 
 Apache 2.0 License
+
 
 
 ## Disclaimer

@@ -15,21 +15,26 @@
  */
 
 import UIKit
-import GD.Runtime
+import BlackBerryDynamics.Runtime
 
 @UIApplicationMain
 class AppDelegate : UIResponder , UIApplicationDelegate,  GDiOSDelegate {
     var window: UIWindow?
+
+    var good: GDiOS?
     var started: Bool = false
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        //Call BlackBerry Dynamics to authorise the app
+        self.good = GDiOS.sharedInstance()
+             
+        self.good!.delegate = self
         self.started = false
-        
+            
         // Show the Good Authentication UI.
-        GDiOS.sharedInstance().authorize(self)
-        
-        
+        self.good!.authorize()
+               
         return true
     }
     

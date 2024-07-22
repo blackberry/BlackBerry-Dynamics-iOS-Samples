@@ -17,7 +17,7 @@
 
 import WebKit
 import MobileCoreServices
-import GD.SecureStore.File
+import BlackBerryDynamics.SecureStore.File
 
 class GDURLSchemeHandler: NSObject, WKURLSchemeHandler {
     

@@ -1,4 +1,4 @@
-/* Copyright (c) 2016 BlackBerry Ltd.
+/* Copyright (c) 2021 BlackBerry Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
  */
 
 #import "SocketViewController.h"
-#import <GD/GDiOS.h>
+@import BlackBerryDynamics.Runtime;
 
 @interface SocketViewController ()
 

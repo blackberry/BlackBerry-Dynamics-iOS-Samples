@@ -136,7 +136,7 @@ static const size_t  JFRMaxFrameSize        = 32;
         self.inputQueue = [NSMutableArray new];
         self.optProtocols = protocols;
     }
-    
+
     return self;
 }
 /////////////////////////////////////////////////////////////////////////////
@@ -145,7 +145,7 @@ static const size_t  JFRMaxFrameSize        = 32;
     if(self.isCreated) {
         return;
     }
-    
+
     __weak typeof(self) weakSelf = self;
     dispatch_async(self.queue, ^{
         weakSelf.didDisconnect = NO;
@@ -193,13 +193,13 @@ static const size_t  JFRMaxFrameSize        = 32;
 - (NSString *)origin;
 {
     NSString *scheme = [_url.scheme lowercaseString];
-    
+
     if ([scheme isEqualToString:@"wss"]) {
         scheme = @"https";
     } else if ([scheme isEqualToString:@"ws"]) {
         scheme = @"http";
     }
-    
+
     if (_url.port) {
         return [NSString stringWithFormat:@"%@://%@:%@/", scheme, _url.host, _url.port];
     } else {
@@ -217,7 +217,7 @@ static const size_t  JFRMaxFrameSize        = 32;
                                                              url,
                                                              kCFHTTPVersion1_1);
     CFRelease(url);
-    
+
     NSNumber *port = _url.port;
     if (!port) {
         if([self.url.scheme isEqualToString:@"wss"] || [self.url.scheme isEqualToString:@"https"]){
@@ -250,17 +250,17 @@ static const size_t  JFRMaxFrameSize        = 32;
                                          (__bridge CFStringRef)headerWSProtocolName,
                                          (__bridge CFStringRef)protocols);
     }
-   
+
     CFHTTPMessageSetHeaderFieldValue(urlRequest,
                                      (__bridge CFStringRef)headerOriginName,
                                      (__bridge CFStringRef)[self origin]);
-    
+
     for(NSString *key in self.headers) {
         CFHTTPMessageSetHeaderFieldValue(urlRequest,
                                          (__bridge CFStringRef)key,
                                          (__bridge CFStringRef)self.headers[key]);
     }
-    
+
 #if defined(DEBUG)
     NSLog(@"urlRequest = \"%@\"", urlRequest);
 #endif
@@ -306,7 +306,7 @@ static const size_t  JFRMaxFrameSize        = 32;
         NSUInteger length = [gdSocketReadData length];
         uint8_t buffer[length];
         [gdSocketReadData getBytes:buffer length:length];
-        
+
         if(length > 0) {
             if(!self.isConnected) {
                 CFIndex responseStatusCode;
@@ -470,7 +470,7 @@ static const size_t  JFRMaxFrameSize        = 32;
                 }
                 offset += 2;
             }
-            
+
             if(payloadLen > 2) {
                 NSInteger len = payloadLen-2;
                 if(len > 0) {
@@ -558,14 +558,14 @@ static const size_t  JFRMaxFrameSize        = 32;
             [self.readStack addObject:response];
         }
         [self processResponse:response];
-        
+
         NSInteger step = (offset+len);
         NSInteger extra = bufferLen-step;
         if(extra > 0) {
             [self processExtra:(buffer+step) length:extra];
         }
     }
-    
+
 }
 /////////////////////////////////////////////////////////////////////////////
 - (void)processExtra:(uint8_t*)buffer length:(NSInteger)bufferLen {
@@ -622,7 +622,7 @@ static const size_t  JFRMaxFrameSize        = 32;
         self.writeQueue = [[NSOperationQueue alloc] init];
         self.writeQueue.maxConcurrentOperationCount = 1;
     }
-    
+
     __weak typeof(self) weakSelf = self;
     [self.writeQueue addOperationWithBlock:^{
         if(!weakSelf || !weakSelf.isConnected) {
@@ -652,7 +652,7 @@ static const size_t  JFRMaxFrameSize        = 32;
             uint8_t *mask_key = (buffer + offset);
             (void)SecRandomCopyBytes(kSecRandomDefault, sizeof(uint32_t), (uint8_t *)mask_key);
             offset += sizeof(uint32_t);
-            
+
             for (size_t i = 0; i < dataLength; i++) {
                 buffer[offset] = bytes[i] ^ mask_key[i % sizeof(uint32_t)];
                 offset += 1;
@@ -668,11 +668,11 @@ static const size_t  JFRMaxFrameSize        = 32;
             if(!strongSelf.isConnected) {
                 break;
             }
-            
+
             int len = (int)(offset-total);
             [gdSocket.writeStream write:([frame bytes]+total) withLength:len];
             [gdSocket write];
-            
+
             total += len;
 
             if(total >= offset) {
@@ -737,15 +737,15 @@ static const size_t  JFRMaxFrameSize        = 32;
 - (void)onErr:(int)error inSocket:(nonnull id)socket {
 
     NSError* gdSocketError;
-    
+
     switch (error) {
         case GDSocketErrorNone:
             break;
-            
+
         case GDSocketErrorServiceTimeOut:
             gdSocketError = [self errorWithDetail:@"GDSocket operation timed out" code:error];
             break;
-            
+
         case GDSocketErrorNetworkUnvailable:
             gdSocketError = [self errorWithDetail:@"GDSocket operation failed because the destination network could not be reached" code:error];
             break;
@@ -753,11 +753,12 @@ static const size_t  JFRMaxFrameSize        = 32;
         case GDSocketServerUnreachable:
             gdSocketError = [self errorWithDetail:@"GDSocket operation failed, host is unreachable" code:error];
             break;
-            
+
         default:
+            gdSocketError = [self errorWithDetail:@"GDSocket operation could not be completed" code:error];
             break;
     }
-    
+
     [self disconnectStream:gdSocketError];
 }
 
