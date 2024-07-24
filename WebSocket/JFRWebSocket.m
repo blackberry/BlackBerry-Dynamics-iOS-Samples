@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////
 //
-// Copyright (c) 2022 BlackBerry Limited. All Rights Reserved.
+// Copyright (c) 2024 BlackBerry Limited. All Rights Reserved.
 // Some modifications to the original from https://github.com/acmacalister/jetfire
 //
 //  JFRWebSocket.m
@@ -688,11 +688,15 @@ static const size_t  JFRMaxFrameSize        = 32;
         dispatch_async(self.queue, ^{
             weakSelf.didDisconnect = YES;
             [weakSelf disconnect:self->_gdSocket];
-            if([weakSelf.delegate respondsToSelector:@selector(websocket:didReceiveError:)] && error.code != JFRCloseCodeNormal) {
-                [weakSelf.delegate websocket:weakSelf didReceiveError:error];
-            }
-            if([weakSelf.delegate respondsToSelector:@selector(websocketDidDisconnect:error:)]) {
-                [weakSelf.delegate websocketDidDisconnect:weakSelf error:error];
+            if([error respondsToSelector:@selector(code)]){
+                if(error.code != JFRCloseCodeNormal  ) {
+                    if([weakSelf.delegate respondsToSelector:@selector(websocket:didReceiveError:)]){
+                        [weakSelf.delegate websocket:weakSelf didReceiveError:error];
+                    }
+                }
+          }
+          if([weakSelf.delegate respondsToSelector:@selector(websocketDidDisconnect:error:)]) {
+              [weakSelf.delegate websocketDidDisconnect:weakSelf error:error];
             }
             if(weakSelf.onDisconnect) {
                 weakSelf.onDisconnect(error);
