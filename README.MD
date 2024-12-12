@@ -3,34 +3,63 @@
 Samples built with BlackBerry Dynamics SDK.
 
 ## BlackBerry Dynamics Overview
+
 [BlackBerry Dynamics](https://docs.blackberry.com/en/endpoint-management/blackberry-dynamics) is a mobile application development platform that enables secure communication, secure storage and exchange of data between enterprise apps according to enterprise security policies.
 
-For details on features and development guide, see [BlackBerry Dynamics SDK for iOS](https://docs.blackberry.com/en/development-tools/blackberry-dynamics-sdk-ios/)
+For details on features and a development guide, see [BlackBerry Dynamics SDK for iOS](https://docs.blackberry.com/en/development-tools/blackberry-dynamics-sdk-ios/)
 
 ## Samples
 
-This repository contains sample projects that demonstrate the use of BlackBerry Dynamics APIs. The table below describes the main features each sample demonstrates. Samples are updated with best effort, not all are tested and updated against each SDK release.
+This repository contains sample projects that demonstrate the use of BlackBerry Dynamics APIs on iOS.
+
+### Getting Started
+
+This sample demonstrate features commonly used in the BlackBerry Dynamics applications. These include how to use secure file storage, secure database and secure communication.
+
+| App Name                                                     | Language        |
+| :----------------------------------------------------------- | --------------- |
+| [GettingStarted-Dynamics-ObjC](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/1-GettingStarted/GettingStarted-Dynamics-ObjC) | Obj-C           |
+| [GettingStarted-Dynamics-Swift](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/1-GettingStarted/GettingStarted-Dynamics-Swift) | Swift           |
+| [GettingStarted-Dynamics-SwiftUI](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/1-GettingStarted/GettingStarted-Dynamics-SwiftUI) | Swift & SwiftUI |
+
+A version of this sample prior to Dynamics integration called 'GettingStarted' can also be found in the Getting Started folder.
+
+### Features
+
+These samples demonstrate specific features available in BlackBerry Dynamics applications. They are updated with best effort as not all are tested and updated against each SDK release.
 
 ------
-| **Sample App**                                              | **Description**                                             |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | 
-| [AppConfiguration-iOS-Objective-C](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/AppConfiguration-iOS-Objective-C) | This sample demonstrates how to develop apps with custom app policies configured in BlackBerry UEM(Objective-C). | 
-| [AppConfiguration-iOS-Swift](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/AppConfiguration-iOS-Swift) | This sample demonstrates how to develop apps with custom app policies configured in BlackBerry UEM(Swift).| 
-| [Autofill-Block-iOS](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/Autofill-Block-iOS) | This sample demonstrates how to block AutoFill suggestions in UITextField instances. | 
-| [AutomatedTestSupportLibrary](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/AutomatedTestSupportLibrary) | This sample demonstrates how to automate the building, execution, and reporting of your application tests utizing BlackBerry Dynamics Automated Test Support Library (ATSL). | 
-| [BEMS-SharedServices](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/BEMS-SharedServices) | This sample application demonstrates how to use BEMS(BlackBerry Enterprise Mobility Server) and BlackBerry Mobile Services. | 
-| [Dynamics-SwiftUI-Sample](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/Dynamics-SwiftUI-Sample) | This sample demostrate features commonly used in the BlackBerry Dynamics applications; secure file storage, secure database, secure communication (HTTP/S and Socket) in Swift UI. | 
-| [Dynamics-iOS-Objective-C](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/Dynamics-iOS-Objective-C) | This sample demonstrates features commonly used in the BlackBerry Dynamics applications; secure file storage, secure database, secure communication (HTTP/S and Socket) in Objective-C.  | 
-| [Dynamics-iOS-Swift](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/Dynamics-iOS-Swift) | This sample demonstrates features commonly used in the BlackBerry Dynamics applications; secure file storage, secure database, secure communication (HTTP/S and Socket) in Swift. | 
-| [Secure-Storage-ObjC](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/Secure-Storage-ObjC) | This sample demonstrates how to use Secure CoreData and Secure SQL database APIs in Objective-C. | 
-| [Secure-Storage-Swift](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/Secure-Storage-Swift) | This sample demonstrates how to use Secure CoreData and Secure SQL database APIs in Swift). | 
-| [UEM-Web-Services](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/UEM-Web-Services) | This sample demonstrates various REST and SOAP APIs including authentication to UEM, automating administrative tasks, and integrations with BlackBerry UEM. | 
-| [WKWebViewObjC](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/WKWebViewObjC) | This sample demonstrates how to render different file types in WKWebView(Objective-C). | 
-| [WKWebViewSwift](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/WKWebViewSwift) | This sample demonstrates how to render different file types in WKWebView (Swift). | 
-| [WebSocket](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/WebSocket) | An Objective-C library based on Jetfire and BlackBerry Dynamics Socket. It provides a secure WebSocket client for iOS and conforms to RFC 6455.
+| App Name                                                     | Language      | Description                                              |
+| ------------------------------------------------------------ | ------------- | ------------------------------------------------------------ |
+| [AppBasedCertImport](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/2-Features/AppBasedCertImport) | Obj-C | How to use the app-based PKI solution to provide certificates for use by BlackBerry Dynamics. |
+| [AppConfiguration](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/2-Features/AppConfiguration) | Swift | How to develop apps with custom app policies configured in BlackBerry UEM. |
+| [AppKinetics](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/2-Features/AppKinetics) [SaveEditClient](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/2-Features/AppKinetics-SaveEditClient) [SaveEditService](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/2-Features/AppKinetics-SaveEditService)| Obj-C| How to search for, create, and implement an Application-Based Service, using BlackBerry Dynamics AppKinetics. These concepts are demonstrated together in the AppKinetics sample by implementing a consumer and a provider for the Transfer File service. The SaveEditClient and SaveEditService samples split out the consumer and provider into different apps to illustrate transferring the file between apps on the device. |
+| [AutoFillBlocking](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/2-Features/AutofillBlocking)| Obj-C | How to block AutoFill suggestions in UITextField instances.  |
+| [Crypto](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/2-Features/Crypto) | Obj-C | Demonstrates how to use the Crypto APIs that enable signing and verification of messages or documents, such as PDFs. |
+| [GreetingsClient](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/2-Features/GreetingsClient)<br /> [GreetingsServer](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/2-Features/GreetingsServer) | Obj-C | Demonstrates how to create your own AppKinetics application-based service. This example uses a fictitious Greetings Service to show how to securely share a greeting between two Dynamics applications (client and server). |
+| [KeyManager](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/2-Features/KeyManager) | Obj-C | This app demonstrates how to present a Credential Manager user interface that enables the user to set up, review, and manage user certificates and keys. The user is granted this capability by admin through assignment of User Certificate and User Credential profiles. |
+| [Launcher](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/2-Features/Launcher) | Obj-C | The “Launcher” is a UX concept whereby an icon is displayed permanently on each screen, “floating” over the content. This sample demonstrates how to customize the Launcher |
+| [UIScene Delegate](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/2-Features/SceneDelegate) | Swift | Simple Swift application illustrating how to integrate Dynamics using UISceneDelegate. |
+| [WebSocket](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/2-Features/WebSocket) | Obj-C | A secure WebSocket client based on Jetfire and BlackBerry Dynamics Socket which conforms to RFC 6455. |
+| [WKWebView](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/2-Features/WKWebView) | Swift | This sample demonstrates how to render different file types in WKWebView. |
 
-You can check out more code samples on our developer site. 
-*[BlackBerry Dynamics SDK Samples](https://developers.blackberry.com/us/en/resources/samples/blackberry-dynamics-sdk-samples/)
+
+### Archive
+
+These older samples are not maintained and included for reference.
+
+| App Name                                                     | Language      | Description                                              |
+| ------------------------------------------------------------ | ------------- | ------------------------------------------------------------ |
+| [AppConfiguration](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/3-Archive/AppConfiguration-Swift) | Obj-C | How to develop apps with custom app policies configured in BlackBerry UEM. |
+| [AppKinetics-Services-Client](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/3-Archive/AppKinetics-ServicesClient) <br>[AppKinetics-Services-Service](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/3-Archive/AppKinetics-Services-Service)  | Swift | Services-Client demonstrates how to use the AppKinetics programming interface as a consumer, whilst Services-Service acts as a sample provider.|
+| [BEMS-SharedServices](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/3-Archive/BEMS-SharedServices) | Obj-C | How to use BEMS (BlackBerry Enterprise Mobility Server) and BlackBerry Mobile Services. For example, send email service, or transfer file service. |
+| [BypassUnlock](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/3-Archive/BypassUnlock) | Obj-C | Shows how part of the application user interface can remain accessible after the BlackBerry Dynamics idle time out has expired. |
+| RSSReader <br />[Swift](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/3-Archive/RSSReader) & [Obj-C](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/3-Archive/RSSReader-ObjC) | Swift & Obj-C | Demonstrates how to use the BlackBerry Dynamics secure communication APIs to fetch RSS feeds. Networking, TLS, NSURLSession Authentication. |
+| Secure-Storage <br />[Swift](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/3-Arcive/Secure-Storage) & [Obj-C](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/3-Archive/Secure-Storage-ObjC)| Swift & Obj-C| This sample demonstrates how to use Secure CoreData and Secure SQL database APIs in Objective-C. |
+| [ServerServices](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/3-Archive/ServerServices) | Obj-C | Intended as a starting point for developers making use of BlackBerry Dynamics Server-Based Services. It retrieves the details of any available com.blackberry.example.gdservice.time-zone service providers using the getServiceProvidersFor programming interface. The user then enters a latitude and longitude, and the application retrieves the corresponding results from the Google service. |
+| [UEM-Web-Services](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/3-Archive/UEM-Web-Services) | Swift | This sample demonstrates various REST and SOAP APIs including authentication to UEM, automating administrative tasks, and integrations with BlackBerry UEM. |
+| [WKWebView](https://github.com/blackberry/BlackBerry-Dynamics-iOS-Samples/tree/master/3-Archive/WKWebView-ObjC) | Obj-C | This sample demonstrates how to render different file types in WKWebView. |
+
 
 **Contribute**
 
@@ -39,8 +68,6 @@ You can check out more code samples on our developer site.
 ## License
 
 Apache 2.0 License
-
-
 
 ## Disclaimer
 

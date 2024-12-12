@@ -1,0 +1,15 @@
+//
+// Prefix header for all source files of the 'AppKinetics' target in the 'AppKinetics' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_7_0
+#warning "This project uses features only available in iOS 7.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import "constants.h"
+#endif

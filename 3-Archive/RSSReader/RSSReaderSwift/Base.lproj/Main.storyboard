@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="U18-Ap-UhK">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Helvetica.ttc">
+            <string>Helvetica</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Add Feed-->
+        <scene sceneID="3Nk-HD-Bon">
+            <objects>
+                <viewController storyboardIdentifier="addFeedViewController" title="Add Feed" useStoryboardIdentifierAsRestorationIdentifier="YES" id="c7J-JV-0HI" customClass="SWAddFeedViewController" customModule="RSSReaderSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1Dd-em-C7g">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfk-5n-PZQ">
+                                <rect key="frame" x="36" y="261" width="303" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="QzT-JM-aId"/>
+                                </constraints>
+                                <state key="normal" title="Add Feed">
+                                    <color key="titleColor" red="0.20784313730000001" green="0.65490196079999996" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addFeed:" destination="c7J-JV-0HI" eventType="touchUpInside" id="Ajk-8J-ckL"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Feed Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gqo-57-98n">
+                                <rect key="frame" x="35" y="157" width="304" height="30"/>
+                                <color key="backgroundColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full URL to RSS Feed" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4lc-Kn-exM">
+                                <rect key="frame" x="36" y="207" width="304" height="30"/>
+                                <color key="backgroundColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dfk-5n-PZQ" firstAttribute="leading" secondItem="4lc-Kn-exM" secondAttribute="leading" id="3lK-6h-yfc"/>
+                            <constraint firstItem="dfk-5n-PZQ" firstAttribute="top" secondItem="4lc-Kn-exM" secondAttribute="bottom" constant="24" id="5kp-d5-Lf9"/>
+                            <constraint firstItem="4lc-Kn-exM" firstAttribute="top" secondItem="gqo-57-98n" secondAttribute="bottom" constant="20" id="FsS-Uy-zc3"/>
+                            <constraint firstItem="4lc-Kn-exM" firstAttribute="centerX" secondItem="dfk-5n-PZQ" secondAttribute="centerX" id="KBG-n6-iQM"/>
+                            <constraint firstItem="gqo-57-98n" firstAttribute="top" secondItem="VQ4-Xa-nIW" secondAttribute="top" constant="69" id="TG1-35-wlR"/>
+                            <constraint firstItem="gqo-57-98n" firstAttribute="leading" secondItem="1Dd-em-C7g" secondAttribute="leadingMargin" constant="19" id="Xbk-pQ-MaG"/>
+                            <constraint firstItem="dfk-5n-PZQ" firstAttribute="centerX" secondItem="VQ4-Xa-nIW" secondAttribute="centerX" id="imK-gj-yHz"/>
+                            <constraint firstItem="dfk-5n-PZQ" firstAttribute="centerX" secondItem="gqo-57-98n" secondAttribute="centerX" id="lTL-3R-jV4"/>
+                            <constraint firstItem="gqo-57-98n" firstAttribute="trailing" secondItem="dfk-5n-PZQ" secondAttribute="trailing" id="mVP-HF-rlL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VQ4-Xa-nIW"/>
+                    </view>
+                    <connections>
+                        <outlet property="addUpdateButton" destination="dfk-5n-PZQ" id="Hpx-ty-Ucw"/>
+                        <outlet property="feedNameTextField" destination="gqo-57-98n" id="XOq-S2-uef"/>
+                        <outlet property="feedURLTextField" destination="4lc-Kn-exM" id="NLr-vG-r4g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cPe-aj-I2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2462" y="-3426"/>
+        </scene>
+        <!--Feeds-->
+        <scene sceneID="NCK-HD-vc9">
+            <objects>
+                <tableViewController storyboardIdentifier="feedsViewController" title="Feeds" clearsSelectionOnViewWillAppear="NO" id="4sO-2U-BVD" customClass="SWFeedsViewController" customModule="RSSReaderSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="C2K-bK-Sls">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="feedUrlTableViewCell" editingAccessoryType="detailDisclosureButton" textLabel="s1S-J2-iu4" detailTextLabel="iTo-Em-gzE" style="IBUITableViewCellStyleSubtitle" id="byI-2Z-8GK">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="byI-2Z-8GK" id="Myh-ke-vLJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="s1S-J2-iu4">
+                                            <rect key="frame" x="16" y="6" width="31.666666666666668" height="19.333333333333332"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.12941176469999999" green="0.1960784314" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iTo-Em-gzE">
+                                            <rect key="frame" x="15.999999999999996" y="25.333333333333332" width="40.666666666666664" height="13.333333333333334"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.20392156859999999" green="0.27058823529999998" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="c7J-JV-0HI" kind="show" identifier="editFeedSegue" trigger="accessoryAction" id="pgT-RB-iBy"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="4sO-2U-BVD" id="znv-w1-esz"/>
+                            <outlet property="delegate" destination="4sO-2U-BVD" id="1vy-1B-I5E"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="mGb-ro-hMw">
+                            <color key="tintColor" red="0.30196078430000001" green="0.35686274509999999" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="AeA-07-joi" kind="presentation" identifier="aboutSegue" id="HKA-qy-OtQ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem image="SECURED_BLACKBERRY_LOGO" id="H0B-7l-f2R">
+                            <color key="tintColor" red="0.30196078430000001" green="0.35686274509999999" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="3Wu-Np-eN9"/>
+                        <barButtonItem systemItem="action" id="0Gj-7W-DPj">
+                            <color key="tintColor" red="0.30196078430000001" green="0.35686274509999999" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="xdu-OS-DXQ" kind="presentation" identifier="showSettingsSegue" id="MTw-bv-gOO"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Rss Feeds List" id="1nx-lU-SfV">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="sU2-bN-Knq">
+                            <color key="tintColor" red="0.30196078430000001" green="0.35686274509999999" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="c7J-JV-0HI" kind="show" identifier="addFeedSegue" id="XUZ-es-vlz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="jZh-V6-cRc" kind="show" identifier="openFeedSegue" id="lor-RU-Ylr"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XsL-yd-4fG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3254" y="-3426"/>
+        </scene>
+        <!--Main Navigation Controller-->
+        <scene sceneID="ilr-Gu-srR">
+            <objects>
+                <navigationController storyboardIdentifier="mainNavigationController" title="Main Navigation Controller" toolbarHidden="NO" id="R8K-rA-ttQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="M4K-Pp-EDT">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.23700182139873505" green="0.28462636470794678" blue="0.32938772439956665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="JUY-Sa-L5l" customClass="RedToolbar" customModule="RSSReaderSwift" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="729.5" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.90980392160000001" green="0.090196078430000007" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="4sO-2U-BVD" kind="relationship" relationship="rootViewController" id="nbT-nC-s7G"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ujZ-rP-V4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4928" y="-3426"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="3aM-My-4nD">
+            <objects>
+                <splitViewController storyboardIdentifier="rootViewController" id="U18-Ap-UhK" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="R8K-rA-ttQ" kind="relationship" relationship="masterViewController" id="ufx-MO-dne"/>
+                        <segue destination="Okt-XD-ovS" kind="relationship" relationship="detailViewController" id="vbB-Ed-vtX"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fu3-Nw-nZ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5684" y="-2767"/>
+        </scene>
+        <!--Child Navigation Controller-->
+        <scene sceneID="7YV-Gf-pfP">
+            <objects>
+                <navigationController storyboardIdentifier="childNavigationViewController" title="Child Navigation Controller" toolbarHidden="NO" id="Okt-XD-ovS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="b8O-Dh-hs4">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.23700182139873505" green="0.28462636470794678" blue="0.32938772439956665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="rc2-5J-vNi" customClass="RedToolbar" customModule="RSSReaderSwift" customModuleProvider="target">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.90980392160000001" green="0.090196078430000007" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="e3W-9O-GQb" kind="relationship" relationship="rootViewController" id="qRl-nL-UGV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZQp-o3-epQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4928" y="-2180"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="X3U-Gw-9J6">
+            <objects>
+                <viewController storyboardIdentifier="aboutViewController" title="About" automaticallyAdjustsScrollViewInsets="NO" id="e3W-9O-GQb" customClass="SWAboutViewController" customModule="RSSReaderSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="A7X-wN-hqo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="K2x-ws-Qpd">
+                                <rect key="frame" x="36" y="134" width="303" height="544"/>
+                                <color key="tintColor" red="0.18823529410000001" green="0.46666666670000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" priority="750" constant="600" id="snS-fN-QbE"/>
+                                </constraints>
+                                <string key="text">This RSS feed example app 
+demonstrates NSURLSession for the access of RSS Feeds. Integration of GDFileManager is also outlined for the secure storage of feeds. 
+
+For more examples visit:
+https://community.blackberry.com/community/gdn
+
+Support:
+https://community.blackberry.com/community/gdn/support</string>
+                                <color key="textColor" red="0.20392156859999999" green="0.27058823529999998" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                <variation key="heightClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                </variation>
+                                <variation key="widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                </variation>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="K2x-ws-Qpd" firstAttribute="centerX" secondItem="Ub9-tb-WOf" secondAttribute="centerX" id="2CA-cV-d4B"/>
+                            <constraint firstItem="K2x-ws-Qpd" firstAttribute="centerY" secondItem="A7X-wN-hqo" secondAttribute="centerY" id="47K-EI-g0x"/>
+                            <constraint firstItem="K2x-ws-Qpd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="A7X-wN-hqo" secondAttribute="leadingMargin" constant="20" id="Mgp-8R-uKt"/>
+                            <constraint firstItem="K2x-ws-Qpd" firstAttribute="top" secondItem="Ub9-tb-WOf" secondAttribute="top" constant="46" id="UrN-1n-D9H"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="K2x-ws-Qpd" secondAttribute="trailing" constant="20" id="d4d-f8-ByS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ub9-tb-WOf"/>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="S2g-ZT-cbf">
+                            <color key="tintColor" red="0.30196078430000001" green="0.35686274509999999" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="AeA-07-joi" kind="presentation" modalPresentationStyle="formSheet" id="6yp-5M-i3K"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem image="SECURED_BLACKBERRY_LOGO" id="Q6i-bT-29J">
+                            <color key="tintColor" red="0.30196078430000001" green="0.35686274509999999" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="v64-k0-hev"/>
+                        <barButtonItem systemItem="action" id="iVQ-EI-9s9">
+                            <color key="tintColor" red="0.30196078430000001" green="0.35686274509999999" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="xdu-OS-DXQ" kind="presentation" modalPresentationStyle="formSheet" id="xCK-fY-mn0"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="eGJ-ml-KtL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6TS-iK-Z8x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4028" y="-2180"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="Zhe-ji-Qbp">
+            <objects>
+                <viewController storyboardIdentifier="aboutModalViewController" title="About" automaticallyAdjustsScrollViewInsets="NO" id="AeA-07-joi" customClass="SWAboutViewController" customModule="RSSReaderSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sj0-mc-4rX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F1y-1V-hPP">
+                                <rect key="frame" x="0.0" y="44" width="375" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="QCI-HL-u0y"/>
+                                    <constraint firstAttribute="height" constant="64" id="ZZE-p6-rTy"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="About" id="4qA-6m-1B0">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="Kzv-DH-viG">
+                                            <color key="tintColor" red="0.30196078430000001" green="0.35686274509999999" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="close:" destination="AeA-07-joi" id="dqQ-Bd-uYo"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="QCI-HL-u0y"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="QCI-HL-u0y"/>
+                                    </mask>
+                                </variation>
+                            </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jrs-47-hDW">
+                                <rect key="frame" x="36" y="154" width="303" height="632"/>
+                                <color key="tintColor" red="0.18823529410000001" green="0.46666666670000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" priority="750" constant="520" id="hSA-wa-6rq"/>
+                                </constraints>
+                                <string key="text">This RSS feed example app 
+demonstrates NSURLSession for the access of RSS Feeds. Integration of GDFileManager is also outlined for the secure storage of feeds. 
+
+For more examples visit:
+https://community.blackberry.com/community/gdn
+
+Support:
+https://community.blackberry.com/community/gdn/support</string>
+                                <color key="textColor" red="0.20392156862745098" green="0.27058823529411763" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                <variation key="heightClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                </variation>
+                                <variation key="widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                </variation>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jrs-47-hDW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Sj0-mc-4rX" secondAttribute="leadingMargin" constant="20" id="A1d-bO-ox9"/>
+                            <constraint firstItem="F1y-1V-hPP" firstAttribute="top" secondItem="6IE-vc-w70" secondAttribute="top" id="Dm1-3a-K32"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="jrs-47-hDW" secondAttribute="trailing" constant="20" id="IxO-M5-PrM"/>
+                            <constraint firstItem="jrs-47-hDW" firstAttribute="centerY" secondItem="Sj0-mc-4rX" secondAttribute="centerY" constant="64" id="KOH-OU-H0j"/>
+                            <constraint firstItem="jrs-47-hDW" firstAttribute="centerX" secondItem="6IE-vc-w70" secondAttribute="centerX" id="N1S-ty-JzS"/>
+                            <constraint firstItem="6IE-vc-w70" firstAttribute="trailing" secondItem="F1y-1V-hPP" secondAttribute="trailing" id="QCw-UL-MPf"/>
+                            <constraint firstItem="F1y-1V-hPP" firstAttribute="leading" secondItem="6IE-vc-w70" secondAttribute="leading" id="m5s-py-c59"/>
+                            <constraint firstItem="jrs-47-hDW" firstAttribute="top" secondItem="6IE-vc-w70" secondAttribute="top" constant="110" id="ydG-2z-Xt4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6IE-vc-w70"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="RSU-zb-9AY"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e4V-Ly-qpr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3228" y="-2174"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="DIb-P8-SZm">
+            <objects>
+                <viewController storyboardIdentifier="settingsViewController" title="Settings" id="xdu-OS-DXQ" customClass="SWSettingsViewController" customModule="RSSReaderSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TFy-o9-eZf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jWf-d4-MHt">
+                                <rect key="frame" x="0.0" y="44" width="375" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="zNt-J3-BhU"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Settings" id="Zuo-rx-hl7">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="vUy-F5-cy8">
+                                            <color key="tintColor" red="0.30196078430000001" green="0.35686274509999999" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="dismissSettings:" destination="xdu-OS-DXQ" id="h3h-uQ-its"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQj-Fw-BAX">
+                                <rect key="frame" x="131.66666666666666" y="292" width="112" height="228"/>
+                                <state key="normal" title="Troubleshooting">
+                                    <color key="titleColor" red="0.20784313730000001" green="0.65490196079999996" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="troubleShootingPressed:" destination="xdu-OS-DXQ" eventType="touchUpInside" id="m3n-kf-Hgs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jWf-d4-MHt" firstAttribute="leading" secondItem="bSC-fw-Gt3" secondAttribute="leading" id="CGU-i4-b4r"/>
+                            <constraint firstItem="FQj-Fw-BAX" firstAttribute="centerX" secondItem="jWf-d4-MHt" secondAttribute="centerX" id="FrU-52-XdB"/>
+                            <constraint firstItem="bSC-fw-Gt3" firstAttribute="trailing" secondItem="jWf-d4-MHt" secondAttribute="trailing" id="OJw-A1-9K9"/>
+                            <constraint firstItem="jWf-d4-MHt" firstAttribute="top" secondItem="bSC-fw-Gt3" secondAttribute="top" id="aTF-IB-lU2"/>
+                            <constraint firstItem="FQj-Fw-BAX" firstAttribute="centerY" secondItem="TFy-o9-eZf" secondAttribute="centerY" id="f0b-EX-a2M"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bSC-fw-Gt3"/>
+                    </view>
+                    <connections>
+                        <outlet property="troubleShootingButton" destination="FQj-Fw-BAX" id="hes-Fo-K6m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nzb-tH-fvB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3254" y="-1060"/>
+        </scene>
+        <!--Feed List-->
+        <scene sceneID="Tt6-BN-Oy5">
+            <objects>
+                <tableViewController storyboardIdentifier="feedViewController" title="Feed List" clearsSelectionOnViewWillAppear="NO" id="jZh-V6-cRc" customClass="SWFeedViewController" customModule="RSSReaderSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="XEK-gb-oBu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="storyTableViewCell" editingAccessoryType="detailDisclosureButton" textLabel="xSM-Nw-Inh" detailTextLabel="NEt-Rk-X6r" style="IBUITableViewCellStyleSubtitle" id="KC4-Ya-yTb">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KC4-Ya-yTb" id="SDD-Ih-pZI">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xSM-Nw-Inh">
+                                            <rect key="frame" x="16" y="7" width="26" height="16.333333333333332"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                            <color key="textColor" red="0.18823529410000001" green="0.46666666670000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NEt-Rk-X6r">
+                                            <rect key="frame" x="16.000000000000004" y="23.333333333333332" width="40.333333333333336" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                            <color key="textColor" red="0.20392156859999999" green="0.27058823529999998" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jZh-V6-cRc" id="g6L-mM-vqk"/>
+                            <outlet property="delegate" destination="jZh-V6-cRc" id="aga-Fi-1Bp"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="hbI-nD-GXd">
+                            <color key="tintColor" red="0.30196078430000001" green="0.35686274509999999" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="AeA-07-joi" kind="presentation" modalPresentationStyle="formSheet" id="Oqt-gz-ZnB"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem image="SECURED_BLACKBERRY_LOGO" id="WkL-Qc-1MB">
+                            <color key="tintColor" red="0.30196078430000001" green="0.35686274509999999" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="PHh-DG-q2V"/>
+                        <barButtonItem systemItem="action" id="rxN-7I-c9p">
+                            <color key="tintColor" red="0.30196078430000001" green="0.35686274509999999" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="xdu-OS-DXQ" kind="presentation" modalPresentationStyle="formSheet" id="ZXU-zA-0cr"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Stories" id="6iL-A1-Txs">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="stop" id="Ldn-kc-fO9">
+                                <color key="tintColor" red="0.30196078430000001" green="0.35686274509999999" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="cancel:" destination="jZh-V6-cRc" id="CL2-0c-rTE"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="refresh" id="oUU-pI-ps9">
+                                <color key="tintColor" red="0.30196078430000001" green="0.35686274509999999" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="refresh:" destination="jZh-V6-cRc" id="VIr-DX-1s1"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UA2-pG-p8G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2462" y="-2174"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="SECURED_BLACKBERRY_LOGO" width="16" height="16"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="MTw-bv-gOO"/>
+        <segue reference="HKA-qy-OtQ"/>
+        <segue reference="pgT-RB-iBy"/>
+    </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.90980392160000001" green="0.090196078430000007" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+</document>

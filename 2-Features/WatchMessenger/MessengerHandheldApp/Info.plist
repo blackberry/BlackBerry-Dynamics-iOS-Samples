@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>$(PRODUCT_BUNDLE_IDENTIFIER).sc2</string>
+				<string>$(PRODUCT_BUNDLE_IDENTIFIER).sc3</string>
+				<string>$(PRODUCT_BUNDLE_IDENTIFIER).sc2.1.0.0.0</string>
+				<string>com.good.gd.discovery</string>
+			</array>
+		</dict>
+	</array>
+	<key>GDApplicationID</key>
+	<string>com.blackberry.dynamics.sample</string>
+	<key>GDApplicationVersion</key>
+	<string>1.0.0.0</string>
+	<key>GDLibraryMode</key>
+	<string>GDEnterprise</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>nearby-interaction</string>
+		<string>processing</string>
+		<string>remote-notification</string>
+	</array>
+</dict>
+</plist>
