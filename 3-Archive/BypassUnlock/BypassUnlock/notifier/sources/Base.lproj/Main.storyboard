@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fOV-s2-icC">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="oEl-dW-a5j">
+            <objects>
+                <navigationController id="fOV-s2-icC" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6YV-fV-2Ck">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Too-35-CxO" kind="relationship" relationship="rootViewController" id="S6P-7J-CWm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yMW-bN-Phg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1220" y="-54"/>
+        </scene>
+        <!--Bypass Unlock Screen Requester-->
+        <scene sceneID="B2w-Wj-5bU">
+            <objects>
+                <viewController id="Too-35-CxO" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="k8O-I9-r0u"/>
+                        <viewControllerLayoutGuide type="bottom" id="J80-Rj-gKA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zkf-nU-VWz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ae-LL-e84">
+                                <rect key="frame" x="174" y="257" width="252" height="86"/>
+                                <color key="backgroundColor" red="0.20784313730000001" green="0.65490196079999996" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="86" id="SzM-Xx-qkO"/>
+                                    <constraint firstAttribute="width" constant="252" id="ZRV-aH-gGW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Request Bypass Action">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="openBypassAction:" destination="Too-35-CxO" eventType="touchUpInside" id="TTy-At-CLK"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This app sends an event to Sample - BypassUnlock, which initiates bypass unlock action" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="560" translatesAutoresizingMaskIntoConstraints="NO" id="PBq-qS-RH0">
+                                <rect key="frame" x="20" y="106" width="560" height="101"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="750" constant="60" id="H5M-bx-stJ"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" priority="750" constant="122" id="tDt-f8-0nj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.20392156862745098" green="0.27058823529411763" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98431372549019602" green="0.98431372549019602" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="5ae-LL-e84" firstAttribute="top" relation="greaterThanOrEqual" secondItem="PBq-qS-RH0" secondAttribute="bottom" priority="850" constant="20" id="4dl-y9-uPa"/>
+                            <constraint firstItem="5ae-LL-e84" firstAttribute="centerX" secondItem="Zkf-nU-VWz" secondAttribute="centerX" id="Jrx-fy-JkQ"/>
+                            <constraint firstItem="5ae-LL-e84" firstAttribute="top" relation="lessThanOrEqual" secondItem="PBq-qS-RH0" secondAttribute="bottom" priority="850" constant="50" id="T8p-HM-2Gc"/>
+                            <constraint firstItem="PBq-qS-RH0" firstAttribute="leading" secondItem="Zkf-nU-VWz" secondAttribute="leadingMargin" id="WGo-JK-wWS"/>
+                            <constraint firstItem="5ae-LL-e84" firstAttribute="centerY" secondItem="Zkf-nU-VWz" secondAttribute="centerY" id="Z1v-in-h1j"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PBq-qS-RH0" secondAttribute="trailing" id="aDW-P1-m98"/>
+                            <constraint firstItem="PBq-qS-RH0" firstAttribute="top" relation="lessThanOrEqual" secondItem="k8O-I9-r0u" secondAttribute="bottom" priority="850" constant="42" id="fa0-Gs-fts"/>
+                            <constraint firstItem="J80-Rj-gKA" firstAttribute="top" secondItem="5ae-LL-e84" secondAttribute="bottom" constant="20" id="reO-hm-qBY"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="reO-hm-qBY"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="history" id="GsJ-MX-kM1">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
+                    <navigationItem key="navigationItem" title="Bypass Unlock Screen Requester" id="iCU-hV-Hd8"/>
+                    <connections>
+                        <outlet property="requestActionButton" destination="5ae-LL-e84" id="7cl-Mc-VGf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cdg-eA-hig" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-451" y="-54"/>
+        </scene>
+    </scenes>
+</document>

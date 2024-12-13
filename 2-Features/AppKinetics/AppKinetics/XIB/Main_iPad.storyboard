@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GDV-90-jBV">
+    <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="MbV-wO-DVe">
+            <objects>
+                <navigationController id="e4y-8U-k0M" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LvW-8b-uw9">
+                        <rect key="frame" x="0.0" y="0.0" width="704" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="0qD-WP-QI0" kind="relationship" relationship="rootViewController" id="bW5-G7-gNV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N9P-Vb-e2f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="316" y="746"/>
+        </scene>
+        <!--Document View-->
+        <scene sceneID="yvK-eC-wE8">
+            <objects>
+                <viewController id="0qD-WP-QI0" customClass="DetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Tid-8Y-67A"/>
+                        <viewControllerLayoutGuide type="bottom" id="RYo-hG-FVZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TfK-d0-aQZ">
+                        <rect key="frame" x="0.0" y="0.0" width="704" height="984"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i4V-Zs-L7x">
+                                <rect key="frame" x="0.0" y="56" width="724" height="828"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SECURED_BLACKBERRY_LOGO" translatesAutoresizingMaskIntoConstraints="NO" id="jpz-AF-6R6">
+                                <rect key="frame" x="51" y="892" width="167" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="167" id="5Nb-Eq-q0i"/>
+                                    <constraint firstAttribute="height" constant="26" id="eNB-r7-pQH"/>
+                                </constraints>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DvI-Fz-iAr">
+                                <rect key="frame" x="0.0" y="884" width="724" height="50"/>
+                                <items>
+                                    <barButtonItem style="plain" id="eLd-DY-GL4">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="vYB-KD-HHV">
+                                            <rect key="frame" x="20" y="12" width="26" height="26"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <connections>
+                                                <action selector="infoButtonOnTouchUpInside:" destination="0qD-WP-QI0" eventType="touchUpInside" id="bYG-xt-K2i"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem width="3" style="plain" systemItem="fixedSpace" id="ccW-8O-IC8"/>
+                                </items>
+                                <color key="tintColor" red="0.23700182139873505" green="0.28462636470794678" blue="0.32938772439956665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="i4V-Zs-L7x" firstAttribute="top" secondItem="TfK-d0-aQZ" secondAttribute="topMargin" id="CfS-Fe-aJo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DvI-Fz-iAr" secondAttribute="trailing" constant="-20" id="LC5-ed-rzq"/>
+                            <constraint firstItem="RYo-hG-FVZ" firstAttribute="top" secondItem="DvI-Fz-iAr" secondAttribute="bottom" id="PTI-3c-SxZ"/>
+                            <constraint firstItem="DvI-Fz-iAr" firstAttribute="top" secondItem="i4V-Zs-L7x" secondAttribute="bottom" id="TwB-8S-wFV"/>
+                            <constraint firstItem="jpz-AF-6R6" firstAttribute="leading" secondItem="TfK-d0-aQZ" secondAttribute="leadingMargin" constant="31" id="diE-f6-DhK"/>
+                            <constraint firstItem="DvI-Fz-iAr" firstAttribute="leading" secondItem="TfK-d0-aQZ" secondAttribute="leadingMargin" constant="-20" id="i6Z-OM-Asg"/>
+                            <constraint firstItem="i4V-Zs-L7x" firstAttribute="leading" secondItem="DvI-Fz-iAr" secondAttribute="leading" id="iHl-hn-a7b"/>
+                            <constraint firstItem="i4V-Zs-L7x" firstAttribute="trailing" secondItem="DvI-Fz-iAr" secondAttribute="trailing" id="ryp-sr-QmE"/>
+                            <constraint firstItem="DvI-Fz-iAr" firstAttribute="top" secondItem="jpz-AF-6R6" secondAttribute="bottom" constant="-34" id="v44-bV-724"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Document View" id="DQo-YW-8Z1">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="zPI-5w-K3l">
+                            <connections>
+                                <segue destination="LxS-Py-ZVL" kind="popoverPresentation" identifier="showAppSelectorController" popoverAnchorBarButtonItem="zPI-5w-K3l" id="jMm-TP-QSe">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="aboutButton" destination="vYB-KD-HHV" id="Oq3-ZF-YZ8"/>
+                        <outlet property="webView" destination="i4V-Zs-L7x" id="9hC-yL-jrM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4sd-ds-l1S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1135.9375" y="745.8984375"/>
+        </scene>
+        <!--App Selector View Controller-->
+        <scene sceneID="1ss-jt-C0q">
+            <objects>
+                <viewController storyboardIdentifier="appSelectorController" id="LxS-Py-ZVL" customClass="AppSelectorViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9vB-KK-Ug8"/>
+                        <viewControllerLayoutGuide type="bottom" id="hgm-X9-ASW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5UK-sI-AlX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="493"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="43" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yIk-LW-7TY">
+                                <rect key="frame" x="-4" y="57" width="328" height="436"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.90980392160000001" green="0.090196078430000007" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="separatorColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="gHz-XF-jly">
+                                        <rect key="frame" x="0.0" y="50" width="328" height="43"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gHz-XF-jly" id="AI3-GS-cxA">
+                                            <rect key="frame" x="0.0" y="0.0" width="328" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="LxS-Py-ZVL" id="l4V-V4-WIu"/>
+                                    <outlet property="delegate" destination="LxS-Py-ZVL" id="Jne-8h-4zh"/>
+                                </connections>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y8b-3R-7bW">
+                                <rect key="frame" x="0.0" y="13" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="gnD-UV-Gu3"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Open in BlackBerry Apps" id="6Wg-jO-EgV">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="JP0-VY-gwR">
+                                            <connections>
+                                                <action selector="barButtonAction:" destination="LxS-Py-ZVL" id="q3X-1r-hJN"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="yIk-LW-7TY" firstAttribute="top" secondItem="y8b-3R-7bW" secondAttribute="bottom" id="B3t-PT-3aY"/>
+                            <constraint firstItem="yIk-LW-7TY" firstAttribute="leading" secondItem="5UK-sI-AlX" secondAttribute="leadingMargin" constant="-20" id="BT1-OH-C97"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yIk-LW-7TY" secondAttribute="trailing" constant="-20" id="BVW-xZ-1fy"/>
+                            <constraint firstAttribute="trailing" secondItem="y8b-3R-7bW" secondAttribute="trailing" id="FVO-l7-Sfv"/>
+                            <constraint firstItem="y8b-3R-7bW" firstAttribute="top" secondItem="9vB-KK-Ug8" secondAttribute="bottom" id="Rro-TZ-vSN"/>
+                            <constraint firstItem="y8b-3R-7bW" firstAttribute="leading" secondItem="5UK-sI-AlX" secondAttribute="leading" id="kkX-SH-PgB"/>
+                            <constraint firstItem="hgm-X9-ASW" firstAttribute="top" secondItem="yIk-LW-7TY" secondAttribute="bottom" id="zOu-x7-oaR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="_tableView" destination="yIk-LW-7TY" id="EIA-QH-LOT"/>
+                        <outlet property="closeButton" destination="JP0-VY-gwR" id="bcE-6n-16J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XbN-Kf-jV6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2014.84375" y="745.8984375"/>
+        </scene>
+        <!--Documents-->
+        <scene sceneID="OTS-cr-Phk">
+            <objects>
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="tHd-Vx-4kl" customClass="MasterViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="cVY-r0-I7G">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="masterCell" id="idZ-kW-8kT">
+                                <rect key="frame" x="0.0" y="50" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="idZ-kW-8kT" id="aqL-Pb-34D">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="tHd-Vx-4kl" id="gNm-vZ-dCs"/>
+                            <outlet property="delegate" destination="tHd-Vx-4kl" id="IsC-TO-sUk"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Documents" id="UIk-1j-PHe"/>
+                    <connections>
+                        <outlet property="view" destination="cVY-r0-I7G" id="x5N-JZ-eLB"/>
+                        <segue destination="e4y-8U-k0M" kind="showDetail" identifier="showDetailController" id="hz3-Kp-7uE"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z6W-fT-eVh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1136" y="-1"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="PUZ-ra-eNn">
+            <objects>
+                <viewController storyboardIdentifier="aboutController" id="YLX-HM-zPp" customClass="AboutViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c8L-mB-w7s"/>
+                        <viewControllerLayoutGuide type="bottom" id="s7g-ic-Pbr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LFx-Xc-Kho">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yed-g7-QXu">
+                                <rect key="frame" x="0.0" y="20" width="768" height="50"/>
+                                <items>
+                                    <navigationItem title="About" id="C3P-bE-liu">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="br8-vb-6i7">
+                                            <color key="tintColor" red="0.23700182139873505" green="0.28462636470794678" blue="0.32938772439956665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="dismissAbout:" destination="YLX-HM-zPp" id="74A-I7-2je"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9tx-p6-H6j">
+                                <rect key="frame" x="14" y="90" width="709" height="876"/>
+                                <color key="backgroundColor" red="0.23700182139873505" green="0.28462636470794678" blue="0.32938772439956665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <string key="text">This is a sample application provided by BlackBerry Limited. It is intended as a starting point for BlackBerry Dynamics AppKinetics™ developers. This sample shows how to send and receive files securely. It is a consumer and provider of the Transfer File service.
+
+For more examples visit:
+https://community.blackberry.com/community/gdn
+
+Support:
+https://community.blackberry.com/community/gdn/support</string>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-29" translatesAutoresizingMaskIntoConstraints="NO" id="ZqR-7l-h73">
+                                <rect key="frame" x="20" y="984" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="Qt1-yB-pqB"/>
+                                    <constraint firstAttribute="width" constant="25" id="Z8e-X7-HQu"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SECURED_BLACKBERRY_LOGO" translatesAutoresizingMaskIntoConstraints="NO" id="pBM-HE-eVM">
+                                <rect key="frame" x="59" y="983" width="167" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="167" id="f3G-Al-xMd"/>
+                                    <constraint firstAttribute="height" constant="26" id="haL-ii-IVG"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.23700182139873505" green="0.28462636470794678" blue="0.32938772439956665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9tx-p6-H6j" firstAttribute="leading" secondItem="LFx-Xc-Kho" secondAttribute="leadingMargin" constant="-6" id="OHg-Bk-3UR"/>
+                            <constraint firstItem="s7g-ic-Pbr" firstAttribute="top" secondItem="9tx-p6-H6j" secondAttribute="bottom" constant="58" id="WFl-gE-JNq"/>
+                            <constraint firstItem="pBM-HE-eVM" firstAttribute="leading" secondItem="ZqR-7l-h73" secondAttribute="trailing" constant="14" id="XAd-Oh-QpN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Yed-g7-QXu" secondAttribute="trailing" constant="-20" id="a3i-S3-thS"/>
+                            <constraint firstItem="Yed-g7-QXu" firstAttribute="top" secondItem="LFx-Xc-Kho" secondAttribute="topMargin" id="afC-wU-WbV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9tx-p6-H6j" secondAttribute="trailing" constant="25" id="c36-eK-NWv"/>
+                            <constraint firstItem="s7g-ic-Pbr" firstAttribute="top" secondItem="pBM-HE-eVM" secondAttribute="bottom" constant="15" id="eeS-Sx-EAj"/>
+                            <constraint firstItem="s7g-ic-Pbr" firstAttribute="top" secondItem="ZqR-7l-h73" secondAttribute="bottom" constant="15" id="mZm-ye-ZhK"/>
+                            <constraint firstItem="Yed-g7-QXu" firstAttribute="leading" secondItem="LFx-Xc-Kho" secondAttribute="leadingMargin" constant="-20" id="mqv-b0-CIc"/>
+                            <constraint firstItem="9tx-p6-H6j" firstAttribute="top" secondItem="c8L-mB-w7s" secondAttribute="bottom" constant="70" id="n0y-qT-G9d"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="ZqR-7l-h73" secondAttribute="leading" id="vcE-au-roa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="aboutTextView" destination="9tx-p6-H6j" id="CcA-7J-mbj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ANh-7e-aED" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1136" y="1398"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="10b-1A-t2d">
+            <objects>
+                <navigationController id="I4E-C8-l5D" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MNg-Xv-bPb">
+                        <rect key="frame" x="0.0" y="20" width="320" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="tHd-Vx-4kl" kind="relationship" relationship="rootViewController" id="j78-Xa-eaK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tg7-tz-m5D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="316" y="-1"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="Ddl-cj-dJ4">
+            <objects>
+                <splitViewController id="GDV-90-jBV" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="I4E-C8-l5D" kind="relationship" relationship="masterViewController" id="6mV-2U-Pkc"/>
+                        <segue destination="e4y-8U-k0M" kind="relationship" relationship="detailViewController" id="fvh-x8-erV"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t5b-Qd-u04" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-504" y="328"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="hz3-Kp-7uE"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="Icon-29" width="29" height="29"/>
+        <image name="SECURED_BLACKBERRY_LOGO" width="268" height="40"/>
+    </resources>
+</document>

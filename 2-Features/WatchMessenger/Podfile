@@ -1,0 +1,16 @@
+
+target 'MessengerApp' do
+  use_frameworks!
+  platform :ios, '17.0'
+
+  pod 'BlackBerryDynamics'
+
+end
+
+target 'MessengerWatchApp' do
+  use_frameworks!
+  platform :ios, '17.0'
+
+  pod 'BlackBerryDynamics'
+
+end

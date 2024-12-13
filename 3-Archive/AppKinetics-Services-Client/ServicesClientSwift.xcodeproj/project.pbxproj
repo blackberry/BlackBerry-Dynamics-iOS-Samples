@@ -1,0 +1,688 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		100D5E6724EFD724002FE309 /* BlackBerryCerticom.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100D5E6424EFD721002FE309 /* BlackBerryCerticom.xcframework */; };
+		100D5E6824EFD724002FE309 /* BlackBerryCerticom.xcframework in Copy Framework */ = {isa = PBXBuildFile; fileRef = 100D5E6424EFD721002FE309 /* BlackBerryCerticom.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		100D5E6924EFD724002FE309 /* BlackBerryCerticomSBGSE.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100D5E6324EFD721002FE309 /* BlackBerryCerticomSBGSE.xcframework */; };
+		100D5E6A24EFD724002FE309 /* BlackBerryCerticomSBGSE.xcframework in Copy Framework */ = {isa = PBXBuildFile; fileRef = 100D5E6324EFD721002FE309 /* BlackBerryCerticomSBGSE.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		10D9ABD624F55B24006C014C /* BlackBerryDynamics.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10D9ABD524F55B24006C014C /* BlackBerryDynamics.xcframework */; };
+		10D9ABD724F55B24006C014C /* BlackBerryDynamics.xcframework in Copy Framework */ = {isa = PBXBuildFile; fileRef = 10D9ABD524F55B24006C014C /* BlackBerryDynamics.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		33DB61262357599D00DB58DD /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33DB61252357599D00DB58DD /* SafariServices.framework */; };
+		3B71D40D1FD82C2900EFAF67 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B71D4001FD82C2800EFAF67 /* InfoPlist.strings */; };
+		599703731C58CE4D00E4D693 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 599703721C58CE4D00E4D693 /* Assets.xcassets */; };
+		5997037A1C58CF0D00E4D693 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5997031B1C58CD3400E4D693 /* AppDelegate.swift */; };
+		5997037D1C58CF1E00E4D693 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5997037B1C58CF1E00E4D693 /* Constants.swift */; };
+		5997037E1C58CF1E00E4D693 /* Extensions+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5997037C1C58CF1E00E4D693 /* Extensions+Protocols.swift */; };
+		599703801C58CF5000E4D693 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28B5F17E1C0C83E6009F0FA3 /* CoreData.framework */; };
+		599703811C58CF5600E4D693 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28B5F1761C0C83C8009F0FA3 /* CoreTelephony.framework */; };
+		599703821C58CF5A00E4D693 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59FB2DB41C5660930077EF74 /* SystemConfiguration.framework */; };
+		599703831C58CF5F00E4D693 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28B5F16E1C0C83A4009F0FA3 /* LocalAuthentication.framework */; };
+		599703841C58CF8700E4D693 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28B5F1701C0C83AC009F0FA3 /* MessageUI.framework */; };
+		599703851C58CF9100E4D693 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 28B5F1821C0C83F4009F0FA3 /* libz.tbd */; };
+		599703891C58CFFF00E4D693 /* Documents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599703871C58CFFF00E4D693 /* Documents.swift */; };
+		5997038A1C58CFFF00E4D693 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599703881C58CFFF00E4D693 /* Service.swift */; };
+		5997038D1C58D00800E4D693 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5997038B1C58D00800E4D693 /* AboutViewController.swift */; };
+		5997038E1C58D00800E4D693 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5997038C1C58D00800E4D693 /* RootViewController.swift */; };
+		599703921C58D01300E4D693 /* AppKineticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5997038F1C58D01300E4D693 /* AppKineticsViewController.swift */; };
+		599703931C58D01300E4D693 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599703901C58D01300E4D693 /* PreviewViewController.swift */; };
+		599703941C58D01300E4D693 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599703911C58D01300E4D693 /* ShareViewController.swift */; };
+		599703971C58D01E00E4D693 /* GreetingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599703951C58D01E00E4D693 /* GreetingsViewModel.swift */; };
+		599703981C58D01E00E4D693 /* TroubleshootingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599703961C58D01E00E4D693 /* TroubleshootingViewModel.swift */; };
+		5997039B1C58D02B00E4D693 /* PreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599703991C58D02B00E4D693 /* PreviewViewModel.swift */; };
+		5997039C1C58D02B00E4D693 /* ShareViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5997039A1C58D02B00E4D693 /* ShareViewModel.swift */; };
+		599703B21C58D14800E4D693 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 599703AC1C58D14500E4D693 /* LaunchScreen.storyboard */; };
+		599703B31C58D14800E4D693 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 599703AE1C58D14500E4D693 /* Main.storyboard */; };
+		59E487B01C60BA2E0049706C /* AppKineticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E487AF1C60BA2E0049706C /* AppKineticsViewModel.swift */; };
+		6D60459A203C936A00B4C64D /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D604599203C936A00B4C64D /* WebKit.framework */; };
+		6D9974A728C7F19500AA0F57 /* UniformTypeIdentifiers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D9974A628C7F19400AA0F57 /* UniformTypeIdentifiers.framework */; };
+		6DA3C4D826F53097009BC7E4 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA3C4D726F53097009BC7E4 /* CoreServices.framework */; };
+		74BB190323F496AF00B3834F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74BB190223F496AF00B3834F /* AVFoundation.framework */; };
+		810685CD2019CF6900E7BC7F /* ServiceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810685CC2019CF6900E7BC7F /* ServiceInfo.swift */; };
+		810E39CD1CD0AB7000F24279 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810E39CC1CD0AB7000F24279 /* SplitViewController.swift */; };
+		8B25332A1DD0EA9B007BDE5D /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B2533291DD0EA9B007BDE5D /* Entitlements.plist */; };
+		92A524B42C62907E008FFAF7 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 92A524B22C62907E008FFAF7 /* Podfile */; };
+		92A524B52C62907E008FFAF7 /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = 92A524B32C62907E008FFAF7 /* ReadMe.md */; };
+		95CCA94028F4D4F7002C13CE /* CryptoTokenKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CCA93F28F4D4F7002C13CE /* CryptoTokenKit.framework */; };
+		9915107821DCF1E500190D05 /* DeviceCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9915107721DCF1E500190D05 /* DeviceCheck.framework */; };
+		9997873F2176059D001B5C5B /* config.info in Resources */ = {isa = PBXBuildFile; fileRef = 9997873E2176059D001B5C5B /* config.info */; };
+		C786FA8022A94B5700418305 /* UIAccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C786FA7F22A94B5700418305 /* UIAccessibilityIdentifiers.swift */; };
+		F64DC73B2AAB64C900DF843C /* Blackberry_Secure_Mobility_Platform.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F64DC7382AAB64C900DF843C /* Blackberry_Secure_Mobility_Platform.pdf */; };
+		F64DC73C2AAB64C900DF843C /* Cylance_Endpoint_Security_Overview_Architecture.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F64DC7392AAB64C900DF843C /* Cylance_Endpoint_Security_Overview_Architecture.pdf */; };
+		F64DC73D2AAB64C900DF843C /* Blackberry_MTD.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F64DC73A2AAB64C900DF843C /* Blackberry_MTD.pdf */; };
+		FB9F3B811E02EBBA0013E906 /* ServicesClientGDiOSDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9F3B801E02EBBA0013E906 /* ServicesClientGDiOSDelegate.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F615EA58244F06EC00ED5011 /* Copy Framework */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				100D5E6A24EFD724002FE309 /* BlackBerryCerticomSBGSE.xcframework in Copy Framework */,
+				100D5E6824EFD724002FE309 /* BlackBerryCerticom.xcframework in Copy Framework */,
+				10D9ABD724F55B24006C014C /* BlackBerryDynamics.xcframework in Copy Framework */,
+			);
+			name = "Copy Framework";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		100D5E6324EFD721002FE309 /* BlackBerryCerticomSBGSE.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = BlackBerryCerticomSBGSE.xcframework; sourceTree = "<group>"; };
+		100D5E6424EFD721002FE309 /* BlackBerryCerticom.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = BlackBerryCerticom.xcframework; sourceTree = "<group>"; };
+		10D9ABD524F55B24006C014C /* BlackBerryDynamics.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = BlackBerryDynamics.xcframework; sourceTree = "<group>"; };
+		207F85221CB2F8A20001365A /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		28B5F16E1C0C83A4009F0FA3 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		28B5F1701C0C83AC009F0FA3 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		28B5F1761C0C83C8009F0FA3 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		28B5F17E1C0C83E6009F0FA3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		28B5F1821C0C83F4009F0FA3 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		33DB61252357599D00DB58DD /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		3B71D4011FD82C2800EFAF67 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = "ServicesClientSwift/Supporting Files/ja.lproj/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
+		3B71D4021FD82C2900EFAF67 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "ServicesClientSwift/Supporting Files/zh-Hans.lproj/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
+		3B71D4031FD82C2900EFAF67 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = "ServicesClientSwift/Supporting Files/de.lproj/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
+		3B71D4041FD82C2900EFAF67 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = "ServicesClientSwift/Supporting Files/it.lproj/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
+		3B71D4051FD82C2900EFAF67 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = "ServicesClientSwift/Supporting Files/nl.lproj/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
+		3B71D4061FD82C2900EFAF67 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = "ServicesClientSwift/Supporting Files/ko.lproj/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
+		3B71D4071FD82C2900EFAF67 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "ServicesClientSwift/Supporting Files/pt-PT.lproj/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
+		3B71D4081FD82C2900EFAF67 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = "ServicesClientSwift/Supporting Files/da.lproj/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
+		3B71D4091FD82C2900EFAF67 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = "ServicesClientSwift/Supporting Files/pt.lproj/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
+		3B71D40A1FD82C2900EFAF67 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = "ServicesClientSwift/Supporting Files/sv.lproj/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
+		3B71D40B1FD82C2900EFAF67 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = "ServicesClientSwift/Supporting Files/es.lproj/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
+		3B71D40C1FD82C2900EFAF67 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = "ServicesClientSwift/Supporting Files/fr.lproj/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
+		3BFC78941FE0122A00624EBE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "ServicesClientSwift/Supporting Files/en.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		5997031B1C58CD3400E4D693 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ServicesClientSwift/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		5997034A1C58CDFD00E4D693 /* ServicesClientSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ServicesClientSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		599703721C58CE4D00E4D693 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ServicesClientSwift/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		599703751C58CE5500E4D693 /* default.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = default.xcconfig; path = ServicesClientSwift/default.xcconfig; sourceTree = SOURCE_ROOT; };
+		599703761C58CE5500E4D693 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ServicesClientSwift/Info.plist; sourceTree = SOURCE_ROOT; };
+		5997037B1C58CF1E00E4D693 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ServicesClientSwift/Constants.swift; sourceTree = SOURCE_ROOT; };
+		5997037C1C58CF1E00E4D693 /* Extensions+Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Extensions+Protocols.swift"; path = "ServicesClientSwift/Extensions+Protocols.swift"; sourceTree = SOURCE_ROOT; };
+		599703871C58CFFF00E4D693 /* Documents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Documents.swift; path = ServicesClientSwift/Documents.swift; sourceTree = SOURCE_ROOT; };
+		599703881C58CFFF00E4D693 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Service.swift; path = ServicesClientSwift/Service.swift; sourceTree = SOURCE_ROOT; };
+		5997038B1C58D00800E4D693 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutViewController.swift; path = ServicesClientSwift/AboutViewController.swift; sourceTree = SOURCE_ROOT; };
+		5997038C1C58D00800E4D693 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootViewController.swift; path = ServicesClientSwift/RootViewController.swift; sourceTree = SOURCE_ROOT; };
+		5997038F1C58D01300E4D693 /* AppKineticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppKineticsViewController.swift; path = ServicesClientSwift/AppKineticsViewController.swift; sourceTree = SOURCE_ROOT; };
+		599703901C58D01300E4D693 /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreviewViewController.swift; path = ServicesClientSwift/PreviewViewController.swift; sourceTree = SOURCE_ROOT; };
+		599703911C58D01300E4D693 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareViewController.swift; path = ServicesClientSwift/ShareViewController.swift; sourceTree = SOURCE_ROOT; };
+		599703951C58D01E00E4D693 /* GreetingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GreetingsViewModel.swift; path = ServicesClientSwift/GreetingsViewModel.swift; sourceTree = SOURCE_ROOT; };
+		599703961C58D01E00E4D693 /* TroubleshootingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TroubleshootingViewModel.swift; path = ServicesClientSwift/TroubleshootingViewModel.swift; sourceTree = SOURCE_ROOT; };
+		599703991C58D02B00E4D693 /* PreviewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreviewViewModel.swift; path = ServicesClientSwift/PreviewViewModel.swift; sourceTree = SOURCE_ROOT; };
+		5997039A1C58D02B00E4D693 /* ShareViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareViewModel.swift; path = ServicesClientSwift/ShareViewModel.swift; sourceTree = SOURCE_ROOT; };
+		599703AD1C58D14500E4D693 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ServicesClientSwift/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		599703AF1C58D14500E4D693 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ServicesClientSwift/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		59E487AF1C60BA2E0049706C /* AppKineticsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppKineticsViewModel.swift; path = ServicesClientSwift/AppKineticsViewModel.swift; sourceTree = SOURCE_ROOT; };
+		59FB2DB41C5660930077EF74 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		6D604599203C936A00B4C64D /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		6D9974A628C7F19400AA0F57 /* UniformTypeIdentifiers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UniformTypeIdentifiers.framework; path = System/Library/Frameworks/UniformTypeIdentifiers.framework; sourceTree = SDKROOT; };
+		6DA3C4D726F53097009BC7E4 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		74BB190223F496AF00B3834F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		810685CC2019CF6900E7BC7F /* ServiceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceInfo.swift; path = ServicesClientSwift/ServiceInfo.swift; sourceTree = "<group>"; };
+		810E39CC1CD0AB7000F24279 /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplitViewController.swift; path = ServicesClientSwift/SplitViewController.swift; sourceTree = SOURCE_ROOT; };
+		8B2533291DD0EA9B007BDE5D /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Entitlements.plist; path = ServicesClientSwift/Entitlements.plist; sourceTree = SOURCE_ROOT; };
+		92A524B22C62907E008FFAF7 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		92A524B32C62907E008FFAF7 /* ReadMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
+		95CCA91F28F4D29C002C13CE /* ServicesClientSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = ServicesClientSwift.entitlements; path = ServicesClientSwift/ServicesClientSwift.entitlements; sourceTree = "<group>"; };
+		95CCA93F28F4D4F7002C13CE /* CryptoTokenKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoTokenKit.framework; path = System/Library/Frameworks/CryptoTokenKit.framework; sourceTree = SDKROOT; };
+		9915107721DCF1E500190D05 /* DeviceCheck.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeviceCheck.framework; path = System/Library/Frameworks/DeviceCheck.framework; sourceTree = SDKROOT; };
+		9997873E2176059D001B5C5B /* config.info */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = config.info; path = "ServicesClientSwift/Supporting Files/config.info"; sourceTree = "<group>"; };
+		C786FA7F22A94B5700418305 /* UIAccessibilityIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIAccessibilityIdentifiers.swift; path = "ServicesClientSwift/Supporting Files/UIAccessibilityIdentifiers.swift"; sourceTree = "<group>"; };
+		F64DC7382AAB64C900DF843C /* Blackberry_Secure_Mobility_Platform.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = Blackberry_Secure_Mobility_Platform.pdf; path = ServicesClientSwift/Files/Blackberry_Secure_Mobility_Platform.pdf; sourceTree = "<group>"; };
+		F64DC7392AAB64C900DF843C /* Cylance_Endpoint_Security_Overview_Architecture.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = Cylance_Endpoint_Security_Overview_Architecture.pdf; path = ServicesClientSwift/Files/Cylance_Endpoint_Security_Overview_Architecture.pdf; sourceTree = "<group>"; };
+		F64DC73A2AAB64C900DF843C /* Blackberry_MTD.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = Blackberry_MTD.pdf; path = ServicesClientSwift/Files/Blackberry_MTD.pdf; sourceTree = "<group>"; };
+		FB9F3B801E02EBBA0013E906 /* ServicesClientGDiOSDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServicesClientGDiOSDelegate.swift; path = ServicesClientSwift/ServicesClientGDiOSDelegate.swift; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		599703471C58CDFD00E4D693 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95CCA94028F4D4F7002C13CE /* CryptoTokenKit.framework in Frameworks */,
+				6DA3C4D826F53097009BC7E4 /* CoreServices.framework in Frameworks */,
+				74BB190323F496AF00B3834F /* AVFoundation.framework in Frameworks */,
+				100D5E6924EFD724002FE309 /* BlackBerryCerticomSBGSE.xcframework in Frameworks */,
+				9915107821DCF1E500190D05 /* DeviceCheck.framework in Frameworks */,
+				6D60459A203C936A00B4C64D /* WebKit.framework in Frameworks */,
+				100D5E6724EFD724002FE309 /* BlackBerryCerticom.xcframework in Frameworks */,
+				599703851C58CF9100E4D693 /* libz.tbd in Frameworks */,
+				599703841C58CF8700E4D693 /* MessageUI.framework in Frameworks */,
+				599703831C58CF5F00E4D693 /* LocalAuthentication.framework in Frameworks */,
+				6D9974A728C7F19500AA0F57 /* UniformTypeIdentifiers.framework in Frameworks */,
+				599703821C58CF5A00E4D693 /* SystemConfiguration.framework in Frameworks */,
+				10D9ABD624F55B24006C014C /* BlackBerryDynamics.xcframework in Frameworks */,
+				599703811C58CF5600E4D693 /* CoreTelephony.framework in Frameworks */,
+				599703801C58CF5000E4D693 /* CoreData.framework in Frameworks */,
+				33DB61262357599D00DB58DD /* SafariServices.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		28B5F1491C0C7F67009F0FA3 = {
+			isa = PBXGroup;
+			children = (
+				92A524B22C62907E008FFAF7 /* Podfile */,
+				92A524B32C62907E008FFAF7 /* ReadMe.md */,
+				28B5F1541C0C7F67009F0FA3 /* ServicesClientSwift */,
+				28B5F1691C0C8010009F0FA3 /* Frameworks */,
+				28B5F1531C0C7F67009F0FA3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		28B5F1531C0C7F67009F0FA3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5997034A1C58CDFD00E4D693 /* ServicesClientSwift.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		28B5F1541C0C7F67009F0FA3 /* ServicesClientSwift */ = {
+			isa = PBXGroup;
+			children = (
+				95CCA91F28F4D29C002C13CE /* ServicesClientSwift.entitlements */,
+				5997031B1C58CD3400E4D693 /* AppDelegate.swift */,
+				FB9F3B801E02EBBA0013E906 /* ServicesClientGDiOSDelegate.swift */,
+				594C08771C0DD25B008527B2 /* MVVM */,
+				28B5F1941C0C8711009F0FA3 /* Storyboards */,
+				28B5F1881C0C8525009F0FA3 /* Supporting Files */,
+			);
+			name = ServicesClientSwift;
+			sourceTree = "<group>";
+		};
+		28B5F1691C0C8010009F0FA3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				95CCA93F28F4D4F7002C13CE /* CryptoTokenKit.framework */,
+				6D9974A628C7F19400AA0F57 /* UniformTypeIdentifiers.framework */,
+				6DA3C4D726F53097009BC7E4 /* CoreServices.framework */,
+				10D9ABD524F55B24006C014C /* BlackBerryDynamics.xcframework */,
+				100D5E6424EFD721002FE309 /* BlackBerryCerticom.xcframework */,
+				100D5E6324EFD721002FE309 /* BlackBerryCerticomSBGSE.xcframework */,
+				74BB190223F496AF00B3834F /* AVFoundation.framework */,
+				33DB61252357599D00DB58DD /* SafariServices.framework */,
+				9915107721DCF1E500190D05 /* DeviceCheck.framework */,
+				6D604599203C936A00B4C64D /* WebKit.framework */,
+				28B5F1821C0C83F4009F0FA3 /* libz.tbd */,
+				207F85221CB2F8A20001365A /* MobileCoreServices.framework */,
+				59FB2DB41C5660930077EF74 /* SystemConfiguration.framework */,
+				28B5F17E1C0C83E6009F0FA3 /* CoreData.framework */,
+				28B5F1761C0C83C8009F0FA3 /* CoreTelephony.framework */,
+				28B5F1701C0C83AC009F0FA3 /* MessageUI.framework */,
+				28B5F16E1C0C83A4009F0FA3 /* LocalAuthentication.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		28B5F1881C0C8525009F0FA3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9997873E2176059D001B5C5B /* config.info */,
+				8B2533291DD0EA9B007BDE5D /* Entitlements.plist */,
+				3B71D4001FD82C2800EFAF67 /* InfoPlist.strings */,
+				28B5F18F1C0C85C1009F0FA3 /* Resources */,
+				599703761C58CE5500E4D693 /* Info.plist */,
+				599703751C58CE5500E4D693 /* default.xcconfig */,
+				C786FA7F22A94B5700418305 /* UIAccessibilityIdentifiers.swift */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		28B5F18F1C0C85C1009F0FA3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				599D6A1A1C103A6600C48B4B /* Files */,
+				599703721C58CE4D00E4D693 /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		28B5F1941C0C8711009F0FA3 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				599703AE1C58D14500E4D693 /* Main.storyboard */,
+				599703AC1C58D14500E4D693 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		591FDE181C16E5BF00F11727 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				599703951C58D01E00E4D693 /* GreetingsViewModel.swift */,
+				599703961C58D01E00E4D693 /* TroubleshootingViewModel.swift */,
+				59BDDEB21C18215B0096DF93 /* AppKinetics */,
+			);
+			name = "View Models";
+			sourceTree = "<group>";
+		};
+		594C08771C0DD25B008527B2 /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				5997037B1C58CF1E00E4D693 /* Constants.swift */,
+				5997037C1C58CF1E00E4D693 /* Extensions+Protocols.swift */,
+				59A5FF961C15D65A00FBA130 /* Models */,
+				59A5FF951C15CCEA00FBA130 /* Controllers */,
+				591FDE181C16E5BF00F11727 /* View Models */,
+			);
+			name = MVVM;
+			sourceTree = "<group>";
+		};
+		599D6A1A1C103A6600C48B4B /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				F64DC73A2AAB64C900DF843C /* Blackberry_MTD.pdf */,
+				F64DC7382AAB64C900DF843C /* Blackberry_Secure_Mobility_Platform.pdf */,
+				F64DC7392AAB64C900DF843C /* Cylance_Endpoint_Security_Overview_Architecture.pdf */,
+			);
+			name = Files;
+			sourceTree = "<group>";
+		};
+		59A5FF951C15CCEA00FBA130 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				810E39CC1CD0AB7000F24279 /* SplitViewController.swift */,
+				5997038C1C58D00800E4D693 /* RootViewController.swift */,
+				5997038B1C58D00800E4D693 /* AboutViewController.swift */,
+				59BDDEB11C18214A0096DF93 /* AppKinetics */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		59A5FF961C15D65A00FBA130 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				810685CC2019CF6900E7BC7F /* ServiceInfo.swift */,
+				599703871C58CFFF00E4D693 /* Documents.swift */,
+				599703881C58CFFF00E4D693 /* Service.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		59BDDEB11C18214A0096DF93 /* AppKinetics */ = {
+			isa = PBXGroup;
+			children = (
+				5997038F1C58D01300E4D693 /* AppKineticsViewController.swift */,
+				599703901C58D01300E4D693 /* PreviewViewController.swift */,
+				599703911C58D01300E4D693 /* ShareViewController.swift */,
+			);
+			name = AppKinetics;
+			sourceTree = "<group>";
+		};
+		59BDDEB21C18215B0096DF93 /* AppKinetics */ = {
+			isa = PBXGroup;
+			children = (
+				59E487AF1C60BA2E0049706C /* AppKineticsViewModel.swift */,
+				599703991C58D02B00E4D693 /* PreviewViewModel.swift */,
+				5997039A1C58D02B00E4D693 /* ShareViewModel.swift */,
+			);
+			name = AppKinetics;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		599703491C58CDFD00E4D693 /* ServicesClientSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 599703641C58CDFE00E4D693 /* Build configuration list for PBXNativeTarget "ServicesClientSwift" */;
+			buildPhases = (
+				599703461C58CDFD00E4D693 /* Sources */,
+				599703471C58CDFD00E4D693 /* Frameworks */,
+				599703481C58CDFD00E4D693 /* Resources */,
+				F615EA58244F06EC00ED5011 /* Copy Framework */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ServicesClientSwift;
+			productName = ServicesClientSwift;
+			productReference = 5997034A1C58CDFD00E4D693 /* ServicesClientSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		28B5F14A1C0C7F67009F0FA3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = BlackBerry;
+				TargetAttributes = {
+					599703491C58CDFD00E4D693 = {
+						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 1000;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 28B5F14D1C0C7F67009F0FA3 /* Build configuration list for PBXProject "ServicesClientSwift" */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				ja,
+				"zh-Hans",
+				de,
+				it,
+				nl,
+				ko,
+				"pt-PT",
+				da,
+				pt,
+				sv,
+				es,
+				fr,
+			);
+			mainGroup = 28B5F1491C0C7F67009F0FA3;
+			productRefGroup = 28B5F1531C0C7F67009F0FA3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				599703491C58CDFD00E4D693 /* ServicesClientSwift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		599703481C58CDFD00E4D693 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F64DC73B2AAB64C900DF843C /* Blackberry_Secure_Mobility_Platform.pdf in Resources */,
+				92A524B52C62907E008FFAF7 /* ReadMe.md in Resources */,
+				F64DC73D2AAB64C900DF843C /* Blackberry_MTD.pdf in Resources */,
+				F64DC73C2AAB64C900DF843C /* Cylance_Endpoint_Security_Overview_Architecture.pdf in Resources */,
+				599703B31C58D14800E4D693 /* Main.storyboard in Resources */,
+				8B25332A1DD0EA9B007BDE5D /* Entitlements.plist in Resources */,
+				9997873F2176059D001B5C5B /* config.info in Resources */,
+				92A524B42C62907E008FFAF7 /* Podfile in Resources */,
+				599703B21C58D14800E4D693 /* LaunchScreen.storyboard in Resources */,
+				599703731C58CE4D00E4D693 /* Assets.xcassets in Resources */,
+				3B71D40D1FD82C2900EFAF67 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		599703461C58CDFD00E4D693 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5997038D1C58D00800E4D693 /* AboutViewController.swift in Sources */,
+				599703981C58D01E00E4D693 /* TroubleshootingViewModel.swift in Sources */,
+				599703891C58CFFF00E4D693 /* Documents.swift in Sources */,
+				C786FA8022A94B5700418305 /* UIAccessibilityIdentifiers.swift in Sources */,
+				FB9F3B811E02EBBA0013E906 /* ServicesClientGDiOSDelegate.swift in Sources */,
+				599703941C58D01300E4D693 /* ShareViewController.swift in Sources */,
+				5997039C1C58D02B00E4D693 /* ShareViewModel.swift in Sources */,
+				5997037E1C58CF1E00E4D693 /* Extensions+Protocols.swift in Sources */,
+				5997038E1C58D00800E4D693 /* RootViewController.swift in Sources */,
+				599703971C58D01E00E4D693 /* GreetingsViewModel.swift in Sources */,
+				810685CD2019CF6900E7BC7F /* ServiceInfo.swift in Sources */,
+				599703921C58D01300E4D693 /* AppKineticsViewController.swift in Sources */,
+				5997038A1C58CFFF00E4D693 /* Service.swift in Sources */,
+				5997039B1C58D02B00E4D693 /* PreviewViewModel.swift in Sources */,
+				59E487B01C60BA2E0049706C /* AppKineticsViewModel.swift in Sources */,
+				5997037A1C58CF0D00E4D693 /* AppDelegate.swift in Sources */,
+				5997037D1C58CF1E00E4D693 /* Constants.swift in Sources */,
+				599703931C58D01300E4D693 /* PreviewViewController.swift in Sources */,
+				810E39CD1CD0AB7000F24279 /* SplitViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3B71D4001FD82C2800EFAF67 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B71D4011FD82C2800EFAF67 /* ja */,
+				3B71D4021FD82C2900EFAF67 /* zh-Hans */,
+				3B71D4031FD82C2900EFAF67 /* de */,
+				3B71D4041FD82C2900EFAF67 /* it */,
+				3B71D4051FD82C2900EFAF67 /* nl */,
+				3B71D4061FD82C2900EFAF67 /* ko */,
+				3B71D4071FD82C2900EFAF67 /* pt-PT */,
+				3B71D4081FD82C2900EFAF67 /* da */,
+				3B71D4091FD82C2900EFAF67 /* pt */,
+				3B71D40A1FD82C2900EFAF67 /* sv */,
+				3B71D40B1FD82C2900EFAF67 /* es */,
+				3B71D40C1FD82C2900EFAF67 /* fr */,
+				3BFC78941FE0122A00624EBE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		599703AC1C58D14500E4D693 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				599703AD1C58D14500E4D693 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		599703AE1C58D14500E4D693 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				599703AF1C58D14500E4D693 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		28B5F1621C0C7F67009F0FA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 arm64e x86_64";
+			};
+			name = Debug;
+		};
+		28B5F1631C0C7F67009F0FA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 arm64e x86_64";
+			};
+			name = Release;
+		};
+		599703651C58CDFE00E4D693 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 599703751C58CE5500E4D693 /* default.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_MODULES_AUTOLINK = YES;
+				CODE_SIGN_ENTITLEMENTS = ServicesClientSwift/ServicesClientSwift.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "$(SRCROOT)/ServicesClientSwift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.good.example.sdk.services-client";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				REEXPORTED_FRAMEWORK_NAMES = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		599703661C58CDFE00E4D693 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 599703751C58CE5500E4D693 /* default.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_MODULES_AUTOLINK = YES;
+				CODE_SIGN_ENTITLEMENTS = ServicesClientSwift/ServicesClientSwift.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "$(SRCROOT)/ServicesClientSwift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.good.example.sdk.services-client";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				REEXPORTED_FRAMEWORK_NAMES = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		28B5F14D1C0C7F67009F0FA3 /* Build configuration list for PBXProject "ServicesClientSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28B5F1621C0C7F67009F0FA3 /* Debug */,
+				28B5F1631C0C7F67009F0FA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		599703641C58CDFE00E4D693 /* Build configuration list for PBXNativeTarget "ServicesClientSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				599703651C58CDFE00E4D693 /* Debug */,
+				599703661C58CDFE00E4D693 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 28B5F14A1C0C7F67009F0FA3 /* Project object */;
+}

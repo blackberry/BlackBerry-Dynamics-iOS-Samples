@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="v8d-zW-C1b">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <development version="7000" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Settings View Controller-->
+        <scene sceneID="2KM-vx-BKR">
+            <objects>
+                <viewController id="5qz-kw-jRe" customClass="SettingsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8s7-Db-BBr"/>
+                        <viewControllerLayoutGuide type="bottom" id="mMy-PG-vQL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CEf-fV-y6L">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xm5-aA-DyV">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" id="Hfn-Pz-79C">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="XtL-lQ-Kpt">
+                                            <rect key="frame" x="20" y="11" width="22" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <connections>
+                                                <segue destination="TqI-ek-P9E" kind="show" id="GlA-fb-bkn">
+                                                    <nil key="action"/>
+                                                </segue>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem width="3" style="plain" systemItem="fixedSpace" id="4OX-EM-8TZ"/>
+                                </items>
+                                <color key="tintColor" red="0.30196078430000001" green="0.35686274509999999" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SECURED_BLACKBERRY_LOGO" translatesAutoresizingMaskIntoConstraints="NO" id="XyJ-Im-Yn1">
+                                <rect key="frame" x="51" y="564" width="167" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="167" id="1V3-qg-2OO"/>
+                                    <constraint firstAttribute="height" constant="26" id="kdP-0g-Pxu"/>
+                                </constraints>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6eB-6c-jxN">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Settings" id="sMI-E8-sdS"/>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Troubleshooting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2U-LZ-Y1T">
+                                <rect key="frame" x="20" y="429" width="173" height="27"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GyD-E1-SQ4">
+                                <rect key="frame" x="233" y="506" width="135" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Upload Logs">
+                                    <color key="titleColor" red="0.30196078430000001" green="0.35686274509999999" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="uploadLogsPressed:" destination="5qz-kw-jRe" eventType="touchUpInside" id="eRt-IH-x06"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xm5-aA-DyV" firstAttribute="leading" secondItem="CEf-fV-y6L" secondAttribute="leadingMargin" constant="-20" id="9WE-0i-dOf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6eB-6c-jxN" secondAttribute="trailing" constant="-20" id="J8d-iE-iFV"/>
+                            <constraint firstItem="GyD-E1-SQ4" firstAttribute="top" secondItem="X2U-LZ-Y1T" secondAttribute="bottom" constant="50" id="csW-5U-qr5"/>
+                            <constraint firstItem="xm5-aA-DyV" firstAttribute="top" secondItem="GyD-E1-SQ4" secondAttribute="bottom" constant="11" id="e9X-SV-g3I"/>
+                            <constraint firstItem="GyD-E1-SQ4" firstAttribute="leading" secondItem="CEf-fV-y6L" secondAttribute="leadingMargin" constant="213" id="eDu-Qb-LZG"/>
+                            <constraint firstItem="xm5-aA-DyV" firstAttribute="top" secondItem="XyJ-Im-Yn1" secondAttribute="bottom" constant="-34" id="lfH-8R-fdZ"/>
+                            <constraint firstItem="X2U-LZ-Y1T" firstAttribute="leading" secondItem="CEf-fV-y6L" secondAttribute="leadingMargin" id="pc5-3g-6Y7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GyD-E1-SQ4" secondAttribute="trailing" constant="212" id="pct-yb-MhB"/>
+                            <constraint firstItem="XyJ-Im-Yn1" firstAttribute="leading" secondItem="CEf-fV-y6L" secondAttribute="leadingMargin" constant="31" id="uk8-CX-hSL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xm5-aA-DyV" secondAttribute="trailing" constant="-20" id="uvD-uM-qKe"/>
+                            <constraint firstItem="mMy-PG-vQL" firstAttribute="top" secondItem="xm5-aA-DyV" secondAttribute="bottom" id="yeh-DB-vHC"/>
+                            <constraint firstItem="6eB-6c-jxN" firstAttribute="leading" secondItem="CEf-fV-y6L" secondAttribute="leadingMargin" constant="-20" id="z2S-EJ-gKb"/>
+                            <constraint firstItem="6eB-6c-jxN" firstAttribute="top" secondItem="CEf-fV-y6L" secondAttribute="topMargin" constant="20" id="zPE-ac-RZP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Th3-ad-jy1"/>
+                    <connections>
+                        <outlet property="uploadLogsButton" destination="GyD-E1-SQ4" id="V9c-yd-gX3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7CH-86-Nvw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1218" y="841"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="q05-IR-Xp7">
+            <objects>
+                <viewController id="TqI-ek-P9E" customClass="AboutViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dKO-U5-dFD"/>
+                        <viewControllerLayoutGuide type="bottom" id="wYZ-Fk-P97"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hqe-QV-PQZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ULd-Es-MZo">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" id="0Cm-ph-F5F">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="IxP-v8-Lr4">
+                                            <rect key="frame" x="20" y="11" width="22" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="u6q-n3-NQZ"/>
+                                    <barButtonItem image="SettingsImage" id="3XO-9T-6hI">
+                                        <connections>
+                                            <action selector="showSettings:" destination="TqI-ek-P9E" id="Sp4-RV-uQs"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="tintColor" red="0.30196078430000001" green="0.35686274509999999" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </toolbar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IDJ-QX-7tc">
+                                <rect key="frame" x="30" y="64" width="541" height="472"/>
+                                <string key="text">This sample app demonstrates the Services API used for secure communication across containers. 
+
+For more examples visit:
+https://community.blackberry.com/community/gdn
+
+Support:
+https://community.blackberry.com/community/gdn/support
+</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SECURED_BLACKBERRY_LOGO" translatesAutoresizingMaskIntoConstraints="NO" id="Nfp-VD-kB0">
+                                <rect key="frame" x="57" y="533" width="60" height="60"/>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9lt-zT-vi4">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="About" id="qeN-aE-OQE"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wYZ-Fk-P97" firstAttribute="top" secondItem="ULd-Es-MZo" secondAttribute="bottom" id="7Kw-EC-xK3"/>
+                            <constraint firstItem="wYZ-Fk-P97" firstAttribute="top" secondItem="Nfp-VD-kB0" secondAttribute="bottom" constant="7" id="Ha1-Ba-h3a"/>
+                            <constraint firstItem="9lt-zT-vi4" firstAttribute="leading" secondItem="hqe-QV-PQZ" secondAttribute="leadingMargin" constant="-20" id="N0S-Cn-5uG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IDJ-QX-7tc" secondAttribute="trailing" constant="9" id="UGJ-te-3dz"/>
+                            <constraint firstItem="IDJ-QX-7tc" firstAttribute="leading" secondItem="hqe-QV-PQZ" secondAttribute="leadingMargin" constant="10" id="Yjv-vX-Ivw"/>
+                            <constraint firstItem="ULd-Es-MZo" firstAttribute="top" secondItem="IDJ-QX-7tc" secondAttribute="bottom" constant="20" id="ayX-Lg-JxT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9lt-zT-vi4" secondAttribute="trailing" constant="-20" id="dm5-XR-nwM"/>
+                            <constraint firstItem="9lt-zT-vi4" firstAttribute="top" secondItem="hqe-QV-PQZ" secondAttribute="topMargin" constant="20" id="ksz-28-BJE"/>
+                            <constraint firstItem="IDJ-QX-7tc" firstAttribute="top" secondItem="9lt-zT-vi4" secondAttribute="bottom" id="mZH-ZK-20s"/>
+                            <constraint firstItem="Nfp-VD-kB0" firstAttribute="leading" secondItem="hqe-QV-PQZ" secondAttribute="leadingMargin" constant="37" id="qaM-Ab-6Xh"/>
+                            <constraint firstItem="ULd-Es-MZo" firstAttribute="leading" secondItem="hqe-QV-PQZ" secondAttribute="leadingMargin" constant="-20" id="rt3-w3-Rey"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ULd-Es-MZo" secondAttribute="trailing" constant="-20" id="wM6-pa-Aaf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="5qz-kw-jRe" kind="show" identifier="ShowSettings" id="a27-kM-4YN">
+                            <nil key="action"/>
+                        </segue>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NE3-xV-KDy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="384" y="815"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="U1c-d5-KDR">
+            <objects>
+                <navigationController id="Ric-Wd-i65" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0zo-8j-eX0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Igq-9o-eMu" kind="relationship" relationship="rootViewController" id="c0n-zt-1jG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UQx-wN-suu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="316" y="-1"/>
+        </scene>
+        <!--GreetingsServer-->
+        <scene sceneID="CH1-kB-CVF">
+            <objects>
+                <viewController id="Igq-9o-eMu" customClass="RootViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="srJ-iH-iJL"/>
+                        <viewControllerLayoutGuide type="bottom" id="UFe-MJ-rzA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="K5d-uS-yJU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pfm-r9-gv7">
+                                <rect key="frame" x="20" y="143" width="560" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="iuH-Cd-wex"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Bring greetings client to front">
+                                    <color key="titleColor" red="0.30196078430000001" green="0.35686274509999999" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="bringGreetingsClientToFrontButtonOnTouchUpInside:" destination="Igq-9o-eMu" eventType="touchUpInside" id="trr-ie-rZj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Pfm-r9-gv7" firstAttribute="trailing" secondItem="K5d-uS-yJU" secondAttribute="trailingMargin" id="Ke8-ix-5UN"/>
+                            <constraint firstItem="Pfm-r9-gv7" firstAttribute="centerX" secondItem="K5d-uS-yJU" secondAttribute="centerX" id="aew-bT-JPB"/>
+                            <constraint firstItem="Pfm-r9-gv7" firstAttribute="leading" secondItem="K5d-uS-yJU" secondAttribute="leadingMargin" id="j7F-vM-wGf"/>
+                            <constraint firstItem="Pfm-r9-gv7" firstAttribute="top" secondItem="srJ-iH-iJL" secondAttribute="bottom" constant="79" id="w4s-3b-XUn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="GreetingsServer" id="BLT-V9-QhV"/>
+                    <connections>
+                        <outlet property="bringToFrontButton" destination="Pfm-r9-gv7" id="jKA-t0-HW1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="21T-p5-Gfg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1134" y="9"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="AUp-LG-qZv">
+            <objects>
+                <splitViewController id="v8d-zW-C1b" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="Ric-Wd-i65" kind="relationship" relationship="masterViewController" id="K3V-tg-dRZ"/>
+                        <segue destination="TqI-ek-P9E" kind="relationship" relationship="detailViewController" id="BxQ-8B-C9Q"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cLF-Yd-Ywp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-504" y="328"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="SECURED_BLACKBERRY_LOGO" width="60" height="60"/>
+        <image name="SettingsImage" width="25" height="25"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="GlA-fb-bkn"/>
+    </inferredMetricsTieBreakers>
+</document>

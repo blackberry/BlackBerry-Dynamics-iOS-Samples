@@ -1,0 +1,835 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		10DE861524F554E40029B8E1 /* BlackBerryDynamics.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10DE861424F554E40029B8E1 /* BlackBerryDynamics.xcframework */; };
+		10DE861624F554E40029B8E1 /* BlackBerryDynamics.xcframework in Copy Framework */ = {isa = PBXBuildFile; fileRef = 10DE861424F554E40029B8E1 /* BlackBerryDynamics.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		10E91E4C24EFD34C00FFC84A /* BlackBerryCerticom.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E91E4924EFD34800FFC84A /* BlackBerryCerticom.xcframework */; };
+		10E91E4D24EFD34C00FFC84A /* BlackBerryCerticom.xcframework in Copy Framework */ = {isa = PBXBuildFile; fileRef = 10E91E4924EFD34800FFC84A /* BlackBerryCerticom.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		10E91E4E24EFD34C00FFC84A /* BlackBerryCerticomSBGSE.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E91E4824EFD34800FFC84A /* BlackBerryCerticomSBGSE.xcframework */; };
+		10E91E4F24EFD34C00FFC84A /* BlackBerryCerticomSBGSE.xcframework in Copy Framework */ = {isa = PBXBuildFile; fileRef = 10E91E4824EFD34800FFC84A /* BlackBerryCerticomSBGSE.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		20E99C931CB5424E005A8730 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E99C921CB5424E005A8730 /* MediaPlayer.framework */; };
+		210B07021E80559A008C8E3A /* BypassUnlockUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 210B07011E80559A008C8E3A /* BypassUnlockUITests.m */; };
+		210B08CF1E81333A008C8E3A /* credentials.json in Resources */ = {isa = PBXBuildFile; fileRef = 210B08CE1E81333A008C8E3A /* credentials.json */; };
+		33DB610F2357594F00DB58DD /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33DB610D2357594F00DB58DD /* SafariServices.framework */; };
+		3B5961261FD8378D00095062 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B5961191FD8378C00095062 /* InfoPlist.strings */; };
+		5609A8B722456265009C6628 /* LocalComplianceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5609A8B622456265009C6628 /* LocalComplianceManager.m */; };
+		6268D1151C97085F0073D9AC /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6268D1141C97085F0073D9AC /* LocalAuthentication.framework */; };
+		6268D1171C97085F0073D9AC /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6268D1161C97085F0073D9AC /* CoreTelephony.framework */; };
+		6268D1191C97085F0073D9AC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6268D1181C97085F0073D9AC /* SystemConfiguration.framework */; };
+		6268D11B1C97085F0073D9AC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6268D11A1C97085F0073D9AC /* Security.framework */; };
+		6268D11D1C97085F0073D9AC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6268D11C1C97085F0073D9AC /* QuartzCore.framework */; };
+		6268D11F1C9708600073D9AC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6268D11E1C97085F0073D9AC /* CFNetwork.framework */; };
+		6268D1211C9708600073D9AC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6268D1201C9708600073D9AC /* CoreData.framework */; };
+		6268D1231C9708600073D9AC /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6268D1221C9708600073D9AC /* AdSupport.framework */; };
+		6268D1251C9708600073D9AC /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6268D1241C9708600073D9AC /* MessageUI.framework */; };
+		6268D1271C9708600073D9AC /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6268D1261C9708600073D9AC /* QuickLook.framework */; };
+		6268D12D1C9708600073D9AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6268D12C1C9708600073D9AC /* main.m */; };
+		6268D1301C9708600073D9AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6268D12F1C9708600073D9AC /* AppDelegate.m */; };
+		6268D13C1C9708600073D9AC /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6268D13B1C9708600073D9AC /* libz.tbd */; };
+		6268D13F1C9708600073D9AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6268D13D1C9708600073D9AC /* Main.storyboard */; };
+		6268D1441C9708600073D9AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6268D1421C9708600073D9AC /* LaunchScreen.storyboard */; };
+		629E3F591CC3B8B200BDB523 /* contacts.txt in Resources */ = {isa = PBXBuildFile; fileRef = 629E3F581CC3B8B200BDB523 /* contacts.txt */; };
+		629E3F5D1CC3BAEE00BDB523 /* BPContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 629E3F5C1CC3BAEE00BDB523 /* BPContactsViewController.m */; };
+		629E3F601CC599D100BDB523 /* com_good_example_sdk_bypassunlock.xml in Resources */ = {isa = PBXBuildFile; fileRef = 629E3F5F1CC599D100BDB523 /* com_good_example_sdk_bypassunlock.xml */; };
+		62EA25DC1CA1F00100E77C4E /* BPIncallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EA25D91CA1F00100E77C4E /* BPIncallViewController.m */; };
+		62EA25DD1CA1F00100E77C4E /* BPStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EA25DB1CA1F00100E77C4E /* BPStartViewController.m */; };
+		62EA25E01CA1FB5900E77C4E /* BPCallManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EA25DF1CA1FB5900E77C4E /* BPCallManager.m */; };
+		6D09A0A0203C773E00FD33BF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D09A09F203C773E00FD33BF /* Images.xcassets */; };
+		6D09A0A4203C77C200FD33BF /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D09A0A3203C77C200FD33BF /* WebKit.framework */; };
+		6D3A77A128D3E76A009CB7B2 /* BlackBerryDynamicsAutomatedTestSupportLibrary.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3A77A028D3E76A009CB7B2 /* BlackBerryDynamicsAutomatedTestSupportLibrary.xcframework */; };
+		6D3A77A228D3E775009CB7B2 /* BlackBerryDynamicsAutomatedTestSupportLibrary.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6D3A77A028D3E76A009CB7B2 /* BlackBerryDynamicsAutomatedTestSupportLibrary.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6D78AB1528C7EF0B0069DE84 /* UniformTypeIdentifiers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D78AB1428C7EF0A0069DE84 /* UniformTypeIdentifiers.framework */; };
+		6DA3C4F426F53323009BC7E4 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA3C4F326F53323009BC7E4 /* CoreServices.framework */; };
+		74BB18ED23F4953500B3834F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74BB18EB23F4953500B3834F /* AVFoundation.framework */; };
+		8102B58E1CC7D07C00292017 /* BPAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8102B58D1CC7D07C00292017 /* BPAboutViewController.m */; };
+		8B2533141DD0D7D8007BDE5D /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B2533131DD0D7D8007BDE5D /* Entitlements.plist */; };
+		95CCA92628F4D3C3002C13CE /* CryptoTokenKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CCA92428F4D3C3002C13CE /* CryptoTokenKit.framework */; };
+		9915102F21DCE58E00190D05 /* DeviceCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9915102D21DCE58D00190D05 /* DeviceCheck.framework */; };
+		FBC130771E0030E600BA169C /* BypassUnlockGDiOSDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC130761E0030E600BA169C /* BypassUnlockGDiOSDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		210B07041E80559A008C8E3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6268D1071C97085F0073D9AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6268D10E1C97085F0073D9AC;
+			remoteInfo = BypassUnlock;
+		};
+		62689BF71CB322CC006DC45A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 62689BF31CB322CC006DC45A /* notifier.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 620274DC1CB28EC500491D7C;
+			remoteInfo = notifier;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3E5F8923225F5C6F00BDE10E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6D3A77A228D3E775009CB7B2 /* BlackBerryDynamicsAutomatedTestSupportLibrary.xcframework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6DC89BC244E1EE900ADAC18 /* Copy Framework */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				10E91E4F24EFD34C00FFC84A /* BlackBerryCerticomSBGSE.xcframework in Copy Framework */,
+				10E91E4D24EFD34C00FFC84A /* BlackBerryCerticom.xcframework in Copy Framework */,
+				10DE861624F554E40029B8E1 /* BlackBerryDynamics.xcframework in Copy Framework */,
+			);
+			name = "Copy Framework";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		10DE861424F554E40029B8E1 /* BlackBerryDynamics.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = BlackBerryDynamics.xcframework; sourceTree = "<group>"; };
+		10E91E4824EFD34800FFC84A /* BlackBerryCerticomSBGSE.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = BlackBerryCerticomSBGSE.xcframework; sourceTree = "<group>"; };
+		10E91E4924EFD34800FFC84A /* BlackBerryCerticom.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = BlackBerryCerticom.xcframework; sourceTree = "<group>"; };
+		20E99C921CB5424E005A8730 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		210B06FF1E80559A008C8E3A /* BypassUnlockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BypassUnlockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		210B07011E80559A008C8E3A /* BypassUnlockUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BypassUnlockUITests.m; sourceTree = "<group>"; };
+		210B07031E80559A008C8E3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		210B077A1E8057D0008C8E3A /* UIAccessibilityIdentifiers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIAccessibilityIdentifiers.h; sourceTree = "<group>"; };
+		210B08CE1E81333A008C8E3A /* credentials.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = credentials.json; sourceTree = "<group>"; };
+		215B7FD21E855D0600A32588 /* UIAccessibilityIdentifiers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UIAccessibilityIdentifiers.h; path = BypassUnlockUITests/UIAccessibilityIdentifiers.h; sourceTree = SOURCE_ROOT; };
+		33DB610D2357594F00DB58DD /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		3B59611A1FD8378C00095062 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = "BypassUnlock/Supporting Files/it.lproj/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
+		3B59611B1FD8378C00095062 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = "BypassUnlock/Supporting Files/nl.lproj/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
+		3B59611C1FD8378C00095062 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = "BypassUnlock/Supporting Files/es.lproj/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
+		3B59611D1FD8378C00095062 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = "BypassUnlock/Supporting Files/ja.lproj/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
+		3B59611E1FD8378C00095062 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = "BypassUnlock/Supporting Files/da.lproj/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
+		3B59611F1FD8378C00095062 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = "BypassUnlock/Supporting Files/ko.lproj/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
+		3B5961201FD8378C00095062 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "BypassUnlock/Supporting Files/pt-PT.lproj/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
+		3B5961211FD8378D00095062 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = "BypassUnlock/Supporting Files/pt.lproj/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
+		3B5961221FD8378D00095062 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = "BypassUnlock/Supporting Files/sv.lproj/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
+		3B5961231FD8378D00095062 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = "BypassUnlock/Supporting Files/de.lproj/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
+		3B5961241FD8378D00095062 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = "BypassUnlock/Supporting Files/fr.lproj/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
+		3B5961251FD8378D00095062 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "BypassUnlock/Supporting Files/zh-Hans.lproj/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
+		3BFC786F1FE011CF00624EBE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "../BypassUnlock/Supporting Files/en.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		5609A8B422456264009C6628 /* LocalComplianceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalComplianceManager.h; path = bypassunlock/Helpers/LocalComplianceManager.h; sourceTree = SOURCE_ROOT; };
+		5609A8B622456265009C6628 /* LocalComplianceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalComplianceManager.m; path = bypassunlock/Helpers/LocalComplianceManager.m; sourceTree = SOURCE_ROOT; };
+		62689BF31CB322CC006DC45A /* notifier.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = notifier.xcodeproj; path = bypassunlock/notifier/notifier.xcodeproj; sourceTree = "<group>"; };
+		6268D10F1C97085F0073D9AC /* BypassUnlock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BypassUnlock.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6268D1141C97085F0073D9AC /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		6268D1161C97085F0073D9AC /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		6268D1181C97085F0073D9AC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		6268D11A1C97085F0073D9AC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		6268D11C1C97085F0073D9AC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		6268D11E1C97085F0073D9AC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		6268D1201C9708600073D9AC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		6268D1221C9708600073D9AC /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		6268D1241C9708600073D9AC /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		6268D1261C9708600073D9AC /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
+		6268D1281C9708600073D9AC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		6268D12C1C9708600073D9AC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6268D12E1C9708600073D9AC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6268D12F1C9708600073D9AC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6268D1341C9708600073D9AC /* default.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = default.xcconfig; sourceTree = "<group>"; };
+		6268D13B1C9708600073D9AC /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		6268D13E1C9708600073D9AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6268D1431C9708600073D9AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6268D1451C9708600073D9AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		629E3F581CC3B8B200BDB523 /* contacts.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = contacts.txt; sourceTree = "<group>"; };
+		629E3F5B1CC3BAEE00BDB523 /* BPContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPContactsViewController.h; sourceTree = "<group>"; };
+		629E3F5C1CC3BAEE00BDB523 /* BPContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPContactsViewController.m; sourceTree = "<group>"; };
+		629E3F5F1CC599D100BDB523 /* com_good_example_sdk_bypassunlock.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = com_good_example_sdk_bypassunlock.xml; sourceTree = "<group>"; };
+		62EA25D81CA1F00100E77C4E /* BPIncallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPIncallViewController.h; sourceTree = "<group>"; };
+		62EA25D91CA1F00100E77C4E /* BPIncallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPIncallViewController.m; sourceTree = "<group>"; };
+		62EA25DA1CA1F00100E77C4E /* BPStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPStartViewController.h; sourceTree = "<group>"; };
+		62EA25DB1CA1F00100E77C4E /* BPStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPStartViewController.m; sourceTree = "<group>"; };
+		62EA25DE1CA1FB5900E77C4E /* BPCallManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPCallManager.h; sourceTree = "<group>"; };
+		62EA25DF1CA1FB5900E77C4E /* BPCallManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPCallManager.m; sourceTree = "<group>"; };
+		6D09A09F203C773E00FD33BF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = BypassUnlock/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		6D09A0A3203C77C200FD33BF /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		6D3A77A028D3E76A009CB7B2 /* BlackBerryDynamicsAutomatedTestSupportLibrary.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = BlackBerryDynamicsAutomatedTestSupportLibrary.xcframework; sourceTree = "<group>"; };
+		6D78AB1428C7EF0A0069DE84 /* UniformTypeIdentifiers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UniformTypeIdentifiers.framework; path = System/Library/Frameworks/UniformTypeIdentifiers.framework; sourceTree = SDKROOT; };
+		6DA3C4F326F53323009BC7E4 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		74BB18EB23F4953500B3834F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		8102B58C1CC7D07C00292017 /* BPAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPAboutViewController.h; sourceTree = "<group>"; };
+		8102B58D1CC7D07C00292017 /* BPAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPAboutViewController.m; sourceTree = "<group>"; };
+		8B2533131DD0D7D8007BDE5D /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Entitlements.plist; path = BypassUnlock/Entitlements.plist; sourceTree = SOURCE_ROOT; };
+		92A524B82C6290AE008FFAF7 /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
+		92A524B92C6290AE008FFAF7 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		95CCA91528F4D1B1002C13CE /* BypassUnlock.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = BypassUnlock.entitlements; path = BypassUnlock/BypassUnlock.entitlements; sourceTree = SOURCE_ROOT; };
+		95CCA92428F4D3C3002C13CE /* CryptoTokenKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoTokenKit.framework; path = System/Library/Frameworks/CryptoTokenKit.framework; sourceTree = SDKROOT; };
+		9915102D21DCE58D00190D05 /* DeviceCheck.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeviceCheck.framework; path = System/Library/Frameworks/DeviceCheck.framework; sourceTree = SDKROOT; };
+		FBC130751E0030E600BA169C /* BypassUnlockGDiOSDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BypassUnlockGDiOSDelegate.h; path = BypassUnlock/BypassUnlockGDiOSDelegate.h; sourceTree = SOURCE_ROOT; };
+		FBC130761E0030E600BA169C /* BypassUnlockGDiOSDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BypassUnlockGDiOSDelegate.m; path = BypassUnlock/BypassUnlockGDiOSDelegate.m; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		210B06FC1E80559A008C8E3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D3A77A128D3E76A009CB7B2 /* BlackBerryDynamicsAutomatedTestSupportLibrary.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6268D10C1C97085F0073D9AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95CCA92628F4D3C3002C13CE /* CryptoTokenKit.framework in Frameworks */,
+				6DA3C4F426F53323009BC7E4 /* CoreServices.framework in Frameworks */,
+				74BB18ED23F4953500B3834F /* AVFoundation.framework in Frameworks */,
+				9915102F21DCE58E00190D05 /* DeviceCheck.framework in Frameworks */,
+				6D09A0A4203C77C200FD33BF /* WebKit.framework in Frameworks */,
+				20E99C931CB5424E005A8730 /* MediaPlayer.framework in Frameworks */,
+				10E91E4C24EFD34C00FFC84A /* BlackBerryCerticom.xcframework in Frameworks */,
+				10E91E4E24EFD34C00FFC84A /* BlackBerryCerticomSBGSE.xcframework in Frameworks */,
+				10DE861524F554E40029B8E1 /* BlackBerryDynamics.xcframework in Frameworks */,
+				6268D1151C97085F0073D9AC /* LocalAuthentication.framework in Frameworks */,
+				6268D1211C9708600073D9AC /* CoreData.framework in Frameworks */,
+				6268D1231C9708600073D9AC /* AdSupport.framework in Frameworks */,
+				6268D11B1C97085F0073D9AC /* Security.framework in Frameworks */,
+				6268D11F1C9708600073D9AC /* CFNetwork.framework in Frameworks */,
+				6268D1271C9708600073D9AC /* QuickLook.framework in Frameworks */,
+				6268D11D1C97085F0073D9AC /* QuartzCore.framework in Frameworks */,
+				6268D1251C9708600073D9AC /* MessageUI.framework in Frameworks */,
+				6268D1171C97085F0073D9AC /* CoreTelephony.framework in Frameworks */,
+				6268D13C1C9708600073D9AC /* libz.tbd in Frameworks */,
+				6D78AB1528C7EF0B0069DE84 /* UniformTypeIdentifiers.framework in Frameworks */,
+				33DB610F2357594F00DB58DD /* SafariServices.framework in Frameworks */,
+				6268D1191C97085F0073D9AC /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		210B07001E80559A008C8E3A /* BypassUnlockUITests */ = {
+			isa = PBXGroup;
+			children = (
+				210B07011E80559A008C8E3A /* BypassUnlockUITests.m */,
+				210B077A1E8057D0008C8E3A /* UIAccessibilityIdentifiers.h */,
+				210B08CE1E81333A008C8E3A /* credentials.json */,
+				210B07031E80559A008C8E3A /* Info.plist */,
+			);
+			path = BypassUnlockUITests;
+			sourceTree = "<group>";
+		};
+		5609A8B822456273009C6628 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5609A8B422456264009C6628 /* LocalComplianceManager.h */,
+				5609A8B622456265009C6628 /* LocalComplianceManager.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		62689BF41CB322CC006DC45A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				62689BF81CB322CC006DC45A /* notifier.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6268D1061C97085F0073D9AC = {
+			isa = PBXGroup;
+			children = (
+				92A524B92C6290AE008FFAF7 /* Podfile */,
+				92A524B82C6290AE008FFAF7 /* ReadMe.md */,
+				62689BF31CB322CC006DC45A /* notifier.xcodeproj */,
+				6268D12A1C9708600073D9AC /* BypassUnlock */,
+				210B07001E80559A008C8E3A /* BypassUnlockUITests */,
+				6268D1111C97085F0073D9AC /* Frameworks */,
+				6268D1101C97085F0073D9AC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6268D1101C97085F0073D9AC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6268D10F1C97085F0073D9AC /* BypassUnlock.app */,
+				210B06FF1E80559A008C8E3A /* BypassUnlockUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6268D1111C97085F0073D9AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				95CCA92428F4D3C3002C13CE /* CryptoTokenKit.framework */,
+				6D3A77A028D3E76A009CB7B2 /* BlackBerryDynamicsAutomatedTestSupportLibrary.xcframework */,
+				6D78AB1428C7EF0A0069DE84 /* UniformTypeIdentifiers.framework */,
+				6DA3C4F326F53323009BC7E4 /* CoreServices.framework */,
+				10DE861424F554E40029B8E1 /* BlackBerryDynamics.xcframework */,
+				10E91E4924EFD34800FFC84A /* BlackBerryCerticom.xcframework */,
+				10E91E4824EFD34800FFC84A /* BlackBerryCerticomSBGSE.xcframework */,
+				74BB18EB23F4953500B3834F /* AVFoundation.framework */,
+				33DB610D2357594F00DB58DD /* SafariServices.framework */,
+				9915102D21DCE58D00190D05 /* DeviceCheck.framework */,
+				6D09A0A3203C77C200FD33BF /* WebKit.framework */,
+				6268D13B1C9708600073D9AC /* libz.tbd */,
+				20E99C921CB5424E005A8730 /* MediaPlayer.framework */,
+				6268D1141C97085F0073D9AC /* LocalAuthentication.framework */,
+				6268D1161C97085F0073D9AC /* CoreTelephony.framework */,
+				6268D1181C97085F0073D9AC /* SystemConfiguration.framework */,
+				6268D11A1C97085F0073D9AC /* Security.framework */,
+				6268D11C1C97085F0073D9AC /* QuartzCore.framework */,
+				6268D11E1C97085F0073D9AC /* CFNetwork.framework */,
+				6268D1201C9708600073D9AC /* CoreData.framework */,
+				6268D1221C9708600073D9AC /* AdSupport.framework */,
+				6268D1241C9708600073D9AC /* MessageUI.framework */,
+				6268D1261C9708600073D9AC /* QuickLook.framework */,
+				6268D1281C9708600073D9AC /* MobileCoreServices.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6268D12A1C9708600073D9AC /* BypassUnlock */ = {
+			isa = PBXGroup;
+			children = (
+				95CCA91528F4D1B1002C13CE /* BypassUnlock.entitlements */,
+				5609A8B822456273009C6628 /* Helpers */,
+				8102B58A1CC7D04A00292017 /* ViewControllers */,
+				6268D12E1C9708600073D9AC /* AppDelegate.h */,
+				6268D12F1C9708600073D9AC /* AppDelegate.m */,
+				FBC130751E0030E600BA169C /* BypassUnlockGDiOSDelegate.h */,
+				FBC130761E0030E600BA169C /* BypassUnlockGDiOSDelegate.m */,
+				629E3F611CC599D500BDB523 /* application_policy */,
+				629E3F5E1CC599B400BDB523 /* UI */,
+				6268D1351C9708600073D9AC /* Resources */,
+				6268D12B1C9708600073D9AC /* Supporting Files */,
+			);
+			name = BypassUnlock;
+			path = bypassunlock;
+			sourceTree = "<group>";
+		};
+		6268D12B1C9708600073D9AC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3B5961191FD8378C00095062 /* InfoPlist.strings */,
+				6268D12C1C9708600073D9AC /* main.m */,
+				6268D1341C9708600073D9AC /* default.xcconfig */,
+				8B2533131DD0D7D8007BDE5D /* Entitlements.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6268D1351C9708600073D9AC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6D09A09F203C773E00FD33BF /* Images.xcassets */,
+				629E3F581CC3B8B200BDB523 /* contacts.txt */,
+				6268D1451C9708600073D9AC /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		629E3F5E1CC599B400BDB523 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				6268D13D1C9708600073D9AC /* Main.storyboard */,
+				6268D1421C9708600073D9AC /* LaunchScreen.storyboard */,
+				215B7FD21E855D0600A32588 /* UIAccessibilityIdentifiers.h */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		629E3F611CC599D500BDB523 /* application_policy */ = {
+			isa = PBXGroup;
+			children = (
+				629E3F5F1CC599D100BDB523 /* com_good_example_sdk_bypassunlock.xml */,
+			);
+			name = application_policy;
+			sourceTree = "<group>";
+		};
+		8102B58A1CC7D04A00292017 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				62EA25D81CA1F00100E77C4E /* BPIncallViewController.h */,
+				62EA25D91CA1F00100E77C4E /* BPIncallViewController.m */,
+				62EA25DA1CA1F00100E77C4E /* BPStartViewController.h */,
+				62EA25DB1CA1F00100E77C4E /* BPStartViewController.m */,
+				629E3F5B1CC3BAEE00BDB523 /* BPContactsViewController.h */,
+				629E3F5C1CC3BAEE00BDB523 /* BPContactsViewController.m */,
+				62EA25DE1CA1FB5900E77C4E /* BPCallManager.h */,
+				62EA25DF1CA1FB5900E77C4E /* BPCallManager.m */,
+				8102B58C1CC7D07C00292017 /* BPAboutViewController.h */,
+				8102B58D1CC7D07C00292017 /* BPAboutViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		210B06FE1E80559A008C8E3A /* BypassUnlockUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 210B07091E80559A008C8E3A /* Build configuration list for PBXNativeTarget "BypassUnlockUITests" */;
+			buildPhases = (
+				210B06FB1E80559A008C8E3A /* Sources */,
+				210B06FC1E80559A008C8E3A /* Frameworks */,
+				210B06FD1E80559A008C8E3A /* Resources */,
+				3E5F8923225F5C6F00BDE10E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				210B07051E80559A008C8E3A /* PBXTargetDependency */,
+			);
+			name = BypassUnlockUITests;
+			productName = BypassUnlockUITests;
+			productReference = 210B06FF1E80559A008C8E3A /* BypassUnlockUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		6268D10E1C97085F0073D9AC /* BypassUnlock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6268D1481C9708600073D9AC /* Build configuration list for PBXNativeTarget "BypassUnlock" */;
+			buildPhases = (
+				6268D10B1C97085F0073D9AC /* Sources */,
+				6268D10C1C97085F0073D9AC /* Frameworks */,
+				6268D10D1C97085F0073D9AC /* Resources */,
+				F6DC89BC244E1EE900ADAC18 /* Copy Framework */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BypassUnlock;
+			productName = bypassunlock;
+			productReference = 6268D10F1C97085F0073D9AC /* BypassUnlock.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6268D1071C97085F0073D9AC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = BlackBerry;
+				TargetAttributes = {
+					210B06FE1E80559A008C8E3A = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6268D10E1C97085F0073D9AC;
+					};
+					6268D10E1C97085F0073D9AC = {
+						CreatedOnToolsVersion = 7.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 6268D10A1C97085F0073D9AC /* Build configuration list for PBXProject "BypassUnlock" */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				it,
+				nl,
+				es,
+				ja,
+				da,
+				ko,
+				"pt-PT",
+				pt,
+				sv,
+				de,
+				fr,
+				"zh-Hans",
+			);
+			mainGroup = 6268D1061C97085F0073D9AC;
+			productRefGroup = 6268D1101C97085F0073D9AC /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 62689BF41CB322CC006DC45A /* Products */;
+					ProjectRef = 62689BF31CB322CC006DC45A /* notifier.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				6268D10E1C97085F0073D9AC /* BypassUnlock */,
+				210B06FE1E80559A008C8E3A /* BypassUnlockUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		62689BF81CB322CC006DC45A /* notifier.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = notifier.app;
+			remoteRef = 62689BF71CB322CC006DC45A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		210B06FD1E80559A008C8E3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				210B08CF1E81333A008C8E3A /* credentials.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6268D10D1C97085F0073D9AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D09A0A0203C773E00FD33BF /* Images.xcassets in Resources */,
+				6268D1441C9708600073D9AC /* LaunchScreen.storyboard in Resources */,
+				629E3F601CC599D100BDB523 /* com_good_example_sdk_bypassunlock.xml in Resources */,
+				629E3F591CC3B8B200BDB523 /* contacts.txt in Resources */,
+				6268D13F1C9708600073D9AC /* Main.storyboard in Resources */,
+				8B2533141DD0D7D8007BDE5D /* Entitlements.plist in Resources */,
+				3B5961261FD8378D00095062 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		210B06FB1E80559A008C8E3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				210B07021E80559A008C8E3A /* BypassUnlockUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6268D10B1C97085F0073D9AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8102B58E1CC7D07C00292017 /* BPAboutViewController.m in Sources */,
+				6268D1301C9708600073D9AC /* AppDelegate.m in Sources */,
+				62EA25DD1CA1F00100E77C4E /* BPStartViewController.m in Sources */,
+				62EA25DC1CA1F00100E77C4E /* BPIncallViewController.m in Sources */,
+				629E3F5D1CC3BAEE00BDB523 /* BPContactsViewController.m in Sources */,
+				FBC130771E0030E600BA169C /* BypassUnlockGDiOSDelegate.m in Sources */,
+				5609A8B722456265009C6628 /* LocalComplianceManager.m in Sources */,
+				62EA25E01CA1FB5900E77C4E /* BPCallManager.m in Sources */,
+				6268D12D1C9708600073D9AC /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		210B07051E80559A008C8E3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6268D10E1C97085F0073D9AC /* BypassUnlock */;
+			targetProxy = 210B07041E80559A008C8E3A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3B5961191FD8378C00095062 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B59611A1FD8378C00095062 /* it */,
+				3B59611B1FD8378C00095062 /* nl */,
+				3B59611C1FD8378C00095062 /* es */,
+				3B59611D1FD8378C00095062 /* ja */,
+				3B59611E1FD8378C00095062 /* da */,
+				3B59611F1FD8378C00095062 /* ko */,
+				3B5961201FD8378C00095062 /* pt-PT */,
+				3B5961211FD8378D00095062 /* pt */,
+				3B5961221FD8378D00095062 /* sv */,
+				3B5961231FD8378D00095062 /* de */,
+				3B5961241FD8378D00095062 /* fr */,
+				3B5961251FD8378D00095062 /* zh-Hans */,
+				3BFC786F1FE011CF00624EBE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6268D13D1C9708600073D9AC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6268D13E1C9708600073D9AC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6268D1421C9708600073D9AC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6268D1431C9708600073D9AC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		210B07061E80559A008C8E3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = BypassUnlockUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.good.gd.example.BypassUnlockUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TEST_TARGET_NAME = BypassUnlock;
+				VALIDATE_WORKSPACE = YES;
+			};
+			name = Debug;
+		};
+		210B07071E80559A008C8E3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = BypassUnlockUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.good.gd.example.BypassUnlockUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TEST_TARGET_NAME = BypassUnlock;
+				VALIDATE_WORKSPACE = YES;
+			};
+			name = Release;
+		};
+		6268D1461C9708600073D9AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = NO;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 arm64e x86_64";
+			};
+			name = Debug;
+		};
+		6268D1471C9708600073D9AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = NO;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 arm64e x86_64";
+			};
+			name = Release;
+		};
+		6268D1491C9708600073D9AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6268D1341C9708600073D9AC /* default.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BypassUnlock/BypassUnlock.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = bypassunlock/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.good.example.sdk.bypassunlock;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		6268D14A1C9708600073D9AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6268D1341C9708600073D9AC /* default.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BypassUnlock/BypassUnlock.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = bypassunlock/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.good.example.sdk.bypassunlock;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		210B07091E80559A008C8E3A /* Build configuration list for PBXNativeTarget "BypassUnlockUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				210B07061E80559A008C8E3A /* Debug */,
+				210B07071E80559A008C8E3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6268D10A1C97085F0073D9AC /* Build configuration list for PBXProject "BypassUnlock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6268D1461C9708600073D9AC /* Debug */,
+				6268D1471C9708600073D9AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6268D1481C9708600073D9AC /* Build configuration list for PBXNativeTarget "BypassUnlock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6268D1491C9708600073D9AC /* Debug */,
+				6268D14A1C9708600073D9AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6268D1071C97085F0073D9AC /* Project object */;
+}

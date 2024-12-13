@@ -1,0 +1,3 @@
+
+ENTITLEMENTS_REQUIRED=YES
+CODE_SIGN_ENTITLEMENTS[sdk=iphonesimulator10.*]=$(SRCROOT)/$(PROJECT_NAME)/Entitlements.plist
