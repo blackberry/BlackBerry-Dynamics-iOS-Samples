@@ -293,6 +293,7 @@
 				<string>6DB97E3626B47E810029B91B</string>
 				<string>6DB97E3726B47E810029B91B</string>
 				<string>6DB97E3826B47E810029B91B</string>
+				<string>F667D7A12CDE8B3B00DDAA5C</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -556,7 +557,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>16.6</string>
+				<string>17.0</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
 				<string>INCLUDE_SOURCE</string>
 				<key>MTL_FAST_MATH</key>
@@ -664,7 +665,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>16.6</string>
+				<string>17.0</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
 				<string>NO</string>
 				<key>MTL_FAST_MATH</key>
@@ -886,26 +887,22 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>F667D79B2CDE8B3B00DDAA5C</key>
+		<key>F667D7A12CDE8B3B00DDAA5C</key>
 		<dict>
-			<key>fileRef</key>
-			<string>F667D7982CDE8B3B00DDAA5C</string>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>dstPath</key>
+			<string></string>
+			<key>dstSubfolderSpec</key>
+			<string>10</string>
+			<key>files</key>
+			<array/>
 			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F667D79D2CDE8B3B00DDAA5C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F667D7992CDE8B3B00DDAA5C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F667D79F2CDE8B3B00DDAA5C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F667D79A2CDE8B3B00DDAA5C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
+			<string>PBXCopyFilesBuildPhase</string>
+			<key>name</key>
+			<string>Embed Frameworks</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
 		</dict>
 	</dict>
 	<key>rootObject</key>

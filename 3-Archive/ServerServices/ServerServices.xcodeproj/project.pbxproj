@@ -40,7 +40,6 @@
 		6DA3C4E926F53267009BC7E4 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA3C4E826F53267009BC7E4 /* CoreServices.framework */; };
 		74BB18FF23F495B600B3834F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74BB18FE23F495B600B3834F /* AVFoundation.framework */; };
 		8B2533201DD0E41E007BDE5D /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B25331F1DD0E41E007BDE5D /* Entitlements.plist */; };
-		927401BB2D0B18D600CBF604 /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = 927401BA2D0B18D600CBF604 /* ReadMe.md */; };
 		95CCA93A28F4D4B7002C13CE /* CryptoTokenKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CCA93928F4D4B7002C13CE /* CryptoTokenKit.framework */; };
 		9915104321DCE5F700190D05 /* DeviceCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9915104221DCE5F700190D05 /* DeviceCheck.framework */; };
 		99201D5618F8463100C9AB0C /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99201D5518F8463100C9AB0C /* QuickLook.framework */; };
@@ -140,7 +139,6 @@
 		6DA3C4E826F53267009BC7E4 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		74BB18FE23F495B600B3834F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		8B25331F1DD0E41E007BDE5D /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
-		927401BA2D0B18D600CBF604 /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
 		95CCA91C28F4D25B002C13CE /* ServerServices.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ServerServices.entitlements; sourceTree = "<group>"; };
 		95CCA93928F4D4B7002C13CE /* CryptoTokenKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoTokenKit.framework; path = System/Library/Frameworks/CryptoTokenKit.framework; sourceTree = SDKROOT; };
 		96C720321E88694600B4FB36 /* UIAccessibilityIdentifiers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UIAccessibilityIdentifiers.h; path = ServerServicesUITests/UIAccessibilityIdentifiers.h; sourceTree = SOURCE_ROOT; };
@@ -160,6 +158,7 @@
 		FA7D6800189C423C00314FC3 /* ServerServices-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ServerServices-Prefix.pch"; path = "ServerServices/Supporting Files/ServerServices-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		FA7D6842189C488D00314FC3 /* TimezoneServiceInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimezoneServiceInputViewController.h; sourceTree = "<group>"; };
 		FA7D6843189C488D00314FC3 /* TimezoneServiceInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimezoneServiceInputViewController.m; sourceTree = "<group>"; };
+		FAF862711FAC8B05009A0CBE /* ReadMe.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
 		FB9F3B9D1E0416090013E906 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBA0508219F114C100F10D0C /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		FBA5636A1DFB0D080066828B /* ServerServiceGDiOSDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerServiceGDiOSDelegate.h; sourceTree = "<group>"; };
@@ -238,7 +237,7 @@
 		61BBCD5416F8FB9100D020B9 = {
 			isa = PBXGroup;
 			children = (
-				927401BA2D0B18D600CBF604 /* ReadMe.md */,
+				FAF862711FAC8B05009A0CBE /* ReadMe.txt */,
 				61BBCD6916F8FB9100D020B9 /* ServerServices */,
 				210B07711E80574E008C8E3A /* ServerServicesUITests */,
 				61BBCD6216F8FB9100D020B9 /* Frameworks */,
@@ -449,7 +448,6 @@
 				594D663E19F8DB9900C97B50 /* Images.xcassets in Resources */,
 				1E8D8C7E1C7E22A100EAA9B7 /* Launch.storyboard in Resources */,
 				594D663C19F8DB3700C97B50 /* Main.storyboard in Resources */,
-				927401BB2D0B18D600CBF604 /* ReadMe.md in Resources */,
 				1EBA30051986C2720004E183 /* iTunesArtwork in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -547,7 +545,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = ServerServicesUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -580,7 +578,6 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -598,7 +595,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = ServerServicesUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -639,7 +636,6 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -658,7 +654,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -693,8 +689,6 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
@@ -705,7 +699,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -734,7 +728,7 @@
 					"$(PROJECT_DIR)/BlackBerryDynamics.framework/Headers",
 				);
 				INFOPLIST_FILE = "ServerServices/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -773,7 +767,7 @@
 					"$(PROJECT_DIR)/BlackBerryDynamics.framework/Headers",
 				);
 				INFOPLIST_FILE = "ServerServices/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -290,7 +290,7 @@
 				<key>LastUpgradeCheck</key>
 				<string>1600</string>
 				<key>ORGANIZATIONNAME</key>
-				<string>BlackBerrySample</string>
+				<string>BlackBerry</string>
 				<key>TargetAttributes</key>
 				<dict>
 					<key>8BE6A5BA1E5CE6CB006692EA</key>
@@ -408,6 +408,7 @@
 				<string>8BE6A5B71E5CE6CB006692EA</string>
 				<string>8BE6A5B81E5CE6CB006692EA</string>
 				<string>8BE6A5B91E5CE6CB006692EA</string>
+				<string>F667D7932CDE4CEF00DDAA5C</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -749,7 +750,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>16.6</string>
+				<string>17.0</string>
 				<key>ONLY_ACTIVE_ARCH</key>
 				<string>YES</string>
 				<key>SDKROOT</key>
@@ -841,7 +842,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>16.6</string>
+				<string>17.0</string>
 				<key>ONLY_ACTIVE_ARCH</key>
 				<string>YES</string>
 				<key>SDKROOT</key>
@@ -992,26 +993,22 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>F667D78D2CDE4CEF00DDAA5C</key>
+		<key>F667D7932CDE4CEF00DDAA5C</key>
 		<dict>
-			<key>fileRef</key>
-			<string>F667D7872CDE4CE700DDAA5C</string>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>dstPath</key>
+			<string></string>
+			<key>dstSubfolderSpec</key>
+			<string>10</string>
+			<key>files</key>
+			<array/>
 			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F667D78F2CDE4CEF00DDAA5C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F667D7882CDE4CE700DDAA5C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F667D7912CDE4CEF00DDAA5C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F667D7892CDE4CE700DDAA5C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
+			<string>PBXCopyFilesBuildPhase</string>
+			<key>name</key>
+			<string>Embed Frameworks</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
 		</dict>
 	</dict>
 	<key>rootObject</key>

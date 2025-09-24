@@ -10,13 +10,6 @@
 	<string>60</string>
 	<key>objects</key>
 	<dict>
-		<key>6D12E1042BED45EE002448EF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6D6FAEC62BEC1426005C4A0F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
 		<key>6D380D1A2BFE8E8C00719057</key>
 		<dict>
 			<key>fileEncoding</key>
@@ -97,19 +90,22 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>6D6FAECB2BEC1426005C4A0F</key>
+		<key>6D6FAECF2BEC1426005C4A0F</key>
 		<dict>
-			<key>fileRef</key>
-			<string>6D6FAEC72BEC1426005C4A0F</string>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>dstPath</key>
+			<string></string>
+			<key>dstSubfolderSpec</key>
+			<string>10</string>
+			<key>files</key>
+			<array/>
 			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6D6FAECD2BEC1426005C4A0F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6D6FAEC82BEC1426005C4A0F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
+			<string>PBXCopyFilesBuildPhase</string>
+			<key>name</key>
+			<string>Embed Frameworks</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
 		</dict>
 		<key>6D6FAEEB2BEC2D7A005C4A0F</key>
 		<dict>
@@ -256,6 +252,7 @@
 				<string>6DD9C5352BEC01CD009CF259</string>
 				<string>6DD9C5362BEC01CD009CF259</string>
 				<string>6DD9C5372BEC01CD009CF259</string>
+				<string>6D6FAECF2BEC1426005C4A0F</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -499,7 +496,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>16.0</string>
+				<string>17.0</string>
 				<key>LOCALIZATION_PREFERS_STRING_CATALOGS</key>
 				<string>YES</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
@@ -607,7 +604,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>16.0</string>
+				<string>17.0</string>
 				<key>LOCALIZATION_PREFERS_STRING_CATALOGS</key>
 				<string>YES</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>

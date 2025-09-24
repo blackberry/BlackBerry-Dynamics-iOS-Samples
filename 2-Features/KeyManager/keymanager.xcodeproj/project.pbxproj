@@ -10,6 +10,23 @@
 	<string>60</string>
 	<key>objects</key>
 	<dict>
+		<key>108C5B3024EED8290071C2F8</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>dstPath</key>
+			<string></string>
+			<key>dstSubfolderSpec</key>
+			<string>10</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXCopyFilesBuildPhase</string>
+			<key>name</key>
+			<string>Copy Frameworks</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
 		<key>33DB610B2357594800DB58DD</key>
 		<dict>
 			<key>isa</key>
@@ -27,13 +44,6 @@
 		<dict>
 			<key>fileRef</key>
 			<string>33DB610B2357594800DB58DD</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6D1C26C428D4E55100A462D5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6D1C26C328D4E55100A462D5</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -144,7 +154,7 @@
 			<key>lastKnownFileType</key>
 			<string>text.plist.entitlements</string>
 			<key>path</key>
-			<string>keymanager.entitlements</string>
+			<string>KeyManager.entitlements</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -214,6 +224,7 @@
 				<string>CC620B3127D00E10009643F3</string>
 				<string>CC620B3227D00E10009643F3</string>
 				<string>CC620B3327D00E10009643F3</string>
+				<string>CC620B4727D010AB009643F3</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -224,7 +235,7 @@
 			<key>isa</key>
 			<string>PBXNativeTarget</string>
 			<key>name</key>
-			<string>keymanagerUITests</string>
+			<string>KeyManagerUITests</string>
 			<key>productName</key>
 			<string>keymanagerUITests</string>
 			<key>productReference</key>
@@ -241,7 +252,7 @@
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>path</key>
-			<string>keymanagerUITests.xctest</string>
+			<string>KeyManagerUITests.xctest</string>
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
@@ -257,7 +268,7 @@
 			<key>isa</key>
 			<string>PBXGroup</string>
 			<key>path</key>
-			<string>keymanagerUITests</string>
+			<string>KeyManagerUITests</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -268,7 +279,7 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.objc</string>
 			<key>path</key>
-			<string>keymanagerUITests.m</string>
+			<string>KeyManagerUITests.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -338,7 +349,7 @@
 				<key>SWIFT_EMIT_LOC_STRINGS</key>
 				<string>NO</string>
 				<key>TEST_TARGET_NAME</key>
-				<string>keymanager</string>
+				<string>KeyManager</string>
 				<key>VALIDATE_WORKSPACE</key>
 				<string>YES</string>
 			</dict>
@@ -382,7 +393,7 @@
 				<key>SWIFT_EMIT_LOC_STRINGS</key>
 				<string>NO</string>
 				<key>TEST_TARGET_NAME</key>
-				<string>keymanager</string>
+				<string>KeyManager</string>
 				<key>VALIDATE_WORKSPACE</key>
 				<string>YES</string>
 			</dict>
@@ -451,26 +462,20 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>CC620B6A27D01647009643F3</key>
+		<key>CC620B4727D010AB009643F3</key>
 		<dict>
-			<key>fileRef</key>
-			<string>CC620B6527D01627009643F3</string>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>dstPath</key>
+			<string></string>
+			<key>dstSubfolderSpec</key>
+			<string>10</string>
+			<key>files</key>
+			<array/>
 			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CC620B6B27D01647009643F3</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CC620B6127D01605009643F3</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CC620B6C27D01647009643F3</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CC620B6227D01605009643F3</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
+			<string>PBXCopyFilesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
 		</dict>
 		<key>CC774DA5221E26B3007913A7</key>
 		<dict>
@@ -786,6 +791,7 @@
 				<string>CCDABF671F28CD5B0011FCA8</string>
 				<string>CCDABF681F28CD5B0011FCA8</string>
 				<string>CCDABF691F28CD5B0011FCA8</string>
+				<string>108C5B3024EED8290071C2F8</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -794,7 +800,7 @@
 			<key>isa</key>
 			<string>PBXNativeTarget</string>
 			<key>name</key>
-			<string>keymanager</string>
+			<string>KeyManager</string>
 			<key>productName</key>
 			<string>keymanager</string>
 			<key>productReference</key>
@@ -811,7 +817,7 @@
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>path</key>
-			<string>keymanager.app</string>
+			<string>KeyManager.app</string>
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
@@ -995,7 +1001,7 @@
 			<key>isa</key>
 			<string>PBXGroup</string>
 			<key>path</key>
-			<string>keymanager</string>
+			<string>KeyManager</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -1254,7 +1260,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>16.0</string>
+				<string>17.0</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
 				<string>YES</string>
 				<key>ONLY_ACTIVE_ARCH</key>
@@ -1350,7 +1356,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>16.0</string>
+				<string>17.0</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
 				<string>NO</string>
 				<key>ONLY_ACTIVE_ARCH</key>
@@ -1390,11 +1396,11 @@
 				<key>CLANG_ENABLE_MODULES</key>
 				<string>NO</string>
 				<key>CODE_SIGN_ENTITLEMENTS</key>
-				<string>keymanager/keymanager.entitlements</string>
+				<string>KeyManager/KeyManager.entitlements</string>
 				<key>DEVELOPMENT_TEAM</key>
 				<string></string>
 				<key>INFOPLIST_FILE</key>
-				<string>keymanager/Info.plist</string>
+				<string>KeyManager/Info.plist</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -1419,11 +1425,11 @@
 				<key>CLANG_ENABLE_MODULES</key>
 				<string>NO</string>
 				<key>CODE_SIGN_ENTITLEMENTS</key>
-				<string>keymanager/keymanager.entitlements</string>
+				<string>KeyManager/KeyManager.entitlements</string>
 				<key>DEVELOPMENT_TEAM</key>
 				<string></string>
 				<key>INFOPLIST_FILE</key>
-				<string>keymanager/Info.plist</string>
+				<string>KeyManager/Info.plist</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>

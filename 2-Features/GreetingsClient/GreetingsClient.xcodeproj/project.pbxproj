@@ -10,27 +10,6 @@
 	<string>60</string>
 	<key>objects</key>
 	<dict>
-		<key>10D9ABCD24F55860006C014C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>10D9ABCC24F55860006C014C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>10E91EA524EFD63900FFC84A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>10E91EA224EFD63600FFC84A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>10E91EA724EFD63900FFC84A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>10E91EA124EFD63600FFC84A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
 		<key>1E8D8C8A1C7E4E6E00EAA9B7</key>
 		<dict>
 			<key>fileEncoding</key>
@@ -97,6 +76,7 @@
 				<string>210B07421E80571B008C8E3A</string>
 				<string>210B07431E80571B008C8E3A</string>
 				<string>210B07441E80571B008C8E3A</string>
+				<string>3E5F8942225F8B3300BDE10E</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -215,8 +195,6 @@
 				<string>YES</string>
 				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
 				<string>YES_ERROR</string>
-				<key>CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER</key>
-				<string>YES</string>
 				<key>CLANG_WARN_SUSPICIOUS_MOVE</key>
 				<string>YES</string>
 				<key>DEBUG_INFORMATION_FORMAT</key>
@@ -269,8 +247,6 @@
 				<string>YES</string>
 				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
 				<string>YES_ERROR</string>
-				<key>CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER</key>
-				<string>YES</string>
 				<key>CLANG_WARN_SUSPICIOUS_MOVE</key>
 				<string>YES</string>
 				<key>COPY_PHASE_STRIP</key>
@@ -573,6 +549,21 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>3E5F8942225F8B3300BDE10E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>dstPath</key>
+			<string></string>
+			<key>dstSubfolderSpec</key>
+			<string>10</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXCopyFilesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
 		<key>6D09A0BC203C803000FD33BF</key>
 		<dict>
 			<key>isa</key>
@@ -590,13 +581,6 @@
 		<dict>
 			<key>fileRef</key>
 			<string>6D09A0BC203C803000FD33BF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6D1C26D328D4EA4400A462D5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6D1C26D228D4EA4400A462D5</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -1165,7 +1149,6 @@
 				<string>8B2533051DD0D357007BDE5D</string>
 				<string>1E8D8C8B1C7E4E6E00EAA9B7</string>
 				<string>92A524BD2C62915C008FFAF7</string>
-				<string>99D793FF152C7F2F004B3877</string>
 				<string>6D4E6AFC19DD5BAE00ADD388</string>
 				<string>8B0992E51E014E60009FCEA2</string>
 				<string>3B5961CC1FD83F3B00095062</string>
@@ -1184,6 +1167,7 @@
 				<string>999E2B7E152374F0002651BD</string>
 				<string>999E2B7F152374F0002651BD</string>
 				<string>999E2B80152374F0002651BD</string>
+				<string>F6969674244F00030005228E</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -1510,9 +1494,7 @@
 		<key>999E2BA6152374F1002651BD</key>
 		<dict>
 			<key>children</key>
-			<array>
-				<string>99D793FC152C7F2F004B3877</string>
-			</array>
+			<array/>
 			<key>isa</key>
 			<string>PBXGroup</string>
 			<key>name</key>
@@ -1557,8 +1539,6 @@
 				<key>CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF</key>
 				<string>YES</string>
 				<key>CLANG_WARN_OBJC_LITERAL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER</key>
 				<string>YES</string>
 				<key>CLANG_WARN_RANGE_LOOP_ANALYSIS</key>
 				<string>YES</string>
@@ -1608,7 +1588,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>16.0</string>
+				<string>17.0</string>
 				<key>ONLY_ACTIVE_ARCH</key>
 				<string>YES</string>
 				<key>SDKROOT</key>
@@ -1659,8 +1639,6 @@
 				<string>YES</string>
 				<key>CLANG_WARN_OBJC_LITERAL_CONVERSION</key>
 				<string>YES</string>
-				<key>CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER</key>
-				<string>YES</string>
 				<key>CLANG_WARN_RANGE_LOOP_ANALYSIS</key>
 				<string>YES</string>
 				<key>CLANG_WARN_STRICT_PROTOTYPES</key>
@@ -1696,7 +1674,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>16.0</string>
+				<string>17.0</string>
 				<key>OTHER_CFLAGS</key>
 				<string>-DNS_BLOCK_ASSERTIONS=1</string>
 				<key>SDKROOT</key>
@@ -1867,28 +1845,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>99D793FC152C7F2F004B3877</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>name</key>
-			<string>config.info</string>
-			<key>path</key>
-			<string>Supporting Files/Resources/config.info</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>99D793FF152C7F2F004B3877</key>
-		<dict>
-			<key>fileRef</key>
-			<string>99D793FC152C7F2F004B3877</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
 		<key>99D79403152C7F73004B3877</key>
 		<dict>
 			<key>fileEncoding</key>
@@ -1998,6 +1954,13 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>C3222D25163AB82D005352A2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C3222D24163AB82D005352A2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>CC60F0A71546BA6600FD570E</key>
 		<dict>
 			<key>children</key>
@@ -2048,6 +2011,23 @@
 			<string>CC60F0A91546BA7200FD570E</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>F6969674244F00030005228E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>dstPath</key>
+			<string></string>
+			<key>dstSubfolderSpec</key>
+			<string>10</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXCopyFilesBuildPhase</string>
+			<key>name</key>
+			<string>Copy Framework</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
 		</dict>
 		<key>F6ECE59E28E726BF004B152C</key>
 		<dict>

@@ -10,27 +10,6 @@
 	<string>60</string>
 	<key>objects</key>
 	<dict>
-		<key>10DE861F24F555F00029B8E1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>10DE861E24F555F00029B8E1</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>10E91E6524EFD45000FFC84A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>10E91E6124EFD44C00FFC84A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>10E91E6724EFD45100FFC84A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>10E91E6224EFD44C00FFC84A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
 		<key>1E8D8C841C7E4D4100EAA9B7</key>
 		<dict>
 			<key>fileEncoding</key>
@@ -97,6 +76,7 @@
 				<string>210B07181E8056F5008C8E3A</string>
 				<string>210B07191E8056F5008C8E3A</string>
 				<string>210B071A1E8056F5008C8E3A</string>
+				<string>3E5F892A225F6DF800BDE10E</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -668,6 +648,7 @@
 				<string>33402B1718C4B7B8008C72E6</string>
 				<string>33402B1818C4B7B8008C72E6</string>
 				<string>33402B1918C4B7B8008C72E6</string>
+				<string>F696965A244EF8770005228E</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -1174,7 +1155,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>16.0</string>
+				<string>17.0</string>
 				<key>ONLY_ACTIVE_ARCH</key>
 				<string>YES</string>
 				<key>SDKROOT</key>
@@ -1268,7 +1249,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>16.0</string>
+				<string>17.0</string>
 				<key>ONLY_ACTIVE_ARCH</key>
 				<string>YES</string>
 				<key>SDKROOT</key>
@@ -1650,6 +1631,21 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>3E5F892A225F6DF800BDE10E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>dstPath</key>
+			<string></string>
+			<key>dstSubfolderSpec</key>
+			<string>10</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXCopyFilesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
 		<key>6D09A0AD203C7BFF00FD33BF</key>
 		<dict>
 			<key>isa</key>
@@ -1667,13 +1663,6 @@
 		<dict>
 			<key>fileRef</key>
 			<string>6D09A0AD203C7BFF00FD33BF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6D3A77AA28D3EC52009CB7B2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6D3A77A928D3EC52009CB7B2</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -1845,6 +1834,23 @@
 			<string>9915103221DCE59F00190D05</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>F696965A244EF8770005228E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>dstPath</key>
+			<string></string>
+			<key>dstSubfolderSpec</key>
+			<string>10</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXCopyFilesBuildPhase</string>
+			<key>name</key>
+			<string>Copy Framework</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
 		</dict>
 		<key>FB9F3B9F1E041A7A0013E906</key>
 		<dict>

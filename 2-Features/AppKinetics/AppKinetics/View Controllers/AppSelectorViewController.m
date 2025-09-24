@@ -22,7 +22,8 @@
 
 @interface AppSelectorViewController ()
 {
-    IBOutlet    UITableView *_tableView;    
+    IBOutlet    UINavigationBar *_navBar;
+    IBOutlet    UITableView *_tableView;
     NSArray                 *_arrayGDServiceProvider;
 }
 
@@ -52,14 +53,14 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     
-    CGRect      frame;
-    frame = self.view.frame;
+    CGRect navFrame = _navBar.frame;
+    CGRect frame = self.view.frame;
     frame.size.width = 300;
-    frame.size.height = _tableView.rowHeight * ([_arrayGDServiceProvider count] + 1);
+    frame.size.height = navFrame.size.height + (_tableView.rowHeight * ([_arrayGDServiceProvider count] + 1));
     
-    if (frame.size.height > 300)
+    if (frame.size.height > 300) {
         frame.size.height = 300;
-    
+    }
     
     CGSize size = CGSizeMake(frame.size.width, frame.size.height); // size of view in popover
     self.preferredContentSize = size;
@@ -117,6 +118,7 @@
         cell.textLabel.text = @"Apple Open In..";
         cell.imageView.image = [UIImage systemImageNamed:@"square.and.arrow.up"];
     }
+
     return cell;
 }
 
@@ -129,9 +131,12 @@
     
         [_delegate appSelected:[serviceProvider address] withVersion:[serviceProvider version] andName:[serviceProvider name]];
     } else {
-        
-        self.openInVC = [UIDocumentInteractionController interactionControllerWithURL:[NSURL fileURLWithPath:_filePath]];
-        [self.openInVC presentOpenInMenuFromRect:tableView.frame inView:self.view animated:YES];
+        if (_filePath) {
+            self.openInVC = [UIDocumentInteractionController interactionControllerWithURL:[NSURL fileURLWithPath:_filePath]];
+            [self.openInVC presentOpenInMenuFromRect:tableView.frame inView:self.view animated:YES];
+        } else {
+            NSLog(@"No filepath in popover");
+        }
     }
 }
 

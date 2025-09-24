@@ -120,7 +120,15 @@ static NSString *const kfilesButtonTitle = @"Files";
     if(self.splitViewController != nil)
     {
         self.splitViewController.delegate = self;
-        self.filesBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:kfilesButtonTitle style:UIBarButtonItemStylePlain target:self.splitViewController.displayModeButtonItem.target action:self.splitViewController.displayModeButtonItem.action];
+        if (@available(iOS 26.0, *))
+        {
+           // do nothing, system will add native button for slide screen
+        }
+        else
+        {
+            self.filesBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:kfilesButtonTitle style:UIBarButtonItemStylePlain target:self.splitViewController.displayModeButtonItem.target action:self.splitViewController.displayModeButtonItem.action];
+        }
+        
         self.filesBarButtonItem.tintColor = maincolor;
         if(self.splitViewController.displayMode != UISplitViewControllerDisplayModeOneBesideSecondary)
         {

@@ -34,7 +34,7 @@
 		24E5230821FF43F900A278DC /* BBDAutoFillBlockerField+InputBlocking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BBDAutoFillBlockerField+InputBlocking.m"; sourceTree = "<group>"; };
 		24E5234E22005AFB00A278DC /* InputBlockingHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputBlockingHandler.h; sourceTree = "<group>"; };
 		24E5234F22005AFB00A278DC /* InputBlockingHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputBlockingHandler.m; sourceTree = "<group>"; };
-		24EEA11C21933E28007490A1 /* AutofillBlocking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutofillBlocking.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		24EEA11C21933E28007490A1 /* AutoFillBlocking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoFillBlocking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24EEA11F21933E28007490A1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		24EEA12021933E28007490A1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		24EEA12221933E28007490A1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 		24EEA11D21933E28007490A1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				24EEA11C21933E28007490A1 /* AutofillBlocking.app */,
+				24EEA11C21933E28007490A1 /* AutoFillBlocking.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -131,9 +131,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		24EEA11B21933E28007490A1 /* AutofillBlocking */ = {
+		24EEA11B21933E28007490A1 /* AutoFillBlocking */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 24EEA13221933E2A007490A1 /* Build configuration list for PBXNativeTarget "AutofillBlocking" */;
+			buildConfigurationList = 24EEA13221933E2A007490A1 /* Build configuration list for PBXNativeTarget "AutoFillBlocking" */;
 			buildPhases = (
 				24EEA11821933E28007490A1 /* Sources */,
 				24EEA11921933E28007490A1 /* Frameworks */,
@@ -143,9 +143,9 @@
 			);
 			dependencies = (
 			);
-			name = AutofillBlocking;
+			name = AutoFillBlocking;
 			productName = AutofillBlocking;
-			productReference = 24EEA11C21933E28007490A1 /* AutofillBlocking.app */;
+			productReference = 24EEA11C21933E28007490A1 /* AutoFillBlocking.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -175,7 +175,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				24EEA11B21933E28007490A1 /* AutofillBlocking */,
+				24EEA11B21933E28007490A1 /* AutoFillBlocking */,
 			);
 		};
 /* End PBXProject section */
@@ -283,7 +283,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -335,7 +335,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -347,7 +347,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = AutoFillBlockingSample/Info.plist;
+				INFOPLIST_FILE = AutoFillBlockingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -361,7 +361,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = AutoFillBlockingSample/Info.plist;
+				INFOPLIST_FILE = AutoFillBlockingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -383,7 +383,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		24EEA13221933E2A007490A1 /* Build configuration list for PBXNativeTarget "AutofillBlocking" */ = {
+		24EEA13221933E2A007490A1 /* Build configuration list for PBXNativeTarget "AutoFillBlocking" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				24EEA13321933E2A007490A1 /* Debug */,

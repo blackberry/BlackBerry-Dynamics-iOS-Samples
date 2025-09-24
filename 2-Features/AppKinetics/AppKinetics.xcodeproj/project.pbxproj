@@ -56,6 +56,7 @@
 				<string>210B070A1E8055E7008C8E3A</string>
 				<string>210B070B1E8055E7008C8E3A</string>
 				<string>210B070C1E8055E7008C8E3A</string>
+				<string>3E5F88E8225DEDC900BDE10E</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -203,7 +204,7 @@
 				<key>INFOPLIST_FILE</key>
 				<string>AppKineticsUITests/Info.plist</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>16.0</string>
+				<string>17.0</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -279,7 +280,7 @@
 				<key>INFOPLIST_FILE</key>
 				<string>AppKineticsUITests/Info.plist</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>16.0</string>
+				<string>17.0</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -741,27 +742,20 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>559088E61806F7FA00283A71</key>
+		<key>3E5F88E8225DEDC900BDE10E</key>
 		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>dstPath</key>
+			<string></string>
+			<key>dstSubfolderSpec</key>
+			<string>10</string>
+			<key>files</key>
+			<array/>
 			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>name</key>
-			<string>config.info</string>
-			<key>path</key>
-			<string>AppKinetics/Supporting Files/Resources/config.info</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>559088E71806F7FA00283A71</key>
-		<dict>
-			<key>fileRef</key>
-			<string>559088E61806F7FA00283A71</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
+			<string>PBXCopyFilesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
 		</dict>
 		<key>6103C9C416FC358400951537</key>
 		<dict>
@@ -1072,7 +1066,6 @@
 			<array>
 				<string>92FBDDEA2C627C58002E53B1</string>
 				<string>27CB0D3F1B03E45B008F34AF</string>
-				<string>559088E71806F7FA00283A71</string>
 				<string>8BE1D6B11DFB04FB00A1B0C9</string>
 				<string>888A76EF19792D0B001B7050</string>
 				<string>8BE1D6B21DFB04FB00A1B0C9</string>
@@ -1095,6 +1088,7 @@
 				<string>61BBCD5B16F8FB9100D020B9</string>
 				<string>61BBCD5C16F8FB9100D020B9</string>
 				<string>61BBCD5D16F8FB9100D020B9</string>
+				<string>8BE10FBF2BF4CC4300806123</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -1371,7 +1365,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>16.0</string>
+				<string>17.0</string>
 				<key>ONLY_ACTIVE_ARCH</key>
 				<string>YES</string>
 				<key>SDKROOT</key>
@@ -1455,7 +1449,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>16.0</string>
+				<string>17.0</string>
 				<key>OTHER_CFLAGS</key>
 				<string>-DNS_BLOCK_ASSERTIONS=1</string>
 				<key>SDKROOT</key>
@@ -1559,7 +1553,6 @@
 			<key>children</key>
 			<array>
 				<string>27CB0D3E1B03E45B008F34AF</string>
-				<string>559088E61806F7FA00283A71</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -1929,6 +1922,13 @@
 			<key>sourceTree</key>
 			<string>SDKROOT</string>
 		</dict>
+		<key>6DA3C4EF26F532D8009BC7E4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6DA3C4EE26F532D8009BC7E4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>7409219E23F61D2800583EDD</key>
 		<dict>
 			<key>isa</key>
@@ -2026,6 +2026,23 @@
 			<string>8BA502211DFEDCE5001BFA0E</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>8BE10FBF2BF4CC4300806123</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>dstPath</key>
+			<string></string>
+			<key>dstSubfolderSpec</key>
+			<string>10</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXCopyFilesBuildPhase</string>
+			<key>name</key>
+			<string>Embed Frameworks</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
 		</dict>
 		<key>8BE1D6A81DFB040500A1B0C9</key>
 		<dict>
@@ -2207,34 +2224,6 @@
 			<string>System/Library/Frameworks/MobileCoreServices.framework</string>
 			<key>sourceTree</key>
 			<string>SDKROOT</string>
-		</dict>
-		<key>F6B1E70B2CE2847000C69FB8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F6B1E7082CE2847000C69FB8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F6B1E70D2CE2847000C69FB8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F6B1E7092CE2847000C69FB8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F6B1E70F2CE2847000C69FB8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F6B1E70A2CE2847000C69FB8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F6B1E7122CE2847900C69FB8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F6B1E7112CE2847900C69FB8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
 		</dict>
 		<key>F6ECE5A228E726E7004B152C</key>
 		<dict>
