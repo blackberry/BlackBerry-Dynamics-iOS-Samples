@@ -10,27 +10,6 @@
 	<string>60</string>
 	<key>objects</key>
 	<dict>
-		<key>10DE861824F555810029B8E1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>10DE861724F555810029B8E1</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>10E91E5524EFD3AA00FFC84A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>10E91E5124EFD3A600FFC84A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>10E91E5724EFD3AA00FFC84A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>10E91E5224EFD3A600FFC84A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
 		<key>33E11A3623604A7A008C611B</key>
 		<dict>
 			<key>isa</key>
@@ -51,12 +30,20 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>6D3A77A428D3E90B009CB7B2</key>
+		<key>3E5F8926225F5FDA00BDE10E</key>
 		<dict>
-			<key>fileRef</key>
-			<string>6D3A77A328D3E90B009CB7B2</string>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>dstPath</key>
+			<string></string>
+			<key>dstSubfolderSpec</key>
+			<string>10</string>
+			<key>files</key>
+			<array/>
 			<key>isa</key>
-			<string>PBXBuildFile</string>
+			<string>PBXCopyFilesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
 		</dict>
 		<key>6D78AB1628C7EFAB0069DE84</key>
 		<dict>
@@ -144,6 +131,7 @@
 				<string>8FE96E3921384F4100D1AF8D</string>
 				<string>8FE96E3A21384F4100D1AF8D</string>
 				<string>8FE96E3B21384F4100D1AF8D</string>
+				<string>3E5F8926225F5FDA00BDE10E</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -270,8 +258,6 @@
 				<string>YES</string>
 				<key>CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK</key>
 				<string>NO</string>
-				<key>CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER</key>
-				<string>YES</string>
 				<key>CLANG_WARN_RANGE_LOOP_ANALYSIS</key>
 				<string>YES</string>
 				<key>CLANG_WARN_STRICT_PROTOTYPES</key>
@@ -284,8 +270,6 @@
 				<string>gnu99</string>
 				<key>INFOPLIST_FILE</key>
 				<string>AppBasedCertImportUITests/Info.plist</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>16.0</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -296,8 +280,6 @@
 				<string>com.good.gd.example.appbasedcertimportUITests</string>
 				<key>PRODUCT_NAME</key>
 				<string>$(TARGET_NAME)</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
 				<key>TEST_TARGET_NAME</key>
 				<string>AppBasedCertImport</string>
 				<key>VALIDATE_WORKSPACE</key>
@@ -336,8 +318,6 @@
 				<string>YES</string>
 				<key>CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK</key>
 				<string>NO</string>
-				<key>CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER</key>
-				<string>YES</string>
 				<key>CLANG_WARN_RANGE_LOOP_ANALYSIS</key>
 				<string>YES</string>
 				<key>CLANG_WARN_STRICT_PROTOTYPES</key>
@@ -350,8 +330,6 @@
 				<string>gnu99</string>
 				<key>INFOPLIST_FILE</key>
 				<string>AppBasedCertImportUITests/Info.plist</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>16.0</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -362,8 +340,6 @@
 				<string>com.good.gd.example.appbasedcertimportUITests</string>
 				<key>PRODUCT_NAME</key>
 				<string>$(TARGET_NAME)</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
 				<key>TEST_TARGET_NAME</key>
 				<string>AppBasedCertImport</string>
 				<key>VALIDATE_WORKSPACE</key>
@@ -696,6 +672,7 @@
 				<string>CCDABF671F28CD5B0011FCA8</string>
 				<string>CCDABF681F28CD5B0011FCA8</string>
 				<string>CCDABF691F28CD5B0011FCA8</string>
+				<string>F6DC89BE244E2B2300ADAC18</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -1186,8 +1163,6 @@
 				<string>YES</string>
 				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
 				<string>YES_ERROR</string>
-				<key>CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER</key>
-				<string>YES</string>
 				<key>CLANG_WARN_RANGE_LOOP_ANALYSIS</key>
 				<string>YES</string>
 				<key>CLANG_WARN_STRICT_PROTOTYPES</key>
@@ -1232,7 +1207,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>16.0</string>
+				<string>17.0</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
 				<string>YES</string>
 				<key>ONLY_ACTIVE_ARCH</key>
@@ -1293,8 +1268,6 @@
 				<string>YES</string>
 				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
 				<string>YES_ERROR</string>
-				<key>CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER</key>
-				<string>YES</string>
 				<key>CLANG_WARN_RANGE_LOOP_ANALYSIS</key>
 				<string>YES</string>
 				<key>CLANG_WARN_STRICT_PROTOTYPES</key>
@@ -1330,7 +1303,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>16.0</string>
+				<string>17.0</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
 				<string>NO</string>
 				<key>ONLY_ACTIVE_ARCH</key>
@@ -1373,8 +1346,6 @@
 				<string>AppBasedCertImport/AppBasedCertImport.entitlements</string>
 				<key>INFOPLIST_FILE</key>
 				<string>AppBasedCertImport/Info.plist</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>16.0</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -1402,8 +1373,6 @@
 				<string>AppBasedCertImport/AppBasedCertImport.entitlements</string>
 				<key>INFOPLIST_FILE</key>
 				<string>AppBasedCertImport/Info.plist</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>16.0</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -1543,6 +1512,23 @@
 			<string>F603A5812403E3D40007D4AF</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>F6DC89BE244E2B2300ADAC18</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>dstPath</key>
+			<string></string>
+			<key>dstSubfolderSpec</key>
+			<string>10</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXCopyFilesBuildPhase</string>
+			<key>name</key>
+			<string>Copy Framework</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
 		</dict>
 		<key>FBA5095D208DFF5C008EAE16</key>
 		<dict>

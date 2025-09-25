@@ -10,6 +10,21 @@
 	<string>77</string>
 	<key>objects</key>
 	<dict>
+		<key>368C701C2615F55600E144B2</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>dstPath</key>
+			<string></string>
+			<key>dstSubfolderSpec</key>
+			<string>10</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXCopyFilesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
 		<key>369CF1DE2497675F00D13EA8</key>
 		<dict>
 			<key>children</key>
@@ -33,7 +48,7 @@
 				<key>LastUpgradeCheck</key>
 				<string>1600</string>
 				<key>ORGANIZATIONNAME</key>
-				<string></string>
+				<string>BlackBerry</string>
 				<key>TargetAttributes</key>
 				<dict>
 					<key>369CF1E62497675F00D13EA8</key>
@@ -162,6 +177,7 @@
 				<string>369CF1E32497675F00D13EA8</string>
 				<string>369CF1E42497675F00D13EA8</string>
 				<string>369CF1E52497675F00D13EA8</string>
+				<string>368C701C2615F55600E144B2</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -543,7 +559,6 @@
 		<dict>
 			<key>children</key>
 			<array>
-				<string>369CF20B2497675F00D13EA8</string>
 				<string>369CF20C2497675F00D13EA8</string>
 				<string>369CF2142497675F00D13EA8</string>
 			</array>
@@ -551,19 +566,6 @@
 			<string>PBXGroup</string>
 			<key>path</key>
 			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>369CF20B2497675F00D13EA8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>default.xcconfig</string>
-			<key>path</key>
-			<string>../default.xcconfig</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -1005,7 +1007,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>16.6</string>
+				<string>17.0</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
 				<string>INCLUDE_SOURCE</string>
 				<key>MTL_FAST_MATH</key>
@@ -1115,7 +1117,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>16.6</string>
+				<string>17.0</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
 				<string>NO</string>
 				<key>MTL_FAST_MATH</key>
@@ -1148,8 +1150,6 @@
 		</dict>
 		<key>369CF2312497676300D13EA8</key>
 		<dict>
-			<key>baseConfigurationReference</key>
-			<string>369CF20B2497675F00D13EA8</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
@@ -1180,8 +1180,6 @@
 		</dict>
 		<key>369CF2322497676300D13EA8</key>
 		<dict>
-			<key>baseConfigurationReference</key>
-			<string>369CF20B2497675F00D13EA8</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
@@ -1240,27 +1238,6 @@
 		<dict>
 			<key>fileRef</key>
 			<string>369CF23A24977D8000D13EA8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F68E9B432CE4E154007C2F30</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F68E9B402CE4E154007C2F30</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F68E9B452CE4E154007C2F30</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F68E9B412CE4E154007C2F30</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F68E9B472CE4E154007C2F30</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F68E9B422CE4E154007C2F30</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>

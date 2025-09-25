@@ -30,14 +30,15 @@ See [Software Requirements](https://docs.blackberry.com/en/development-tools/bla
 5. Edit the *Bundle Identifier* to your own.
 6. Edit the *URL identifier* and *URL Schemes* according to your own in the *info.plist*. See [Declaring a URL type to support BlackBerry Dynamics features](https://docs.blackberry.com/en/development-tools/blackberry-dynamics-sdk-ios/current/blackberry-dynamics-sdk-ios-devguide/gwj1489687014271) in the Developer Guide.
 7. Edit the *GDApplicationID* to your own or use the default '*com.blackberry.dynamics.sample*' in the *info.plist*.
-8. Assign the app entitlement to a user in your UEM server. This may also require adding the BlackBerry Dynamics App entitlement to UEM if you are using your own. See [Add an internal BlackBerry Dynamics app entitlement](https://docs.blackberry.com/en/endpoint-management/blackberry-uem/current/managing-apps/managing-blackberry-dynamics-apps).
-9. Build and run on simulator or a device.
+8. Assign the app entitlement to a user in your UEM server. This may also require adding the *BlackBerry Dynamics App entitlement to UEM if you are using your own. See [Add an internal BlackBerry Dynamics app entitlement](https://docs.blackberry.com/en/endpoint-management/blackberry-uem/current/administration/blackberry-dynamics/Adding-Dynamics-apps/zjx1471960344735).
+9. Build, deploy and run on a testing device.
 
 For more information on how to develop BlackBerry Dynamics apps, refer to [Get Started with BlackBerry Dynamics](https://developers.blackberry.com/us/en/resources/get-started/blackberry-dynamics-getting-started) 
 
 ## License
 
 Apache 2.0 License
+
 
 ## Disclaimer
 

@@ -37,6 +37,7 @@
 		629E3F591CC3B8B200BDB523 /* contacts.txt in Resources */ = {isa = PBXBuildFile; fileRef = 629E3F581CC3B8B200BDB523 /* contacts.txt */; };
 		629E3F5D1CC3BAEE00BDB523 /* BPContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 629E3F5C1CC3BAEE00BDB523 /* BPContactsViewController.m */; };
 		629E3F601CC599D100BDB523 /* com_good_example_sdk_bypassunlock.xml in Resources */ = {isa = PBXBuildFile; fileRef = 629E3F5F1CC599D100BDB523 /* com_good_example_sdk_bypassunlock.xml */; };
+		62B41B571CBE8EFF001DC89F /* config.info in Resources */ = {isa = PBXBuildFile; fileRef = 62B41B561CBE8EFF001DC89F /* config.info */; };
 		62EA25DC1CA1F00100E77C4E /* BPIncallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EA25D91CA1F00100E77C4E /* BPIncallViewController.m */; };
 		62EA25DD1CA1F00100E77C4E /* BPStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EA25DB1CA1F00100E77C4E /* BPStartViewController.m */; };
 		62EA25E01CA1FB5900E77C4E /* BPCallManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EA25DF1CA1FB5900E77C4E /* BPCallManager.m */; };
@@ -149,6 +150,7 @@
 		629E3F5B1CC3BAEE00BDB523 /* BPContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPContactsViewController.h; sourceTree = "<group>"; };
 		629E3F5C1CC3BAEE00BDB523 /* BPContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPContactsViewController.m; sourceTree = "<group>"; };
 		629E3F5F1CC599D100BDB523 /* com_good_example_sdk_bypassunlock.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = com_good_example_sdk_bypassunlock.xml; sourceTree = "<group>"; };
+		62B41B561CBE8EFF001DC89F /* config.info */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.info; sourceTree = "<group>"; };
 		62EA25D81CA1F00100E77C4E /* BPIncallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPIncallViewController.h; sourceTree = "<group>"; };
 		62EA25D91CA1F00100E77C4E /* BPIncallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPIncallViewController.m; sourceTree = "<group>"; };
 		62EA25DA1CA1F00100E77C4E /* BPStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPStartViewController.h; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 				6D09A09F203C773E00FD33BF /* Images.xcassets */,
 				629E3F581CC3B8B200BDB523 /* contacts.txt */,
 				6268D1451C9708600073D9AC /* Info.plist */,
+				62B41B561CBE8EFF001DC89F /* config.info */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				629E3F591CC3B8B200BDB523 /* contacts.txt in Resources */,
 				6268D13F1C9708600073D9AC /* Main.storyboard in Resources */,
 				8B2533141DD0D7D8007BDE5D /* Entitlements.plist in Resources */,
+				62B41B571CBE8EFF001DC89F /* config.info in Resources */,
 				3B5961261FD8378D00095062 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -585,7 +589,6 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -593,7 +596,7 @@
 				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = BypassUnlockUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -615,7 +618,6 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -623,7 +625,7 @@
 				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = BypassUnlockUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -666,7 +668,6 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -685,7 +686,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -723,7 +724,6 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -736,7 +736,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -752,7 +752,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BypassUnlock/BypassUnlock.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -760,7 +759,7 @@
 				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = bypassunlock/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -778,7 +777,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BypassUnlock/BypassUnlock.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -786,7 +784,7 @@
 				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = bypassunlock/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

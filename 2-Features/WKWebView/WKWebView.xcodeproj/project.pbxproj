@@ -71,7 +71,7 @@
 				<key>LastUpgradeCheck</key>
 				<string>1600</string>
 				<key>ORGANIZATIONNAME</key>
-				<string></string>
+				<string>BlackBerry</string>
 				<key>TargetAttributes</key>
 				<dict>
 					<key>18FEF7DB2450A8DA002D6C29</key>
@@ -202,6 +202,7 @@
 				<string>18FEF7D82450A8DA002D6C29</string>
 				<string>18FEF7D92450A8DA002D6C29</string>
 				<string>18FEF7DA2450A8DA002D6C29</string>
+				<string>F68E9B552CE4E591007C2F30</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -894,7 +895,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>16.6</string>
+				<string>17.0</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
 				<string>INCLUDE_SOURCE</string>
 				<key>MTL_FAST_MATH</key>
@@ -1008,7 +1009,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>16.6</string>
+				<string>17.0</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
 				<string>NO</string>
 				<key>MTL_FAST_MATH</key>
@@ -1258,26 +1259,22 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>F68E9B4F2CE4E590007C2F30</key>
+		<key>F68E9B552CE4E591007C2F30</key>
 		<dict>
-			<key>fileRef</key>
-			<string>F68E9B4C2CE4E590007C2F30</string>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>dstPath</key>
+			<string></string>
+			<key>dstSubfolderSpec</key>
+			<string>10</string>
+			<key>files</key>
+			<array/>
 			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F68E9B512CE4E591007C2F30</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F68E9B4D2CE4E590007C2F30</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F68E9B532CE4E591007C2F30</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F68E9B4E2CE4E590007C2F30</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
+			<string>PBXCopyFilesBuildPhase</string>
+			<key>name</key>
+			<string>Embed Frameworks</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
 		</dict>
 		<key>F68E9B562CE4E5BB007C2F30</key>
 		<dict>

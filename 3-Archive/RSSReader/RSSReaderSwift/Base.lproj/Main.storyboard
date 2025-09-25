@@ -1,21 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="U18-Ap-UhK">
-    <device id="retina5_9" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24093.9" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="U18-Ap-UhK">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24057"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Helvetica.ttc">
-            <string>Helvetica</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Add Feed-->
         <scene sceneID="3Nk-HD-Bon">
@@ -25,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfk-5n-PZQ">
-                                <rect key="frame" x="36" y="261" width="303" height="46"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfk-5n-PZQ">
+                                <rect key="frame" x="35" y="335" width="305" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="QzT-JM-aId"/>
                                 </constraints>
@@ -38,18 +29,19 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Feed Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gqo-57-98n">
-                                <rect key="frame" x="35" y="157" width="304" height="30"/>
+                                <rect key="frame" x="35" y="223" width="305" height="34"/>
                                 <color key="backgroundColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full URL to RSS Feed" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4lc-Kn-exM">
-                                <rect key="frame" x="36" y="207" width="304" height="30"/>
+                                <rect key="frame" x="35" y="277" width="305" height="34"/>
                                 <color key="backgroundColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="VQ4-Xa-nIW"/>
                         <color key="backgroundColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="dfk-5n-PZQ" firstAttribute="leading" secondItem="4lc-Kn-exM" secondAttribute="leading" id="3lK-6h-yfc"/>
@@ -62,7 +54,6 @@
                             <constraint firstItem="dfk-5n-PZQ" firstAttribute="centerX" secondItem="gqo-57-98n" secondAttribute="centerX" id="lTL-3R-jV4"/>
                             <constraint firstItem="gqo-57-98n" firstAttribute="trailing" secondItem="dfk-5n-PZQ" secondAttribute="trailing" id="mVP-HF-rlL"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="VQ4-Xa-nIW"/>
                     </view>
                     <connections>
                         <outlet property="addUpdateButton" destination="dfk-5n-PZQ" id="Hpx-ty-Ucw"/>
@@ -84,10 +75,10 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="feedUrlTableViewCell" editingAccessoryType="detailDisclosureButton" textLabel="s1S-J2-iu4" detailTextLabel="iTo-Em-gzE" style="IBUITableViewCellStyleSubtitle" id="byI-2Z-8GK">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="byI-2Z-8GK" id="Myh-ke-vLJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="348.66666666666669" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="s1S-J2-iu4">
@@ -118,7 +109,9 @@
                         </connections>
                     </tableView>
                     <toolbarItems>
-                        <barButtonItem title="Item" id="mGb-ro-hMw">
+                        <barButtonItem id="mGb-ro-hMw">
+                            <imageReference key="image" image="info.circle" catalog="system" symbolScale="medium"/>
+                            <imageReference key="landscapeImage" image="info.circle" catalog="system" symbolScale="medium"/>
                             <color key="tintColor" red="0.30196078430000001" green="0.35686274509999999" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="AeA-07-joi" kind="presentation" identifier="aboutSegue" id="HKA-qy-OtQ"/>
@@ -157,12 +150,11 @@
                 <navigationController storyboardIdentifier="mainNavigationController" title="Main Navigation Controller" toolbarHidden="NO" id="R8K-rA-ttQ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="M4K-Pp-EDT">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="100" width="375" height="54"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.23700182139873505" green="0.28462636470794678" blue="0.32938772439956665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="JUY-Sa-L5l" customClass="RedToolbar" customModule="RSSReaderSwift" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="729.5" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.90980392160000001" green="0.090196078430000007" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </toolbar>
@@ -193,7 +185,7 @@
                 <navigationController storyboardIdentifier="childNavigationViewController" title="Child Navigation Controller" toolbarHidden="NO" id="Okt-XD-ovS" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="b8O-Dh-hs4">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="100" width="375" height="54"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.23700182139873505" green="0.28462636470794678" blue="0.32938772439956665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
@@ -218,7 +210,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="K2x-ws-Qpd">
-                                <rect key="frame" x="36" y="134" width="303" height="544"/>
+                                <rect key="frame" x="36" y="200" width="303" height="412"/>
                                 <color key="tintColor" red="0.18823529410000001" green="0.46666666670000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" priority="750" constant="600" id="snS-fN-QbE"/>
@@ -249,6 +241,7 @@ https://community.blackberry.com/community/gdn/support</string>
                                 </variation>
                             </textView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ub9-tb-WOf"/>
                         <color key="backgroundColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="K2x-ws-Qpd" firstAttribute="centerX" secondItem="Ub9-tb-WOf" secondAttribute="centerX" id="2CA-cV-d4B"/>
@@ -257,17 +250,15 @@ https://community.blackberry.com/community/gdn/support</string>
                             <constraint firstItem="K2x-ws-Qpd" firstAttribute="top" secondItem="Ub9-tb-WOf" secondAttribute="top" constant="46" id="UrN-1n-D9H"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="K2x-ws-Qpd" secondAttribute="trailing" constant="20" id="d4d-f8-ByS"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Ub9-tb-WOf"/>
                     </view>
                     <toolbarItems>
-                        <barButtonItem title="Item" id="S2g-ZT-cbf">
+                        <barButtonItem id="S2g-ZT-cbf">
+                            <imageReference key="image" image="info.circle" catalog="system" symbolScale="medium"/>
+                            <imageReference key="landscapeImage" image="info.circle" catalog="system" symbolScale="medium"/>
                             <color key="tintColor" red="0.30196078430000001" green="0.35686274509999999" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="AeA-07-joi" kind="presentation" modalPresentationStyle="formSheet" id="6yp-5M-i3K"/>
                             </connections>
-                        </barButtonItem>
-                        <barButtonItem image="SECURED_BLACKBERRY_LOGO" id="Q6i-bT-29J">
-                            <color key="tintColor" red="0.30196078430000001" green="0.35686274509999999" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="v64-k0-hev"/>
                         <barButtonItem systemItem="action" id="iVQ-EI-9s9">
@@ -288,11 +279,11 @@ https://community.blackberry.com/community/gdn/support</string>
             <objects>
                 <viewController storyboardIdentifier="aboutModalViewController" title="About" automaticallyAdjustsScrollViewInsets="NO" id="AeA-07-joi" customClass="SWAboutViewController" customModule="RSSReaderSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sj0-mc-4rX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="762"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F1y-1V-hPP">
-                                <rect key="frame" x="0.0" y="44" width="375" height="64"/>
+                                <rect key="frame" x="0.0" y="49.666666666666657" width="375" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="QCI-HL-u0y"/>
                                     <constraint firstAttribute="height" constant="64" id="ZZE-p6-rTy"/>
@@ -319,7 +310,7 @@ https://community.blackberry.com/community/gdn/support</string>
                                 </variation>
                             </navigationBar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jrs-47-hDW">
-                                <rect key="frame" x="36" y="154" width="303" height="632"/>
+                                <rect key="frame" x="36" y="159.66666666666669" width="303" height="570.66666666666652"/>
                                 <color key="tintColor" red="0.18823529410000001" green="0.46666666670000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" priority="750" constant="520" id="hSA-wa-6rq"/>
@@ -350,6 +341,7 @@ https://community.blackberry.com/community/gdn/support</string>
                                 </variation>
                             </textView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6IE-vc-w70"/>
                         <color key="backgroundColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="jrs-47-hDW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Sj0-mc-4rX" secondAttribute="leadingMargin" constant="20" id="A1d-bO-ox9"/>
@@ -361,7 +353,6 @@ https://community.blackberry.com/community/gdn/support</string>
                             <constraint firstItem="F1y-1V-hPP" firstAttribute="leading" secondItem="6IE-vc-w70" secondAttribute="leading" id="m5s-py-c59"/>
                             <constraint firstItem="jrs-47-hDW" firstAttribute="top" secondItem="6IE-vc-w70" secondAttribute="top" constant="110" id="ydG-2z-Xt4"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6IE-vc-w70"/>
                     </view>
                     <navigationItem key="navigationItem" id="RSU-zb-9AY"/>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -375,11 +366,11 @@ https://community.blackberry.com/community/gdn/support</string>
             <objects>
                 <viewController storyboardIdentifier="settingsViewController" title="Settings" id="xdu-OS-DXQ" customClass="SWSettingsViewController" customModule="RSSReaderSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TFy-o9-eZf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="762"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jWf-d4-MHt">
-                                <rect key="frame" x="0.0" y="44" width="375" height="64"/>
+                                <rect key="frame" x="0.0" y="49.666666666666657" width="375" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="zNt-J3-BhU"/>
                                 </constraints>
@@ -394,8 +385,8 @@ https://community.blackberry.com/community/gdn/support</string>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQj-Fw-BAX">
-                                <rect key="frame" x="131.66666666666666" y="292" width="112" height="228"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQj-Fw-BAX">
+                                <rect key="frame" x="131.66666666666666" y="366" width="112" height="30"/>
                                 <state key="normal" title="Troubleshooting">
                                     <color key="titleColor" red="0.20784313730000001" green="0.65490196079999996" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -404,6 +395,7 @@ https://community.blackberry.com/community/gdn/support</string>
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="bSC-fw-Gt3"/>
                         <color key="backgroundColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="jWf-d4-MHt" firstAttribute="leading" secondItem="bSC-fw-Gt3" secondAttribute="leading" id="CGU-i4-b4r"/>
@@ -412,7 +404,6 @@ https://community.blackberry.com/community/gdn/support</string>
                             <constraint firstItem="jWf-d4-MHt" firstAttribute="top" secondItem="bSC-fw-Gt3" secondAttribute="top" id="aTF-IB-lU2"/>
                             <constraint firstItem="FQj-Fw-BAX" firstAttribute="centerY" secondItem="TFy-o9-eZf" secondAttribute="centerY" id="f0b-EX-a2M"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="bSC-fw-Gt3"/>
                     </view>
                     <connections>
                         <outlet property="troubleShootingButton" destination="FQj-Fw-BAX" id="hes-Fo-K6m"/>
@@ -432,10 +423,10 @@ https://community.blackberry.com/community/gdn/support</string>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="storyTableViewCell" editingAccessoryType="detailDisclosureButton" textLabel="xSM-Nw-Inh" detailTextLabel="NEt-Rk-X6r" style="IBUITableViewCellStyleSubtitle" id="KC4-Ya-yTb">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KC4-Ya-yTb" id="SDD-Ih-pZI">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xSM-Nw-Inh">
@@ -462,14 +453,13 @@ https://community.blackberry.com/community/gdn/support</string>
                         </connections>
                     </tableView>
                     <toolbarItems>
-                        <barButtonItem title="Item" id="hbI-nD-GXd">
+                        <barButtonItem id="hbI-nD-GXd">
+                            <imageReference key="image" image="info.circle" catalog="system" symbolScale="medium"/>
+                            <imageReference key="landscapeImage" image="info.circle" catalog="system" symbolScale="medium"/>
                             <color key="tintColor" red="0.30196078430000001" green="0.35686274509999999" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="AeA-07-joi" kind="presentation" modalPresentationStyle="formSheet" id="Oqt-gz-ZnB"/>
                             </connections>
-                        </barButtonItem>
-                        <barButtonItem image="SECURED_BLACKBERRY_LOGO" id="WkL-Qc-1MB">
-                            <color key="tintColor" red="0.30196078430000001" green="0.35686274509999999" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="PHh-DG-q2V"/>
                         <barButtonItem systemItem="action" id="rxN-7I-c9p">
@@ -501,13 +491,14 @@ https://community.blackberry.com/community/gdn/support</string>
             <point key="canvasLocation" x="-2462" y="-2174"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="SECURED_BLACKBERRY_LOGO" width="16" height="16"/>
-    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MTw-bv-gOO"/>
-        <segue reference="HKA-qy-OtQ"/>
+        <segue reference="xCK-fY-mn0"/>
+        <segue reference="6yp-5M-i3K"/>
         <segue reference="pgT-RB-iBy"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.90980392160000001" green="0.090196078430000007" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+    <resources>
+        <image name="SECURED_BLACKBERRY_LOGO" width="178" height="27"/>
+        <image name="info.circle" catalog="system" width="128" height="123"/>
+    </resources>
 </document>

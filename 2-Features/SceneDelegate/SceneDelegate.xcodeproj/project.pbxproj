@@ -220,6 +220,7 @@
 				<string>563891ED22CD0CB600D3DBD8</string>
 				<string>563891EE22CD0CB600D3DBD8</string>
 				<string>563891EF22CD0CB600D3DBD8</string>
+				<string>99C9533225C8083F0099F208</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -497,7 +498,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>16.0</string>
+				<string>17.0</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
 				<string>INCLUDE_SOURCE</string>
 				<key>MTL_FAST_MATH</key>
@@ -609,7 +610,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>16.0</string>
+				<string>17.0</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
 				<string>NO</string>
 				<key>MTL_FAST_MATH</key>
@@ -1616,6 +1617,23 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>99C9533225C8083F0099F208</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>dstPath</key>
+			<string></string>
+			<key>dstSubfolderSpec</key>
+			<string>10</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXCopyFilesBuildPhase</string>
+			<key>name</key>
+			<string>Embed Frameworks</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
 		<key>99E0BDC225C45BB00079A1D7</key>
 		<dict>
 			<key>isa</key>
@@ -1633,27 +1651,6 @@
 		<dict>
 			<key>fileRef</key>
 			<string>99E0BDC225C45BB00079A1D7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F6AB3B292637257000205670</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F6AB3B252637254F00205670</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F6AB3B2B2637257000205670</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F6AB3B232637254F00205670</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F6AB3B2D2637257000205670</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F6AB3B242637254F00205670</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>

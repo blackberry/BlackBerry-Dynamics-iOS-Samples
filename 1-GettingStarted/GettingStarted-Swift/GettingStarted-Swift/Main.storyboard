@@ -28,7 +28,7 @@
         <!--Web View Controller-->
         <scene sceneID="sNG-Ef-yCJ">
             <objects>
-                <viewController id="ZcW-CH-IVC" customClass="WebViewController" customModule="GettingStarted-Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ZcW-CH-IVC" customClass="WebViewController" customModule="GettingStarted_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fQC-1v-Ud6"/>
                         <viewControllerLayoutGuide type="bottom" id="JRd-de-raX"/>
@@ -78,7 +78,7 @@
         <!--File-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController title="File Manager" id="9pv-A4-QxB" userLabel="File" customClass="FileViewController" customModule="GettingStarted-Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="File Manager" id="9pv-A4-QxB" userLabel="File" customClass="FileViewController" customModule="GettingStarted_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -261,7 +261,7 @@
         <!--HTTP-->
         <scene sceneID="Jxj-0q-8Kp">
             <objects>
-                <viewController title="HTTP" id="dnC-0Y-oPU" customClass="HttpViewController" customModule="GettingStarted-Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="HTTP" id="dnC-0Y-oPU" customClass="HttpViewController" customModule="GettingStarted_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Nfh-YQ-INC"/>
                         <viewControllerLayoutGuide type="bottom" id="Siy-i0-rUH"/>
@@ -340,7 +340,7 @@
         <!--SQL Database-->
         <scene sceneID="cEE-pD-G7B">
             <objects>
-                <viewController id="s9k-Z5-wP9" customClass="DBViewController" customModule="GettingStarted-Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="s9k-Z5-wP9" customClass="DBViewController" customModule="GettingStarted_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9eo-nH-0Ps"/>
                         <viewControllerLayoutGuide type="bottom" id="dmz-qz-kEy"/>
@@ -482,7 +482,7 @@
         <!--Socket-->
         <scene sceneID="VTy-JC-V8N">
             <objects>
-                <viewController title="Socket" id="ADa-ld-0fv" userLabel="Socket" customClass="SocketViewController" customModule="GettingStarted-Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Socket" id="ADa-ld-0fv" userLabel="Socket" customClass="SocketViewController" customModule="GettingStarted_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PUB-Na-SYf"/>
                         <viewControllerLayoutGuide type="bottom" id="pKB-fE-3qv"/>
@@ -670,7 +670,7 @@
         <!--Socket-->
         <scene sceneID="x6M-G3-Arm">
             <objects>
-                <viewController title="Socket" id="gR3-zB-eTV" userLabel="Socket" customClass="SocketViewController" customModule="GettingStarted-Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Socket" id="gR3-zB-eTV" userLabel="Socket" customClass="SocketViewController" customModule="GettingStarted_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="f4P-6G-CgN"/>
                         <viewControllerLayoutGuide type="bottom" id="szb-6w-exz"/>
@@ -798,7 +798,7 @@
         <!--Native Share View Controller-->
         <scene sceneID="vHb-HL-asw">
             <objects>
-                <viewController id="m6M-ou-Syc" customClass="NativeShareViewController" customModule="GettingStarted-Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="m6M-ou-Syc" customClass="NativeShareViewController" customModule="GettingStarted_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="u9a-lx-v9K"/>
                         <viewControllerLayoutGuide type="bottom" id="kFH-da-upC"/>
@@ -834,7 +834,7 @@
         <!--CoreData-->
         <scene sceneID="DEd-6T-7uJ">
             <objects>
-                <viewController title="CoreData" id="QAN-Mh-FPM" customClass="CoreDataViewController" customModule="GettingStarted-Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="CoreData" id="QAN-Mh-FPM" customClass="CoreDataViewController" customModule="GettingStarted_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YZc-Nl-bEv"/>
                         <viewControllerLayoutGuide type="bottom" id="dwE-09-Sab"/>

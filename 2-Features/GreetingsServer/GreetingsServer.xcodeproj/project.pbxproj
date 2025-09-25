@@ -10,27 +10,6 @@
 	<string>60</string>
 	<key>objects</key>
 	<dict>
-		<key>10D9ABD024F5587C006C014C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>10D9ABCF24F5587C006C014C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>10E91EAD24EFD67300FFC84A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>10E91EAA24EFD67000FFC84A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>10E91EAF24EFD67300FFC84A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>10E91EA924EFD67000FFC84A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
 		<key>1E8D8C8C1C7E505B00EAA9B7</key>
 		<dict>
 			<key>fileEncoding</key>
@@ -117,6 +96,7 @@
 				<string>218406CB1E804DAE0017D8CF</string>
 				<string>218406CC1E804DAE0017D8CF</string>
 				<string>218406CD1E804DAE0017D8CF</string>
+				<string>3E5F8940225F8A3B00BDE10E</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -569,6 +549,21 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>3E5F8940225F8A3B00BDE10E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>dstPath</key>
+			<string></string>
+			<key>dstSubfolderSpec</key>
+			<string>10</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXCopyFilesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
 		<key>679F819A1C999C3000D19331</key>
 		<dict>
 			<key>isa</key>
@@ -597,13 +592,6 @@
 		<dict>
 			<key>fileRef</key>
 			<string>6D09A0C1203C822D00FD33BF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6D1C26D628D4EACC00A462D5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6D1C26D528D4EACC00A462D5</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -1185,7 +1173,6 @@
 				<string>8B1AB0211E02EF1300F192A7</string>
 				<string>8B2533161DD0DAA2007BDE5D</string>
 				<string>1E8D8C8D1C7E505B00EAA9B7</string>
-				<string>99D793FF152C7F2F004B3877</string>
 				<string>6D4E6B1C19DD810A00ADD388</string>
 				<string>3B5961DA1FD83FE500095062</string>
 				<string>8B1AB0231E02FC6300F192A7</string>
@@ -1205,6 +1192,7 @@
 				<string>999E2B7E152374F0002651BD</string>
 				<string>999E2B7F152374F0002651BD</string>
 				<string>999E2B80152374F0002651BD</string>
+				<string>F696967A244F00510005228E</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -1376,6 +1364,13 @@
 			<key>sourceTree</key>
 			<string>SDKROOT</string>
 		</dict>
+		<key>999E2B91152374F0002651BD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>999E2B90152374F0002651BD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>999E2B92152374F0002651BD</key>
 		<dict>
 			<key>isa</key>
@@ -1524,9 +1519,7 @@
 		<key>999E2BA6152374F1002651BD</key>
 		<dict>
 			<key>children</key>
-			<array>
-				<string>99D793FC152C7F2F004B3877</string>
-			</array>
+			<array/>
 			<key>isa</key>
 			<string>PBXGroup</string>
 			<key>name</key>
@@ -1622,7 +1615,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>16.0</string>
+				<string>17.0</string>
 				<key>ONLY_ACTIVE_ARCH</key>
 				<string>YES</string>
 				<key>SDKROOT</key>
@@ -1710,7 +1703,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>16.0</string>
+				<string>17.0</string>
 				<key>ONLY_ACTIVE_ARCH</key>
 				<string>YES</string>
 				<key>OTHER_CFLAGS</key>
@@ -1872,28 +1865,6 @@
 			<string>Storyboards</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>99D793FC152C7F2F004B3877</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>name</key>
-			<string>config.info</string>
-			<key>path</key>
-			<string>Supporting Files/Resources/config.info</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>99D793FF152C7F2F004B3877</key>
-		<dict>
-			<key>fileRef</key>
-			<string>99D793FC152C7F2F004B3877</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
 		</dict>
 		<key>99D79403152C7F73004B3877</key>
 		<dict>
@@ -2061,6 +2032,23 @@
 			<string>CC60F0A91546BA7200FD570E</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>F696967A244F00510005228E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>dstPath</key>
+			<string></string>
+			<key>dstSubfolderSpec</key>
+			<string>10</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXCopyFilesBuildPhase</string>
+			<key>name</key>
+			<string>Copy Framework</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
 		</dict>
 		<key>F6ECE59A28E7248C004B152C</key>
 		<dict>

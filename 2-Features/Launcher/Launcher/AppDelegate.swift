@@ -137,7 +137,7 @@ class AppDelegate : NSObject, UIApplicationDelegate, GDiOSDelegate, GTLauncherVi
                     GTLauncherViewController.setCacheExpiry(5*60)
 
                     // Set Launcher Delegate
-                    GDiOS.sharedInstance().getManagedLauncherViewController().delegate = self
+                    GDiOS.sharedInstance().getManagedLauncherViewController()?.delegate = self
                     
                     self.window?.rootViewController = vc
                     self.window?.makeKeyAndVisible()

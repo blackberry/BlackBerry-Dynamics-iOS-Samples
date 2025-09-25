@@ -10,27 +10,6 @@
 	<string>60</string>
 	<key>objects</key>
 	<dict>
-		<key>10D9ABBE24F557E0006C014C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>10D9ABBD24F557E0006C014C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>10E91E7D24EFD50C00FFC84A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>10E91E7A24EFD50800FFC84A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>10E91E7F24EFD50C00FFC84A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>10E91E7924EFD50800FFC84A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
 		<key>33DB610B2357594800DB58DD</key>
 		<dict>
 			<key>isa</key>
@@ -48,13 +27,6 @@
 		<dict>
 			<key>fileRef</key>
 			<string>33DB610B2357594800DB58DD</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6D1C26C128D4E4CC00A462D5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6D1C26C028D4E4CC00A462D5</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -768,6 +740,7 @@
 				<string>CCDABF671F28CD5B0011FCA8</string>
 				<string>CCDABF681F28CD5B0011FCA8</string>
 				<string>CCDABF691F28CD5B0011FCA8</string>
+				<string>F699D28D244E183C00EC7E18</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -1291,7 +1264,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>16.0</string>
+				<string>17.0</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
 				<string>YES</string>
 				<key>ONLY_ACTIVE_ARCH</key>
@@ -1387,7 +1360,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>16.0</string>
+				<string>17.0</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
 				<string>NO</string>
 				<key>ONLY_ACTIVE_ARCH</key>
@@ -1641,6 +1614,21 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>D507FAA22435E16200A8BE67</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>dstPath</key>
+			<string></string>
+			<key>dstSubfolderSpec</key>
+			<string>10</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXCopyFilesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
 		<key>D55AD28A2433855500C00D48</key>
 		<dict>
 			<key>buildActionMask</key>
@@ -1687,6 +1675,7 @@
 				<string>D55AD28A2433855500C00D48</string>
 				<string>D55AD28B2433855500C00D48</string>
 				<string>D55AD28C2433855500C00D48</string>
+				<string>D507FAA22435E16200A8BE67</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -1928,6 +1917,23 @@
 			<string>UIAccessibilityIdentifiers.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F699D28D244E183C00EC7E18</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>dstPath</key>
+			<string></string>
+			<key>dstSubfolderSpec</key>
+			<string>10</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXCopyFilesBuildPhase</string>
+			<key>name</key>
+			<string>Copy Frameworks</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
 		</dict>
 		<key>FBA5095D208DFF5C008EAE16</key>
 		<dict>
