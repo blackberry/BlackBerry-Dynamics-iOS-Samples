@@ -622,7 +622,7 @@ typedef enum {
 
     // Sign message.
     myCertChain = GDX509List_aux_certs(self.myCert);
-    p7signed = GDPKCS7_add_signer(self.myCert, self.myPrivateKey, myCertChain, GDDigest_byname("sha1"), 0);
+    p7signed = GDPKCS7_add_signer(self.myCert, self.myPrivateKey, myCertChain, GDDigest_byname("sha256"), 0);
     if (!p7signed) {
         [self showAlert:@"Error" text:[NSString stringWithFormat:@"Failed to add signer: %s", GDCryptoError_string(GDCryptoError_get())]];
         cleanup();
@@ -650,17 +650,15 @@ typedef enum {
         GDX509List_insert(encCerts, 0, self.myCert);
         // Encrypt signed e-mail using public keys for each recipient, including sender's, so all in
         // the club can read it!
-        p7enc = GDPKCS7_encrypt(encCerts, signedEnvelope, GDCipher_byname("des-ede3-cbc"), 0);
+        p7enc = GDPKCS7_encrypt(encCerts, signedEnvelope, GDCipher_byname("aes-256-cbc"), 0);
         if (!p7enc) {
             [self showAlert:@"Error" text:[NSString stringWithFormat:@"Failed to encrypt: %s", GDCryptoError_string(GDCryptoError_get())]];
             cleanup();
             return;
         }
-        if (GDPKCS7_final(p7enc, signedEnvelope, 0) != 1) {
-            [self showAlert:@"Error" text:[NSString stringWithFormat:@"Failed to finalize encryption: %s", GDCryptoError_string(GDCryptoError_get())]];
-            cleanup();
-            return;
-        }
+        // Note: GDPKCS7_final is NOT needed after GDPKCS7_encrypt - CMS_encrypt already
+        // processes all data. Calling CMS_final after would cause "wrong final block length" error.
+        
         // Append encrypted SMIME envelope to email.
         if (GDPKCS7_SMIME_write(email, p7enc, NULL, 0) != 1) {
             [self showAlert:@"Error" text:[NSString stringWithFormat:@"Failed to write encrypted envelope: %s", GDCryptoError_string(GDCryptoError_get())]];

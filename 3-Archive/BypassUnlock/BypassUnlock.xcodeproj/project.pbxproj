@@ -9,15 +9,13 @@
 /* Begin PBXBuildFile section */
 		10DE861524F554E40029B8E1 /* BlackBerryDynamics.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10DE861424F554E40029B8E1 /* BlackBerryDynamics.xcframework */; };
 		10DE861624F554E40029B8E1 /* BlackBerryDynamics.xcframework in Copy Framework */ = {isa = PBXBuildFile; fileRef = 10DE861424F554E40029B8E1 /* BlackBerryDynamics.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		10E91E4C24EFD34C00FFC84A /* BlackBerryCerticom.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E91E4924EFD34800FFC84A /* BlackBerryCerticom.xcframework */; };
-		10E91E4D24EFD34C00FFC84A /* BlackBerryCerticom.xcframework in Copy Framework */ = {isa = PBXBuildFile; fileRef = 10E91E4924EFD34800FFC84A /* BlackBerryCerticom.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		10E91E4E24EFD34C00FFC84A /* BlackBerryCerticomSBGSE.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E91E4824EFD34800FFC84A /* BlackBerryCerticomSBGSE.xcframework */; };
-		10E91E4F24EFD34C00FFC84A /* BlackBerryCerticomSBGSE.xcframework in Copy Framework */ = {isa = PBXBuildFile; fileRef = 10E91E4824EFD34800FFC84A /* BlackBerryCerticomSBGSE.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		20E99C931CB5424E005A8730 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E99C921CB5424E005A8730 /* MediaPlayer.framework */; };
 		210B07021E80559A008C8E3A /* BypassUnlockUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 210B07011E80559A008C8E3A /* BypassUnlockUITests.m */; };
 		210B08CF1E81333A008C8E3A /* credentials.json in Resources */ = {isa = PBXBuildFile; fileRef = 210B08CE1E81333A008C8E3A /* credentials.json */; };
 		33DB610F2357594F00DB58DD /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33DB610D2357594F00DB58DD /* SafariServices.framework */; };
 		3B5961261FD8378D00095062 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B5961191FD8378C00095062 /* InfoPlist.strings */; };
+		49D3D1C02ED0DA6100A00F65 /* GSEProvider.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D3D1BF2ED0DA6100A00F65 /* GSEProvider.xcframework */; };
+		49D3D1C12ED0DA6A00A00F65 /* GSEProvider.xcframework in Copy Framework */ = {isa = PBXBuildFile; fileRef = 49D3D1BF2ED0DA6100A00F65 /* GSEProvider.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5609A8B722456265009C6628 /* LocalComplianceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5609A8B622456265009C6628 /* LocalComplianceManager.m */; };
 		6268D1151C97085F0073D9AC /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6268D1141C97085F0073D9AC /* LocalAuthentication.framework */; };
 		6268D1171C97085F0073D9AC /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6268D1161C97085F0073D9AC /* CoreTelephony.framework */; };
@@ -89,8 +87,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				10E91E4F24EFD34C00FFC84A /* BlackBerryCerticomSBGSE.xcframework in Copy Framework */,
-				10E91E4D24EFD34C00FFC84A /* BlackBerryCerticom.xcframework in Copy Framework */,
+				49D3D1C12ED0DA6A00A00F65 /* GSEProvider.xcframework in Copy Framework */,
 				10DE861624F554E40029B8E1 /* BlackBerryDynamics.xcframework in Copy Framework */,
 			);
 			name = "Copy Framework";
@@ -100,8 +97,6 @@
 
 /* Begin PBXFileReference section */
 		10DE861424F554E40029B8E1 /* BlackBerryDynamics.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = BlackBerryDynamics.xcframework; sourceTree = "<group>"; };
-		10E91E4824EFD34800FFC84A /* BlackBerryCerticomSBGSE.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = BlackBerryCerticomSBGSE.xcframework; sourceTree = "<group>"; };
-		10E91E4924EFD34800FFC84A /* BlackBerryCerticom.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = BlackBerryCerticom.xcframework; sourceTree = "<group>"; };
 		20E99C921CB5424E005A8730 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		210B06FF1E80559A008C8E3A /* BypassUnlockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BypassUnlockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		210B07011E80559A008C8E3A /* BypassUnlockUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BypassUnlockUITests.m; sourceTree = "<group>"; };
@@ -123,6 +118,7 @@
 		3B5961241FD8378D00095062 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = "BypassUnlock/Supporting Files/fr.lproj/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
 		3B5961251FD8378D00095062 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "BypassUnlock/Supporting Files/zh-Hans.lproj/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
 		3BFC786F1FE011CF00624EBE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "../BypassUnlock/Supporting Files/en.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		49D3D1BF2ED0DA6100A00F65 /* GSEProvider.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GSEProvider.xcframework; path = ../../../../../msdk/nexus/certicom/ios/GSEProvider.xcframework; sourceTree = "<group>"; };
 		5609A8B422456264009C6628 /* LocalComplianceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalComplianceManager.h; path = bypassunlock/Helpers/LocalComplianceManager.h; sourceTree = SOURCE_ROOT; };
 		5609A8B622456265009C6628 /* LocalComplianceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalComplianceManager.m; path = bypassunlock/Helpers/LocalComplianceManager.m; sourceTree = SOURCE_ROOT; };
 		62689BF31CB322CC006DC45A /* notifier.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = notifier.xcodeproj; path = bypassunlock/notifier/notifier.xcodeproj; sourceTree = "<group>"; };
@@ -194,8 +190,7 @@
 				9915102F21DCE58E00190D05 /* DeviceCheck.framework in Frameworks */,
 				6D09A0A4203C77C200FD33BF /* WebKit.framework in Frameworks */,
 				20E99C931CB5424E005A8730 /* MediaPlayer.framework in Frameworks */,
-				10E91E4C24EFD34C00FFC84A /* BlackBerryCerticom.xcframework in Frameworks */,
-				10E91E4E24EFD34C00FFC84A /* BlackBerryCerticomSBGSE.xcframework in Frameworks */,
+				49D3D1C02ED0DA6100A00F65 /* GSEProvider.xcframework in Frameworks */,
 				10DE861524F554E40029B8E1 /* BlackBerryDynamics.xcframework in Frameworks */,
 				6268D1151C97085F0073D9AC /* LocalAuthentication.framework in Frameworks */,
 				6268D1211C9708600073D9AC /* CoreData.framework in Frameworks */,
@@ -269,13 +264,12 @@
 		6268D1111C97085F0073D9AC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49D3D1BF2ED0DA6100A00F65 /* GSEProvider.xcframework */,
 				95CCA92428F4D3C3002C13CE /* CryptoTokenKit.framework */,
 				6D3A77A028D3E76A009CB7B2 /* BlackBerryDynamicsAutomatedTestSupportLibrary.xcframework */,
 				6D78AB1428C7EF0A0069DE84 /* UniformTypeIdentifiers.framework */,
 				6DA3C4F326F53323009BC7E4 /* CoreServices.framework */,
 				10DE861424F554E40029B8E1 /* BlackBerryDynamics.xcframework */,
-				10E91E4924EFD34800FFC84A /* BlackBerryCerticom.xcframework */,
-				10E91E4824EFD34800FFC84A /* BlackBerryCerticomSBGSE.xcframework */,
 				74BB18EB23F4953500B3834F /* AVFoundation.framework */,
 				33DB610D2357594F00DB58DD /* SafariServices.framework */,
 				9915102D21DCE58D00190D05 /* DeviceCheck.framework */,

@@ -1,5 +1,7 @@
 # Server Services
 
+From Summer 24 - Application is no longer a public sample.
+
 ## Description
 
 This sample application is intended as a starting point for developers making use of BlackBerry Dynamics Server-Based Services. It retrieves the details of any available com.blackberry.example.gdservice.time-zone service providers using the getServiceProvidersFor programming interface. The user then enters a latitude and longitude, and the application retrieves the corresponding results from the Google service.
@@ -26,7 +28,7 @@ See [Software Requirements](https://docs.blackberry.com/en/development-tools/bla
 1. Set up BlackBerry Dynamics Development Environment.
 2. Clone the repo. 
 3. Run `pod install` to create project workspace.
-4. Launch Xcode and open the project.
+4. Launch Xcode `and` open the project.
 5. Edit the *Bundle Identifier* to your own.
 6. Edit the *URL identifier* and *URL Schemes* according to your own in the *info.plist*. See [Declaring a URL type to support BlackBerry Dynamics features](https://docs.blackberry.com/en/development-tools/blackberry-dynamics-sdk-ios/current/blackberry-dynamics-sdk-ios-devguide/gwj1489687014271) in the Developer Guide.
 7. Edit the *GDApplicationID* to your own or use the default '*com.blackberry.dynamics.sample*' in the *info.plist*.
