@@ -7,14 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		100D5E6724EFD724002FE309 /* BlackBerryCerticom.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100D5E6424EFD721002FE309 /* BlackBerryCerticom.xcframework */; };
-		100D5E6824EFD724002FE309 /* BlackBerryCerticom.xcframework in Copy Framework */ = {isa = PBXBuildFile; fileRef = 100D5E6424EFD721002FE309 /* BlackBerryCerticom.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		100D5E6924EFD724002FE309 /* BlackBerryCerticomSBGSE.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100D5E6324EFD721002FE309 /* BlackBerryCerticomSBGSE.xcframework */; };
-		100D5E6A24EFD724002FE309 /* BlackBerryCerticomSBGSE.xcframework in Copy Framework */ = {isa = PBXBuildFile; fileRef = 100D5E6324EFD721002FE309 /* BlackBerryCerticomSBGSE.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		10D9ABD624F55B24006C014C /* BlackBerryDynamics.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10D9ABD524F55B24006C014C /* BlackBerryDynamics.xcframework */; };
 		10D9ABD724F55B24006C014C /* BlackBerryDynamics.xcframework in Copy Framework */ = {isa = PBXBuildFile; fileRef = 10D9ABD524F55B24006C014C /* BlackBerryDynamics.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		33DB61262357599D00DB58DD /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33DB61252357599D00DB58DD /* SafariServices.framework */; };
 		3B71D40D1FD82C2900EFAF67 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B71D4001FD82C2800EFAF67 /* InfoPlist.strings */; };
+		49D3D1B82ED0D9D800A00F65 /* GSEProvider.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D3D1B72ED0D9D800A00F65 /* GSEProvider.xcframework */; };
+		49D3D1B92ED0D9E000A00F65 /* GSEProvider.xcframework in Copy Framework */ = {isa = PBXBuildFile; fileRef = 49D3D1B72ED0D9D800A00F65 /* GSEProvider.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		599703731C58CE4D00E4D693 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 599703721C58CE4D00E4D693 /* Assets.xcassets */; };
 		5997037A1C58CF0D00E4D693 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5997031B1C58CD3400E4D693 /* AppDelegate.swift */; };
 		5997037D1C58CF1E00E4D693 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5997037B1C58CF1E00E4D693 /* Constants.swift */; };
@@ -65,8 +63,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				100D5E6A24EFD724002FE309 /* BlackBerryCerticomSBGSE.xcframework in Copy Framework */,
-				100D5E6824EFD724002FE309 /* BlackBerryCerticom.xcframework in Copy Framework */,
+				49D3D1B92ED0D9E000A00F65 /* GSEProvider.xcframework in Copy Framework */,
 				10D9ABD724F55B24006C014C /* BlackBerryDynamics.xcframework in Copy Framework */,
 			);
 			name = "Copy Framework";
@@ -75,8 +72,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		100D5E6324EFD721002FE309 /* BlackBerryCerticomSBGSE.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = BlackBerryCerticomSBGSE.xcframework; sourceTree = "<group>"; };
-		100D5E6424EFD721002FE309 /* BlackBerryCerticom.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = BlackBerryCerticom.xcframework; sourceTree = "<group>"; };
 		10D9ABD524F55B24006C014C /* BlackBerryDynamics.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = BlackBerryDynamics.xcframework; sourceTree = "<group>"; };
 		207F85221CB2F8A20001365A /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		28B5F16E1C0C83A4009F0FA3 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
@@ -98,6 +93,7 @@
 		3B71D40B1FD82C2900EFAF67 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = "ServicesClientSwift/Supporting Files/es.lproj/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
 		3B71D40C1FD82C2900EFAF67 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = "ServicesClientSwift/Supporting Files/fr.lproj/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
 		3BFC78941FE0122A00624EBE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "ServicesClientSwift/Supporting Files/en.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		49D3D1B72ED0D9D800A00F65 /* GSEProvider.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GSEProvider.xcframework; sourceTree = "<group>"; };
 		5997031B1C58CD3400E4D693 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ServicesClientSwift/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		5997034A1C58CDFD00E4D693 /* ServicesClientSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ServicesClientSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		599703721C58CE4D00E4D693 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ServicesClientSwift/Assets.xcassets; sourceTree = SOURCE_ROOT; };
@@ -148,15 +144,14 @@
 				95CCA94028F4D4F7002C13CE /* CryptoTokenKit.framework in Frameworks */,
 				6DA3C4D826F53097009BC7E4 /* CoreServices.framework in Frameworks */,
 				74BB190323F496AF00B3834F /* AVFoundation.framework in Frameworks */,
-				100D5E6924EFD724002FE309 /* BlackBerryCerticomSBGSE.xcframework in Frameworks */,
 				9915107821DCF1E500190D05 /* DeviceCheck.framework in Frameworks */,
 				6D60459A203C936A00B4C64D /* WebKit.framework in Frameworks */,
-				100D5E6724EFD724002FE309 /* BlackBerryCerticom.xcframework in Frameworks */,
 				599703851C58CF9100E4D693 /* libz.tbd in Frameworks */,
 				599703841C58CF8700E4D693 /* MessageUI.framework in Frameworks */,
 				599703831C58CF5F00E4D693 /* LocalAuthentication.framework in Frameworks */,
 				6D9974A728C7F19500AA0F57 /* UniformTypeIdentifiers.framework in Frameworks */,
 				599703821C58CF5A00E4D693 /* SystemConfiguration.framework in Frameworks */,
+				49D3D1B82ED0D9D800A00F65 /* GSEProvider.xcframework in Frameworks */,
 				10D9ABD624F55B24006C014C /* BlackBerryDynamics.xcframework in Frameworks */,
 				599703811C58CF5600E4D693 /* CoreTelephony.framework in Frameworks */,
 				599703801C58CF5000E4D693 /* CoreData.framework in Frameworks */,
@@ -202,12 +197,11 @@
 		28B5F1691C0C8010009F0FA3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49D3D1B72ED0D9D800A00F65 /* GSEProvider.xcframework */,
 				95CCA93F28F4D4F7002C13CE /* CryptoTokenKit.framework */,
 				6D9974A628C7F19400AA0F57 /* UniformTypeIdentifiers.framework */,
 				6DA3C4D726F53097009BC7E4 /* CoreServices.framework */,
 				10D9ABD524F55B24006C014C /* BlackBerryDynamics.xcframework */,
-				100D5E6424EFD721002FE309 /* BlackBerryCerticom.xcframework */,
-				100D5E6324EFD721002FE309 /* BlackBerryCerticomSBGSE.xcframework */,
 				74BB190223F496AF00B3834F /* AVFoundation.framework */,
 				33DB61252357599D00DB58DD /* SafariServices.framework */,
 				9915107721DCF1E500190D05 /* DeviceCheck.framework */,

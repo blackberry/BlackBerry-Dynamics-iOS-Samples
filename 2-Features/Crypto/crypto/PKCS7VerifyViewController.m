@@ -346,14 +346,16 @@ typedef enum {
     }
     
     // Verify the document has not been edited since it was signed.
-    if (GDPKCS7_verify(p7, NULL, NULL, doc, NULL, GDPKCS7_NOVERIFY) != 1) {
+    // note: must use GDPKCS7_BINARY flag to match how the signature was created
+    if (GDPKCS7_verify(p7, NULL, NULL, doc, NULL, GDPKCS7_BINARY | GDPKCS7_NOVERIFY) != 1) {
         [self showAlert:@"Error" text:[NSString stringWithFormat:@"Digest verification failure. %@ has changed after it was signed. Error:%s", _document, GDCryptoError_string(GDCryptoError_get())]];
         cleanup();
         return;
     }
 
     // Verify that the signer is trusted by Dynamics.
-    if (GDPKCS7_verify(p7, NULL, NULL, doc, NULL, 0) == 1) {
+    // note: must use GDPKCS7_BINARY flag to match how the signature was created
+    if (GDPKCS7_verify(p7, NULL, NULL, doc, NULL, GDPKCS7_BINARY) == 1) {
         signers = GDPKCS7_get_signers(p7, 0);
         if (signers)
             signer = GDX509Certificate_create(GDX509List_value(signers, 0));

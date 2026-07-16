@@ -25,7 +25,19 @@ class RandomSceneDelegate: UIResponder, UIWindowSceneDelegate, UserInterfaceLaun
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let scene = (scene as? UIWindowScene) else { return }
-        self.window = UIWindow(windowScene: scene)
+        
+        // With BlackBerry Dynamics 15.+, UISceneDelegate handling has changed.
+        if AppGDiOSDelegate.sharedInstance.isDynamicsVersionGreaterThanOrEqualv15() {
+            // Recommended implementation based on BlackBerry Dynamics 15.0 and newer
+            if let keyWin = scene.keyWindow {
+                window = keyWin
+            }
+        } else {
+            // for BlackBerry Dynamics 14.+ or earlier
+            window = UIWindow(windowScene: scene)
+            window?.makeKeyAndVisible()
+        }
+        
         AppGDiOSDelegate.sharedInstance.scheduleInterfaceLaunching(with: self)
     }
     

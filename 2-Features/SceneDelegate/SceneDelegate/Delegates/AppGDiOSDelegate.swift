@@ -85,4 +85,25 @@ class AppGDiOSDelegate: NSObject, GDiOSDelegate {
         super.init()
     }
     
+    /// Checks if the current BlackBerry Dynamics version is greater than or equal to v15.0
+    /// - Returns: True if the current Dynamics version is 15.0 or greater, false otherwise
+    func isDynamicsVersionGreaterThanOrEqualv15() -> Bool {
+        // Get the current Dynamics version
+        let dynamicsVersion = GDiOS.sharedInstance().getVersion()
+        
+        // Parse the version string (format: "major.minor.patch.build")
+        let versionComponents = dynamicsVersion.components(separatedBy: ".")
+        guard versionComponents.count >= 1 else {
+            return false
+        }
+        
+        // Extract current major version
+        guard let currentMajor = Int(versionComponents[0]) else {
+            return false
+        }
+        
+        // Check if major version is 15 or greater
+        return currentMajor >= 15
+    }
+    
 }
