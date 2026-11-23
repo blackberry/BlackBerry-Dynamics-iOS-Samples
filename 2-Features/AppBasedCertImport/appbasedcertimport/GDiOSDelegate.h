@@ -1,4 +1,4 @@
-/* Copyright (c) 2023 BlackBerry Ltd.
+/* Copyright (c) 2026 BlackBerry Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,12 +15,13 @@
  */
 
 @import BlackBerryDynamics.Runtime;
-#import "AppDelegate.h"
 
 @interface GDiOSDelegate : NSObject <GDiOSDelegate>
 
-    @property (weak, nonatomic) AppDelegate *appDelegate;
-    @property (assign,nonatomic,readonly) BOOL hasAuthorized;
+@property (assign, nonatomic, readonly) BOOL hasAuthorized;
 
-    +(instancetype)sharedInstance;
++ (instancetype)sharedInstance;
+
+- (void)presentMainUIIfNeeded;
+
 @end

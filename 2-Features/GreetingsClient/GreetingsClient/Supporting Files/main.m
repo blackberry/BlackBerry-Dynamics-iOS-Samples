@@ -15,7 +15,7 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "AppDelegate.h"
+#import "GreetingsClient-Swift.h"
 
 int main(int argc, char* argv[])
 {

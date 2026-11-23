@@ -28,7 +28,7 @@
 		8B889A061E080C59003ACCEC /* RSSReaderGDiOSDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B889A051E080C59003ACCEC /* RSSReaderGDiOSDelegate.m */; };
 		8B889A081E080CB6003ACCEC /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B889A071E080CB6003ACCEC /* Main_iPhone.storyboard */; };
 		8B889A0A1E080CC5003ACCEC /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B889A091E080CC5003ACCEC /* Main_iPad.storyboard */; };
-		92FBDDE62C627B5C002E53B1 /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = 92FBDDE42C627B5C002E53B1 /* ReadMe.md */; };
+		92FBDDE62C627B5C002E53B1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 92FBDDE42C627B5C002E53B1 /* README.md */; };
 		92FBDDE72C627B5C002E53B1 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 92FBDDE52C627B5C002E53B1 /* Podfile */; };
 		95CCA93628F4D48D002C13CE /* CryptoTokenKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CCA93528F4D48D002C13CE /* CryptoTokenKit.framework */; };
 		96D4C6DB1F33BD0700E36725 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D4C6DA1F33BD0700E36725 /* Utilities.m */; };
@@ -55,6 +55,7 @@
 		999E2B97152374F0002651BD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999E2B96152374F0002651BD /* CFNetwork.framework */; };
 		999E2B99152374F0002651BD /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999E2B98152374F0002651BD /* CoreData.framework */; };
 		999E2BA5152374F1002651BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 999E2BA4152374F1002651BD /* AppDelegate.m */; };
+		C7E8F9012A3B4C5D6E7F8001 /* RSSReaderObjCSceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E8F9032A3B4C5D6E7F8003 /* RSSReaderObjCSceneDelegate.m */; };
 		99D793FF152C7F2F004B3877 /* config.info in Resources */ = {isa = PBXBuildFile; fileRef = 99D793FC152C7F2F004B3877 /* config.info */; };
 		99D79401152C7F2F004B3877 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 99D793FE152C7F2F004B3877 /* iTunesArtwork */; };
 		99D79407152C7F73004B3877 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D79403152C7F73004B3877 /* main.m */; };
@@ -135,7 +136,7 @@
 		8B889A051E080C59003ACCEC /* RSSReaderGDiOSDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSReaderGDiOSDelegate.m; sourceTree = "<group>"; };
 		8B889A071E080CB6003ACCEC /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
 		8B889A091E080CC5003ACCEC /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
-		92FBDDE42C627B5C002E53B1 /* ReadMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
+		92FBDDE42C627B5C002E53B1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		92FBDDE52C627B5C002E53B1 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		95CCA93528F4D48D002C13CE /* CryptoTokenKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoTokenKit.framework; path = System/Library/Frameworks/CryptoTokenKit.framework; sourceTree = SDKROOT; };
 		96D4C6D91F33BD0700E36725 /* Utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Utilities.h; path = RSSReader/Utilities.h; sourceTree = "<group>"; };
@@ -177,6 +178,8 @@
 		999E2B98152374F0002651BD /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		999E2BA3152374F1002651BD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		999E2BA4152374F1002651BD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C7E8F9022A3B4C5D6E7F8002 /* RSSReaderObjCSceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSSReaderObjCSceneDelegate.h; sourceTree = "<group>"; };
+		C7E8F9032A3B4C5D6E7F8003 /* RSSReaderObjCSceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSSReaderObjCSceneDelegate.m; sourceTree = "<group>"; };
 		99D793FC152C7F2F004B3877 /* config.info */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = config.info; path = "Supporting Files/Resources/config.info"; sourceTree = "<group>"; };
 		99D793FE152C7F2F004B3877 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = text; name = iTunesArtwork; path = "Supporting Files/Resources/iTunesArtwork"; sourceTree = "<group>"; };
 		99D79403152C7F73004B3877 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Supporting Files/main.m"; sourceTree = "<group>"; };
@@ -254,7 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				92FBDDE52C627B5C002E53B1 /* Podfile */,
-				92FBDDE42C627B5C002E53B1 /* ReadMe.md */,
+				92FBDDE42C627B5C002E53B1 /* README.md */,
 				999E2B9A152374F0002651BD /* RSSReader */,
 				21FB6E9F1E72FC1100C1EA7D /* RSSReaderUITests */,
 				999E2B85152374F0002651BD /* Frameworks */,
@@ -308,6 +311,8 @@
 			children = (
 				999E2BA3152374F1002651BD /* AppDelegate.h */,
 				999E2BA4152374F1002651BD /* AppDelegate.m */,
+				C7E8F9022A3B4C5D6E7F8002 /* RSSReaderObjCSceneDelegate.h */,
+				C7E8F9032A3B4C5D6E7F8003 /* RSSReaderObjCSceneDelegate.m */,
 				8B889A041E080C59003ACCEC /* RSSReaderGDiOSDelegate.h */,
 				8B889A051E080C59003ACCEC /* RSSReaderGDiOSDelegate.m */,
 				999E2BBD1524745B002651BD /* Helpers */,
@@ -565,7 +570,7 @@
 				99D793FF152C7F2F004B3877 /* config.info in Resources */,
 				99D79401152C7F2F004B3877 /* iTunesArtwork in Resources */,
 				3B5961A21FD83C9A00095062 /* InfoPlist.strings in Resources */,
-				92FBDDE62C627B5C002E53B1 /* ReadMe.md in Resources */,
+				92FBDDE62C627B5C002E53B1 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,6 +590,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				999E2BA5152374F1002651BD /* AppDelegate.m in Sources */,
+				C7E8F9012A3B4C5D6E7F8001 /* RSSReaderObjCSceneDelegate.m in Sources */,
 				9949093A152C72F100019C4C /* RedToolbar.m in Sources */,
 				99490942152C735700019C4C /* RSSFeed.m in Sources */,
 				99490943152C735700019C4C /* RSSManager.m in Sources */,
@@ -657,7 +663,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = RSSReaderUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -695,7 +701,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = RSSReaderUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -755,7 +761,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				STRIP_INSTALLED_PRODUCT = NO;
@@ -801,7 +807,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -826,7 +832,7 @@
 				GCC_THUMB_SUPPORT = NO;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "$(SRCROOT)/RSSReader/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -855,7 +861,7 @@
 				GCC_THUMB_SUPPORT = NO;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "$(SRCROOT)/RSSReader/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

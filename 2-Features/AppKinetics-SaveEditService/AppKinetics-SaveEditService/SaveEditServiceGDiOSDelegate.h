@@ -1,4 +1,4 @@
-/* Copyright (c) 2023 BlackBerry Ltd.
+/* Copyright (c) 2026 BlackBerry Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -11,7 +11,6 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
 
 #import <Foundation/Foundation.h>
@@ -19,13 +18,18 @@
 
 #import "ViewController.h"
 #import "AppDelegate.h"
+#import "ServiceController.h"
+
+@class SaveEditServiceSceneDelegate;
 
 @interface SaveEditServiceGDiOSDelegate : NSObject <GDiOSDelegate>
 
 @property (weak, nonatomic) ViewController *rootViewController;
 @property (weak, nonatomic) AppDelegate *appDelegate;
+@property (weak, nonatomic, nullable) SaveEditServiceSceneDelegate *sceneDelegate;
+@property (strong, nonatomic) ServiceController *serviceController;
 @property (assign,nonatomic,readonly) BOOL hasAuthorized;
 
-+(instancetype)sharedInstance;
++(instancetype _Nonnull)sharedInstance;
 
 @end

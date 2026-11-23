@@ -15,10 +15,25 @@
  */
 
 import SwiftUI
+import BlackBerryDynamics
+
+struct FileShareViewController: UIViewControllerRepresentable {
+    var filePath:String
+    func makeUIViewController(context: Context) -> UIViewController {
+        let fileVC = GDiOS.sharedInstance().getShareFileOptionsViewController(withFilePath:filePath, appProvidedActionsView: nil)
+        return fileVC
+    }
+    
+    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+        
+    }
+    typealias UIViewControllerType = UIViewController
+}
 
 struct FileView: View {
     
     @StateObject var fileVC : FileController
+    @State private var showingSheet = false
     
     var body: some View {
         NavigationView {
@@ -32,7 +47,13 @@ struct FileView: View {
                         fileVC.saveToFile()
                         hideKeyboard()
                     }, label: {
-                        Text("Save")
+                        Text("Save txt")
+                    })
+                    Button(action: {
+                        fileVC.savePDFToFile()
+                        hideKeyboard()
+                    }, label: {
+                        Text("Save PDF")
                     }).padding()
                     
                     Button(action: {
@@ -40,14 +61,24 @@ struct FileView: View {
                         hideKeyboard()
                     }, label: {
                         Text("Load")
-                    }).padding()
+                    })
                     
                     Button(action: {
                         fileVC.clearText()
                         hideKeyboard()
                     }, label: {
                         Text("Clear")
-                    }).padding()
+                    })
+                    
+                    Button(action: {
+                        showingSheet = true;
+                    }, label: {
+                        Text("Share")
+                    })
+                    
+                    .sheet(isPresented: $showingSheet) {
+                        FileShareViewController(filePath: fileVC.filePath)
+                    }
                 }
                 HStack {
                     Text("Folder Exercise").bold()

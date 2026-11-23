@@ -20,10 +20,13 @@
 #import "RootViewController.h"
 #import "AppDelegate.h"
 
+@class SaveEditClientSceneDelegate;
+
 @interface SaveEditClientGDiOSDelegate : NSObject <GDiOSDelegate>
 
 @property (weak, nonatomic) RootViewController *rootViewController;
 @property (weak, nonatomic) AppDelegate *appDelegate;
+@property (weak, nonatomic, nullable) SaveEditClientSceneDelegate *sceneDelegate;
 @property (assign,nonatomic,readonly) BOOL hasAuthorized;
 
 +(instancetype)sharedInstance;

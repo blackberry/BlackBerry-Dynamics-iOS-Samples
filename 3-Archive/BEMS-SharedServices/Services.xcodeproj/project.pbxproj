@@ -18,15 +18,15 @@
 		8B9F16A91FA26EB0001C383A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B9F16A81FA26EB0001C383A /* CoreData.framework */; };
 		8B9F16AB1FA26EB0001C383A /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B9F16AA1FA26EB0001C383A /* MessageUI.framework */; };
 		8B9F16AD1FA26EB0001C383A /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B9F16AC1FA26EB0001C383A /* MobileCoreServices.framework */; };
-		8B9F16B11FA26EB0001C383A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9F16B01FA26EB0001C383A /* AppDelegate.m */; };
+		B1E203641E10000400000001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E203641E10000400000002 /* AppDelegate.swift */; };
+		B1E203641E10000400000003 /* ServicesSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E203641E10000400000004 /* ServicesSceneDelegate.swift */; };
+		B1E203641E10000400000005 /* ServicesGDiOSDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E203641E10000400000006 /* ServicesGDiOSDelegate.swift */; };
 		8B9F16B41FA26EB0001C383A /* EmailServiceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9F16B31FA26EB0001C383A /* EmailServiceVC.m */; };
-		8B9F16B71FA26EB0001C383A /* ServicesGDiOSDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9F16B61FA26EB0001C383A /* ServicesGDiOSDelegate.m */; };
 		8B9F16BB1FA26EB0001C383A /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B9F16BA1FA26EB0001C383A /* Entitlements.plist */; };
 		8B9F16C31FA26EB0001C383A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B9F16C21FA26EB0001C383A /* libz.tbd */; };
 		8B9F16C61FA26EB0001C383A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B9F16C41FA26EB0001C383A /* Main.storyboard */; };
 		8B9F16C81FA26EB0001C383A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B9F16C71FA26EB0001C383A /* Assets.xcassets */; };
 		8B9F16CB1FA26EB0001C383A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B9F16C91FA26EB0001C383A /* LaunchScreen.storyboard */; };
-		8B9F16CE1FA26EB0001C383A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9F16CD1FA26EB0001C383A /* main.m */; };
 		8BA3E4F322679BFB00E1F207 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BA3E4F222679BFB00E1F207 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,12 +46,12 @@
 		8B9F16A81FA26EB0001C383A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		8B9F16AA1FA26EB0001C383A /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		8B9F16AC1FA26EB0001C383A /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		8B9F16AF1FA26EB0001C383A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		8B9F16B01FA26EB0001C383A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B1E203641E10000400000002 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B1E203641E10000400000004 /* ServicesSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesSceneDelegate.swift; sourceTree = "<group>"; };
+		B1E203641E10000400000006 /* ServicesGDiOSDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesGDiOSDelegate.swift; sourceTree = "<group>"; };
+		B1E203641E10000400000007 /* Services-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Services-Bridging-Header.h"; sourceTree = "<group>"; };
 		8B9F16B21FA26EB0001C383A /* EmailServiceVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmailServiceVC.h; sourceTree = "<group>"; };
 		8B9F16B31FA26EB0001C383A /* EmailServiceVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmailServiceVC.m; sourceTree = "<group>"; };
-		8B9F16B51FA26EB0001C383A /* ServicesGDiOSDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServicesGDiOSDelegate.h; sourceTree = "<group>"; };
-		8B9F16B61FA26EB0001C383A /* ServicesGDiOSDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServicesGDiOSDelegate.m; sourceTree = "<group>"; };
 		8B9F16B91FA26EB0001C383A /* default.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = default.xcconfig; sourceTree = "<group>"; };
 		8B9F16BA1FA26EB0001C383A /* Entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		8B9F16C21FA26EB0001C383A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -59,7 +59,6 @@
 		8B9F16C71FA26EB0001C383A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B9F16CA1FA26EB0001C383A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B9F16CC1FA26EB0001C383A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8B9F16CD1FA26EB0001C383A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8BA3E4F222679BFB00E1F207 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -120,10 +119,10 @@
 		8B9F16AE1FA26EB0001C383A /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				8B9F16AF1FA26EB0001C383A /* AppDelegate.h */,
-				8B9F16B01FA26EB0001C383A /* AppDelegate.m */,
-				8B9F16B51FA26EB0001C383A /* ServicesGDiOSDelegate.h */,
-				8B9F16B61FA26EB0001C383A /* ServicesGDiOSDelegate.m */,
+				B1E203641E10000400000002 /* AppDelegate.swift */,
+				B1E203641E10000400000004 /* ServicesSceneDelegate.swift */,
+				B1E203641E10000400000006 /* ServicesGDiOSDelegate.swift */,
+				B1E203641E10000400000007 /* Services-Bridging-Header.h */,
 				8B9F16B21FA26EB0001C383A /* EmailServiceVC.h */,
 				8B9F16B31FA26EB0001C383A /* EmailServiceVC.m */,
 				8B9D52521FA3B5F1000B16EE /* TransferFileVC.h */,
@@ -134,7 +133,6 @@
 				8B9F16C71FA26EB0001C383A /* Assets.xcassets */,
 				8B9F16C91FA26EB0001C383A /* LaunchScreen.storyboard */,
 				8B9F16CC1FA26EB0001C383A /* Info.plist */,
-				8B9F16CD1FA26EB0001C383A /* main.m */,
 				8B9F16BC1FA26EB0001C383A /* Resources */,
 				8B9F16BF1FA26EB0001C383A /* Libs */,
 				8B9F16B81FA26EB0001C383A /* Supporting Files */,
@@ -241,11 +239,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B9F16B71FA26EB0001C383A /* ServicesGDiOSDelegate.m in Sources */,
+				B1E203641E10000400000001 /* AppDelegate.swift in Sources */,
+				B1E203641E10000400000003 /* ServicesSceneDelegate.swift in Sources */,
+				B1E203641E10000400000005 /* ServicesGDiOSDelegate.swift in Sources */,
 				8B9F16B41FA26EB0001C383A /* EmailServiceVC.m in Sources */,
 				8B9D52571FA77E51000B16EE /* DirectoryServicesVC.m in Sources */,
-				8B9F16CE1FA26EB0001C383A /* main.m in Sources */,
-				8B9F16B11FA26EB0001C383A /* AppDelegate.m in Sources */,
 				8B9D52541FA3B5F1000B16EE /* TransferFileVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,7 +320,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -373,7 +371,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -392,7 +390,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Services/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-lstdc++",
@@ -400,6 +398,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gurjit.ghangura.services;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Services/Services-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -415,7 +415,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Services/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-lstdc++",
@@ -423,6 +423,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gurjit.ghangura.services;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Services/Services-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

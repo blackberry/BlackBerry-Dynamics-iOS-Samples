@@ -27,6 +27,13 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
+		<key>1C9B497CFC214D849815C98A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>productRef</key>
+			<string>D18D5898E2B54BBAB11441DE</string>
+		</dict>
 		<key>33DB610B2357594800DB58DD</key>
 		<dict>
 			<key>isa</key>
@@ -46,6 +53,27 @@
 			<string>33DB610B2357594800DB58DD</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>5F2F62C1B51F43A7A5B7ACA0</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>productRef</key>
+			<string>FEBEEB7A72C54CBA875C6835</string>
+		</dict>
+		<key>65A640585F434A77B5E9CDDF</key>
+		<dict>
+			<key>isa</key>
+			<string>XCRemoteSwiftPackageReference</string>
+			<key>repositoryURL</key>
+			<string>https://github.com/blackberry/BlackBerry-Dynamics-iOS-SDK</string>
+			<key>requirement</key>
+			<dict>
+				<key>branch</key>
+				<string>main</string>
+				<key>kind</key>
+				<string>branch</string>
+			</dict>
 		</dict>
 		<key>6D58DFD02AD4816D0079F965</key>
 		<dict>
@@ -86,6 +114,15 @@
 			<string>6D78AB2228C7F0800069DE84</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>6FA6BB640BC349D6AF45F2B4</key>
+		<dict>
+			<key>isa</key>
+			<string>XCSwiftPackageProductDependency</string>
+			<key>package</key>
+			<string>65A640585F434A77B5E9CDDF</string>
+			<key>productName</key>
+			<string>GSEProvider</string>
 		</dict>
 		<key>74BB18E923F4952800B3834F</key>
 		<dict>
@@ -154,7 +191,7 @@
 			<key>lastKnownFileType</key>
 			<string>text.plist.entitlements</string>
 			<key>path</key>
-			<string>KeyManager.entitlements</string>
+			<string>keymanager.entitlements</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -196,7 +233,9 @@
 			<key>buildActionMask</key>
 			<string>2147483647</string>
 			<key>files</key>
-			<array/>
+			<array>
+				<string>5F2F62C1B51F43A7A5B7ACA0</string>
+			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
@@ -236,6 +275,10 @@
 			<string>PBXNativeTarget</string>
 			<key>name</key>
 			<string>KeyManagerUITests</string>
+			<key>packageProductDependencies</key>
+			<array>
+				<string>FEBEEB7A72C54CBA875C6835</string>
+			</array>
 			<key>productName</key>
 			<string>keymanagerUITests</string>
 			<key>productReference</key>
@@ -268,7 +311,7 @@
 			<key>isa</key>
 			<string>PBXGroup</string>
 			<key>path</key>
-			<string>KeyManagerUITests</string>
+			<string>keymanagerUITests</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -279,7 +322,7 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.objc</string>
 			<key>path</key>
-			<string>KeyManagerUITests.m</string>
+			<string>keymanagerUITests.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -328,14 +371,20 @@
 				<string>YES</string>
 				<key>CLANG_WARN_UNGUARDED_AVAILABILITY</key>
 				<string>YES_AGGRESSIVE</string>
+				<key>CODE_SIGN_ENTITLEMENTS[sdk</key>
+				<string>iphonesimulator10.]=$(SRCROOT)/$(PROJECT_NAME)/Entitlements.plist</string>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
 				<key>DEBUG_INFORMATION_FORMAT</key>
 				<string>dwarf</string>
+				<key>ENTITLEMENTS_REQUIRED</key>
+				<string>YES</string>
 				<key>GCC_C_LANGUAGE_STANDARD</key>
 				<string>gnu11</string>
 				<key>GENERATE_INFOPLIST_FILE</key>
 				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>18.0</string>
 				<key>MARKETING_VERSION</key>
 				<string>1.0</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
@@ -374,14 +423,20 @@
 				<string>YES</string>
 				<key>CLANG_WARN_UNGUARDED_AVAILABILITY</key>
 				<string>YES_AGGRESSIVE</string>
+				<key>CODE_SIGN_ENTITLEMENTS[sdk</key>
+				<string>iphonesimulator10.]=$(SRCROOT)/$(PROJECT_NAME)/Entitlements.plist</string>
 				<key>CURRENT_PROJECT_VERSION</key>
 				<string>1</string>
 				<key>DEBUG_INFORMATION_FORMAT</key>
 				<string>dwarf-with-dsym</string>
+				<key>ENTITLEMENTS_REQUIRED</key>
+				<string>YES</string>
 				<key>GCC_C_LANGUAGE_STANDARD</key>
 				<string>gnu11</string>
 				<key>GENERATE_INFOPLIST_FILE</key>
 				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>18.0</string>
 				<key>MARKETING_VERSION</key>
 				<string>1.0</string>
 				<key>MTL_FAST_MATH</key>
@@ -692,6 +747,10 @@
 			</array>
 			<key>mainGroup</key>
 			<string>CCDABF621F28CD5B0011FCA8</string>
+			<key>packageReferences</key>
+			<array>
+				<string>65A640585F434A77B5E9CDDF</string>
+			</array>
 			<key>productRefGroup</key>
 			<string>CCDABF6C1F28CD5B0011FCA8</string>
 			<key>projectDirPath</key>
@@ -724,10 +783,10 @@
 			<string>2147483647</string>
 			<key>files</key>
 			<array>
-				<string>CCDABF821F28CD5B0011FCA8</string>
-				<string>CCDABF7F1F28CD5B0011FCA8</string>
+				<string>CCKEY01012630504005F0001</string>
+				<string>CCKEY01032630504005F0003</string>
+				<string>CCKEY01052630504005F0005</string>
 				<string>F6E27A6127DBABC7005681DB</string>
-				<string>CCDABF881F28CD5B0011FCA8</string>
 			</array>
 			<key>isa</key>
 			<string>PBXSourcesBuildPhase</string>
@@ -759,6 +818,8 @@
 				<string>6D78AB2328C7F0800069DE84</string>
 				<string>990BD04625B89A03003809B9</string>
 				<string>33DB610C2357594800DB58DD</string>
+				<string>1C9B497CFC214D849815C98A</string>
+				<string>D852A8C9DFBD4A728525020E</string>
 			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
@@ -801,6 +862,11 @@
 			<string>PBXNativeTarget</string>
 			<key>name</key>
 			<string>KeyManager</string>
+			<key>packageProductDependencies</key>
+			<array>
+				<string>D18D5898E2B54BBAB11441DE</string>
+				<string>6FA6BB640BC349D6AF45F2B4</string>
+			</array>
 			<key>productName</key>
 			<string>keymanager</string>
 			<key>productReference</key>
@@ -986,10 +1052,9 @@
 			<key>children</key>
 			<array>
 				<string>CC149B8527581199008053A3</string>
-				<string>CCDABF801F28CD5B0011FCA8</string>
-				<string>CCDABF811F28CD5B0011FCA8</string>
-				<string>CCDABF861F28CD5B0011FCA8</string>
-				<string>CCDABF871F28CD5B0011FCA8</string>
+				<string>CCKEY01022630504005F0002</string>
+				<string>CCKEY01042630504005F0004</string>
+				<string>CCKEY01062630504005F0006</string>
 				<string>F6E27A6027DBABC7005681DB</string>
 				<string>F6E27A5E27DBABC7005681DB</string>
 				<string>CCDABF991F28CD5B0011FCA8</string>
@@ -1001,7 +1066,7 @@
 			<key>isa</key>
 			<string>PBXGroup</string>
 			<key>path</key>
-			<string>KeyManager</string>
+			<string>keymanager</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -1009,7 +1074,6 @@
 		<dict>
 			<key>children</key>
 			<array>
-				<string>CCDABF7E1F28CD5B0011FCA8</string>
 				<string>CCDABF8A1F28CD5B0011FCA8</string>
 			</array>
 			<key>isa</key>
@@ -1018,82 +1082,6 @@
 			<string>Supporting Files</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CCDABF7E1F28CD5B0011FCA8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>main.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CCDABF7F1F28CD5B0011FCA8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CCDABF7E1F28CD5B0011FCA8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CCDABF801F28CD5B0011FCA8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>AppDelegate.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CCDABF811F28CD5B0011FCA8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>AppDelegate.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CCDABF821F28CD5B0011FCA8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CCDABF811F28CD5B0011FCA8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CCDABF861F28CD5B0011FCA8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>GDiOSDelegate.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CCDABF871F28CD5B0011FCA8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>GDiOSDelegate.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CCDABF881F28CD5B0011FCA8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CCDABF871F28CD5B0011FCA8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
 		</dict>
 		<key>CCDABF8A1F28CD5B0011FCA8</key>
 		<dict>
@@ -1226,11 +1214,15 @@
 				<string>YES</string>
 				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
 				<string>YES</string>
+				<key>CODE_SIGN_ENTITLEMENTS[sdk</key>
+				<string>iphonesimulator10.]=$(SRCROOT)/$(PROJECT_NAME)/Entitlements.plist</string>
 				<key>COPY_PHASE_STRIP</key>
 				<string>NO</string>
 				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
 				<string>YES</string>
 				<key>ENABLE_TESTABILITY</key>
+				<string>YES</string>
+				<key>ENTITLEMENTS_REQUIRED</key>
 				<string>YES</string>
 				<key>GCC_C_LANGUAGE_STANDARD</key>
 				<string>gnu99</string>
@@ -1260,7 +1252,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>17.0</string>
+				<string>18.0</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
 				<string>YES</string>
 				<key>ONLY_ACTIVE_ARCH</key>
@@ -1331,11 +1323,15 @@
 				<string>YES</string>
 				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
 				<string>YES</string>
+				<key>CODE_SIGN_ENTITLEMENTS[sdk</key>
+				<string>iphonesimulator10.]=$(SRCROOT)/$(PROJECT_NAME)/Entitlements.plist</string>
 				<key>COPY_PHASE_STRIP</key>
 				<string>NO</string>
 				<key>ENABLE_NS_ASSERTIONS</key>
 				<string>NO</string>
 				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>ENTITLEMENTS_REQUIRED</key>
 				<string>YES</string>
 				<key>GCC_C_LANGUAGE_STANDARD</key>
 				<string>gnu99</string>
@@ -1356,7 +1352,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>17.0</string>
+				<string>18.0</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
 				<string>NO</string>
 				<key>ONLY_ACTIVE_ARCH</key>
@@ -1394,13 +1390,19 @@
 				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
 				<string>AppIcon</string>
 				<key>CLANG_ENABLE_MODULES</key>
-				<string>NO</string>
+				<string>YES</string>
 				<key>CODE_SIGN_ENTITLEMENTS</key>
-				<string>KeyManager/KeyManager.entitlements</string>
+				<string>keymanager/keymanager.entitlements</string>
+				<key>CODE_SIGN_ENTITLEMENTS[sdk</key>
+				<string>iphonesimulator10.]=$(SRCROOT)/$(PROJECT_NAME)/Entitlements.plist</string>
 				<key>DEVELOPMENT_TEAM</key>
 				<string></string>
+				<key>ENTITLEMENTS_REQUIRED</key>
+				<string>YES</string>
 				<key>INFOPLIST_FILE</key>
-				<string>KeyManager/Info.plist</string>
+				<string>keymanager/Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>18.0</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -1410,6 +1412,8 @@
 				<string>com.good.gd.example.keymanager</string>
 				<key>PRODUCT_NAME</key>
 				<string>$(TARGET_NAME)</string>
+				<key>SWIFT_VERSION</key>
+				<string>5.0</string>
 			</dict>
 			<key>isa</key>
 			<string>XCBuildConfiguration</string>
@@ -1423,13 +1427,19 @@
 				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
 				<string>AppIcon</string>
 				<key>CLANG_ENABLE_MODULES</key>
-				<string>NO</string>
+				<string>YES</string>
 				<key>CODE_SIGN_ENTITLEMENTS</key>
-				<string>KeyManager/KeyManager.entitlements</string>
+				<string>keymanager/keymanager.entitlements</string>
+				<key>CODE_SIGN_ENTITLEMENTS[sdk</key>
+				<string>iphonesimulator10.]=$(SRCROOT)/$(PROJECT_NAME)/Entitlements.plist</string>
 				<key>DEVELOPMENT_TEAM</key>
 				<string></string>
+				<key>ENTITLEMENTS_REQUIRED</key>
+				<string>YES</string>
 				<key>INFOPLIST_FILE</key>
-				<string>KeyManager/Info.plist</string>
+				<string>keymanager/Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>18.0</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -1439,6 +1449,8 @@
 				<string>com.good.gd.example.keymanager</string>
 				<key>PRODUCT_NAME</key>
 				<string>$(TARGET_NAME)</string>
+				<key>SWIFT_VERSION</key>
+				<string>5.0</string>
 			</dict>
 			<key>isa</key>
 			<string>XCBuildConfiguration</string>
@@ -1462,6 +1474,76 @@
 			<string>CCDF00C322694C87004F7009</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>CCKEY01012630504005F0001</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CCKEY01022630504005F0002</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>CCKEY01022630504005F0002</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AppDelegate.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CCKEY01032630504005F0003</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CCKEY01042630504005F0004</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>CCKEY01042630504005F0004</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>KeyManagerSceneDelegate.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CCKEY01052630504005F0005</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CCKEY01062630504005F0006</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>CCKEY01062630504005F0006</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>KeyManagerGDiOSDelegate.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D18D5898E2B54BBAB11441DE</key>
+		<dict>
+			<key>isa</key>
+			<string>XCSwiftPackageProductDependency</string>
+			<key>package</key>
+			<string>65A640585F434A77B5E9CDDF</string>
+			<key>productName</key>
+			<string>BlackBerryDynamics</string>
+		</dict>
+		<key>D852A8C9DFBD4A728525020E</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>productRef</key>
+			<string>6FA6BB640BC349D6AF45F2B4</string>
 		</dict>
 		<key>F6E27A5E27DBABC7005681DB</key>
 		<dict>
@@ -1535,6 +1617,15 @@
 			<string>FBA5095D208DFF5C008EAE16</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>FEBEEB7A72C54CBA875C6835</key>
+		<dict>
+			<key>isa</key>
+			<string>XCSwiftPackageProductDependency</string>
+			<key>package</key>
+			<string>65A640585F434A77B5E9CDDF</string>
+			<key>productName</key>
+			<string>BlackBerryDynamicsAutomatedTestSupportLibrary</string>
 		</dict>
 	</dict>
 	<key>rootObject</key>

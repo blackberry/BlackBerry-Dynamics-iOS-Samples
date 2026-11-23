@@ -1,4 +1,4 @@
-/* Copyright (c) 2023 BlackBerry Ltd.
+/* Copyright (c) 2026 BlackBerry Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,13 +15,16 @@
  */
 
 #import "GDiOSDelegate.h"
+#import "AppBasedCertImport-Swift.h"
 
 @interface GDiOSDelegate ()
 
-    @property (nonatomic, assign) BOOL hasAuthorized;
+@property (nonatomic, assign) BOOL hasAuthorizedInternal;
+@property (nonatomic, strong) UIViewController *pendingRootViewController;
 
-    -(instancetype)init;
-    -(void)didAuthorize;
+- (instancetype)init;
+- (void)notifyApplicationDidAuthorizeIfNeeded;
+
 @end
 
 @implementation GDiOSDelegate
@@ -39,25 +42,37 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        // Do any additional setup
     }
     return self;
 }
 
-- (void)setAppDelegate:(AppDelegate *)appDelegate {
-
-    _appDelegate = appDelegate;
-    [self didAuthorize];							
+- (BOOL)hasAuthorized {
+    return self.hasAuthorizedInternal;
 }
 
-- (void)didAuthorize {
-
-    if (self.hasAuthorized && self.appDelegate) {
-        [self.appDelegate didAuthorize];
-    }						
+- (void)presentMainUIIfNeeded {
+    if (!self.hasAuthorizedInternal || self.pendingRootViewController == nil) {
+        return;
+    }
+    AppBasedCertImportSceneDelegate *scene = [AppBasedCertImportSceneDelegate current];
+    if (scene == nil || scene.window == nil) {
+        return;
+    }
+    scene.window.rootViewController = self.pendingRootViewController;
+    self.pendingRootViewController = nil;
+    [scene.window makeKeyAndVisible];
+    [self notifyApplicationDidAuthorizeIfNeeded];
 }
 
-
+- (void)notifyApplicationDidAuthorizeIfNeeded {
+    if (!self.hasAuthorizedInternal || self.pendingRootViewController != nil) {
+        return;
+    }
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    if (appDelegate != nil) {
+        [appDelegate didAuthorize];
+    }
+}
 
 #pragma mark - Good Dynamics Delegate Methods
 - (void)handleEvent:(GDAppEvent *)anEvent {
@@ -77,22 +92,18 @@
         }
         case GDAppEventRemoteSettingsUpdate:
         {
-            //A change to application-related configuration or policy settings.
             break;
         }
         case GDAppEventServicesUpdate:
         {
-            //A change to services-related configuration.
             break;
         }
         case GDAppEventPolicyUpdate:
         {
-            //A change to one or more application-specific policy settings has been received.
             break;
         }
         case GDAppEventEntitlementsUpdate:
         {
-            //A change to the entitlements data has been received.
             break;
         }
         default:
@@ -115,17 +126,15 @@
         case GDErrorAppVersionNotEntitled:
         case GDErrorBlocked:
         case GDErrorWiped:
-        case GDErrorRemoteLockout: 
+        case GDErrorRemoteLockout:
         case GDErrorPasswordChangeRequired: {
-            // an condition has occured denying authorization, an application may wish to log these events
             NSLog(@"onNotAuthorized %@", anEvent.message);
             break;
         }
         case GDErrorIdleLockout: {
-            // idle lockout is benign & informational
             break;
         }
-        default: 
+        default:
             NSAssert(false, @"Unhandled not authorized event");
             break;
     }
@@ -133,18 +142,15 @@
 
 - (void)onAuthorized:(GDAppEvent *)anEvent {
 
-    /* Handle the Good Libraries authorized event. */                            
+    /* Handle the Good Libraries authorized event. */
     switch (anEvent.code) {
         case GDErrorNone:
-            if (!self.hasAuthorized) {
-                // launch application UI here
-                NSString *storyboardName = nil;
-                storyboardName = @"Main";
-                UIStoryboard *uiStoryboard = [UIStoryboard storyboardWithName:storyboardName bundle:nil];
+            if (!self.hasAuthorizedInternal) {
+                UIStoryboard *uiStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                 UIViewController *uiViewController = [uiStoryboard instantiateInitialViewController];
-                self.appDelegate.window.rootViewController = uiViewController;
-                self.hasAuthorized = YES;
-                [self didAuthorize];
+                self.pendingRootViewController = uiViewController;
+                self.hasAuthorizedInternal = YES;
+                [self presentMainUIIfNeeded];
             }
             break;
         default:
@@ -152,6 +158,5 @@
             break;
     }
 }
-
 
 @end

@@ -17,15 +17,11 @@
 #import <Foundation/Foundation.h>
 @import BlackBerryDynamics.Runtime;
 
-#import "RootViewController.h"
-
-#import "AppDelegate.h" 
-
+@class GettingStartedDynamicsObjCSceneDelegate;
 
 @interface AppGDiOSDelegate : NSObject <GDiOSDelegate>
 
-@property (weak, nonatomic) RootViewController *rootViewController;
-@property (weak, nonatomic) AppDelegate *appDelegate;
+@property (weak, nonatomic) GettingStartedDynamicsObjCSceneDelegate *sceneDelegate;
 @property (assign, nonatomic, readonly) BOOL hasAuthorized;
 
 +(AppGDiOSDelegate *)sharedInstance;

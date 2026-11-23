@@ -18,15 +18,18 @@
 #import <CoreData/CoreData.h>
 @import GD.Runtime;
 
+@class SecureStorageObjCSceneDelegate;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate, GDiOSDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
-                            
+@property (weak, nonatomic) SecureStorageObjCSceneDelegate *sceneDelegate;
+
 @property (nonatomic, assign) BOOL hasAuthorized;
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 - (void)saveContext;
+- (void)tryLaunchUIIfAuthorized;
 
 @end

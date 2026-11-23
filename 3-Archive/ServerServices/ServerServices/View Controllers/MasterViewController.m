@@ -20,7 +20,7 @@
 #import <BlackBerryDynamics/GD/GDAppServer.h>
 
 #import "GDAppDetailCell.h"
-#import "ServerServiceGDiOSDelegate.h"
+#import "ServerServices-Swift.h"
 #import "UIAccessibilityIdentifiers.h"
 
 @interface MasterViewController ()

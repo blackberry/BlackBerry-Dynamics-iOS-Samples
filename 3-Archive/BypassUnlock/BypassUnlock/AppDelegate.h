@@ -18,9 +18,8 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
-
--(void)didAuthorize;
+- (void)didAuthorize;
+- (void)setupVolumeOutputKVO;
 
 @end
 

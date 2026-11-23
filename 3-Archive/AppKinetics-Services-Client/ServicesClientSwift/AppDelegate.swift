@@ -17,29 +17,35 @@
 import UIKit
 import BlackBerryDynamics.Runtime
 
-@UIApplicationMain
+@main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         disableAnimationsInUITests()
         ServicesClientGDiOSDelegate.sharedInstance.appDelegate = self
         GDiOS.sharedInstance().authorize(ServicesClientGDiOSDelegate.sharedInstance)
-        
         return true
     }
-    
-    func didAuthorize() -> Void {
+
+    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        let sceneConfig = UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+        sceneConfig.delegateClass = ServicesClientSceneDelegate.self
+        sceneConfig.sceneClass = UIWindowScene.self
+        sceneConfig.storyboard = UIStoryboard(name: Constants.mainStoryboardIdentifier, bundle: nil)
+        return sceneConfig
+    }
+
+    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
+    }
+
+    func didAuthorize() {
         print(#file, #function)
     }
-    
-    func disableAnimationsInUITests() -> Void {
-        if (CommandLine.arguments.contains("disableAnimations")) {
+
+    func disableAnimationsInUITests() {
+        if CommandLine.arguments.contains("disableAnimations") {
             print("Animations disabled in UITests")
             UIView.setAnimationsEnabled(false)
         }
     }
 }
-

@@ -15,13 +15,14 @@
  */
 
 #import <Foundation/Foundation.h>
-#import <BlackBerryDynamics/GD/GDiOS.h> 
-#import "AppDelegate.h"
+#import <BlackBerryDynamics/GD/GDiOS.h>
+
+@class RSSReaderObjCSceneDelegate;
 
 @interface RSSReaderGDiOSDelegate : NSObject <GDiOSDelegate>
 
 @property (nonatomic, readonly) BOOL hasAuthorized;
-@property (weak, nonatomic) AppDelegate *rssReaderAppDelegate;
+@property (weak, nonatomic) RSSReaderObjCSceneDelegate *sceneDelegate;
 
 @property (strong, nonatomic) UINavigationController *navController;
 @property (strong, nonatomic) UINavigationController *detailNavigationController;

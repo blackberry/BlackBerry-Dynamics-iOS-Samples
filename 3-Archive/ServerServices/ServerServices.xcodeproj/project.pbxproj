@@ -43,13 +43,13 @@
 		99201D5618F8463100C9AB0C /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99201D5518F8463100C9AB0C /* QuickLook.framework */; };
 		99201D5818F8467A00C9AB0C /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99201D5718F8467A00C9AB0C /* MessageUI.framework */; };
 		B4CC525C17A0035800D4A856 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4CC525B17A0035800D4A856 /* AdSupport.framework */; };
-		FA7D67C1189C41DA00314FC3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7D67BF189C41DA00314FC3 /* AppDelegate.m */; };
+		61E253941E10000500000001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E253941E10000500000002 /* AppDelegate.swift */; };
+		61E253941E10000500000003 /* ServerServicesSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E253941E10000500000004 /* ServerServicesSceneDelegate.swift */; };
+		61E253941E10000500000005 /* ServerServiceGDiOSDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E253941E10000500000006 /* ServerServiceGDiOSDelegate.swift */; };
 		FA7D67D2189C420D00314FC3 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7D67CE189C420D00314FC3 /* MasterViewController.m */; };
-		FA7D681A189C423C00314FC3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7D67FC189C423C00314FC3 /* main.m */; };
 		FA7D681B189C423C00314FC3 /* config.info in Resources */ = {isa = PBXBuildFile; fileRef = FA7D67FE189C423C00314FC3 /* config.info */; };
 		FA7D6844189C488D00314FC3 /* TimezoneServiceInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7D6843189C488D00314FC3 /* TimezoneServiceInputViewController.m */; };
 		FBA0508319F114C100F10D0C /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBA0508219F114C100F10D0C /* LocalAuthentication.framework */; };
-		FBA5636C1DFB0D080066828B /* ServerServiceGDiOSDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA5636B1DFB0D080066828B /* ServerServiceGDiOSDelegate.m */; };
 		FBD9283B1BA2F64100319DBB /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FBD928371BA2F64100319DBB /* libz.tbd */; };
 /* End PBXBuildFile section */
 
@@ -144,12 +144,13 @@
 		99201D5718F8467A00C9AB0C /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		B4489E7018EC3B66000B2B79 /* default.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = default.xcconfig; sourceTree = "<group>"; };
 		B4CC525B17A0035800D4A856 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
-		FA7D67BE189C41DA00314FC3 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ServerServices/AppDelegate.h; sourceTree = SOURCE_ROOT; };
-		FA7D67BF189C41DA00314FC3 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ServerServices/AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		61E253941E10000500000002 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ServerServices/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		61E253941E10000500000004 /* ServerServicesSceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServerServicesSceneDelegate.swift; path = ServerServices/ServerServicesSceneDelegate.swift; sourceTree = SOURCE_ROOT; };
+		61E253941E10000500000006 /* ServerServiceGDiOSDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServerServiceGDiOSDelegate.swift; path = ServerServices/ServerServiceGDiOSDelegate.swift; sourceTree = SOURCE_ROOT; };
+		61E253941E10000500000007 /* ServerServices-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ServerServices-Bridging-Header.h"; path = "ServerServices/ServerServices-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		FA7D67CD189C420D00314FC3 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MasterViewController.h; path = "ServerServices/View Controllers/MasterViewController.h"; sourceTree = SOURCE_ROOT; };
 		FA7D67CE189C420D00314FC3 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MasterViewController.m; path = "ServerServices/View Controllers/MasterViewController.m"; sourceTree = SOURCE_ROOT; };
 		FA7D67E1189C423C00314FC3 /* constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = constants.h; path = "ServerServices/Supporting Files/constants.h"; sourceTree = SOURCE_ROOT; };
-		FA7D67FC189C423C00314FC3 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "ServerServices/Supporting Files/main.m"; sourceTree = SOURCE_ROOT; };
 		FA7D67FE189C423C00314FC3 /* config.info */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.info; sourceTree = "<group>"; };
 		FA7D6800189C423C00314FC3 /* ServerServices-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ServerServices-Prefix.pch"; path = "ServerServices/Supporting Files/ServerServices-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		FA7D6842189C488D00314FC3 /* TimezoneServiceInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimezoneServiceInputViewController.h; sourceTree = "<group>"; };
@@ -157,8 +158,6 @@
 		FAF862711FAC8B05009A0CBE /* ReadMe.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
 		FB9F3B9D1E0416090013E906 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBA0508219F114C100F10D0C /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
-		FBA5636A1DFB0D080066828B /* ServerServiceGDiOSDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerServiceGDiOSDelegate.h; sourceTree = "<group>"; };
-		FBA5636B1DFB0D080066828B /* ServerServiceGDiOSDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerServiceGDiOSDelegate.m; sourceTree = "<group>"; };
 		FBD928371BA2F64100319DBB /* libz.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -289,10 +288,10 @@
 				61BBCDBC16F9044100D020B9 /* View Controllers */,
 				59F5C5B019D96C7000324AEB /* UI */,
 				61BBCD9516F9033100D020B9 /* Supporting Files */,
-				FBA5636A1DFB0D080066828B /* ServerServiceGDiOSDelegate.h */,
-				FBA5636B1DFB0D080066828B /* ServerServiceGDiOSDelegate.m */,
-				FA7D67BE189C41DA00314FC3 /* AppDelegate.h */,
-				FA7D67BF189C41DA00314FC3 /* AppDelegate.m */,
+				61E253941E10000500000002 /* AppDelegate.swift */,
+				61E253941E10000500000004 /* ServerServicesSceneDelegate.swift */,
+				61E253941E10000500000006 /* ServerServiceGDiOSDelegate.swift */,
+				61E253941E10000500000007 /* ServerServices-Bridging-Header.h */,
 				B4489E7018EC3B66000B2B79 /* default.xcconfig */,
 				594D663D19F8DB9900C97B50 /* Images.xcassets */,
 			);
@@ -304,7 +303,6 @@
 			children = (
 				FA7D67FD189C423C00314FC3 /* Resources */,
 				FA7D67E1189C423C00314FC3 /* constants.h */,
-				FA7D67FC189C423C00314FC3 /* main.m */,
 				FB9F3B9D1E0416090013E906 /* Info.plist */,
 				3B5961B11FD83EB900095062 /* InfoPlist.strings */,
 				FA7D6800189C423C00314FC3 /* ServerServices-Prefix.pch */,
@@ -461,13 +459,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61E253941E10000500000001 /* AppDelegate.swift in Sources */,
+				61E253941E10000500000003 /* ServerServicesSceneDelegate.swift in Sources */,
+				61E253941E10000500000005 /* ServerServiceGDiOSDelegate.swift in Sources */,
 				1EE5D67E18B64B6000A4A9DC /* ReverseGeocodeServiceViewController.m in Sources */,
 				59F5C5D919D96F7F00324AEB /* GDAppDetailCell.m in Sources */,
-				FA7D67C1189C41DA00314FC3 /* AppDelegate.m in Sources */,
 				FA7D67D2189C420D00314FC3 /* MasterViewController.m in Sources */,
 				FA7D6844189C488D00314FC3 /* TimezoneServiceInputViewController.m in Sources */,
-				FBA5636C1DFB0D080066828B /* ServerServiceGDiOSDelegate.m in Sources */,
-				FA7D681A189C423C00314FC3 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,7 +537,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = ServerServicesUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -589,7 +587,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = ServerServicesUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -648,7 +646,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -693,7 +691,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -722,7 +720,7 @@
 					"$(PROJECT_DIR)/BlackBerryDynamics.framework/Headers",
 				);
 				INFOPLIST_FILE = "ServerServices/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -736,6 +734,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.good.gd.example.serverservices;
 				PRODUCT_NAME = ServerServices;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ServerServices/ServerServices-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -761,7 +761,7 @@
 					"$(PROJECT_DIR)/BlackBerryDynamics.framework/Headers",
 				);
 				INFOPLIST_FILE = "ServerServices/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -775,6 +775,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.good.gd.example.serverservices;
 				PRODUCT_NAME = ServerServices;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ServerServices/ServerServices-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

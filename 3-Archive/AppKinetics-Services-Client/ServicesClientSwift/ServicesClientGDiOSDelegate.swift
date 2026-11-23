@@ -22,6 +22,7 @@ import BlackBerryDynamics.Runtime
 class ServicesClientGDiOSDelegate: NSObject, GDiOSDelegate {
     
     static let sharedInstance = ServicesClientGDiOSDelegate()
+    weak var sceneDelegate: ServicesClientSceneDelegate?
     weak var appDelegate: AppDelegate? {
         didSet {
             didAuthorize()
@@ -77,23 +78,7 @@ class ServicesClientGDiOSDelegate: NSObject, GDiOSDelegate {
         switch anEvent.code {
         case .errorNone :
             if (!hasAuthorized) {
-                // Prepare main storyboard and root view controller
-                let mainStoryboard: UIStoryboard = UIStoryboard(name: Constants.mainStoryboardIdentifier, bundle: nil)
-                let navigationViewController = mainStoryboard.instantiateViewController(withIdentifier: Constants.rootNavigationViewControllerIdentifier) as? UINavigationController
-                navigationViewController!.navigationBar.tintColor = UIColor(red: 77.0/255.0, green: 91.0/255.0, blue: 103.0/255.0, alpha: 1.0)
-                
-                if (UIDevice.current.userInterfaceIdiom == .phone) {
-                    self.appDelegate!.window?.rootViewController = navigationViewController
-                    
-                } else {
-                    // For iPad create split view controller with root and about view controllers
-                    let aboutViewController = mainStoryboard.instantiateViewController(withIdentifier: Constants.aboutNavigationViewControllerIdentifier)
-                    
-                    let splitViewController = SplitViewController()
-                    splitViewController.viewControllers = NSArray(objects: navigationViewController!, aboutViewController) as! [UIViewController]
-                    splitViewController.preferredDisplayMode = UISplitViewController.DisplayMode.oneBesideSecondary
-                    self.appDelegate!.window?.rootViewController = splitViewController
-                }
+                sceneDelegate?.launchApplicationUI()
                 hasAuthorized = true
                 didAuthorize()
             }

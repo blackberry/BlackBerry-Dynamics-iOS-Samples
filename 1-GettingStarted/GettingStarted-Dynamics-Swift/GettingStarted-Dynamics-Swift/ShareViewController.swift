@@ -21,10 +21,11 @@ import PDFKit
 import LinkPresentation
 
 class ShareViewController: UIViewController {
-    
-    
+
     @IBOutlet weak var dlpOutLabel: UILabel!
     @IBOutlet weak var dlpInLabel: UILabel!
+
+    private var remoteSettingsObserver: NSObjectProtocol?
     
     func appDelegate() -> AppDelegate {
         return UIApplication.shared.delegate as! AppDelegate
@@ -40,7 +41,26 @@ class ShareViewController: UIViewController {
         button.center = view.center
         button.addTarget(self, action: #selector(presentNativeShare), for: .touchUpInside)
         view.addSubview(button)
-        self.refreshUI()
+
+        remoteSettingsObserver = NotificationCenter.default.addObserver(
+            forName: .gettingStartedDynamicsRemoteSettingsUpdated,
+            object: nil,
+            queue: .main
+        ) { [weak self] _ in
+            guard let self = self, self.viewIfLoaded?.window != nil else { return }
+            self.refreshUI()
+        }
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        refreshUI()
+    }
+
+    deinit {
+        if let observer = remoteSettingsObserver {
+            NotificationCenter.default.removeObserver(observer)
+        }
     }
     
     /*
@@ -114,7 +134,7 @@ class ShareViewController: UIViewController {
     public func refreshUI() {
         
         /*Documentation on all keys https://developer.blackberry.com/devzone/files/blackberry-dynamics/ios/interface_g_di_o_s.html#a3265c6148406a8850ba673b26e472ece   */
-        let config:NSDictionary = appDelegate().good?.getApplicationConfig() as! NSDictionary
+        let config:NSDictionary = GDiOS.sharedInstance().getApplicationConfig() as NSDictionary
         let isDLPoutEnabled = config.object(forKey: GDAppConfigKeyPreventDataLeakageOut) as! Bool
         let isDLPinEnabled = config.object(forKey: GDAppConfigKeyPreventDataLeakageIn) as! Bool
 

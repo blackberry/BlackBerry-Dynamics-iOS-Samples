@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24765" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24743"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qLI-CH-G8I">
-                                <rect key="frame" x="30" y="30" width="354" height="749"/>
+                                <rect key="frame" x="30" y="30" width="354" height="663"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URL:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bM6-JI-SuG" userLabel="Label">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="20.5"/>
@@ -47,13 +46,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Data..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BEK-Fc-vFo" userLabel="TextEdit">
-                                        <rect key="frame" x="0.0" y="105" width="354" height="614"/>
+                                        <rect key="frame" x="0.0" y="105" width="354" height="528"/>
                                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXf-JK-Hmf" userLabel="ClearButton">
-                                        <rect key="frame" x="0.0" y="719" width="354" height="30"/>
+                                        <rect key="frame" x="0.0" y="633" width="354" height="30"/>
                                         <state key="normal" title="Clear Data"/>
                                         <connections>
                                             <action selector="clearDataView:" destination="dnC-0Y-oPU" eventType="touchUpInside" id="A1H-Sp-dYd"/>
@@ -92,7 +91,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellIDRecord" textLabel="CSJ-Lb-b2y" detailTextLabel="ZNW-LM-7v6" style="IBUITableViewCellStyleSubtitle" id="ajw-gE-FKZ">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="50" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ajw-gE-FKZ" id="FZI-fk-iM3">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -150,7 +149,7 @@
                 <navigationController id="LLm-pG-5nN" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="SQLite" image="second" id="Wja-iQ-hRN"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0sj-z3-eQk">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="96" width="414" height="54"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -197,7 +196,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="t4Z-yH-rFS">
-                                <rect key="frame" x="30" y="30" width="354" height="749"/>
+                                <rect key="frame" x="30" y="30" width="354" height="663"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URL/Port" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9oV-PR-bco" userLabel="URLLabel">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="20.5"/>
@@ -229,13 +228,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Data..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="APs-qx-oJP" userLabel="TextEdit">
-                                        <rect key="frame" x="0.0" y="139" width="354" height="580"/>
+                                        <rect key="frame" x="0.0" y="139" width="354" height="494"/>
                                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3q-vP-dKB">
-                                        <rect key="frame" x="0.0" y="719" width="354" height="30"/>
+                                        <rect key="frame" x="0.0" y="633" width="354" height="30"/>
                                         <state key="normal" title="Clear"/>
                                         <connections>
                                             <action selector="clearData:" destination="xe5-VF-a1b" eventType="touchUpInside" id="GQQ-X2-V8U"/>
@@ -280,7 +279,7 @@
                                 <rect key="frame" x="30" y="80" width="354" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ao-mr-cCA" userLabel="SaveButton">
-                                        <rect key="frame" x="0.0" y="0.0" width="118" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="88.5" height="30"/>
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                         <state key="normal" title="Save"/>
                                         <connections>
@@ -288,17 +287,24 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yq-zk-Dfi" userLabel="LoadButton">
-                                        <rect key="frame" x="118" y="0.0" width="118" height="30"/>
+                                        <rect key="frame" x="88.5" y="0.0" width="88.5" height="30"/>
                                         <state key="normal" title="Load"/>
                                         <connections>
                                             <action selector="loadFromFile:" destination="ro5-oI-pH2" eventType="touchUpInside" id="rCt-WO-Eb0"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0oQ-lj-VFL" userLabel="ClearButton">
-                                        <rect key="frame" x="236" y="0.0" width="118" height="30"/>
+                                        <rect key="frame" x="177" y="0.0" width="88.5" height="30"/>
                                         <state key="normal" title="Clear Text"/>
                                         <connections>
                                             <action selector="clearText:" destination="ro5-oI-pH2" eventType="touchUpInside" id="xhY-go-Wxp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBd-AB-PjX" userLabel="ShareButton">
+                                        <rect key="frame" x="265.5" y="0.0" width="88.5" height="30"/>
+                                        <state key="normal" title="Share"/>
+                                        <connections>
+                                            <action selector="shareFile:" destination="ro5-oI-pH2" eventType="touchUpInside" id="6Bv-cJ-kzC"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -307,7 +313,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vI3-Wk-2Ce">
-                                <rect key="frame" x="30" y="120" width="354" height="615"/>
+                                <rect key="frame" x="30" y="120" width="354" height="519"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MtZ-TJ-tBv" userLabel="MessageLabel">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="20.5"/>
@@ -316,7 +322,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" text="&lt;Enter text here&gt;" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ku2-qm-FD9" userLabel="TextEdit">
-                                        <rect key="frame" x="0.0" y="30.5" width="354" height="584.5"/>
+                                        <rect key="frame" x="0.0" y="30.5" width="354" height="488.5"/>
                                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -353,7 +359,7 @@
                 <navigationController title="File Manager" id="08H-77-HoZ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="File Manager" image="second" id="oGf-qM-4nO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2UJ-mS-b6b">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="96" width="414" height="54"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

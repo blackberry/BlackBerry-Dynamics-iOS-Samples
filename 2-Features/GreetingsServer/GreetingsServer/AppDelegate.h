@@ -26,8 +26,6 @@
     ServiceController *serviceController;
 }
 
-@property (strong, nonatomic) UIWindow *window;
-
 -(void)didAuthorize;
 
 @end

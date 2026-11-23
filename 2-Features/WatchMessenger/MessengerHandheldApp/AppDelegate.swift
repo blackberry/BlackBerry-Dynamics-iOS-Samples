@@ -1,6 +1,6 @@
-/* Copyright (c) 2024 BlackBerry Ltd.
+/* Copyright (c) 2026 BlackBerry Ltd.
  *
- * Licensed under the Apache License, Version 2.0 (the "License")
+ * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
@@ -16,28 +16,37 @@
 
 import UIKit
 import BlackBerryDynamics.Runtime
+import BlackBerryDynamics.Launcher
 import WatchConnectivity
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
-    
-    var window: UIWindow?
-    
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         MessengerHandheldAppGDiOSDelegate.sharedInstance.appDelegate = self
         GDiOS.sharedInstance().authorize(MessengerHandheldAppGDiOSDelegate.sharedInstance)
-        
-        if (WCSession.isSupported()) {
+
+        if WCSession.isSupported() {
             let session = WCSession.default
             session.delegate = self
             session.activate()
             print("WCSession activation state: \(session.activationState)")
         }
-        
+
         return true
     }
-    
+
+    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        let sceneConfig = UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+        sceneConfig.delegateClass = MessengerHandheldAppSceneDelegate.self
+        sceneConfig.sceneClass = UIWindowScene.self
+        return sceneConfig
+    }
+
+    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {}
+
     // MARK: WCSessionDelegate
+
     func sessionReachabilityDidChange(_ session: WCSession) {
         print("WCSession sessionReachabilityDidChange reachable \(session.isReachable)")
         DispatchQueue.main.async { [weak self] in
@@ -46,58 +55,59 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
             }
         }
     }
-    
+
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         print("WCSession activationDidComplete with state: \(activationState)")
     }
-    
+
     func sessionDidBecomeInactive(_ session: WCSession) {
         print("WCSession sessionDidBecomeInactive")
     }
-    
+
     func sessionDidDeactivate(_ session: WCSession) {
         print("WCSession sessionDidDeactivate")
     }
-    
-    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+
+    func session(_ session: WCSession, didReceiveMessage message: [String: Any]) {
         handleMessageReceived(message)
     }
-    
-    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+
+    func session(_ session: WCSession, didReceiveMessage message: [String: Any], replyHandler: @escaping ([String: Any]) -> Void) {
         handleMessageReceived(message, replyHandler: replyHandler)
     }
-    
+
     func session(_ session: WCSession, didReceiveMessageData messageData: Data) {
         handleMessageDataReceived(messageData)
     }
-    
+
     func session(_ session: WCSession, didReceiveMessageData messageData: Data, replyHandler: @escaping (Data) -> Void) {
         handleMessageDataReceived(messageData, replyHandler: replyHandler)
     }
-    
+
     func session(_ session: WCSession, didFinish fileTransfer: WCSessionFileTransfer, error: (any Error)?) {
         print("Session delegate finished transfer of \(fileTransfer.file.fileURL)  - metadata: \(String(describing: fileTransfer.file.metadata)) - error \(error?.localizedDescription ?? "none") - outstanding transfers \(session.outstandingFileTransfers)")
     }
-    
+
     func session(_ session: WCSession, didReceive file: WCSessionFile) {
         print("Session delegate received file: \(file.fileURL) - metadata: \(String(describing: file.metadata))")
-        
+
         let fileName = file.fileURL.lastPathComponent
-        
+
         let newFileName = FileHelper.sharedInstance.saveFileFromWatch(fileName)
 
         let fileContent = FileHelper.sharedInstance.getContentOfFileFromWatchFolder(newFileName)
         print("Received file: \(fileName)\nsaved as \(newFileName)\nContent: \(fileContent)")
-        
+
         DispatchQueue.main.async { [weak self] in
             if let vc = self?.findMainViewController() {
                 vc.receivedFile(file: file)
             }
         }
     }
-    
+
     // MARK: helper methods
-    private func handleMessageReceived(_ message: [String: Any], replyHandler: (([String : Any]) -> Void)? = nil) {
+
+    private func handleMessageReceived(_ message: [String: Any], replyHandler: (([String: Any]) -> Void)? = nil) {
         print("Session delegate received message: \(message) - handler \(replyHandler != nil)")
         DispatchQueue.main.async { [weak self] in
             if let vc = self?.findMainViewController() {
@@ -105,7 +115,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
             }
         }
     }
-    
+
     private func handleMessageDataReceived(_ messageData: Data, replyHandler: ((Data) -> Void)? = nil) {
         print("Session delegate received data: \(messageData) - handler \(replyHandler != nil)")
         DispatchQueue.main.async { [weak self] in
@@ -114,9 +124,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
             }
         }
     }
-    
+
     func findMainViewController() -> MainViewController? {
-        var vc = self.window?.rootViewController
+        var vc = MessengerHandheldAppSceneDelegate.shared?.window?.rootViewController
         if let gtlvc = vc as? GTLauncherViewController {
             vc = gtlvc.baseViewController
         }
@@ -128,10 +138,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
         }
         return nil
     }
-    
-    func didAuthorize() -> Void {
+
+    func didAuthorize() {
         print(#file, #function)
         FileHelper.sharedInstance.initialiseMessageFile()
     }
 }
-

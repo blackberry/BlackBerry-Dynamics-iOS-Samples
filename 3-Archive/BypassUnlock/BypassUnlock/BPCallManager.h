@@ -31,6 +31,6 @@ typedef void (^simpleBlock)(void);
 @end
 
 @interface BPCallManager (BPCallSimulation)
-- (void)simulateCall;
+- (void)simulateCall:(NSString *_Nonnull)trigger;
 - (void)continueCallUsingViewController:(UIViewController *_Null_unspecified)viewController completion:(void (^ __nullable)(void))completion;
 @end

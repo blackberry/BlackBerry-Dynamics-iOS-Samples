@@ -20,11 +20,14 @@
 #import "AppDelegate.h"
 #import "MasterViewController.h"
 
+@class AppKineticsSceneDelegate;
+
 @interface AppKineticsGDiOSDelegate : NSObject <GDiOSDelegate>
 
 @property (assign, nonatomic, readonly) BOOL hasAuthorized;
 @property (weak, nonatomic) MasterViewController *rootViewController;
 @property (weak, nonatomic) AppDelegate *appKineticsAppDelegate;
+@property (weak, nonatomic, nullable) AppKineticsSceneDelegate *sceneDelegate;
 
 +(AppKineticsGDiOSDelegate *)sharedInstance;
 

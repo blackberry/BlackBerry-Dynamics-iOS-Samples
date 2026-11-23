@@ -16,6 +16,7 @@
 
 #import "RootViewController.h"
 @import BlackBerryDynamics.SecureStore.File;
+@import BlackBerryDynamics.Runtime;
 
 @interface RootViewController ()
 
@@ -26,6 +27,7 @@
 - (IBAction)saveToFile:(id)sender;
 - (IBAction)loadFromFile:(id)sender;
 - (IBAction)clearText:(id)sender;
+- (IBAction)shareFile:(id)sender;
 
 @end
 
@@ -95,6 +97,11 @@ static NSString * const textFilename = @"aTextFileName.txt";
     self.messageLabel.text = @"Cleared text.";
     
     [self.view endEditing:YES];
+}
+
+- (IBAction)shareFile:(id)sender {
+    UIViewController *shareVC = [[GDiOS sharedInstance] getShareFileOptionsViewControllerWithFilePath:[self documentsFolderPathForFileNamed:textFilename]  appProvidedActionsView:nil];
+    [self presentViewController:shareVC animated:YES completion:nil];
 }
 
 - (NSString *)documentsFolderPathForFileNamed:(NSString *)fileName {

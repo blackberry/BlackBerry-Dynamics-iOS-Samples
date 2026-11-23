@@ -17,8 +17,12 @@
 #import <UIKit/UIKit.h>
 @import GD.Runtime;
 
+@class AppConfigurationObjCSceneDelegate;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate, GDiOSDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+@property (weak, nonatomic) AppConfigurationObjCSceneDelegate *sceneDelegate;
+
+- (void)tryLaunchUIIfAuthorized;
 
 @end

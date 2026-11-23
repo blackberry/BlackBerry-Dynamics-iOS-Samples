@@ -1,4 +1,4 @@
-/* Copyright (c) 2024 BlackBerry Ltd.
+/* Copyright (c) 2026 BlackBerry Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,150 +15,124 @@
  */
 
 import Foundation
-import UIKit
 import SwiftUI
+import UIKit
 import BlackBerryDynamics.Runtime
 import BlackBerryDynamics.Launcher
 
-class AppDelegate : NSObject, UIApplicationDelegate, GDiOSDelegate, GTLauncherViewControllerDelegate {
+@main
+final class AppDelegate: UIResponder, UIApplicationDelegate, GDiOSDelegate, GTLauncherViewControllerDelegate {
 
-    var window: UIWindow?
     var gdLibrary: GDiOS?
     var started: Bool = false
-    var launcherVC: GTLauncherViewController?
-    
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        //Call BlackBerry Dynamics to authorise the app
-        self.gdLibrary = GDiOS.sharedInstance()
-        self.gdLibrary!.delegate = self
-        self.started = false
-        
-        // Show the Good Authentication UI.
-        self.gdLibrary!.authorize()
-        
+    private var pendingRootViewController: UIViewController?
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        gdLibrary = GDiOS.sharedInstance()
+        gdLibrary?.delegate = self
+        started = false
+        gdLibrary?.authorize()
         return true
     }
-    
-    func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+
+    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        let sceneConfig = UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+        sceneConfig.delegateClass = LauncherSceneDelegate.self
+        sceneConfig.sceneClass = UIWindowScene.self
+        return sceneConfig
     }
 
+    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {}
 
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    /// Installs `ContentView` on the active scene window once Dynamics is authorized and the scene exists.
+    func presentMainUIIfNeeded() {
+        guard started, let root = pendingRootViewController else { return }
+        guard let scene = LauncherSceneDelegate.current, let win = scene.window else { return }
+        win.rootViewController = root
+        pendingRootViewController = nil
+        win.makeKeyAndVisible()
     }
 
+    func applicationWillResignActive(_ application: UIApplication) {}
 
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-    }
+    func applicationDidEnterBackground(_ application: UIApplication) {}
 
+    func applicationWillEnterForeground(_ application: UIApplication) {}
 
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    }
+    func applicationDidBecomeActive(_ application: UIApplication) {}
 
+    func applicationWillTerminate(_ application: UIApplication) {}
 
-    func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
-    
     // MARK: - Good Dynamics Delegate Methods
 
     func handle(_ anEvent: GDAppEvent) {
-         
+
         switch anEvent.type {
-                case .authorized:
-                    onAuthorized(anEvent: anEvent)
-                    break
-                   
-                case .notAuthorized:
-                    self.onNotAuthorized(anEvent: anEvent)
-                    break
-                    
-                case .remoteSettingsUpdate:
-                    //A change to application-related configuration or policy settings.
-                    break
-                    
-                case .servicesUpdate:
-                    //A change to services-related configuration.
-                    break
-                      
-                 case .policyUpdate:
-                    if started {
-                        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "AppPolicyUpdated"), object: nil)
-                    }
-                    break
-                      
-                default:
-                    print("handleEvent \(anEvent.message)")
-                }
-    }
-
-        
-    func onNotAuthorized(anEvent:GDAppEvent ) {
-        /* Handle the Good Libraries not authorized event. */
-        switch anEvent.code {
-            case .errorActivationFailed: break
-            case .errorProvisioningFailed: break
-            case .errorPushConnectionTimeout: break
-            case .errorSecurityError: break
-            case .errorAppDenied: break
-            case .errorAppVersionNotEntitled: break
-            case .errorBlocked: break
-            case .errorWiped: break
-            case .errorRemoteLockout: break
-            case .errorPasswordChangeRequired:
-                // an condition has occured denying authorization, an application may wish to log these events
-                print("onNotAuthorized \(anEvent.message)")
-            case .errorIdleLockout:
-                // idle lockout is benign & informational
-                break
-
-            default: assert(false, "Unhandled not authorized event");
+        case .authorized:
+            onAuthorized(anEvent: anEvent)
+        case .notAuthorized:
+            onNotAuthorized(anEvent: anEvent)
+        case .remoteSettingsUpdate:
+            break
+        case .servicesUpdate:
+            break
+        case .policyUpdate:
+            if started {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "AppPolicyUpdated"), object: nil)
             }
+        default:
+            print("handleEvent \(anEvent.message)")
+        }
     }
 
-        
-    func onAuthorized(anEvent:GDAppEvent ) {
-        /* Handle the Good Libraries authorized event. */
+    func onNotAuthorized(anEvent: GDAppEvent) {
         switch anEvent.code {
-            case .errorNone:
-                if !self.started {
-                    //Show the User UI
-                    self.started = true
-                    let vc = UIHostingController(rootView: ContentView())
-                    
-                    // Setup Launcher
-                    // set cache expiry for 5 minutes
-                    GTLauncherViewController.setCacheExpiry(5*60)
-
-                    // Set Launcher Delegate
-                    GDiOS.sharedInstance().getManagedLauncherViewController()?.delegate = self
-                    
-                    self.window?.rootViewController = vc
-                    self.window?.makeKeyAndVisible()
-                }
-            default:
-                assert(false, "Authorized startup with an error")
-                break
-            }
+        case .errorActivationFailed: break
+        case .errorProvisioningFailed: break
+        case .errorPushConnectionTimeout: break
+        case .errorSecurityError: break
+        case .errorAppDenied: break
+        case .errorAppVersionNotEntitled: break
+        case .errorBlocked: break
+        case .errorWiped: break
+        case .errorRemoteLockout: break
+        case .errorPasswordChangeRequired:
+            print("onNotAuthorized \(anEvent.message)")
+        case .errorIdleLockout:
+            break
+        default:
+            assertionFailure("Unhandled not authorized event")
+        }
     }
-    
-    //MARK: BlackBerry Dynamics Launcher Delegate
-    
-    // add host app settings to launcher
+
+    func onAuthorized(anEvent: GDAppEvent) {
+        switch anEvent.code {
+        case .errorNone:
+            if !started {
+                started = true
+                let vc = UIHostingController(rootView: ContentView())
+
+                GTLauncherViewController.setCacheExpiry(5 * 60)
+                GDiOS.sharedInstance().getManagedLauncherViewController()?.delegate = self
+
+                pendingRootViewController = vc
+                presentMainUIIfNeeded()
+            }
+        default:
+            assertionFailure("Authorized startup with an error")
+        }
+    }
+
+    // MARK: BlackBerry Dynamics Launcher Delegate
+
     func applicationSettingsTableViewController(forLauncher controller: GTLauncherViewController) -> UITableViewController? {
-       return SettingsTableView()
+        SettingsTableView()
     }
-    
-    // provide cell style to launcher provided common settings
+
     func commonSettingsCellConfiguration(for cellType: GTLCommonSettingsCellType, launcherViewController controller: GTLauncherViewController) -> GTLCommonSettingsCellConfiguration? {
         let config = GTLCommonSettingsCellConfiguration.defaultConfiguration(for: cellType)
-        
+
         if cellType == GTLCommonSettingsCellTypeChangePassword {
             config.textFont = .boldSystemFont(ofSize: 14.0)
             config.textColor = .brown
@@ -169,9 +143,7 @@ class AppDelegate : NSObject, UIApplicationDelegate, GDiOSDelegate, GTLauncherVi
             config.textFont = .systemFont(ofSize: 10.0)
             config.textColor = .blue
         }
-        
+
         return config
     }
 }
-
-

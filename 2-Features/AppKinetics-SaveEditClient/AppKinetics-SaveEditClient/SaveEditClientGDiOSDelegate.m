@@ -15,17 +15,28 @@
  */
 
 #import "SaveEditClientGDiOSDelegate.h"
+#import "AppKinetics_SaveEditClient-Swift.h"
 
 @interface SaveEditClientGDiOSDelegate()
 
 @property (nonatomic, assign) BOOL hasAuthorized;
+@property (nonatomic, assign) BOOL didInstallMainUI;
 
 -(instancetype)init;
 -(void)didAuthorize;
+-(void)tryInstallApplicationUI;
 
 @end
 
 @implementation SaveEditClientGDiOSDelegate
+
+@synthesize sceneDelegate = _sceneDelegate;
+
+-(void)setSceneDelegate:(SaveEditClientSceneDelegate *)sceneDelegate
+{
+    _sceneDelegate = sceneDelegate;
+    [self tryInstallApplicationUI];
+}
 
 +(instancetype)sharedInstance
 {
@@ -149,14 +160,8 @@
         case GDErrorNone: {
             if (!self.hasAuthorized)
             {
-                UIStoryboard *uiStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                UIViewController *uiViewController = [uiStoryboard instantiateInitialViewController];
-                
-                self.appDelegate.window.rootViewController = uiViewController;
-                
                 self.hasAuthorized = YES;
-                
-                [self didAuthorize];
+                [self tryInstallApplicationUI];
             }
             break;
         }
@@ -164,6 +169,16 @@
             NSAssert(false, @"authorized startup with an error");
             break;
     }
+}
+
+-(void)tryInstallApplicationUI
+{
+    if (!self.hasAuthorized || self.sceneDelegate == nil || self.didInstallMainUI) {
+        return;
+    }
+    self.didInstallMainUI = YES;
+    [self.sceneDelegate launchApplicationUI];
+    [self didAuthorize];
 }
 
 

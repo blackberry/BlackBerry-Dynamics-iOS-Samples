@@ -41,9 +41,6 @@ class WKWebViewPreviewVC: UIViewController, WKNavigationDelegate, WKUIDelegate {
     }
     
     func loadJSON(gdURL fileURL: URL?) -> [Website]? {
-                
-        let fileManager = GDFileManager.default()
-        
         
         // Use GDFileHandle to get data
         var fileHandle = GDFileHandle.init()

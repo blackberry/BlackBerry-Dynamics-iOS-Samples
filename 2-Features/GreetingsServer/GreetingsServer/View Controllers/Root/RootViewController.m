@@ -16,8 +16,8 @@
 
 #import "RootViewController.h"
 #import "ServiceController.h"
-#import "GreetingsServerGDiOSDelegate.h"
 #import "UIAccessibilityIdentifiers.h"
+#import "GreetingsServer-Swift.h"
 
 @interface RootViewController(private)
 
@@ -41,8 +41,22 @@
     self.view.accessibilityIdentifier = GRSMainViewID;
     self.bringToFrontButton.accessibilityIdentifier = GRSBringToFrontButtonID;
     
-    [GreetingsServerGDiOSDelegate sharedInstance].serviceController.delegate = self;
-    [GreetingsServerGDiOSDelegate sharedInstance].rootViewController = self;
+    [GreetingsServerGDiOSDelegate shared].serviceController.delegate = self;
+    [GreetingsServerGDiOSDelegate shared].rootViewController = self;
+    
+    // Add settings button for iPad split view
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        UIImage *gearImage = [UIImage imageNamed:@"SettingsImage"];
+        UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc]
+                                           initWithImage:gearImage
+                                           style:UIBarButtonItemStylePlain
+                                           target:self
+                                           action:@selector(showSettings:)];
+        self.navigationItem.rightBarButtonItem = settingsButton;
+    }
+    if ([GreetingsServerGDiOSDelegate shared].serviceController.lastReceivedText) {
+        [[GreetingsServerGDiOSDelegate shared].serviceController showAlertWithLastReceivedText];
+    }
 }
 
 #pragma mark - ServiceControllerDelegate Methods
@@ -94,6 +108,20 @@
             [self showErrorAlert:localError];
         }
     } error:&error];
+}
+
+- (void)showSettings:(id)sender
+{
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        // For iPad, show settings in secondary view of split view controller
+        UISplitViewController *splitVC = self.splitViewController;
+        if (splitVC) {
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPad" bundle:nil];
+            UIViewController *settingsVC = [storyboard instantiateViewControllerWithIdentifier:@"SettingsViewController"];
+            UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:settingsVC];
+            [splitVC showDetailViewController:navController sender:self];
+        }
+    }
 }
 
 

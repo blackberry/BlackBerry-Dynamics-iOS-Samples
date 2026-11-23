@@ -15,28 +15,32 @@
  */
 
 #import "AppKineticsGDiOSDelegate.h"
-
-
+#import "AppKinetics-Swift.h"
 
 @interface AppKineticsGDiOSDelegate()
 
 @property(assign, nonatomic) BOOL hasAuthorized;
+@property(assign, nonatomic) BOOL didInstallMainUI;
 
 -(instancetype)init;
 -(void)didAuthorize;
+-(void)tryInstallApplicationUI;
 
 @end
 
 @implementation AppKineticsGDiOSDelegate
 
+@synthesize sceneDelegate = _sceneDelegate;
+
+-(void)setSceneDelegate:(AppKineticsSceneDelegate *)sceneDelegate
+{
+    _sceneDelegate = sceneDelegate;
+    [self tryInstallApplicationUI];
+}
+
 -(void)setRootViewController:(MasterViewController *)rootViewController
 {
     _rootViewController = rootViewController;
-    [self didAuthorize];
-}
--(void)setAppKineticsTableAppDelegate:(AppDelegate *)appKineticsAppDelegate
-{
-    _appKineticsAppDelegate = appKineticsAppDelegate;
     [self didAuthorize];
 }
 -(void)didAuthorize
@@ -147,27 +151,23 @@
     switch (anEvent.code) {
         case GDErrorNone: {
             if (!self.hasAuthorized) {
-                // launch application UI here
-                self.hasAuthorized= YES;
-                if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
-                {
-                    UIStoryboard *uiStoryboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
-                    UIViewController *uiViewController = [uiStoryboard instantiateInitialViewController];
-                    self.appKineticsAppDelegate.window.rootViewController = uiViewController;
-                }
-                else
-                {
-                    UIStoryboard *uiStoryboard = [UIStoryboard storyboardWithName:@"Main_iPad" bundle:nil];
-                    UIViewController *uiViewController = [uiStoryboard instantiateInitialViewController];
-                    self.appKineticsAppDelegate.window.rootViewController = uiViewController;
-                }
-
-                [self didAuthorize];
+                self.hasAuthorized = YES;
+                [self tryInstallApplicationUI];
             }
             break;
         }
         default: break;
     }
+}
+
+-(void)tryInstallApplicationUI
+{
+    if (!self.hasAuthorized || self.sceneDelegate == nil || self.didInstallMainUI) {
+        return;
+    }
+    self.didInstallMainUI = YES;
+    [self.sceneDelegate launchApplicationUI];
+    [self didAuthorize];
 }
 
 

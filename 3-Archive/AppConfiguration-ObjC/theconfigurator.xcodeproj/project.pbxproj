@@ -28,6 +28,7 @@
 		F6EFBC451E5F326C000B683C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EFBC441E5F326C000B683C /* MobileCoreServices.framework */; };
 		F6EFBC491E5F326C000B683C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EFBC481E5F326C000B683C /* main.m */; };
 		F6EFBC4C1E5F326C000B683C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EFBC4B1E5F326C000B683C /* AppDelegate.m */; };
+		A69709A01E5F326C000B683C /* AppConfigurationObjCSceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A69709A21E5F326C000B683C /* AppConfigurationObjCSceneDelegate.m */; };
 		F6EFBC4F1E5F326C000B683C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EFBC4E1E5F326C000B683C /* ViewController.m */; };
 		F6EFBC521E5F326C000B683C /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6EFBC511E5F326C000B683C /* Entitlements.plist */; };
 		F6EFBC5A1E5F326C000B683C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EFBC591E5F326C000B683C /* libz.tbd */; };
@@ -57,6 +58,8 @@
 		F6EFBC481E5F326C000B683C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F6EFBC4A1E5F326C000B683C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F6EFBC4B1E5F326C000B683C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A69709A11E5F326C000B683C /* AppConfigurationObjCSceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppConfigurationObjCSceneDelegate.h; sourceTree = "<group>"; };
+		A69709A21E5F326C000B683C /* AppConfigurationObjCSceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppConfigurationObjCSceneDelegate.m; sourceTree = "<group>"; };
 		F6EFBC4D1E5F326C000B683C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		F6EFBC4E1E5F326C000B683C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F6EFBC511E5F326C000B683C /* Entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
@@ -143,6 +146,8 @@
 			children = (
 				F6EFBC4A1E5F326C000B683C /* AppDelegate.h */,
 				F6EFBC4B1E5F326C000B683C /* AppDelegate.m */,
+				A69709A11E5F326C000B683C /* AppConfigurationObjCSceneDelegate.h */,
+				A69709A21E5F326C000B683C /* AppConfigurationObjCSceneDelegate.m */,
 				F6EFBC4D1E5F326C000B683C /* ViewController.h */,
 				F6EFBC4E1E5F326C000B683C /* ViewController.m */,
 				F6EFBC5B1E5F326C000B683C /* Main.storyboard */,
@@ -304,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A69709A01E5F326C000B683C /* AppConfigurationObjCSceneDelegate.m in Sources */,
 				F6EFBC4F1E5F326C000B683C /* ViewController.m in Sources */,
 				F6EFBC4C1E5F326C000B683C /* AppDelegate.m in Sources */,
 				F6EFBC491E5F326C000B683C /* main.m in Sources */,
@@ -372,7 +378,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -414,7 +420,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -429,7 +435,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = theconfigurator/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -447,7 +453,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = theconfigurator/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",

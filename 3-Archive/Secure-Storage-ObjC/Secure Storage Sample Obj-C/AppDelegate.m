@@ -15,6 +15,7 @@
  */
 
 #import "AppDelegate.h"
+#import "SecureStorageObjCSceneDelegate.h"
 @import GD.SecureStore.CoreData;
 
 @interface AppDelegate ()
@@ -23,44 +24,29 @@
 
 @implementation AppDelegate
 
-                        
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
-    self.window = [[GDiOS sharedInstance] getWindow];
     [[GDiOS sharedInstance] authorize:self];
-    
-     return YES;
+    return YES;
 }
 
+#pragma mark - UISceneSession lifecycle
 
-- (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+- (UISceneConfiguration *)application:(UIApplication *)application configurationForConnectingSceneSession:(UISceneSession *)connectingSceneSession options:(UISceneConnectionOptions *)options {
+    UISceneConfiguration *config = [[UISceneConfiguration alloc] initWithName:@"Default Configuration" sessionRole:connectingSceneSession.role];
+    config.delegateClass = [SecureStorageObjCSceneDelegate class];
+    config.sceneClass = [UIWindowScene class];
+    config.storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    return config;
 }
 
-
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+- (void)application:(UIApplication *)application didDiscardSceneSessions:(NSSet<UISceneSession *> *)sceneSessions {
 }
-
-
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-}
-
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
-
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
 }
-
 
 #pragma mark - Core Data stack
 
@@ -88,9 +74,9 @@
     if (_persistentStoreCoordinator != nil) {
         return _persistentStoreCoordinator;
     }
-    
+
     // Create the coordinator and store
-    
+
     _persistentStoreCoordinator = [[GDPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Secure_Storage_Sample_Obj_C.sqlite"];
     NSError *error = nil;
@@ -107,17 +93,16 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
-    
+
     return _persistentStoreCoordinator;
 }
-
 
 - (NSManagedObjectContext *)managedObjectContext {
     // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.)
     if (_managedObjectContext != nil) {
         return _managedObjectContext;
     }
-    
+
     NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
     if (!coordinator) {
         return nil;
@@ -144,7 +129,7 @@
 
 #pragma mark - Good Dynamics Delegate Methods
 - (void)handleEvent:(GDAppEvent *)anEvent {
-    
+
     /* Called from _good when events occur, such as system startup. */
     switch (anEvent.type)
     {
@@ -187,7 +172,7 @@
 }
 
 - (void)onNotAuthorized:(GDAppEvent *)anEvent {
-    
+
     /* Handle the Good Libraries not authorized event. */
     switch (anEvent.code) {
         case GDErrorActivationFailed:
@@ -214,35 +199,26 @@
     }
 }
 
-
 - (void)onAuthorized:(GDAppEvent *)anEvent {
-    
+
     /* Handle the Good Libraries authorized event. */
     switch (anEvent.code) {
         case GDErrorNone: {
             if (!self.hasAuthorized) {
-                // launch application UI here
-                if (!self.hasAuthorized) {
-                    // launch application UI here
-                    NSString *storyboardName = nil;
-                    storyboardName = @"Main";
-                    
-                    UIStoryboard *uiStoryboard = [UIStoryboard storyboardWithName:storyboardName bundle:nil];
-                    UIViewController *uiViewController = [uiStoryboard instantiateInitialViewController];
-                    
-                    self.window.rootViewController = uiViewController;
-                    
-                    self.hasAuthorized = YES;
-                    
-                    //[self didAuthorize];
-                    
-                }
-                break;
+                self.hasAuthorized = YES;
+                [self tryLaunchUIIfAuthorized];
             }
+            break;
+        }
         default:
             NSAssert(false, @"Authorized startup with an error");
             break;
-        }
+    }
+}
+
+- (void)tryLaunchUIIfAuthorized {
+    if (self.hasAuthorized && self.sceneDelegate) {
+        [self.sceneDelegate launchApplicationUI];
     }
 }
 

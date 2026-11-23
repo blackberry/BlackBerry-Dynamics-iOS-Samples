@@ -28,5 +28,9 @@
 @interface ServiceController : NSObject <GDServiceDelegate>
 
 @property(nonatomic) id <ServiceControllerDelegate> delegate;
+@property(nonatomic, retain) NSString * lastReceivedText;
+@property (nonatomic, copy, nullable) void (^receiveServiceCompletion)(NSString * _Nonnull text);
+
+-(void)showAlertWithLastReceivedText;
 
 @end

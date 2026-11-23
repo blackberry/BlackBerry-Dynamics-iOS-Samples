@@ -10,6 +10,43 @@
 	<string>60</string>
 	<key>objects</key>
 	<dict>
+		<key>1B5EEE15508D47B9B13B0376</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>productRef</key>
+			<string>3FFAC321A08E42538FD3397C</string>
+		</dict>
+		<key>3FFAC321A08E42538FD3397C</key>
+		<dict>
+			<key>isa</key>
+			<string>XCSwiftPackageProductDependency</string>
+			<key>package</key>
+			<string>43DF43486D0346E98BF60610</string>
+			<key>productName</key>
+			<string>BlackBerryDynamics</string>
+		</dict>
+		<key>43DF43486D0346E98BF60610</key>
+		<dict>
+			<key>isa</key>
+			<string>XCRemoteSwiftPackageReference</string>
+			<key>repositoryURL</key>
+			<string>https://github.com/blackberry/BlackBerry-Dynamics-iOS-SDK</string>
+			<key>requirement</key>
+			<dict>
+				<key>branch</key>
+				<string>main</string>
+				<key>kind</key>
+				<string>branch</string>
+			</dict>
+		</dict>
+		<key>5F23EC73FF3D42C8958DE03F</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>productRef</key>
+			<string>A150A8F27FCE4101BBD1F062</string>
+		</dict>
 		<key>6D380D1A2BFE8E8C00719057</key>
 		<dict>
 			<key>fileEncoding</key>
@@ -175,6 +212,10 @@
 			</array>
 			<key>mainGroup</key>
 			<string>6DD9C5302BEC01CD009CF259</string>
+			<key>packageReferences</key>
+			<array>
+				<string>43DF43486D0346E98BF60610</string>
+			</array>
 			<key>productRefGroup</key>
 			<string>6DD9C53A2BEC01CD009CF259</string>
 			<key>projectDirPath</key>
@@ -207,9 +248,9 @@
 			<key>files</key>
 			<array>
 				<string>6D6FAE582BEC0E40005C4A0F</string>
+				<string>L2C3D412E060011</string>
 				<string>6D6FAEEC2BEC2D7A005C4A0F</string>
 				<string>6DD9C53F2BEC01CD009CF259</string>
-				<string>6DD9C53D2BEC01CD009CF259</string>
 			</array>
 			<key>isa</key>
 			<string>PBXSourcesBuildPhase</string>
@@ -221,7 +262,10 @@
 			<key>buildActionMask</key>
 			<string>2147483647</string>
 			<key>files</key>
-			<array/>
+			<array>
+				<string>1B5EEE15508D47B9B13B0376</string>
+				<string>5F23EC73FF3D42C8958DE03F</string>
+			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
@@ -262,6 +306,11 @@
 			<string>PBXNativeTarget</string>
 			<key>name</key>
 			<string>Launcher</string>
+			<key>packageProductDependencies</key>
+			<array>
+				<string>3FFAC321A08E42538FD3397C</string>
+				<string>A150A8F27FCE4101BBD1F062</string>
+			</array>
 			<key>productName</key>
 			<string>Launcher</string>
 			<key>productReference</key>
@@ -301,7 +350,7 @@
 			<array>
 				<string>6D380D1A2BFE8E8C00719057</string>
 				<string>6D6FAE572BEC0E40005C4A0F</string>
-				<string>6DD9C53C2BEC01CD009CF259</string>
+				<string>L2C3D412E060001</string>
 				<string>6DD9C53E2BEC01CD009CF259</string>
 				<string>6D6FAEEB2BEC2D7A005C4A0F</string>
 				<string>6D6FAE592BEC111B005C4A0F</string>
@@ -314,24 +363,6 @@
 			<string>Launcher</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6DD9C53C2BEC01CD009CF259</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>LauncherApp.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6DD9C53D2BEC01CD009CF259</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6DD9C53C2BEC01CD009CF259</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
 		</dict>
 		<key>6DD9C53E2BEC01CD009CF259</key>
 		<dict>
@@ -496,7 +527,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>17.0</string>
+				<string>18.0</string>
 				<key>LOCALIZATION_PREFERS_STRING_CATALOGS</key>
 				<string>YES</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
@@ -604,7 +635,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>17.0</string>
+				<string>18.0</string>
 				<key>LOCALIZATION_PREFERS_STRING_CATALOGS</key>
 				<string>YES</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
@@ -658,7 +689,7 @@
 				<key>INFOPLIST_KEY_NSFaceIDUsageDescription</key>
 				<string>FaceID can be used to authenticate users without using a password.</string>
 				<key>INFOPLIST_KEY_UIApplicationSceneManifest_Generation</key>
-				<string>YES</string>
+				<string>NO</string>
 				<key>INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents</key>
 				<string>YES</string>
 				<key>INFOPLIST_KEY_UILaunchScreen_Generation</key>
@@ -669,6 +700,8 @@
 				<string>UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight</string>
 				<key>INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone</key>
 				<string>UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>18.0</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -711,7 +744,7 @@
 				<key>INFOPLIST_KEY_NSFaceIDUsageDescription</key>
 				<string>FaceID can be used to authenticate users without using a password.</string>
 				<key>INFOPLIST_KEY_UIApplicationSceneManifest_Generation</key>
-				<string>YES</string>
+				<string>NO</string>
 				<key>INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents</key>
 				<string>YES</string>
 				<key>INFOPLIST_KEY_UILaunchScreen_Generation</key>
@@ -722,6 +755,8 @@
 				<string>UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight</string>
 				<key>INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone</key>
 				<string>UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>18.0</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -742,6 +777,33 @@
 			<string>XCBuildConfiguration</string>
 			<key>name</key>
 			<string>Release</string>
+		</dict>
+		<key>A150A8F27FCE4101BBD1F062</key>
+		<dict>
+			<key>isa</key>
+			<string>XCSwiftPackageProductDependency</string>
+			<key>package</key>
+			<string>43DF43486D0346E98BF60610</string>
+			<key>productName</key>
+			<string>GSEProvider</string>
+		</dict>
+		<key>L2C3D412E060001</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>LauncherSceneDelegate.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>L2C3D412E060011</key>
+		<dict>
+			<key>fileRef</key>
+			<string>L2C3D412E060001</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
 		</dict>
 	</dict>
 	<key>rootObject</key>

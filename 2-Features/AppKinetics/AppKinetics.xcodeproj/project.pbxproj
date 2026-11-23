@@ -28,7 +28,9 @@
 			<key>buildActionMask</key>
 			<string>2147483647</string>
 			<key>files</key>
-			<array/>
+			<array>
+				<string>330F88AA971D4475BB084419</string>
+			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
@@ -68,6 +70,10 @@
 			<string>PBXNativeTarget</string>
 			<key>name</key>
 			<string>AppKineticsUITests</string>
+			<key>packageProductDependencies</key>
+			<array>
+				<string>8E308F5FCC6F43849C6D857A</string>
+			</array>
 			<key>productName</key>
 			<string>AppKineticsUITests</string>
 			<key>productReference</key>
@@ -185,9 +191,13 @@
 				<string>YES</string>
 				<key>CLANG_WARN_UNREACHABLE_CODE</key>
 				<string>YES</string>
+				<key>CODE_SIGN_ENTITLEMENTS[sdk</key>
+				<string>iphonesimulator10.*]=$(SRCROOT)/AppKinetics/Supporting Files/Entitlements.plist</string>
 				<key>DEBUG_INFORMATION_FORMAT</key>
 				<string>dwarf</string>
 				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>ENTITLEMENTS_REQUIRED</key>
 				<string>YES</string>
 				<key>GCC_NO_COMMON_BLOCKS</key>
 				<string>YES</string>
@@ -204,7 +214,7 @@
 				<key>INFOPLIST_FILE</key>
 				<string>AppKineticsUITests/Info.plist</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>17.0</string>
+				<string>18.0</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -257,6 +267,8 @@
 				<string>YES</string>
 				<key>CLANG_WARN_UNREACHABLE_CODE</key>
 				<string>YES</string>
+				<key>CODE_SIGN_ENTITLEMENTS[sdk</key>
+				<string>iphonesimulator10.*]=$(SRCROOT)/AppKinetics/Supporting Files/Entitlements.plist</string>
 				<key>COPY_PHASE_STRIP</key>
 				<string>NO</string>
 				<key>DEBUG_INFORMATION_FORMAT</key>
@@ -264,6 +276,8 @@
 				<key>ENABLE_NS_ASSERTIONS</key>
 				<string>NO</string>
 				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>ENTITLEMENTS_REQUIRED</key>
 				<string>YES</string>
 				<key>GCC_NO_COMMON_BLOCKS</key>
 				<string>YES</string>
@@ -280,7 +294,7 @@
 				<key>INFOPLIST_FILE</key>
 				<string>AppKineticsUITests/Info.plist</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>17.0</string>
+				<string>18.0</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -521,6 +535,29 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>29FFA362C603445CA8B12CDF</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>productRef</key>
+			<string>2BCFE5EC57B845DBBD96A9EA</string>
+		</dict>
+		<key>2BCFE5EC57B845DBBD96A9EA</key>
+		<dict>
+			<key>isa</key>
+			<string>XCSwiftPackageProductDependency</string>
+			<key>package</key>
+			<string>CB4FEDD306534BE9B8CA1D49</string>
+			<key>productName</key>
+			<string>GSEProvider</string>
+		</dict>
+		<key>330F88AA971D4475BB084419</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>productRef</key>
+			<string>8E308F5FCC6F43849C6D857A</string>
+		</dict>
 		<key>33DB61102357595600DB58DD</key>
 		<dict>
 			<key>isa</key>
@@ -757,6 +794,13 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
+		<key>4C7B90D3E4A242FA881D9AD8</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>productRef</key>
+			<string>7017D593022E47609F93A713</string>
+		</dict>
 		<key>6103C9C416FC358400951537</key>
 		<dict>
 			<key>children</key>
@@ -973,6 +1017,10 @@
 			</array>
 			<key>mainGroup</key>
 			<string>61BBCD5416F8FB9100D020B9</string>
+			<key>packageReferences</key>
+			<array>
+				<string>CB4FEDD306534BE9B8CA1D49</string>
+			</array>
 			<key>productRefGroup</key>
 			<string>61BBCD6016F8FB9100D020B9</string>
 			<key>projectDirPath</key>
@@ -1007,6 +1055,7 @@
 			<array>
 				<string>24AA70562191C3330016C08A</string>
 				<string>614017F216F9A2500062F952</string>
+				<string>C15AF2012FA403400033HC01</string>
 				<string>61BBCD7416F8FB9100D020B9</string>
 				<string>61BBCDC116F9044100D020B9</string>
 				<string>61BBCDC216F9044100D020B9</string>
@@ -1052,6 +1101,8 @@
 				<string>61BBCD6616F8FB9100D020B9</string>
 				<string>6D78AB1928C7EFC50069DE84</string>
 				<string>61BBCD6816F8FB9100D020B9</string>
+				<string>4C7B90D3E4A242FA881D9AD8</string>
+				<string>29FFA362C603445CA8B12CDF</string>
 			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
@@ -1098,6 +1149,11 @@
 			<string>PBXNativeTarget</string>
 			<key>name</key>
 			<string>AppKinetics</string>
+			<key>packageProductDependencies</key>
+			<array>
+				<string>7017D593022E47609F93A713</string>
+				<string>2BCFE5EC57B845DBBD96A9EA</string>
+			</array>
 			<key>productName</key>
 			<string>AppKinetics</string>
 			<key>productReference</key>
@@ -1240,6 +1296,8 @@
 				<string>61BBCD9216F8FFE200D020B9</string>
 				<string>61BBCD7216F8FB9100D020B9</string>
 				<string>61BBCD7316F8FB9100D020B9</string>
+				<string>C15AF2022FA403400033HC02</string>
+				<string>C15AF2042FA403400033HC04</string>
 				<string>8BE1D6A81DFB040500A1B0C9</string>
 				<string>8BE1D6A91DFB040500A1B0C9</string>
 				<string>61276E951738542A0094E7DE</string>
@@ -1331,11 +1389,15 @@
 				<string>YES</string>
 				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
 				<string>YES</string>
+				<key>CODE_SIGN_ENTITLEMENTS[sdk</key>
+				<string>iphonesimulator10.*]=$(SRCROOT)/AppKinetics/Supporting Files/Entitlements.plist</string>
 				<key>COPY_PHASE_STRIP</key>
 				<string>NO</string>
 				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
 				<string>YES</string>
 				<key>ENABLE_TESTABILITY</key>
+				<string>YES</string>
+				<key>ENTITLEMENTS_REQUIRED</key>
 				<string>YES</string>
 				<key>GCC_C_LANGUAGE_STANDARD</key>
 				<string>gnu99</string>
@@ -1365,7 +1427,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>17.0</string>
+				<string>18.0</string>
 				<key>ONLY_ACTIVE_ARCH</key>
 				<string>YES</string>
 				<key>SDKROOT</key>
@@ -1428,9 +1490,13 @@
 				<string>YES</string>
 				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
 				<string>YES</string>
+				<key>CODE_SIGN_ENTITLEMENTS[sdk</key>
+				<string>iphonesimulator10.*]=$(SRCROOT)/AppKinetics/Supporting Files/Entitlements.plist</string>
 				<key>COPY_PHASE_STRIP</key>
 				<string>YES</string>
 				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>ENTITLEMENTS_REQUIRED</key>
 				<string>YES</string>
 				<key>GCC_C_LANGUAGE_STANDARD</key>
 				<string>gnu99</string>
@@ -1449,7 +1515,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>17.0</string>
+				<string>18.0</string>
 				<key>OTHER_CFLAGS</key>
 				<string>-DNS_BLOCK_ASSERTIONS=1</string>
 				<key>SDKROOT</key>
@@ -1487,13 +1553,19 @@
 				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
 				<string>compiler-default</string>
 				<key>CODE_SIGN_ENTITLEMENTS</key>
-				<string>AppKinetics/AppKinetics.entitlements</string>
+				<string></string>
+				<key>CODE_SIGN_ENTITLEMENTS[sdk</key>
+				<string>iphonesimulator10.*]=$(SRCROOT)/AppKinetics/Supporting Files/Entitlements.plist</string>
+				<key>ENTITLEMENTS_REQUIRED</key>
+				<string>YES</string>
 				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
 				<string>YES</string>
 				<key>GCC_PREFIX_HEADER</key>
 				<string>AppKinetics/Supporting Files/AppKinetics-Prefix.pch</string>
 				<key>INFOPLIST_FILE</key>
 				<string>AppKinetics/Supporting Files/Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>18.0</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -1505,6 +1577,10 @@
 				<string>com.good.gd.example.appkinetics</string>
 				<key>PRODUCT_NAME</key>
 				<string>$(TARGET_NAME)</string>
+				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
+				<string>AppKinetics/AppKinetics-Bridging-Header.h</string>
+				<key>SWIFT_VERSION</key>
+				<string>5.0</string>
 				<key>WRAPPER_EXTENSION</key>
 				<string>app</string>
 			</dict>
@@ -1522,13 +1598,19 @@
 				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
 				<string>compiler-default</string>
 				<key>CODE_SIGN_ENTITLEMENTS</key>
-				<string>AppKinetics/AppKinetics.entitlements</string>
+				<string></string>
+				<key>CODE_SIGN_ENTITLEMENTS[sdk</key>
+				<string>iphonesimulator10.*]=$(SRCROOT)/AppKinetics/Supporting Files/Entitlements.plist</string>
+				<key>ENTITLEMENTS_REQUIRED</key>
+				<string>YES</string>
 				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
 				<string>YES</string>
 				<key>GCC_PREFIX_HEADER</key>
 				<string>AppKinetics/Supporting Files/AppKinetics-Prefix.pch</string>
 				<key>INFOPLIST_FILE</key>
 				<string>AppKinetics/Supporting Files/Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>18.0</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -1540,6 +1622,10 @@
 				<string>com.good.gd.example.appkinetics</string>
 				<key>PRODUCT_NAME</key>
 				<string>$(TARGET_NAME)</string>
+				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
+				<string>AppKinetics/AppKinetics-Bridging-Header.h</string>
+				<key>SWIFT_VERSION</key>
+				<string>5.0</string>
 				<key>WRAPPER_EXTENSION</key>
 				<string>app</string>
 			</dict>
@@ -1929,6 +2015,15 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>7017D593022E47609F93A713</key>
+		<dict>
+			<key>isa</key>
+			<string>XCSwiftPackageProductDependency</string>
+			<key>package</key>
+			<string>CB4FEDD306534BE9B8CA1D49</string>
+			<key>productName</key>
+			<string>BlackBerryDynamics</string>
+		</dict>
 		<key>7409219E23F61D2800583EDD</key>
 		<dict>
 			<key>isa</key>
@@ -2121,6 +2216,15 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>8E308F5FCC6F43849C6D857A</key>
+		<dict>
+			<key>isa</key>
+			<string>XCSwiftPackageProductDependency</string>
+			<key>package</key>
+			<string>CB4FEDD306534BE9B8CA1D49</string>
+			<key>productName</key>
+			<string>BlackBerryDynamicsAutomatedTestSupportLibrary</string>
+		</dict>
 		<key>92FBDDE82C627C58002E53B1</key>
 		<dict>
 			<key>fileEncoding</key>
@@ -2224,6 +2328,49 @@
 			<string>System/Library/Frameworks/MobileCoreServices.framework</string>
 			<key>sourceTree</key>
 			<string>SDKROOT</string>
+		</dict>
+		<key>C15AF2012FA403400033HC01</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C15AF2022FA403400033HC02</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C15AF2022FA403400033HC02</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AppKineticsSceneDelegate.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C15AF2042FA403400033HC04</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>AppKinetics-Bridging-Header.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CB4FEDD306534BE9B8CA1D49</key>
+		<dict>
+			<key>isa</key>
+			<string>XCRemoteSwiftPackageReference</string>
+			<key>repositoryURL</key>
+			<string>https://github.com/blackberry/BlackBerry-Dynamics-iOS-SDK</string>
+			<key>requirement</key>
+			<dict>
+				<key>branch</key>
+				<string>main</string>
+				<key>kind</key>
+				<string>branch</string>
+			</dict>
 		</dict>
 		<key>F6ECE5A228E726E7004B152C</key>
 		<dict>

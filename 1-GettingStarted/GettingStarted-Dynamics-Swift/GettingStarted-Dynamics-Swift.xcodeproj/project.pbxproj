@@ -10,6 +10,15 @@
 	<string>60</string>
 	<key>objects</key>
 	<dict>
+		<key>0A658418F6D34DF1B34C0B54</key>
+		<dict>
+			<key>isa</key>
+			<string>XCSwiftPackageProductDependency</string>
+			<key>package</key>
+			<string>6694F643FF7E4FDF99FC61EA</string>
+			<key>productName</key>
+			<string>GSEProvider</string>
+		</dict>
 		<key>1A6295952745876300E870D1</key>
 		<dict>
 			<key>isa</key>
@@ -167,6 +176,63 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>58F5252495C24E15B18A2805</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>productRef</key>
+			<string>0A658418F6D34DF1B34C0B54</string>
+		</dict>
+		<key>6694F643FF7E4FDF99FC61EA</key>
+		<dict>
+			<key>isa</key>
+			<string>XCRemoteSwiftPackageReference</string>
+			<key>repositoryURL</key>
+			<string>https://github.com/blackberry/BlackBerry-Dynamics-iOS-SDK</string>
+			<key>requirement</key>
+			<dict>
+				<key>branch</key>
+				<string>main</string>
+				<key>kind</key>
+				<string>branch</string>
+			</dict>
+		</dict>
+		<key>6D7E01042EF0010033B00105</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6D7E01052EF0010033B00106</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6D7E01052EF0010033B00106</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>GettingStartedGDiOSDelegate.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6D7E01062EF0010033B00107</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6D7E01072EF0010033B00108</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6D7E01072EF0010033B00108</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>GettingStartedSceneDelegate.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>6D833E6E2718C6DB001FEBDE</key>
 		<dict>
 			<key>isa</key>
@@ -319,6 +385,10 @@
 			</array>
 			<key>mainGroup</key>
 			<string>8BE6A5B21E5CE6CB006692EA</string>
+			<key>packageReferences</key>
+			<array>
+				<string>6694F643FF7E4FDF99FC61EA</string>
+			</array>
 			<key>productRefGroup</key>
 			<string>8BE6A5BC1E5CE6CB006692EA</string>
 			<key>projectDirPath</key>
@@ -352,6 +422,8 @@
 			<array>
 				<string>1A6295962745876300E870D1</string>
 				<string>1AF81EE9274BD61B00B4B490</string>
+				<string>6D7E01042EF0010033B00105</string>
+				<string>6D7E01062EF0010033B00107</string>
 				<string>8BE6A5CE1E5CE6CB006692EA</string>
 				<string>1AD6698C2742BA1B00493B69</string>
 				<string>8BC133D01E5CE9640049BB85</string>
@@ -373,7 +445,8 @@
 			<string>2147483647</string>
 			<key>files</key>
 			<array>
-				<string>8BE6A5DC1E5CE6CB006692EA</string>
+				<string>A82D01E41EEB425CB6E3765B</string>
+				<string>58F5252495C24E15B18A2805</string>
 			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
@@ -418,6 +491,11 @@
 			<string>PBXNativeTarget</string>
 			<key>name</key>
 			<string>GettingStarted-Dynamics-Swift</string>
+			<key>packageProductDependencies</key>
+			<array>
+				<string>EA18E66DB606410D9C57559C</string>
+				<string>0A658418F6D34DF1B34C0B54</string>
+			</array>
 			<key>productName</key>
 			<string>GettingStarted-Dynamics-Swift</string>
 			<key>productReference</key>
@@ -470,6 +548,8 @@
 				<string>1AD669882742B4E400493B69</string>
 				<string>1AF81EE8274BD61B00B4B490</string>
 				<string>8BE6A5CD1E5CE6CB006692EA</string>
+				<string>6D7E01052EF0010033B00106</string>
+				<string>6D7E01072EF0010033B00108</string>
 				<string>8BC133D71E5CE9A10049BB85</string>
 				<string>8BC133D31E5CE9860049BB85</string>
 				<string>8BC133CF1E5CE9640049BB85</string>
@@ -561,13 +641,6 @@
 			<string>usr/lib/libz.tbd</string>
 			<key>sourceTree</key>
 			<string>SDKROOT</string>
-		</dict>
-		<key>8BE6A5DC1E5CE6CB006692EA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8BE6A5DB1E5CE6CB006692EA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
 		</dict>
 		<key>8BE6A5DD1E5CE6CB006692EA</key>
 		<dict>
@@ -750,7 +823,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>17.0</string>
+				<string>18.0</string>
 				<key>ONLY_ACTIVE_ARCH</key>
 				<string>YES</string>
 				<key>SDKROOT</key>
@@ -842,7 +915,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>17.0</string>
+				<string>18.0</string>
 				<key>ONLY_ACTIVE_ARCH</key>
 				<string>YES</string>
 				<key>SDKROOT</key>
@@ -887,6 +960,8 @@
 				<string>1.0</string>
 				<key>INFOPLIST_FILE</key>
 				<string>GettingStarted-Dynamics-Swift/Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>18.0</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -926,6 +1001,8 @@
 				<string>1.0</string>
 				<key>INFOPLIST_FILE</key>
 				<string>GettingStarted-Dynamics-Swift/Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>18.0</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -992,6 +1069,22 @@
 			<string>8BFF5BBF1E7AF10200F31823</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>A82D01E41EEB425CB6E3765B</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>productRef</key>
+			<string>EA18E66DB606410D9C57559C</string>
+		</dict>
+		<key>EA18E66DB606410D9C57559C</key>
+		<dict>
+			<key>isa</key>
+			<string>XCSwiftPackageProductDependency</string>
+			<key>package</key>
+			<string>6694F643FF7E4FDF99FC61EA</string>
+			<key>productName</key>
+			<string>BlackBerryDynamics</string>
 		</dict>
 		<key>F667D7932CDE4CEF00DDAA5C</key>
 		<dict>

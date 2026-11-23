@@ -22,15 +22,18 @@ class FileController: ObservableObject {
     
     @Published var statusUpdateMsg : String
     @Published var fileInfo : String
+    @Published var filePath : String
     
     //File Names
     private let textFilename = "SecureFile.txt"
+    private let pdfFilename = "SecureFile.pdf"
     private let folderName = "SecureFolder"
     private let renamedFile = "NewSecureFile.txt"
     
     init() {
         self.statusUpdateMsg = "Status"
         self.fileInfo = "<Enter Text>"
+        self.filePath = ""
     }
     
     //Actions
@@ -40,12 +43,22 @@ class FileController: ObservableObject {
         let result = self.writeMyFile()
         
         if result {
-            self.statusUpdateMsg = "Saved to file."
+            self.statusUpdateMsg = "Saved to text file."
         } else {
             self.statusUpdateMsg = "Failed to save."
         }
     }
     
+    func savePDFToFile() {
+        
+        let result = self.writeMyPDFFile()
+        
+        if result {
+            self.statusUpdateMsg = "Saved to PDF file."
+        } else {
+            self.statusUpdateMsg = "Failed to save."
+        }
+    }
     //Use GDFileManger to read/write data
     func loadFromFile() {
         
@@ -261,13 +274,50 @@ class FileController: ObservableObject {
         // Delete the file if exists
         let filePath = documentsFolderPathForNamed(name: textFilename)
         
-        //Initialize GDFileManger to read
         let fileManager = GDFileManager.default()
+        do {
+            try fileManager.removeItem(atPath: filePath)
+        } catch {
+        }
         let fileData = self.fileInfo.data(using: .utf8)
         
-        //Create a secure file uisng GDFileManager
+        //Create a secure file using GDFileManager
         let fileCreated = fileManager.createFile(atPath: filePath, contents: fileData, attributes: nil)
-        
+        if (fileCreated) {
+            self.filePath = filePath
+        }
         return fileCreated
+    }
+
+    func writeMyPDFFile() -> Bool {
+
+        // Delete the file if exists
+        let destPath = documentsFolderPathForNamed(name: pdfFilename)
+        let destURL = URL(fileURLWithPath: destPath)
+        //Initialize GDFileManger to read
+        let fileManager = GDFileManager.default()
+        do {
+            try fileManager.removeItem(atPath: destPath)
+        }
+        catch {
+            
+        }
+      
+        let arrayOfPdfFiles = Bundle.main.path(forResource: nil, ofType: "pdf")
+        
+        let filePath = arrayOfPdfFiles ?? ""
+        
+        let fileURL = URL.init(fileURLWithPath:(arrayOfPdfFiles ?? ""))
+        do {
+            let fileData = try NSData(contentsOfFile: filePath) as Data
+            
+            let fileCreated = fileManager.createFile(atPath: destPath, contents:fileData)
+            if (fileCreated) {
+               self.filePath = destPath
+            }
+            return fileCreated
+        } catch {
+            return false
+        }
     }
 }

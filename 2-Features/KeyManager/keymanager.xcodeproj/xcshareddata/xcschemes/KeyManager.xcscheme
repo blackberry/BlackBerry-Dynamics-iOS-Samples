@@ -18,7 +18,7 @@
                BlueprintIdentifier = "CCDABF6A1F28CD5B0011FCA8"
                BuildableName = "KeyManager.app"
                BlueprintName = "KeyManager"
-               ReferencedContainer = "container:KeyManager.xcodeproj">
+               ReferencedContainer = "container:keymanager.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -37,7 +37,7 @@
                BlueprintIdentifier = "CC620B3427D00E10009643F3"
                BuildableName = "KeyManagerUITests.xctest"
                BlueprintName = "KeyManagerUITests"
-               ReferencedContainer = "container:KeyManager.xcodeproj">
+               ReferencedContainer = "container:keymanager.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -59,7 +59,7 @@
             BlueprintIdentifier = "CCDABF6A1F28CD5B0011FCA8"
             BuildableName = "KeyManager.app"
             BlueprintName = "KeyManager"
-            ReferencedContainer = "container:KeyManager.xcodeproj">
+            ReferencedContainer = "container:keymanager.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -76,7 +76,7 @@
             BlueprintIdentifier = "CCDABF6A1F28CD5B0011FCA8"
             BuildableName = "KeyManager.app"
             BlueprintName = "KeyManager"
-            ReferencedContainer = "container:KeyManager.xcodeproj">
+            ReferencedContainer = "container:keymanager.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

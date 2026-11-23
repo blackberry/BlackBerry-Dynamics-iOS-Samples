@@ -20,8 +20,6 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
-                            
 // GD methods
 - (void)didAuthorize;
 

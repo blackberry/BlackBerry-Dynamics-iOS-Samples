@@ -25,7 +25,6 @@
 
 #import "ViewController.h"
 #import "JFRWebSocket.h"
-#import "WebSocketGDiOSDelegate.h"
 
 @interface ViewController ()<JFRWebSocketDelegate>
 

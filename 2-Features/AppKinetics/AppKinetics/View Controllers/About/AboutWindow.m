@@ -17,7 +17,8 @@
 #import "AboutWindow.h"
 
 #import "AboutViewController.h"
-#import "AppDelegate.h"
+#import "AppKineticsGDiOSDelegate.h"
+#import "AppKinetics-Swift.h"
 
 @interface AboutWindow ()
 
@@ -25,20 +26,30 @@
 
 @end
 
+static AboutWindow *sActiveAboutOverlay = nil;
+
 @implementation AboutWindow
 
 + (void)show
 {
-    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    UIWindow *appWindow = appDelegate.window;
-    
-    if ([appWindow isKindOfClass:[AboutWindow class]])
+    AppKineticsSceneDelegate *sceneDelegate = [AppKineticsGDiOSDelegate sharedInstance].sceneDelegate;
+    UIWindow *mainWindow = sceneDelegate.window;
+    if (mainWindow == nil)
+    {
+        NSLog(@"AboutWindow: scene delegate window is nil");
+        return;
+    }
+
+    if (sActiveAboutOverlay != nil)
     {
         NSLog(@"About window is already shown");
         return;
     }
-    
-    AboutWindow *instance = [[AboutWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+
+    UIWindowScene *windowScene = mainWindow.windowScene;
+    AboutWindow *instance = windowScene != nil
+        ? [[AboutWindow alloc] initWithWindowScene:windowScene]
+        : [[AboutWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     NSString *storyboardName;
     // detect the device
@@ -52,12 +63,10 @@
     UIStoryboard *uiStoryboard = [UIStoryboard storyboardWithName:storyboardName bundle:nil];
     AboutViewController* vc = [uiStoryboard instantiateViewControllerWithIdentifier:@"aboutController"];
     instance.rootViewController = vc;
-    
-    instance.onDismissWindow = appWindow;
-    // set new window as application window
-    // it can be stored in another way,
-    // but this is where Dynamics had problems in the past, before multiple windows support.
-    appDelegate.window = instance;
+    instance.windowLevel = UIWindowLevelAlert;
+
+    instance.onDismissWindow = mainWindow;
+    sActiveAboutOverlay = instance;
     [instance makeKeyWindow];
     instance.hidden = NO;
     
@@ -70,8 +79,11 @@
 
 + (void)hide
 {
-    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    AboutWindow *window = (AboutWindow *)appDelegate.window;
+    AboutWindow *window = sActiveAboutOverlay;
+    if (![window isKindOfClass:[AboutWindow class]])
+    {
+        return;
+    }
     UIWindow *onDismissWindow = window.onDismissWindow;
 
     // hide window
@@ -82,7 +94,8 @@
      }
                      completion:^(BOOL finished)
     {
-        appDelegate.window = onDismissWindow;
+        window.hidden = YES;
+        sActiveAboutOverlay = nil;
         [onDismissWindow makeKeyAndVisible];
     }];
 }

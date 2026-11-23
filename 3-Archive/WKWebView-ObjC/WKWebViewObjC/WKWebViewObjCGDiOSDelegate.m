@@ -16,68 +16,47 @@
  */
 
 #import "WKWebViewObjCGDiOSDelegate.h"
+#import "WKWebViewObjCSceneDelegate.h"
 
 @interface WKWebViewObjCGDiOSDelegate ()
 
+@property (nonatomic, assign) BOOL hasAuthorized;
 
-@property (nonatomic, assign) BOOL hasAuthorized;							
-                        
-
--(instancetype)init;
--(void)didAuthorize;						
-                        
 @end
 
 @implementation WKWebViewObjCGDiOSDelegate
 
 + (instancetype)sharedInstance {
-
     static WKWebViewObjCGDiOSDelegate *gdiOSDelegate = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         gdiOSDelegate = [[WKWebViewObjCGDiOSDelegate alloc] init];
     });
-    return gdiOSDelegate;							
-                            
+    return gdiOSDelegate;
 }
 
-
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-
-        // Do any additional setup						
-                                
-    }
-    return self;
+- (void)setSceneDelegate:(WKWebViewObjCSceneDelegate *)sceneDelegate {
+    _sceneDelegate = sceneDelegate;
+    [self onSceneDelegateAndAuthorizationReady];
 }
 
 - (void)setRootViewController:(FileListTableVC *)rootViewController {
-
     _rootViewController = rootViewController;
-    [self didAuthorize];							
-                            
+    [self onSceneDelegateAndAuthorizationReady];
 }
-
 
 - (void)setAppDelegate:(AppDelegate *)appDelegate {
-
     _appDelegate = appDelegate;
-    [self didAuthorize];							
-                            
 }
 
-
-- (void)didAuthorize {
-
-    if (self.hasAuthorized && self.rootViewController && self.appDelegate)
-    {
-        [self.appDelegate didAuthorize];
-    }						
-                            
+- (void)onSceneDelegateAndAuthorizationReady {
+    if (self.hasAuthorized && self.sceneDelegate) {
+        [self.sceneDelegate launchApplicationUI];
+        if (self.appDelegate) {
+            [self.appDelegate didAuthorize];
+        }
+    }
 }
-
-
 
 #pragma mark - BlackBerry Dynamics SDK Delegate Methods
 - (void)handleEvent:(GDAppEvent *)anEvent {
@@ -135,7 +114,7 @@
         case GDErrorAppVersionNotEntitled:
         case GDErrorBlocked:
         case GDErrorWiped:
-        case GDErrorRemoteLockout: 
+        case GDErrorRemoteLockout:
         case GDErrorPasswordChangeRequired: {
             // an condition has occured denying authorization, an application may wish to log these events
             NSLog(@"onNotAuthorized %@", anEvent.message);
@@ -145,32 +124,20 @@
             // idle lockout is benign & informational
             break;
         }
-        default: 
+        default:
             NSAssert(false, @"Unhandled not authorized event");
             break;
     }
 }
 
-
 - (void)onAuthorized:(GDAppEvent *)anEvent {
 
-    /* Handle the BlackBerry Dynamics SDK authorized event. */                            
+    /* Handle the BlackBerry Dynamics SDK authorized event. */
     switch (anEvent.code) {
         case GDErrorNone: {
             if (!self.hasAuthorized) {
-                // launch application UI here
-                NSString *storyboardName = nil;
-                storyboardName = @"Main";
-        
-                UIStoryboard *uiStoryboard = [UIStoryboard storyboardWithName:storyboardName bundle:nil];
-                UIViewController *uiViewController = [uiStoryboard instantiateInitialViewController];
-        
-                self.appDelegate.window.rootViewController = uiViewController;
-        
                 self.hasAuthorized = YES;
-        
-                [self didAuthorize];
-        
+                [self onSceneDelegateAndAuthorizationReady];
             }
             break;
         }
@@ -179,6 +146,5 @@
             break;
     }
 }
-
 
 @end

@@ -22,6 +22,7 @@ import BlackBerryDynamics.Runtime
 class RSSReaderGDiOSDelegate: NSObject, GDiOSDelegate {
     
     static let sharedInstance = RSSReaderGDiOSDelegate()
+    weak var sceneDelegate: RSSReaderSceneDelegate?
     weak var appDelegate: AppDelegate? {
         didSet {
             didAuthorize()
@@ -110,12 +111,7 @@ class RSSReaderGDiOSDelegate: NSObject, GDiOSDelegate {
         switch anEvent.code {
         case .errorNone :
             if (!hasAuthorized) {
-                // Prepare main storyboard and root view controller
-                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-                let rootViewController = mainStoryboard.instantiateInitialViewController()
-                self.rootViewController = rootViewController;
-
-                self.appDelegate!.window?.rootViewController = rootViewController
+                sceneDelegate?.launchApplicationUI()
                 hasAuthorized = true
                 didAuthorize()
             }

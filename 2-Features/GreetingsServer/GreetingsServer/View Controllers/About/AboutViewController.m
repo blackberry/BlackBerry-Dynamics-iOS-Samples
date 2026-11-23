@@ -40,7 +40,18 @@
 
 - (IBAction)showSettings:(id)sender
 {
-    [self performSegueWithIdentifier:@"ShowSettings" sender:self];
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        // For iPad, replace current secondary view with settings
+        UISplitViewController *splitVC = self.splitViewController;
+        if (splitVC) {
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPad" bundle:nil];
+            UIViewController *settingsVC = [storyboard instantiateViewControllerWithIdentifier:@"SettingsViewController"];
+            UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:settingsVC];
+            [splitVC showDetailViewController:navController sender:self];
+        }
+    } else {
+        [self performSegueWithIdentifier:@"ShowSettings" sender:self];
+    }
 }
 
 @end

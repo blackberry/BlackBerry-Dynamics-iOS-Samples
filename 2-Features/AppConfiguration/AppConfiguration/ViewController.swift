@@ -56,16 +56,12 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     public func refreshUi() {
-        
-        if let appPolicy = appDelegate().good?.getApplicationPolicy() {
-            if appPolicy.isEmpty {
-                print("DEBUG: App Policy Not Set. Nothing to Refresh.")
-            }
-            else {
-                updateUI(appPolicy: appPolicy)
-            }
+        let appPolicy = GDiOS.sharedInstance().getApplicationPolicy()
+        if appPolicy.isEmpty {
+            print("DEBUG: App Policy Not Set. Nothing to Refresh.")
+        } else {
+            updateUI(appPolicy: appPolicy)
         }
-            
     }
     
     public func updateUI(appPolicy: [String:Any]) {
@@ -162,7 +158,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     
     func configureAudioPlayer() throws {
-        try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, mode: AVAudioSessionModeDefault)
+        try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback, mode: AVAudioSession.Mode.default)
         
         let backgroundMusicPath = Bundle.main.path(forResource: "CarSound", ofType:"mp3")
         try self.player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: backgroundMusicPath!))

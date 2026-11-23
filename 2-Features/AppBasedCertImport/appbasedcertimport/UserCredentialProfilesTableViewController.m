@@ -64,7 +64,9 @@ static void onProfileEvent(struct GDCredentialsProfileEvent event, void* appData
 
     [super viewDidLoad];
     _items = [[NSMutableArray alloc] init];
-    GDCredentialsProfile_register(onProfileEvent, (__bridge void*)self);
+    GDCredentialsProfile_register_type(GDCredentialsProfileTypeAppbased,
+                                       onProfileEvent,
+                                       (__bridge void*)self);
     self.view.accessibilityIdentifier = AppUserCredentialProfileID;
 }
 

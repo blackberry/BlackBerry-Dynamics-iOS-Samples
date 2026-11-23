@@ -85,6 +85,10 @@
 			</array>
 			<key>mainGroup</key>
 			<string>369CF1DE2497675F00D13EA8</string>
+			<key>packageReferences</key>
+			<array>
+				<string>870E25EE039B4EA78C0C9CE2</string>
+			</array>
 			<key>preferredProjectObjectVersion</key>
 			<string>77</string>
 			<key>productRefGroup</key>
@@ -119,10 +123,10 @@
 			<key>files</key>
 			<array>
 				<string>369CF2062497675F00D13EA8</string>
-				<string>369CF2032497675F00D13EA8</string>
-				<string>369CF22D2497676300D13EA8</string>
+				<string>49A1041D2ECFA273001299DF</string>
+				<string>49A1041E2ECFA273001299DF</string>
+				<string>49A1041F2ECFA273001299DF</string>
 				<string>369CF23E24977D8000D13EA8</string>
-				<string>369CF2092497675F00D13EA8</string>
 			</array>
 			<key>isa</key>
 			<string>PBXSourcesBuildPhase</string>
@@ -145,6 +149,8 @@
 				<string>369CF1F92497675F00D13EA8</string>
 				<string>369CF1EF2497675F00D13EA8</string>
 				<string>369CF1ED2497675F00D13EA8</string>
+				<string>946E585F7BA34F0B9FB0C8E2</string>
+				<string>534FF1E916D94F6EABC209EF</string>
 			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
@@ -187,6 +193,11 @@
 			<string>PBXNativeTarget</string>
 			<key>name</key>
 			<string>WebSocket</string>
+			<key>packageProductDependencies</key>
+			<array>
+				<string>DAE7C16C560D48EC99FE5541</string>
+				<string>9A09A1E08D4D4132B4512D89</string>
+			</array>
 			<key>productName</key>
 			<string>WebSocket</string>
 			<key>productReference</key>
@@ -446,19 +457,18 @@
 		<dict>
 			<key>children</key>
 			<array>
+				<string>49A104192ECFA273001299DF</string>
+				<string>49A1041A2ECFA273001299DF</string>
+				<string>49A1041B2ECFA273001299DF</string>
+				<string>49A1041C2ECFA273001299DF</string>
 				<string>369CF23C24977D8000D13EA8</string>
 				<string>369CF23A24977D8000D13EA8</string>
-				<string>369CF2012497675F00D13EA8</string>
-				<string>369CF2022497675F00D13EA8</string>
 				<string>369CF2042497675F00D13EA8</string>
 				<string>369CF2052497675F00D13EA8</string>
-				<string>369CF2072497675F00D13EA8</string>
-				<string>369CF2082497675F00D13EA8</string>
 				<string>369CF2232497675F00D13EA8</string>
 				<string>369CF2262497676300D13EA8</string>
 				<string>369CF2282497676300D13EA8</string>
 				<string>369CF22B2497676300D13EA8</string>
-				<string>369CF22C2497676300D13EA8</string>
 				<string>369CF20A2497675F00D13EA8</string>
 			</array>
 			<key>isa</key>
@@ -467,35 +477,6 @@
 			<string>WebSocket</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>369CF2012497675F00D13EA8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>AppDelegate.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>369CF2022497675F00D13EA8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>AppDelegate.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>369CF2032497675F00D13EA8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>369CF2022497675F00D13EA8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
 		</dict>
 		<key>369CF2042497675F00D13EA8</key>
 		<dict>
@@ -523,35 +504,6 @@
 		<dict>
 			<key>fileRef</key>
 			<string>369CF2052497675F00D13EA8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>369CF2072497675F00D13EA8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>WebSocketGDiOSDelegate.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>369CF2082497675F00D13EA8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>WebSocketGDiOSDelegate.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>369CF2092497675F00D13EA8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>369CF2082497675F00D13EA8</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -885,24 +837,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>369CF22C2497676300D13EA8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>main.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>369CF22D2497676300D13EA8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>369CF22C2497676300D13EA8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
 		<key>369CF22E2497676300D13EA8</key>
 		<dict>
 			<key>buildSettings</key>
@@ -971,6 +905,8 @@
 				<string>YES</string>
 				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
 				<string>YES</string>
+				<key>CODE_SIGN_ENTITLEMENTS[sdk</key>
+				<string>iphonesimulator10.*]=$(SRCROOT)/$(PROJECT_NAME)/Entitlements.plist</string>
 				<key>COPY_PHASE_STRIP</key>
 				<string>NO</string>
 				<key>DEBUG_INFORMATION_FORMAT</key>
@@ -978,6 +914,8 @@
 				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
 				<string>YES</string>
 				<key>ENABLE_TESTABILITY</key>
+				<string>YES</string>
+				<key>ENTITLEMENTS_REQUIRED</key>
 				<string>YES</string>
 				<key>GCC_C_LANGUAGE_STANDARD</key>
 				<string>gnu11</string>
@@ -1007,7 +945,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>17.0</string>
+				<string>18.0</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
 				<string>INCLUDE_SOURCE</string>
 				<key>MTL_FAST_MATH</key>
@@ -1090,6 +1028,8 @@
 				<string>YES</string>
 				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
 				<string>YES</string>
+				<key>CODE_SIGN_ENTITLEMENTS[sdk</key>
+				<string>iphonesimulator10.*]=$(SRCROOT)/$(PROJECT_NAME)/Entitlements.plist</string>
 				<key>COPY_PHASE_STRIP</key>
 				<string>NO</string>
 				<key>DEBUG_INFORMATION_FORMAT</key>
@@ -1097,6 +1037,8 @@
 				<key>ENABLE_NS_ASSERTIONS</key>
 				<string>NO</string>
 				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>ENTITLEMENTS_REQUIRED</key>
 				<string>YES</string>
 				<key>GCC_C_LANGUAGE_STANDARD</key>
 				<string>gnu11</string>
@@ -1117,7 +1059,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>17.0</string>
+				<string>18.0</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
 				<string>NO</string>
 				<key>MTL_FAST_MATH</key>
@@ -1154,8 +1096,14 @@
 			<dict>
 				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
 				<string>AppIcon</string>
+				<key>CODE_SIGN_ENTITLEMENTS[sdk</key>
+				<string>iphonesimulator10.*]=$(SRCROOT)/$(PROJECT_NAME)/Entitlements.plist</string>
+				<key>ENTITLEMENTS_REQUIRED</key>
+				<string>YES</string>
 				<key>INFOPLIST_FILE</key>
 				<string>WebSocket/Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>18.0</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -1170,6 +1118,10 @@
 				<string>com.blackberry.dynamics.sample.websocket</string>
 				<key>PRODUCT_NAME</key>
 				<string>$(TARGET_NAME)</string>
+				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
+				<string>WebSocket/WebSocket-Bridging-Header.h</string>
+				<key>SWIFT_VERSION</key>
+				<string>5.0</string>
 				<key>TARGETED_DEVICE_FAMILY</key>
 				<string>1,2</string>
 			</dict>
@@ -1184,8 +1136,14 @@
 			<dict>
 				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
 				<string>AppIcon</string>
+				<key>CODE_SIGN_ENTITLEMENTS[sdk</key>
+				<string>iphonesimulator10.*]=$(SRCROOT)/$(PROJECT_NAME)/Entitlements.plist</string>
+				<key>ENTITLEMENTS_REQUIRED</key>
+				<string>YES</string>
 				<key>INFOPLIST_FILE</key>
 				<string>WebSocket/Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>18.0</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -1200,6 +1158,10 @@
 				<string>com.blackberry.dynamics.sample.websocket</string>
 				<key>PRODUCT_NAME</key>
 				<string>$(TARGET_NAME)</string>
+				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
+				<string>WebSocket/WebSocket-Bridging-Header.h</string>
+				<key>SWIFT_VERSION</key>
+				<string>5.0</string>
 				<key>TARGETED_DEVICE_FAMILY</key>
 				<string>1,2</string>
 			</dict>
@@ -1240,6 +1202,117 @@
 			<string>369CF23A24977D8000D13EA8</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>49A104192ECFA273001299DF</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AppDelegate.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>49A1041A2ECFA273001299DF</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>WebSocketSceneDelegate.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>49A1041B2ECFA273001299DF</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>WebSocketGDiOSDelegate.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>49A1041C2ECFA273001299DF</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>WebSocket-Bridging-Header.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>49A1041D2ECFA273001299DF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>49A104192ECFA273001299DF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>49A1041E2ECFA273001299DF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>49A1041A2ECFA273001299DF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>49A1041F2ECFA273001299DF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>49A1041B2ECFA273001299DF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>534FF1E916D94F6EABC209EF</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>productRef</key>
+			<string>9A09A1E08D4D4132B4512D89</string>
+		</dict>
+		<key>870E25EE039B4EA78C0C9CE2</key>
+		<dict>
+			<key>isa</key>
+			<string>XCRemoteSwiftPackageReference</string>
+			<key>repositoryURL</key>
+			<string>https://github.com/blackberry/BlackBerry-Dynamics-iOS-SDK</string>
+			<key>requirement</key>
+			<dict>
+				<key>branch</key>
+				<string>main</string>
+				<key>kind</key>
+				<string>branch</string>
+			</dict>
+		</dict>
+		<key>946E585F7BA34F0B9FB0C8E2</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>productRef</key>
+			<string>DAE7C16C560D48EC99FE5541</string>
+		</dict>
+		<key>9A09A1E08D4D4132B4512D89</key>
+		<dict>
+			<key>isa</key>
+			<string>XCSwiftPackageProductDependency</string>
+			<key>package</key>
+			<string>870E25EE039B4EA78C0C9CE2</string>
+			<key>productName</key>
+			<string>GSEProvider</string>
+		</dict>
+		<key>DAE7C16C560D48EC99FE5541</key>
+		<dict>
+			<key>isa</key>
+			<string>XCSwiftPackageProductDependency</string>
+			<key>package</key>
+			<string>870E25EE039B4EA78C0C9CE2</string>
+			<key>productName</key>
+			<string>BlackBerryDynamics</string>
 		</dict>
 		<key>F68E9B492CE4E272007C2F30</key>
 		<dict>
