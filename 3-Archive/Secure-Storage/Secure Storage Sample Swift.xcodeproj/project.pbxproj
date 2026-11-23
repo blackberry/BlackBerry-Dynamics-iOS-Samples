@@ -16,6 +16,8 @@
 		8B4C78121FE025140002C854 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B4C78111FE025140002C854 /* CoreData.framework */; };
 		8B4C78141FE025140002C854 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B4C78131FE025140002C854 /* MessageUI.framework */; };
 		8B4C78191FE025140002C854 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C78181FE025140002C854 /* AppDelegate.swift */; };
+		63C485541E10000700000001 /* SecureStorageSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C485541E10000700000002 /* SecureStorageSceneDelegate.swift */; };
+		63C485541E10000700000003 /* SecureStorageGDiOSDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C485541E10000700000004 /* SecureStorageGDiOSDelegate.swift */; };
 		8B4C781B1FE025140002C854 /* SecureCoreDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C781A1FE025140002C854 /* SecureCoreDataVC.swift */; };
 		8B4C78211FE025140002C854 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B4C78201FE025140002C854 /* Entitlements.plist */; };
 		8B4C78291FE025140002C854 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B4C78281FE025140002C854 /* libz.tbd */; };
@@ -42,6 +44,8 @@
 		8B4C78131FE025140002C854 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		8B4C78151FE025140002C854 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		8B4C78181FE025140002C854 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		63C485541E10000700000002 /* SecureStorageSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorageSceneDelegate.swift; sourceTree = "<group>"; };
+		63C485541E10000700000004 /* SecureStorageGDiOSDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorageGDiOSDelegate.swift; sourceTree = "<group>"; };
 		8B4C781A1FE025140002C854 /* SecureCoreDataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureCoreDataVC.swift; sourceTree = "<group>"; };
 		8B4C781F1FE025140002C854 /* default.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = default.xcconfig; sourceTree = "<group>"; };
 		8B4C78201FE025140002C854 /* Entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
@@ -123,6 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				8B4C78181FE025140002C854 /* AppDelegate.swift */,
+				63C485541E10000700000002 /* SecureStorageSceneDelegate.swift */,
+				63C485541E10000700000004 /* SecureStorageGDiOSDelegate.swift */,
 				8BC32F0C1FE056C9005788A2 /* Controller */,
 				8BC32F0B1FE056C2005788A2 /* View */,
 				8B4C78221FE025140002C854 /* Resources */,
@@ -306,6 +312,8 @@
 				8B2556E31FFC1F500057B05F /* Secure_Storage_Sample_Swift.xcdatamodeld in Sources */,
 				8BB101A31FE9914700747912 /* SecureSQLVC.swift in Sources */,
 				8BF251F71FE8296D00FA65D7 /* CustomTableViewCell.swift in Sources */,
+				63C485541E10000700000001 /* SecureStorageSceneDelegate.swift in Sources */,
+				63C485541E10000700000003 /* SecureStorageGDiOSDelegate.swift in Sources */,
 				8B4C78191FE025140002C854 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,7 +391,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -437,7 +445,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -454,7 +462,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "Secure Storage Sample Swift/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-lstdc++",
@@ -464,7 +472,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sample.securestorageswift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -477,7 +485,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "Secure Storage Sample Swift/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-lstdc++",
@@ -487,7 +495,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sample.securestorageswift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

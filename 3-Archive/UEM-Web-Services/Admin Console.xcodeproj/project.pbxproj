@@ -31,6 +31,8 @@
 		8BBC74F31E491B3000596212 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BBC74F21E491B3000596212 /* SystemConfiguration.framework */; };
 		8BD0ABD11FA257C900F5C12F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8BD0ABD01FA257C800F5C12F /* README.md */; };
 		8BE599971E3BC5FD00D2C9C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE599961E3BC5FD00D2C9C4 /* AppDelegate.swift */; };
+		8304A5641E10000800000001 /* AdminConsoleSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8304A5641E10000800000002 /* AdminConsoleSceneDelegate.swift */; };
+		8304A5641E10000800000003 /* AdminConsoleGDiOSDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8304A5641E10000800000004 /* AdminConsoleGDiOSDelegate.swift */; };
 		8BE599991E3BC5FD00D2C9C4 /* InitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE599981E3BC5FD00D2C9C4 /* InitialVC.swift */; };
 		8BE5999C1E3BC5FE00D2C9C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BE5999A1E3BC5FE00D2C9C4 /* Main.storyboard */; };
 		8BE5999E1E3BC5FE00D2C9C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BE5999D1E3BC5FE00D2C9C4 /* Assets.xcassets */; };
@@ -42,7 +44,7 @@
 		8BE6A5871E575040006692EA /* DeviceDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE6A5861E57503F006692EA /* DeviceDetailVC.swift */; };
 		8BE6A5891E577488006692EA /* SoapApplicationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE6A5881E577488006692EA /* SoapApplicationsVC.swift */; };
 		8BE6A58B1E577CF3006692EA /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE6A58A1E577CF3006692EA /* AboutVC.swift */; };
-		8BFF31EB1FC4AE7B007318D8 /* License in Resources */ = {isa = PBXBuildFile; fileRef = 8BFF31EA1FC4AE7B007318D8 /* License */; };
+		8BFF31EB1FC4AE7B007318D8 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 8BFF31EA1FC4AE7B007318D8 /* LICENSE */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		8BD0ABD01FA257C800F5C12F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8BE599931E3BC5FD00D2C9C4 /* Admin Console.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Admin Console.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BE599961E3BC5FD00D2C9C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8304A5641E10000800000002 /* AdminConsoleSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminConsoleSceneDelegate.swift; sourceTree = "<group>"; };
+		8304A5641E10000800000004 /* AdminConsoleGDiOSDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminConsoleGDiOSDelegate.swift; sourceTree = "<group>"; };
 		8BE599981E3BC5FD00D2C9C4 /* InitialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialVC.swift; sourceTree = "<group>"; };
 		8BE5999B1E3BC5FE00D2C9C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8BE5999D1E3BC5FE00D2C9C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,7 +88,7 @@
 		8BE6A5861E57503F006692EA /* DeviceDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceDetailVC.swift; sourceTree = "<group>"; };
 		8BE6A5881E577488006692EA /* SoapApplicationsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoapApplicationsVC.swift; sourceTree = "<group>"; };
 		8BE6A58A1E577CF3006692EA /* AboutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
-		8BFF31EA1FC4AE7B007318D8 /* License */ = {isa = PBXFileReference; lastKnownFileType = text; path = License; sourceTree = "<group>"; };
+		8BFF31EA1FC4AE7B007318D8 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,7 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				8BE6A5801E54B894006692EA /* Default-568h@2x.png */,
-				8BFF31EA1FC4AE7B007318D8 /* License */,
+				8BFF31EA1FC4AE7B007318D8 /* LICENSE */,
 				8BD0ABD01FA257C800F5C12F /* README.md */,
 				8BE599951E3BC5FD00D2C9C4 /* Admin Console */,
 				8BE599941E3BC5FD00D2C9C4 /* Products */,
@@ -204,6 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				8BE599961E3BC5FD00D2C9C4 /* AppDelegate.swift */,
+				8304A5641E10000800000002 /* AdminConsoleSceneDelegate.swift */,
+				8304A5641E10000800000004 /* AdminConsoleGDiOSDelegate.swift */,
 				8B0D64F71E48CADC00EBB7CE /* Model */,
 				8B0D64F61E48CAC800EBB7CE /* Controller */,
 				8B0D64F51E48CAB800EBB7CE /* View */,
@@ -276,7 +282,7 @@
 			files = (
 				8BD0ABD11FA257C900F5C12F /* README.md in Resources */,
 				8BE599A11E3BC5FE00D2C9C4 /* LaunchScreen.storyboard in Resources */,
-				8BFF31EB1FC4AE7B007318D8 /* License in Resources */,
+				8BFF31EB1FC4AE7B007318D8 /* LICENSE in Resources */,
 				8BE5999E1E3BC5FE00D2C9C4 /* Assets.xcassets in Resources */,
 				8BE6A5811E54B894006692EA /* Default-568h@2x.png in Resources */,
 				8BE5999C1E3BC5FE00D2C9C4 /* Main.storyboard in Resources */,
@@ -301,6 +307,8 @@
 				8BAD6EB91E9FB2CE0063D676 /* Constants.swift in Sources */,
 				8B0D64F41E48CA5300EBB7CE /* UserDetailsVC.swift in Sources */,
 				8BE6A5741E54AE0E006692EA /* SoapXml.swift in Sources */,
+				8304A5641E10000800000001 /* AdminConsoleSceneDelegate.swift in Sources */,
+				8304A5641E10000800000003 /* AdminConsoleGDiOSDelegate.swift in Sources */,
 				8BE599971E3BC5FD00D2C9C4 /* AppDelegate.swift in Sources */,
 				8BE6A5851E574243006692EA /* SoapUserVC.swift in Sources */,
 				8B0D64FA1E48D34900EBB7CE /* User.swift in Sources */,
@@ -372,7 +380,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -417,7 +425,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -436,13 +444,13 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 7QTYGGGMUN;
 				INFOPLIST_FILE = "Admin Console/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = XXXXXXXX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -455,12 +463,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 7QTYGGGMUN;
 				INFOPLIST_FILE = "Admin Console/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = XXXXXXXX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

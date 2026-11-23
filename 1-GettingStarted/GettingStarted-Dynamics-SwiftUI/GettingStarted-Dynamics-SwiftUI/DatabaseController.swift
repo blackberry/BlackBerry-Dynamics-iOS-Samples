@@ -16,9 +16,8 @@
 
 import SwiftUI
 
-// Add Secure SQLite/GDFileManager
+// GDFileManager + encrypted SQLite C API (Bridging header provides sqlite3enc/sqlite3 symbols — no Swift import GD_C)
 import BlackBerryDynamics.SecureStore.File
-import GD_C.SecureStore.SQLite
 
 class DBController: ObservableObject {
     

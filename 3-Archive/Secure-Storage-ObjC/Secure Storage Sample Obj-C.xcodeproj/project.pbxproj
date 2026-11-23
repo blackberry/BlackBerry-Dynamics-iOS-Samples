@@ -14,6 +14,7 @@
 		8B2557051FFD70CB0057B05F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B2557041FFD70CB0057B05F /* MessageUI.framework */; };
 		8B2557071FFD70CB0057B05F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B2557061FFD70CB0057B05F /* MobileCoreServices.framework */; };
 		8B25570B1FFD70CB0057B05F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B25570A1FFD70CB0057B05F /* AppDelegate.m */; };
+		D8F9A0123B4C5D6E7F809001 /* SecureStorageObjCSceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F9A0143B4C5D6E7F809003 /* SecureStorageObjCSceneDelegate.m */; };
 		8B25570E1FFD70CB0057B05F /* SecureCoreDataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B25570D1FFD70CB0057B05F /* SecureCoreDataVC.m */; };
 		8B2557151FFD70CB0057B05F /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B2557141FFD70CB0057B05F /* Entitlements.plist */; };
 		8B25571D1FFD70CB0057B05F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B25571C1FFD70CB0057B05F /* libz.tbd */; };
@@ -40,6 +41,8 @@
 		8B2557061FFD70CB0057B05F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		8B2557091FFD70CB0057B05F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8B25570A1FFD70CB0057B05F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D8F9A0133B4C5D6E7F809002 /* SecureStorageObjCSceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecureStorageObjCSceneDelegate.h; sourceTree = "<group>"; };
+		D8F9A0143B4C5D6E7F809003 /* SecureStorageObjCSceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecureStorageObjCSceneDelegate.m; sourceTree = "<group>"; };
 		8B25570C1FFD70CB0057B05F /* SecureCoreDataVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecureCoreDataVC.h; sourceTree = "<group>"; };
 		8B25570D1FFD70CB0057B05F /* SecureCoreDataVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecureCoreDataVC.m; sourceTree = "<group>"; };
 		8B2557131FFD70CB0057B05F /* default.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = default.xcconfig; sourceTree = "<group>"; };
@@ -119,6 +122,8 @@
 			children = (
 				8B2557091FFD70CB0057B05F /* AppDelegate.h */,
 				8B25570A1FFD70CB0057B05F /* AppDelegate.m */,
+				D8F9A0133B4C5D6E7F809002 /* SecureStorageObjCSceneDelegate.h */,
+				D8F9A0143B4C5D6E7F809003 /* SecureStorageObjCSceneDelegate.m */,
 				8B25570C1FFD70CB0057B05F /* SecureCoreDataVC.h */,
 				8B25570D1FFD70CB0057B05F /* SecureCoreDataVC.m */,
 				8B2557351FFD74490057B05F /* CommonVC.h */,
@@ -245,6 +250,7 @@
 				8B2557371FFD74490057B05F /* CommonVC.m in Sources */,
 				8B82894E200FB771005DC468 /* SecureSQLVC.m in Sources */,
 				8B25570B1FFD70CB0057B05F /* AppDelegate.m in Sources */,
+				D8F9A0123B4C5D6E7F809001 /* SecureStorageObjCSceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,7 +316,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -359,7 +365,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -375,7 +381,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Secure Storage Sample Obj-C/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-lstdc++",
@@ -396,7 +402,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Secure Storage Sample Obj-C/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-lstdc++",

@@ -110,6 +110,10 @@
 			</array>
 			<key>mainGroup</key>
 			<string>18FEF7D32450A8DA002D6C29</string>
+			<key>packageReferences</key>
+			<array>
+				<string>1AB1F18D36BE470EB8A1C237</string>
+			</array>
 			<key>productRefGroup</key>
 			<string>18FEF7DD2450A8DA002D6C29</string>
 			<key>projectDirPath</key>
@@ -145,6 +149,7 @@
 				<string>1A98520C275FBBB300251FE0</string>
 				<string>1833D7E7245177510099987E</string>
 				<string>18FEF7F32450A8DA002D6C29</string>
+				<string>W2WKSCEN2E060011</string>
 				<string>1833D7E5245176460099987E</string>
 			</array>
 			<key>isa</key>
@@ -167,6 +172,8 @@
 				<string>18FEF7F02450A8DA002D6C29</string>
 				<string>18FEF7E42450A8DA002D6C29</string>
 				<string>18FEF7E22450A8DA002D6C29</string>
+				<string>D599C0D7C78E46719F7E9643</string>
+				<string>A335491A88434907BE3E621D</string>
 			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
@@ -212,6 +219,11 @@
 			<string>PBXNativeTarget</string>
 			<key>name</key>
 			<string>WKWebView</string>
+			<key>packageProductDependencies</key>
+			<array>
+				<string>95D5CA929F224D82932B5F23</string>
+				<string>56FC70F8860D4149BB311646</string>
+			</array>
 			<key>productName</key>
 			<string>WKWebView</string>
 			<key>productReference</key>
@@ -426,6 +438,7 @@
 			<array>
 				<string>18FEF83D2450ABC5002D6C29</string>
 				<string>18FEF7F22450A8DA002D6C29</string>
+				<string>W2WKSCEN2E060001</string>
 				<string>1A98520B275FBBB300251FE0</string>
 				<string>18FEF83B2450AA47002D6C29</string>
 				<string>1833D7E4245176460099987E</string>
@@ -797,6 +810,8 @@
 			<dict>
 				<key>ALWAYS_SEARCH_USER_PATHS</key>
 				<string>NO</string>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD)</string>
 				<key>ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS</key>
 				<string>YES</string>
 				<key>CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED</key>
@@ -859,14 +874,22 @@
 				<string>YES</string>
 				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
 				<string>YES</string>
+				<key>CODE_SIGN_ENTITLEMENTS[sdk</key>
+				<string>iphonesimulator10.*]=$(SRCROOT)/$(PROJECT_NAME)/Entitlements.plist</string>
 				<key>COPY_PHASE_STRIP</key>
 				<string>NO</string>
 				<key>DEBUG_INFORMATION_FORMAT</key>
 				<string>dwarf</string>
+				<key>ENABLE_BITCODE</key>
+				<string>NO</string>
 				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
 				<string>YES</string>
 				<key>ENABLE_TESTABILITY</key>
 				<string>YES</string>
+				<key>ENTITLEMENTS_REQUIRED</key>
+				<string>YES</string>
+				<key>FIPS_PACKAGE</key>
+				<string>$(CURRENT_ARCH).sdk</string>
 				<key>GCC_C_LANGUAGE_STANDARD</key>
 				<string>gnu11</string>
 				<key>GCC_DYNAMIC_NO_PIC</key>
@@ -895,7 +918,11 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>17.0</string>
+				<string>18.0</string>
+				<key>LD</key>
+				<string>$(HOME)/Library/Application Support/BlackBerry/Good.platform/iOS/FIPS_module/$FIPS_PACKAGE/bin/gd_fipsld</string>
+				<key>LDPLUSPLUS</key>
+				<string>$(HOME)/Library/Application Support/BlackBerry/Good.platform/iOS/FIPS_module/$FIPS_PACKAGE/bin/gd_fipsld</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
 				<string>INCLUDE_SOURCE</string>
 				<key>MTL_FAST_MATH</key>
@@ -908,6 +935,8 @@
 				<string>DEBUG</string>
 				<key>SWIFT_OPTIMIZATION_LEVEL</key>
 				<string>-Onone</string>
+				<key>VALID_ARCHS</key>
+				<string>arm64 arm64e x86_64</string>
 			</dict>
 			<key>isa</key>
 			<string>XCBuildConfiguration</string>
@@ -920,6 +949,8 @@
 			<dict>
 				<key>ALWAYS_SEARCH_USER_PATHS</key>
 				<string>NO</string>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD)</string>
 				<key>ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS</key>
 				<string>YES</string>
 				<key>CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED</key>
@@ -982,14 +1013,22 @@
 				<string>YES</string>
 				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
 				<string>YES</string>
+				<key>CODE_SIGN_ENTITLEMENTS[sdk</key>
+				<string>iphonesimulator10.*]=$(SRCROOT)/$(PROJECT_NAME)/Entitlements.plist</string>
 				<key>COPY_PHASE_STRIP</key>
 				<string>NO</string>
 				<key>DEBUG_INFORMATION_FORMAT</key>
 				<string>dwarf-with-dsym</string>
+				<key>ENABLE_BITCODE</key>
+				<string>NO</string>
 				<key>ENABLE_NS_ASSERTIONS</key>
 				<string>NO</string>
 				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
 				<string>YES</string>
+				<key>ENTITLEMENTS_REQUIRED</key>
+				<string>YES</string>
+				<key>FIPS_PACKAGE</key>
+				<string>$(CURRENT_ARCH).sdk</string>
 				<key>GCC_C_LANGUAGE_STANDARD</key>
 				<string>gnu11</string>
 				<key>GCC_NO_COMMON_BLOCKS</key>
@@ -1009,7 +1048,11 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>17.0</string>
+				<string>18.0</string>
+				<key>LD</key>
+				<string>$(HOME)/Library/Application Support/BlackBerry/Good.platform/iOS/FIPS_module/$FIPS_PACKAGE/bin/gd_fipsld</string>
+				<key>LDPLUSPLUS</key>
+				<string>$(HOME)/Library/Application Support/BlackBerry/Good.platform/iOS/FIPS_module/$FIPS_PACKAGE/bin/gd_fipsld</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
 				<string>NO</string>
 				<key>MTL_FAST_MATH</key>
@@ -1024,6 +1067,8 @@
 				<string>-O</string>
 				<key>VALIDATE_PRODUCT</key>
 				<string>YES</string>
+				<key>VALID_ARCHS</key>
+				<string>arm64 arm64e x86_64</string>
 			</dict>
 			<key>isa</key>
 			<string>XCBuildConfiguration</string>
@@ -1048,10 +1093,26 @@
 		<dict>
 			<key>buildSettings</key>
 			<dict>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD)</string>
 				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
 				<string>AppIcon</string>
+				<key>CODE_SIGN_ENTITLEMENTS[sdk</key>
+				<string>iphonesimulator10.*]=$(SRCROOT)/$(PROJECT_NAME)/Entitlements.plist</string>
+				<key>ENABLE_BITCODE</key>
+				<string>NO</string>
+				<key>ENTITLEMENTS_REQUIRED</key>
+				<string>YES</string>
+				<key>FIPS_PACKAGE</key>
+				<string>$(CURRENT_ARCH).sdk</string>
 				<key>INFOPLIST_FILE</key>
 				<string>WKWebView/Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>18.0</string>
+				<key>LD</key>
+				<string>$(HOME)/Library/Application Support/BlackBerry/Good.platform/iOS/FIPS_module/$FIPS_PACKAGE/bin/gd_fipsld</string>
+				<key>LDPLUSPLUS</key>
+				<string>$(HOME)/Library/Application Support/BlackBerry/Good.platform/iOS/FIPS_module/$FIPS_PACKAGE/bin/gd_fipsld</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -1071,6 +1132,8 @@
 				<string>5.0</string>
 				<key>TARGETED_DEVICE_FAMILY</key>
 				<string>1,2</string>
+				<key>VALID_ARCHS</key>
+				<string>arm64 arm64e x86_64</string>
 			</dict>
 			<key>isa</key>
 			<string>XCBuildConfiguration</string>
@@ -1081,10 +1144,26 @@
 		<dict>
 			<key>buildSettings</key>
 			<dict>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD)</string>
 				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
 				<string>AppIcon</string>
+				<key>CODE_SIGN_ENTITLEMENTS[sdk</key>
+				<string>iphonesimulator10.*]=$(SRCROOT)/$(PROJECT_NAME)/Entitlements.plist</string>
+				<key>ENABLE_BITCODE</key>
+				<string>NO</string>
+				<key>ENTITLEMENTS_REQUIRED</key>
+				<string>YES</string>
+				<key>FIPS_PACKAGE</key>
+				<string>$(CURRENT_ARCH).sdk</string>
 				<key>INFOPLIST_FILE</key>
 				<string>WKWebView/Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>18.0</string>
+				<key>LD</key>
+				<string>$(HOME)/Library/Application Support/BlackBerry/Good.platform/iOS/FIPS_module/$FIPS_PACKAGE/bin/gd_fipsld</string>
+				<key>LDPLUSPLUS</key>
+				<string>$(HOME)/Library/Application Support/BlackBerry/Good.platform/iOS/FIPS_module/$FIPS_PACKAGE/bin/gd_fipsld</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -1104,6 +1183,8 @@
 				<string>5.0</string>
 				<key>TARGETED_DEVICE_FAMILY</key>
 				<string>1,2</string>
+				<key>VALID_ARCHS</key>
+				<string>arm64 arm64e x86_64</string>
 			</dict>
 			<key>isa</key>
 			<string>XCBuildConfiguration</string>
@@ -1219,6 +1300,20 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>1AB1F18D36BE470EB8A1C237</key>
+		<dict>
+			<key>isa</key>
+			<string>XCRemoteSwiftPackageReference</string>
+			<key>repositoryURL</key>
+			<string>https://github.com/blackberry/BlackBerry-Dynamics-iOS-SDK</string>
+			<key>requirement</key>
+			<dict>
+				<key>branch</key>
+				<string>main</string>
+				<key>kind</key>
+				<string>branch</string>
+			</dict>
+		</dict>
 		<key>1ABDCFCF275AA7E0007D0CC3</key>
 		<dict>
 			<key>isa</key>
@@ -1239,6 +1334,15 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>56FC70F8860D4149BB311646</key>
+		<dict>
+			<key>isa</key>
+			<string>XCSwiftPackageProductDependency</string>
+			<key>package</key>
+			<string>1AB1F18D36BE470EB8A1C237</string>
+			<key>productName</key>
+			<string>GSEProvider</string>
+		</dict>
 		<key>8BC02ACF247C10B900F4962C</key>
 		<dict>
 			<key>isa</key>
@@ -1258,6 +1362,29 @@
 			<string>8BC02ACF247C10B900F4962C</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>95D5CA929F224D82932B5F23</key>
+		<dict>
+			<key>isa</key>
+			<string>XCSwiftPackageProductDependency</string>
+			<key>package</key>
+			<string>1AB1F18D36BE470EB8A1C237</string>
+			<key>productName</key>
+			<string>BlackBerryDynamics</string>
+		</dict>
+		<key>A335491A88434907BE3E621D</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>productRef</key>
+			<string>56FC70F8860D4149BB311646</string>
+		</dict>
+		<key>D599C0D7C78E46719F7E9643</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>productRef</key>
+			<string>95D5CA929F224D82932B5F23</string>
 		</dict>
 		<key>F68E9B552CE4E591007C2F30</key>
 		<dict>
@@ -1286,6 +1413,24 @@
 			<string>README.md</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>W2WKSCEN2E060001</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>WKWebViewSceneDelegate.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>W2WKSCEN2E060011</key>
+		<dict>
+			<key>fileRef</key>
+			<string>W2WKSCEN2E060001</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
 		</dict>
 	</dict>
 	<key>rootObject</key>

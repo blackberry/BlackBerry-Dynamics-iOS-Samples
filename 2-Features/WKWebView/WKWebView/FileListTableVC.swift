@@ -18,14 +18,13 @@
 import UIKit
 import BlackBerryDynamics.SecureStore.File
 
-@available(iOS 13.0, *)
 class FileListTableVC: UITableViewController {
 
     let fileArr = ["sample.docx", "sample.pdf", "websites.json"]
     let websites = ["BlackBerry.com"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        WKWebViewGDiOSDelegate.sharedInstance.rootViewController = self;
+        WKWebViewGDiOSDelegate.sharedInstance.sceneDelegate?.window?.rootViewController = self;
         self.title = "File List"
     }
 
@@ -67,8 +66,4 @@ class FileListTableVC: UITableViewController {
         previewVC.fileGDURL = fileURL
         self.navigationController?.pushViewController(previewVC, animated: true)
     }
-    
-    
-    
-    
 }

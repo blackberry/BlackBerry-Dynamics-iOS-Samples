@@ -19,12 +19,15 @@
 #import "AppDelegate.h"
 #import "FileListTableVC.h"
 
+@class WKWebViewObjCSceneDelegate;
+
 @interface WKWebViewObjCGDiOSDelegate : NSObject <GDiOSDelegate>
 
 @property (weak, nonatomic) FileListTableVC *rootViewController;
 @property (weak, nonatomic) AppDelegate *appDelegate;
+@property (weak, nonatomic) WKWebViewObjCSceneDelegate *sceneDelegate;
 @property (assign,nonatomic,readonly) BOOL hasAuthorized;
-                            
+
 +(instancetype)sharedInstance;
-                        
+
 @end

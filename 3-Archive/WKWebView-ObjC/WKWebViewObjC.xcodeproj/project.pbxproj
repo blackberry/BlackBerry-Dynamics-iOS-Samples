@@ -16,6 +16,7 @@
 		1833D80324517E450099987E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1833D80224517E450099987E /* MobileCoreServices.framework */; };
 		1833D80524517E450099987E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1833D80424517E450099987E /* WebKit.framework */; };
 		1833D80924517E450099987E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1833D80824517E450099987E /* AppDelegate.m */; };
+		E9A0B1234C5D6E7F8090A001 /* WKWebViewObjCSceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A0B1254C5D6E7F8090A003 /* WKWebViewObjCSceneDelegate.m */; };
 		1833D80F24517E450099987E /* WKWebViewObjCGDiOSDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1833D80E24517E450099987E /* WKWebViewObjCGDiOSDelegate.m */; };
 		1833D81324517E450099987E /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1833D81224517E450099987E /* Entitlements.plist */; };
 		1833D81C24517E450099987E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1833D81A24517E450099987E /* InfoPlist.strings */; };
@@ -68,6 +69,8 @@
 		1833D80424517E450099987E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		1833D80724517E450099987E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1833D80824517E450099987E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E9A0B1244C5D6E7F8090A002 /* WKWebViewObjCSceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKWebViewObjCSceneDelegate.h; sourceTree = "<group>"; };
+		E9A0B1254C5D6E7F8090A003 /* WKWebViewObjCSceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKWebViewObjCSceneDelegate.m; sourceTree = "<group>"; };
 		1833D80D24517E450099987E /* WKWebViewObjCGDiOSDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKWebViewObjCGDiOSDelegate.h; sourceTree = "<group>"; };
 		1833D80E24517E450099987E /* WKWebViewObjCGDiOSDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKWebViewObjCGDiOSDelegate.m; sourceTree = "<group>"; };
 		1833D81224517E450099987E /* Entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Entitlements.plist; path = ../Entitlements.plist; sourceTree = "<group>"; };
@@ -195,6 +198,8 @@
 				1833D86024518BA50099987E /* Files */,
 				1833D80724517E450099987E /* AppDelegate.h */,
 				1833D80824517E450099987E /* AppDelegate.m */,
+				E9A0B1244C5D6E7F8090A002 /* WKWebViewObjCSceneDelegate.h */,
+				E9A0B1254C5D6E7F8090A003 /* WKWebViewObjCSceneDelegate.m */,
 				1833D80D24517E450099987E /* WKWebViewObjCGDiOSDelegate.h */,
 				1833D80E24517E450099987E /* WKWebViewObjCGDiOSDelegate.m */,
 				1833D85B245186230099987E /* GDURLSchemeHandler.h */,
@@ -509,6 +514,7 @@
 				1833D80F24517E450099987E /* WKWebViewObjCGDiOSDelegate.m in Sources */,
 				1833D83324517E480099987E /* main.m in Sources */,
 				1833D80924517E450099987E /* AppDelegate.m in Sources */,
+				E9A0B1234C5D6E7F8090A001 /* WKWebViewObjCSceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,7 +640,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -688,7 +694,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -705,7 +711,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = WKWebViewObjC/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -728,7 +734,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = WKWebViewObjC/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -750,7 +756,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = WKWebViewObjCTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -769,7 +775,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = WKWebViewObjCTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -787,7 +793,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = WKWebViewObjCUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -805,7 +811,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = WKWebViewObjCUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -1,8 +1,0 @@
-
-target 'Launcher' do
-  use_frameworks!
-  platform :ios, '18.0'
-
-  pod 'BlackBerryDynamics'
-
-end

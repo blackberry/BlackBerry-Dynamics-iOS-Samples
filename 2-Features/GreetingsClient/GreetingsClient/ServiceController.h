@@ -18,7 +18,6 @@
 #import <BlackBerryDynamics/GD/GDServices.h>
 
 @class ViewController;
-@class RootViewController;
 
 typedef enum
 {

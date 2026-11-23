@@ -16,7 +16,7 @@
  */
 
 import WebKit
-import MobileCoreServices
+import UniformTypeIdentifiers
 import BlackBerryDynamics.SecureStore.File
 
 class GDURLSchemeHandler: NSObject, WKURLSchemeHandler {
@@ -55,18 +55,23 @@ class GDURLSchemeHandler: NSObject, WKURLSchemeHandler {
     
     func webView(_ webView: WKWebView, start urlSchemeTask: WKURLSchemeTask) {
         guard let filePath = urlSchemeTask.request.url?.standardized.path,
-            let requestURL = urlSchemeTask.request.url,
-            let fileUTI = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, requestURL.pathExtension as CFString, nil)?.takeRetainedValue(),
-            let mimeType = UTTypeCopyPreferredTagWithClass(fileUTI, kUTTagClassMIMEType)?.takeRetainedValue()
-            else {
-                urlSchemeTask.didFailWithError(NSError(domain: "", code: 0, userInfo: ["message": "Unknown Access"]))
-                return
+              let requestURL = urlSchemeTask.request.url else {
+            urlSchemeTask.didFailWithError(NSError(domain: "", code: 0, userInfo: ["message": "Unknown Access"]))
+            return
         }
-        
+
+        let ext = requestURL.pathExtension
+        guard !ext.isEmpty,
+              let utType = UTType(filenameExtension: ext),
+              let mimeType = utType.preferredMIMEType else {
+            urlSchemeTask.didFailWithError(NSError(domain: "", code: 0, userInfo: ["message": "Unknown Access"]))
+            return
+        }
+
         let fileSize = self.getContentLengthForFilePath(filePath: filePath)
         let fileData = self.getFileDataForFilePath(filePath: filePath)
-        
-        let response = URLResponse(url: requestURL, mimeType: mimeType as String?, expectedContentLength: fileSize, textEncodingName: nil)
+
+        let response = URLResponse(url: requestURL, mimeType: mimeType, expectedContentLength: fileSize, textEncodingName: nil)
         urlSchemeTask.didReceive(response)
         if let data = fileData {
             urlSchemeTask.didReceive(data)

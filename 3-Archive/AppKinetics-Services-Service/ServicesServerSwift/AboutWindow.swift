@@ -17,54 +17,55 @@
 import UIKit
 
 class AboutWindow: UIWindow {
-    
-    fileprivate var onDismissWindow: UIWindow?;
+
+    fileprivate var onDismissWindow: UIWindow?
+    private static var activeAboutOverlay: AboutWindow?
 
     class func show() {
-        let appDelegate =  UIApplication.shared.delegate! as! AppDelegate
-        let appWindow = appDelegate.window
-        
-        if let _ = appWindow as? AboutWindow {
+        guard let sceneDelegate = ServicesServerGDiOSDelegate.sharedInstance.sceneDelegate,
+              let mainWindow = sceneDelegate.window else {
+            print("AboutWindow: scene delegate window is nil")
+            return
+        }
+
+        if activeAboutOverlay != nil {
             print("About window is already shown")
             return
         }
-        
-        let instance = AboutWindow.init(frame: UIScreen.main.bounds)
-        
-        let storyboardName = "Main"
-        
-        let storyboard = UIStoryboard.init(name: storyboardName, bundle: nil)
-        // set rootViewController for a new window instance
+
+        let windowScene = mainWindow.windowScene
+        let instance: AboutWindow
+        if let windowScene = windowScene {
+            instance = AboutWindow(windowScene: windowScene)
+        } else {
+            instance = AboutWindow(frame: UIScreen.main.bounds)
+        }
+
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let aboutVC = storyboard.instantiateViewController(withIdentifier: "navigationAbout")
-        instance.rootViewController = aboutVC;
-        
-        instance.onDismissWindow = appWindow;
-        // set new window as application window
-        // it can be stored in another way,
-        // but this is where Dynamics had problems in the past, before multiple windows support.
-        appDelegate.window = instance;
-        instance.makeKey()
-        instance.isHidden = false;
-        
-        instance.alpha = 0;
+        instance.rootViewController = aboutVC
+        instance.windowLevel = .alert
+        instance.onDismissWindow = mainWindow
+        activeAboutOverlay = instance
+        instance.makeKeyAndVisible()
+        instance.alpha = 0
         UIView.animate(withDuration: 0.7) {
-            instance.alpha = 1;
+            instance.alpha = 1
         }
     }
-    
+
     class func hide() {
-        let appDelegate =  UIApplication.shared.delegate! as! AppDelegate
-        let appWindow = appDelegate.window
-        guard let aboutWindow = appWindow as? AboutWindow,
+        guard let aboutWindow = activeAboutOverlay,
               let onDismissWindow = aboutWindow.onDismissWindow else {
-                return;
+            return
         }
-        
+
         UIView.animate(withDuration: 0.4, animations: {
-            appWindow?.alpha = 0;
-        }) { (finished) in
-            appDelegate.window = onDismissWindow
-            onDismissWindow .makeKeyAndVisible()
+            aboutWindow.alpha = 0
+        }) { _ in
+            aboutWindow.isHidden = true
+            activeAboutOverlay = nil
+            onDismissWindow.makeKeyAndVisible()
         }
     }
 }

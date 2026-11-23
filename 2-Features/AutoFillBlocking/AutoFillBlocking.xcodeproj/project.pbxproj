@@ -13,13 +13,13 @@
 		24BAD9AB21F76E5C0058416E /* UIView+FirstResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 24BAD9AA21F76E5C0058416E /* UIView+FirstResponder.m */; };
 		24E5230921FF43F900A278DC /* BBDAutoFillBlockerField+InputBlocking.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E5230821FF43F900A278DC /* BBDAutoFillBlockerField+InputBlocking.m */; };
 		24E5235022005AFB00A278DC /* InputBlockingHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E5234F22005AFB00A278DC /* InputBlockingHandler.m */; };
-		24EEA12121933E28007490A1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EEA12021933E28007490A1 /* AppDelegate.m */; };
 		24EEA12421933E28007490A1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EEA12321933E28007490A1 /* ViewController.m */; };
 		24EEA12721933E28007490A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24EEA12521933E28007490A1 /* Main.storyboard */; };
 		24EEA12921933E2A007490A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24EEA12821933E2A007490A1 /* Assets.xcassets */; };
 		24EEA12C21933E2A007490A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24EEA12A21933E2A007490A1 /* LaunchScreen.storyboard */; };
-		24EEA12F21933E2A007490A1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EEA12E21933E2A007490A1 /* main.m */; };
 		24EEA13721933E79007490A1 /* BBDAutoFillBlockerField.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EEA13621933E78007490A1 /* BBDAutoFillBlockerField.m */; };
+		AFB000032194300A01D0003 /* AutoFillBlockingSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB000012194300A01D0001 /* AutoFillBlockingSceneDelegate.swift */; };
+		AFB000042194300A01D0004 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB000022194300A01D0002 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,17 +35,17 @@
 		24E5234E22005AFB00A278DC /* InputBlockingHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputBlockingHandler.h; sourceTree = "<group>"; };
 		24E5234F22005AFB00A278DC /* InputBlockingHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputBlockingHandler.m; sourceTree = "<group>"; };
 		24EEA11C21933E28007490A1 /* AutoFillBlocking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoFillBlocking.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		24EEA11F21933E28007490A1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		24EEA12021933E28007490A1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		24EEA12221933E28007490A1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		24EEA12321933E28007490A1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		24EEA12621933E28007490A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		24EEA12821933E2A007490A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24EEA12B21933E2A007490A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24EEA12D21933E2A007490A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		24EEA12E21933E2A007490A1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		24EEA13521933E78007490A1 /* BBDAutoFillBlockerField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBDAutoFillBlockerField.h; sourceTree = "<group>"; };
 		24EEA13621933E78007490A1 /* BBDAutoFillBlockerField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBDAutoFillBlockerField.m; sourceTree = "<group>"; };
+		6DA3FBDD2FA9479C00AE9546 /* AutoFillBlocking-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AutoFillBlocking-Bridging-Header.h"; sourceTree = "<group>"; };
+		AFB000012194300A01D0001 /* AutoFillBlockingSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoFillBlockingSceneDelegate.swift; sourceTree = "<group>"; };
+		AFB000022194300A01D0002 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +62,9 @@
 		24BAD99C21F7532F0058416E /* AutoFillBlockingApp */ = {
 			isa = PBXGroup;
 			children = (
-				24EEA11F21933E28007490A1 /* AppDelegate.h */,
-				24EEA12021933E28007490A1 /* AppDelegate.m */,
+				6DA3FBDD2FA9479C00AE9546 /* AutoFillBlocking-Bridging-Header.h */,
+				AFB000022194300A01D0002 /* AppDelegate.swift */,
+				AFB000012194300A01D0001 /* AutoFillBlockingSceneDelegate.swift */,
 				24EEA12221933E28007490A1 /* ViewController.h */,
 				24EEA12321933E28007490A1 /* ViewController.m */,
 				24E5234E22005AFB00A278DC /* InputBlockingHandler.h */,
@@ -72,7 +73,6 @@
 				24EEA12821933E2A007490A1 /* Assets.xcassets */,
 				24EEA12A21933E2A007490A1 /* LaunchScreen.storyboard */,
 				24EEA12D21933E2A007490A1 /* Info.plist */,
-				24EEA12E21933E2A007490A1 /* main.m */,
 			);
 			path = AutoFillBlockingApp;
 			sourceTree = "<group>";
@@ -201,9 +201,9 @@
 			files = (
 				24BAD9A121F7612A0058416E /* BBDInputBlocker.m in Sources */,
 				24EEA12421933E28007490A1 /* ViewController.m in Sources */,
-				24EEA12F21933E2A007490A1 /* main.m in Sources */,
+				AFB000032194300A01D0003 /* AutoFillBlockingSceneDelegate.swift in Sources */,
+				AFB000042194300A01D0004 /* AppDelegate.swift in Sources */,
 				24EEA13721933E79007490A1 /* BBDAutoFillBlockerField.m in Sources */,
-				24EEA12121933E28007490A1 /* AppDelegate.m in Sources */,
 				24E5235022005AFB00A278DC /* InputBlockingHandler.m in Sources */,
 				24BAD9A821F76E4B0058416E /* NSObject+KeyboardBlocking.m in Sources */,
 				24E5230921FF43F900A278DC /* BBDAutoFillBlockerField+InputBlocking.m in Sources */,
@@ -283,7 +283,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -335,7 +335,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -354,6 +354,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.good.gd.example.autofillblocking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AutoFillBlockingApp/AutoFillBlocking-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -368,6 +370,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.good.gd.example.autofillblocking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AutoFillBlockingApp/AutoFillBlocking-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

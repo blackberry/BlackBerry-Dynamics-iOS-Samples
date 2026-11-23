@@ -50,9 +50,9 @@ class DBViewController: UIViewController {
             let db = try Connection(path)
             
             let colors = Table("colors")
-            let id = Expression<Int>(value: "id")
-            let name = Expression<String>(value: "name")
-            let enabled = Expression<Bool>(value: "enabled")
+            let id = SQLite.Expression<Int>("id")
+            let name = SQLite.Expression<String>("name")
+            let enabled = SQLite.Expression<Bool>("enabled")
             
             try db.run(colors.create { t in
                 t.column(id, primaryKey:true)
@@ -64,7 +64,7 @@ class DBViewController: UIViewController {
             
             for color in colorList {
                     
-                let insert = colors.insert(name <- color, enabled <- "false")
+                let insert = colors.insert(name <- color, enabled <- false)
                 let _ = try db.run(insert)
             }
             
@@ -82,12 +82,12 @@ class DBViewController: UIViewController {
         do {
             let db = try Connection(path)
             let colors = Table("colors")
-            let name = Expression<String>(value: "name")
-            let isEnabled = Expression<Bool>(value: "enabled")
+            let name = SQLite.Expression<String>("name")
+            let isEnabled = SQLite.Expression<Bool>("enabled")
 
             for color in try db.prepare(colors) {
                 let currSwitch = switchDBMap[color[name]]
-                let state = Bool(color[isEnabled])!
+                let state = color[isEnabled]
                 currSwitch!.setOn(state, animated: true)
             }
         }
@@ -101,13 +101,13 @@ class DBViewController: UIViewController {
         do {
         let db = try Connection(path)
         let colors = Table("colors")
-            let name = Expression<String>(value: "name")
-            let isEnabled = Expression<Bool>(value: "enabled")
+            let name = SQLite.Expression<String>("name")
+            let isEnabled = SQLite.Expression<Bool>("enabled")
 
         
         for (key, value) in switchDBMap {
                 let colorUpdate = colors.filter(name == key)
-            try db.run(colorUpdate.update(isEnabled <- value.isOn.description))
+            try db.run(colorUpdate.update(isEnabled <- value.isOn))
            }
         }
         catch {

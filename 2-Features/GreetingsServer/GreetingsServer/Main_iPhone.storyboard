@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dSa-t0-K1C">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dSa-t0-K1C">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <development version="7000" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Root View Controller-->
@@ -16,27 +15,27 @@
                         <viewControllerLayoutGuide type="bottom" id="FOS-pf-bGR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0sE-w4-u8K">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="op0-Sc-o6G">
-                                <rect key="frame" x="20" y="206" width="560" height="37"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="op0-Sc-o6G">
+                                <rect key="frame" x="16" y="304" width="361" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="OPy-6R-jk6"/>
                                 </constraints>
                                 <state key="normal" title="Bring greetings client to front">
-                                    <color key="titleColor" red="0.23700182139873505" green="0.28462636470794678" blue="0.32938772439956665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.18136706948280334" green="0.21992394328117371" blue="0.26005378365516663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="bringGreetingsClientToFrontButtonOnTouchUpInside:" destination="dSa-t0-K1C" eventType="touchUpInside" id="Ksm-Nm-OIL"/>
                                 </connections>
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qfi-AD-xRs">
-                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <rect key="frame" x="-4" y="736" width="401" height="48"/>
                                 <items>
                                     <barButtonItem style="plain" id="r2a-sO-oIe">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="led-l4-QUH">
-                                            <rect key="frame" x="20" y="11" width="22" height="22"/>
+                                            <rect key="frame" x="27.000000000000004" y="11.000000000000004" width="25.666666666666668" height="25.666666666666668"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <connections>
                                                 <segue destination="Afa-RW-AlP" kind="popoverPresentation" popoverAnchorView="led-l4-QUH" id="i9S-jL-1Xk">
@@ -49,23 +48,21 @@
                                     <barButtonItem image="SettingsImage" id="wRC-c5-MyN">
                                         <connections>
                                             <action selector="showSettings:" destination="Afa-RW-AlP" id="HKn-Vi-Qa3"/>
-                                            <segue destination="8h9-F1-fw0" kind="show" id="IAM-SS-UQ3">
-                                                <nil key="action"/>
-                                            </segue>
+                                            <segue destination="8h9-F1-fw0" kind="show" id="IAM-SS-UQ3"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
-                                <color key="tintColor" red="0.23700182139873505" green="0.28462636470794678" blue="0.32938772439956665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.18136706948280334" green="0.21992394328117371" blue="0.26005378365516663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SECURED_BLACKBERRY_LOGO" translatesAutoresizingMaskIntoConstraints="NO" id="Ais-At-5qu">
-                                <rect key="frame" x="61" y="566" width="167" height="26"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="securedByBB" translatesAutoresizingMaskIntoConstraints="NO" id="Ais-At-5qu">
+                                <rect key="frame" x="57" y="750" width="167" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="167" id="f2M-ae-K0G"/>
                                     <constraint firstAttribute="height" constant="26" id="o5u-PR-vGh"/>
                                 </constraints>
                             </imageView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DiM-pV-skL">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <rect key="frame" x="-4" y="138" width="401" height="54"/>
                                 <items>
                                     <navigationItem title="GreetingsServer" id="j1l-eH-U8j"/>
                                 </items>
@@ -104,48 +101,51 @@
                         <viewControllerLayoutGuide type="bottom" id="xjr-tw-hzb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hOF-Ms-WT2">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="793"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zYc-Vj-dnZ">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <rect key="frame" x="-4" y="79" width="401" height="54"/>
                                 <items>
                                     <navigationItem title="Settings" id="vLM-Jo-jlP"/>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kC0-IE-gy2">
-                                <rect key="frame" x="20" y="488" width="560" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Troubleshooting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PiN-GN-FV0">
+                                <rect key="frame" x="16" y="133" width="135" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="135" id="GCR-66-dCW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kC0-IE-gy2">
+                                <rect key="frame" x="16" y="210" width="361" height="30"/>
                                 <state key="normal" title="Upload Logs">
-                                    <color key="titleColor" red="0.23700182139873505" green="0.28462636470794678" blue="0.32938772439956665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.18136706948280334" green="0.21992394328117371" blue="0.26005378365516663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="uploadLogsPressed:" destination="8h9-F1-fw0" eventType="touchUpInside" id="tv8-8J-3wq"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Troubleshooting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PiN-GN-FV0">
-                                <rect key="frame" x="20" y="421" width="135" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="kC0-IE-gy2" firstAttribute="trailing" secondItem="hOF-Ms-WT2" secondAttribute="trailingMargin" id="1ir-UC-iOq"/>
-                            <constraint firstItem="kC0-IE-gy2" firstAttribute="leading" secondItem="hOF-Ms-WT2" secondAttribute="leadingMargin" id="1tj-UX-zx3"/>
-                            <constraint firstItem="PiN-GN-FV0" firstAttribute="leading" secondItem="hOF-Ms-WT2" secondAttribute="leadingMargin" id="8Zm-Rf-ced"/>
+                            <constraint firstItem="PiN-GN-FV0" firstAttribute="leading" secondItem="hOF-Ms-WT2" secondAttribute="leadingMargin" id="2yO-WN-kmR"/>
+                            <constraint firstItem="kC0-IE-gy2" firstAttribute="top" secondItem="PiN-GN-FV0" secondAttribute="bottom" constant="56" id="Hb9-2U-mGi"/>
                             <constraint firstItem="zYc-Vj-dnZ" firstAttribute="leading" secondItem="hOF-Ms-WT2" secondAttribute="leadingMargin" constant="-20" id="LPV-Om-g99"/>
-                            <constraint firstItem="kC0-IE-gy2" firstAttribute="top" secondItem="PiN-GN-FV0" secondAttribute="bottom" constant="46" id="O8v-I3-1SF"/>
+                            <constraint firstItem="kC0-IE-gy2" firstAttribute="leading" secondItem="PiN-GN-FV0" secondAttribute="leading" id="MEz-v0-JLl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zYc-Vj-dnZ" secondAttribute="trailing" constant="-20" id="Unm-nD-F72"/>
+                            <constraint firstItem="PiN-GN-FV0" firstAttribute="top" secondItem="zYc-Vj-dnZ" secondAttribute="bottom" id="YWn-xz-MAU"/>
                             <constraint firstItem="zYc-Vj-dnZ" firstAttribute="top" secondItem="hOF-Ms-WT2" secondAttribute="topMargin" constant="20" id="hPm-cJ-3xL"/>
-                            <constraint firstItem="xjr-tw-hzb" firstAttribute="top" secondItem="kC0-IE-gy2" secondAttribute="bottom" constant="82" id="kXC-BK-noM"/>
+                            <constraint firstItem="kC0-IE-gy2" firstAttribute="centerX" secondItem="zYc-Vj-dnZ" secondAttribute="centerX" id="ofy-E3-PeP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qau-Ci-MT9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZX-8q-rTf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1312" y="-107"/>
+            <point key="canvasLocation" x="1310.6870229007634" y="-107.04225352112677"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="1XN-wu-XJC">
@@ -156,24 +156,24 @@
                         <viewControllerLayoutGuide type="bottom" id="etb-l9-nog"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="84p-q7-baN">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="793"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cqA-Mx-LUM">
-                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <rect key="frame" x="-4" y="711" width="401" height="48"/>
                                 <items>
                                     <barButtonItem style="plain" id="Ddg-A5-BZ3">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="HK1-zO-Ry4">
-                                            <rect key="frame" x="20" y="11" width="22" height="22"/>
+                                            <rect key="frame" x="27.000000000000004" y="11.000000000000004" width="25.666666666666668" height="25.666666666666668"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </button>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="REh-ao-ci0"/>
                                 </items>
-                                <color key="tintColor" red="0.23700182139873505" green="0.28462636470794678" blue="0.32938772439956665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.18136706948280334" green="0.21992394328117371" blue="0.26005378365516663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lbw-bG-7gk">
-                                <rect key="frame" x="30" y="64" width="541" height="472"/>
+                                <rect key="frame" x="26" y="133" width="342" height="558"/>
                                 <string key="text">This sample app demonstrates the Services API used for secure communication across containers. 
 
 For more examples visit:
@@ -186,15 +186,15 @@ https://community.blackberry.com/community/gdn/support
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SECURED_BLACKBERRY_LOGO" translatesAutoresizingMaskIntoConstraints="NO" id="Bmm-XB-xxB">
-                                <rect key="frame" x="57" y="533" width="60" height="60"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="securedByBB" translatesAutoresizingMaskIntoConstraints="NO" id="Bmm-XB-xxB">
+                                <rect key="frame" x="53" y="725" width="178" height="27"/>
                             </imageView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u43-FJ-jci">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <rect key="frame" x="-4" y="79" width="401" height="54"/>
                                 <items>
                                     <navigationItem title="About" id="xSn-Mc-hRe">
                                         <barButtonItem key="rightBarButtonItem" systemItem="stop" id="exk-CF-BWU">
-                                            <color key="tintColor" red="0.23700182139873505" green="0.28462636470794678" blue="0.32938772439956665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="tintColor" red="0.18136706948280334" green="0.21992394328117371" blue="0.26005378365516663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <action selector="dismissAbout:" destination="Afa-RW-AlP" id="BHd-pq-XSS"/>
                                             </connections>
@@ -226,7 +226,7 @@ https://community.blackberry.com/community/gdn/support
         </scene>
     </scenes>
     <resources>
-        <image name="SECURED_BLACKBERRY_LOGO" width="60" height="60"/>
         <image name="SettingsImage" width="25" height="25"/>
+        <image name="securedByBB" width="178" height="27"/>
     </resources>
 </document>

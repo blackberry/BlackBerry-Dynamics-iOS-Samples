@@ -17,6 +17,7 @@
 import UIKit
 //Use GDFileManager file
 import BlackBerryDynamics.SecureStore.File
+import BlackBerryDynamics
 
 class FileViewController: UIViewController {
     
@@ -93,6 +94,13 @@ class FileViewController: UIViewController {
         self.messageLabel.text = "Cleared text."
         
         self.view.endEditing(true)
+    }
+    
+    @IBAction func shareFile(_ sender: Any) {
+        
+        let filePath = documentsFolderPathForNamed(name: textFilename)
+        let vc = GDiOS.sharedInstance().getShareFileOptionsViewController(withFilePath: filePath, appProvidedActionsView: nil)
+        self.present(vc, animated: true)
     }
     
     //Create the folder

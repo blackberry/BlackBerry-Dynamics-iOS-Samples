@@ -267,6 +267,8 @@ NSString* const kGreetingsServiceErrorNotImplementedDescription = @"The requeste
             if(_delegate && [_delegate respondsToSelector:@selector(showAlert:)])
             {
                 [_delegate showAlert:filesString];
+            } else {
+                self.lastReceivedText = filesString;
             }
             
             requestProcessed = YES;
@@ -302,6 +304,14 @@ NSString* const kGreetingsServiceErrorNotImplementedDescription = @"The requeste
     }
     
     return didSendResponse;
+}
+
+- (void)showAlertWithLastReceivedText {
+    if(_delegate && [_delegate respondsToSelector:@selector(showAlert:)])
+    {
+        [_delegate showAlert:self.lastReceivedText];
+        self.lastReceivedText = @"";
+    }
 }
 
 @end

@@ -59,7 +59,10 @@ class SWFeedsViewController : UITableViewController {
     
     deinit {
         NotificationCenter.default.removeObserver(self)
-        NotificationCenter.default.removeObserver(self.tableView!)
+        // Avoid force-unwrapping tableView during teardown (view may not be loaded).
+        if isViewLoaded {
+            NotificationCenter.default.removeObserver(tableView as Any)
+        }
     }
 
     fileprivate func showAlertWithMessage(_ actionMessage: String) {

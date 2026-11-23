@@ -10,6 +10,24 @@
 	<string>60</string>
 	<key>objects</key>
 	<dict>
+		<key>0CBF1569BAE24864ACAFC5BA</key>
+		<dict>
+			<key>isa</key>
+			<string>XCSwiftPackageProductDependency</string>
+			<key>package</key>
+			<string>9A922112AF3748F1819CD51B</string>
+			<key>productName</key>
+			<string>BlackBerryDynamics</string>
+		</dict>
+		<key>4CF6489719D54CE0B60CF852</key>
+		<dict>
+			<key>isa</key>
+			<string>XCSwiftPackageProductDependency</string>
+			<key>package</key>
+			<string>9A922112AF3748F1819CD51B</string>
+			<key>productName</key>
+			<string>GSEProvider</string>
+		</dict>
 		<key>5638563023EC1EFE002E6E14</key>
 		<dict>
 			<key>isa</key>
@@ -112,6 +130,10 @@
 			</array>
 			<key>mainGroup</key>
 			<string>563891E822CD0CB600D3DBD8</string>
+			<key>packageReferences</key>
+			<array>
+				<string>9A922112AF3748F1819CD51B</string>
+			</array>
 			<key>productRefGroup</key>
 			<string>563891F222CD0CB600D3DBD8</string>
 			<key>projectDirPath</key>
@@ -187,6 +209,8 @@
 				<string>99E0BDC325C45BB00079A1D7</string>
 				<string>5638935D22CE1F1000D3DBD8</string>
 				<string>56FFB3C02362DD5A00996162</string>
+				<string>9111DC97239642838248DD1D</string>
+				<string>AEBAEBA94A7241F594528168</string>
 			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
@@ -230,6 +254,11 @@
 			<string>PBXNativeTarget</string>
 			<key>name</key>
 			<string>SceneDelegate</string>
+			<key>packageProductDependencies</key>
+			<array>
+				<string>0CBF1569BAE24864ACAFC5BA</string>
+				<string>4CF6489719D54CE0B60CF852</string>
+			</array>
 			<key>productName</key>
 			<string>SceneDelegate</string>
 			<key>productReference</key>
@@ -466,11 +495,15 @@
 				<string>YES</string>
 				<key>CODE_SIGN_ENTITLEMENTS</key>
 				<string>SceneDelegate/SceneDelegate.entitlements</string>
+				<key>CODE_SIGN_ENTITLEMENTS[sdk</key>
+				<string>iphonesimulator15.*]=$(SRCROOT)/SceneDelegate/Supporting Files/Entitlements.plist</string>
 				<key>COPY_PHASE_STRIP</key>
 				<string>NO</string>
 				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
 				<string>YES</string>
 				<key>ENABLE_TESTABILITY</key>
+				<string>YES</string>
+				<key>ENTITLEMENTS_REQUIRED</key>
 				<string>YES</string>
 				<key>GCC_C_LANGUAGE_STANDARD</key>
 				<string>gnu11</string>
@@ -498,7 +531,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>17.0</string>
+				<string>18.0</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
 				<string>INCLUDE_SOURCE</string>
 				<key>MTL_FAST_MATH</key>
@@ -587,11 +620,15 @@
 				<string>YES</string>
 				<key>CODE_SIGN_ENTITLEMENTS</key>
 				<string>SceneDelegate/SceneDelegate.entitlements</string>
+				<key>CODE_SIGN_ENTITLEMENTS[sdk</key>
+				<string>iphonesimulator15.*]=$(SRCROOT)/SceneDelegate/Supporting Files/Entitlements.plist</string>
 				<key>COPY_PHASE_STRIP</key>
 				<string>NO</string>
 				<key>ENABLE_NS_ASSERTIONS</key>
 				<string>NO</string>
 				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>ENTITLEMENTS_REQUIRED</key>
 				<string>YES</string>
 				<key>GCC_C_LANGUAGE_STANDARD</key>
 				<string>gnu11</string>
@@ -610,7 +647,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>17.0</string>
+				<string>18.0</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
 				<string>NO</string>
 				<key>MTL_FAST_MATH</key>
@@ -653,8 +690,14 @@
 				<string>YES</string>
 				<key>CODE_SIGN_ENTITLEMENTS</key>
 				<string>SceneDelegate/SceneDelegate.entitlements</string>
+				<key>CODE_SIGN_ENTITLEMENTS[sdk</key>
+				<string>iphonesimulator15.*]=$(SRCROOT)/SceneDelegate/Supporting Files/Entitlements.plist</string>
+				<key>ENTITLEMENTS_REQUIRED</key>
+				<string>YES</string>
 				<key>INFOPLIST_FILE</key>
 				<string>SceneDelegate/Supporting Files/Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>18.0</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -668,6 +711,8 @@
 				<string>-Onone</string>
 				<key>SWIFT_VERSION</key>
 				<string>5.0</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
 			</dict>
 			<key>isa</key>
 			<string>XCBuildConfiguration</string>
@@ -684,8 +729,14 @@
 				<string>YES</string>
 				<key>CODE_SIGN_ENTITLEMENTS</key>
 				<string>SceneDelegate/SceneDelegate.entitlements</string>
+				<key>CODE_SIGN_ENTITLEMENTS[sdk</key>
+				<string>iphonesimulator15.*]=$(SRCROOT)/SceneDelegate/Supporting Files/Entitlements.plist</string>
+				<key>ENTITLEMENTS_REQUIRED</key>
+				<string>YES</string>
 				<key>INFOPLIST_FILE</key>
 				<string>SceneDelegate/Supporting Files/Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>18.0</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -697,6 +748,8 @@
 				<string>$(TARGET_NAME)</string>
 				<key>SWIFT_VERSION</key>
 				<string>5.0</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
 			</dict>
 			<key>isa</key>
 			<string>XCBuildConfiguration</string>
@@ -1597,6 +1650,13 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>9111DC97239642838248DD1D</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>productRef</key>
+			<string>0CBF1569BAE24864ACAFC5BA</string>
+		</dict>
 		<key>92A524CA2C63C246008FFAF7</key>
 		<dict>
 			<key>fileEncoding</key>
@@ -1653,6 +1713,27 @@
 			<string>99E0BDC225C45BB00079A1D7</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>9A922112AF3748F1819CD51B</key>
+		<dict>
+			<key>isa</key>
+			<string>XCRemoteSwiftPackageReference</string>
+			<key>repositoryURL</key>
+			<string>https://github.com/blackberry/BlackBerry-Dynamics-iOS-SDK</string>
+			<key>requirement</key>
+			<dict>
+				<key>branch</key>
+				<string>main</string>
+				<key>kind</key>
+				<string>branch</string>
+			</dict>
+		</dict>
+		<key>AEBAEBA94A7241F594528168</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>productRef</key>
+			<string>4CF6489719D54CE0B60CF852</string>
 		</dict>
 		<key>F6EBC7822A65751C007B3620</key>
 		<dict>

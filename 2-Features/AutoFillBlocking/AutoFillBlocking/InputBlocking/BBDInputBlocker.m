@@ -30,7 +30,9 @@ NSString *const BBDKeyboardExtensionInputWasBlockedNotification = @"BBDKeyboardE
 // look at initExtensionClasses method for implementation details
 @property (nonatomic, assign) BOOL isKeyboardExtBlockingInitialized;
 @property (nonatomic, assign) BOOL shouldKeyboardExtBlockBypass;
-    
+
+- (nullable UIWindow *)keyWindowForForegroundActiveScene;
+
 @end
 
 static NSString* const kDictationLanguageIndentifier = @"dictation";
@@ -230,9 +232,38 @@ static BBDInputBlocker *sharedInstance = nil;
     return array;
 }
 
+- (nullable UIWindow *)keyWindowForForegroundActiveScene
+{
+    for (UIScene *scene in [UIApplication sharedApplication].connectedScenes)
+    {
+        if (scene.activationState != UISceneActivationStateForegroundActive)
+        {
+            continue;
+        }
+        if (![scene isKindOfClass:[UIWindowScene class]])
+        {
+            continue;
+        }
+        UIWindowScene *windowScene = (UIWindowScene *)scene;
+        if (windowScene.keyWindow != nil)
+        {
+            return windowScene.keyWindow;
+        }
+        for (UIWindow *window in windowScene.windows)
+        {
+            if (window.isKeyWindow)
+            {
+                return window;
+            }
+        }
+    }
+    return nil;
+}
+
 - (UIView *)getCurrentFirstResponder
 {
-    return [UIApplication sharedApplication].keyWindow.findFirstResponder;
+    UIWindow *keyWindow = [self keyWindowForForegroundActiveScene];
+    return keyWindow.findFirstResponder;
 }
     
 @end

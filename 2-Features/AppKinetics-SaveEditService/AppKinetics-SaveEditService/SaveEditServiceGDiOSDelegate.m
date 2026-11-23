@@ -1,4 +1,4 @@
-/* Copyright (c) 2023 BlackBerry Ltd.
+/* Copyright (c) 2026 BlackBerry Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -11,25 +11,34 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
 
 #import "SaveEditServiceGDiOSDelegate.h"
 
 #import "ViewController.h"
-#import "ServiceController.h"
+#import "AppKinetics_SaveEditService-Swift.h"
 
 @interface SaveEditServiceGDiOSDelegate()
 
 @property (nonatomic, assign) BOOL hasAuthorized;
-@property (strong, nonatomic) ServiceController *serviceController;
+@property (nonatomic, assign) BOOL didInstallMainUI;
+@property (nonatomic, assign) BOOL didNotifyAppDelegateAuthorization;
 
 -(instancetype)init;
--(void)didAuthorize;
+-(void)forwardAuthorizationToAppDelegateIfNeeded;
+-(void)tryInstallApplicationUI;
 
 @end
 
 @implementation SaveEditServiceGDiOSDelegate
+
+@synthesize sceneDelegate = _sceneDelegate;
+
+-(void)setSceneDelegate:(SaveEditServiceSceneDelegate *)sceneDelegate
+{
+    _sceneDelegate = sceneDelegate;
+    [self tryInstallApplicationUI];
+}
 
 +(instancetype)sharedInstance
 {
@@ -56,28 +65,28 @@
 -(void)setRootViewController:(ViewController *)rootViewController
 {
     _rootViewController = rootViewController;
-    [self didAuthorize];
 }
 
 -(void)setAppDelegate:(AppDelegate *)appDelegate
 {
     _appDelegate = appDelegate;
-    [self didAuthorize];
+    [self forwardAuthorizationToAppDelegateIfNeeded];
 }
 
--(void)didAuthorize
+-(void)forwardAuthorizationToAppDelegateIfNeeded
 {
-    if (self.hasAuthorized && self.rootViewController && self.appDelegate)
-    {
-        [self.appDelegate didAuthorize];
+    if (!self.hasAuthorized || !self.appDelegate || self.didNotifyAppDelegateAuthorization) {
+        return;
     }
+    self.didNotifyAppDelegateAuthorization = YES;
+    [self.appDelegate didAuthorize];
 }
 
 #pragma mark - Good Dynamics Delegate Methods
 -(void)handleEvent:(GDAppEvent*)anEvent
 {
     /* Called from _good when events occur, such as system startup. */
-    
+
     switch (anEvent.type)
     {
         case GDAppEventAuthorized:
@@ -121,7 +130,7 @@
 
 -(void)onNotAuthorized:(GDAppEvent*)anEvent {
     /* Handle the Good Libraries not authorized event. */
-    
+
     switch (anEvent.code) {
         case GDErrorActivationFailed:
         case GDErrorProvisioningFailed:
@@ -154,27 +163,13 @@
 
 -(void)onAuthorized:(GDAppEvent*)anEvent {
     /* Handle the Good Libraries authorized event. */
-    
+
     switch (anEvent.code) {
         case GDErrorNone: {
             if (!self.hasAuthorized) {
-                // launch application UI here
-                UIStoryboard *uiStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                UINavigationController *uiNavController = [uiStoryboard instantiateInitialViewController];
-                
-                self.appDelegate.window.rootViewController = uiNavController;
-                ViewController *rootVC = uiNavController.viewControllers.firstObject;
-                // create dependencies 
-                self.rootViewController = rootVC;
-                rootVC.serviceController = self.serviceController;
-                self.serviceController.receiveTextCompletion = ^(NSString * _Nonnull text) {
-                    [rootVC receiveText:text];
-                };
-                
                 self.hasAuthorized = YES;
-                
-                [self didAuthorize];
-                
+                [self forwardAuthorizationToAppDelegateIfNeeded];
+                [self tryInstallApplicationUI];
             }
             break;
         }
@@ -182,6 +177,15 @@
             NSAssert(false, @"authorized startup with an error");
             break;
     }
+}
+
+-(void)tryInstallApplicationUI
+{
+    if (!self.hasAuthorized || self.sceneDelegate == nil || self.didInstallMainUI) {
+        return;
+    }
+    self.didInstallMainUI = YES;
+    [self.sceneDelegate launchApplicationUI];
 }
 
 

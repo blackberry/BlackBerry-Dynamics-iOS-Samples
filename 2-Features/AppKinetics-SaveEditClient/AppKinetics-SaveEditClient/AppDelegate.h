@@ -1,4 +1,4 @@
-/* Copyright (c) 2023 BlackBerry Ltd.
+/* Copyright (c) 2026 BlackBerry Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property  (strong, nonatomic) ServiceController *serviceController;
-@property (strong, nonatomic) UIWindow *window;
 
 - (void)didAuthorize;
 		

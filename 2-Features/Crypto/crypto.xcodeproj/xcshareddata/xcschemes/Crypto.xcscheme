@@ -18,7 +18,7 @@
                BlueprintIdentifier = "CCDABF6A1F28CD5B0011FCA8"
                BuildableName = "Crypto.app"
                BlueprintName = "Crypto"
-               ReferencedContainer = "container:Crypto.xcodeproj">
+               ReferencedContainer = "container:crypto.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -37,7 +37,7 @@
                BlueprintIdentifier = "D55AD28D2433855500C00D48"
                BuildableName = "CryptoUITests.xctest"
                BlueprintName = "CryptoUITests"
-               ReferencedContainer = "container:Crypto.xcodeproj">
+               ReferencedContainer = "container:crypto.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -59,7 +59,7 @@
             BlueprintIdentifier = "CCDABF6A1F28CD5B0011FCA8"
             BuildableName = "Crypto.app"
             BlueprintName = "Crypto"
-            ReferencedContainer = "container:Crypto.xcodeproj">
+            ReferencedContainer = "container:crypto.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -76,7 +76,7 @@
             BlueprintIdentifier = "CCDABF6A1F28CD5B0011FCA8"
             BuildableName = "Crypto.app"
             BlueprintName = "Crypto"
-            ReferencedContainer = "container:Crypto.xcodeproj">
+            ReferencedContainer = "container:crypto.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

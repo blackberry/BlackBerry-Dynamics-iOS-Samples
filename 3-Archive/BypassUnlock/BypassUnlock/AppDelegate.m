@@ -16,14 +16,19 @@
 
 #import "AppDelegate.h"
 #import "BPCallManager.h"
-#import "BypassUnlockGDiOSDelegate.h"
+#import "BypassUnlock-Swift.h"
 #import <AVFoundation/AVFoundation.h>
+
+static const NSTimeInterval kVolumeKVOSuppressionInterval = 1.0;
 
 @interface AppDelegate ()
 
 @property (assign) BOOL coldStart;
 @property (strong, nonatomic) GDState *gdState;
 @property (nonatomic, strong) AVAudioSession *session;
+@property (nonatomic, assign) float lastLoggedOutputVolume;
+@property (nonatomic, assign) BOOL isGDLibraryInFront;
+@property (nonatomic, assign) CFAbsoluteTime volumeKVOSuppressedUntil;
 
 @end
 
@@ -45,6 +50,7 @@ static void *gdCurrentScreenContext = &gdCurrentScreenContext;
     [self disableAnimationsInUITests];
 
     self.coldStart = YES;
+    self.isGDLibraryInFront = NO;
     [BPCallManager sharedManager].appStarted = NO;
     
     [BypassUnlockGDiOSDelegate sharedInstance].appDelegate = self;
@@ -61,25 +67,18 @@ static void *gdCurrentScreenContext = &gdCurrentScreenContext;
     return YES;
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+#pragma mark - UISceneSession lifecycle
+
+- (UISceneConfiguration *)application:(UIApplication *)application configurationForConnectingSceneSession:(UISceneSession *)connectingSceneSession options:(UISceneConnectionOptions *)options {
+    UISceneConfiguration *sceneConfig = [[UISceneConfiguration alloc] initWithName:@"Default Configuration"
+                                                                       sessionRole:connectingSceneSession.role];
+    sceneConfig.delegateClass = [BypassUnlockSceneDelegate class];
+    sceneConfig.sceneClass = [UIWindowScene class];
+    sceneConfig.storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    return sceneConfig;
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-}
-
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    
-    // must set AVAudioSession active to true when returning to foreground
-    [self setupVolumeOutputKVO];
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+- (void)application:(UIApplication *)application didDiscardSceneSessions:(NSSet<UISceneSession *> *)sceneSessions {
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(nullable NSString *)sourceApplication annotation:(id)annotation {
@@ -95,13 +94,9 @@ static void *gdCurrentScreenContext = &gdCurrentScreenContext;
         NSLog(@"Will attempt bypass unlock screen from background state ...");
     }
     
-    [[BPCallManager sharedManager] simulateCall];
+    [[BPCallManager sharedManager] simulateCall:@"notifierURL"];
     
     return YES;
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
 -(void)didAuthorize
@@ -110,6 +105,39 @@ static void *gdCurrentScreenContext = &gdCurrentScreenContext;
     if (![BPCallManager sharedManager].appStarted) {
         [BPCallManager sharedManager].appStarted = YES;
     }
+}
+
+- (BOOL)shouldHandleVolumeBypassForOutputVolumeChange {
+    if (CFAbsoluteTimeGetCurrent() < self.volumeKVOSuppressedUntil) {
+        NSLog(@"BypassUnlock: ignoring outputVolume change during AVAudioSession stabilization");
+        return NO;
+    }
+    
+    UIApplicationState applicationState = [UIApplication sharedApplication].applicationState;
+    BOOL appStarted = [BPCallManager sharedManager].appStarted;
+    
+    if (applicationState == UIApplicationStateBackground) {
+        NSLog(@"BypassUnlock: ignoring outputVolume change while app is in background");
+        return NO;
+    }
+    
+    // when biometric unlock or the system volume HUD shown the app is often inactive,
+    // not active
+    // allow volume bypass once the app has started.
+    // foreground activation screens still require active.
+    if (!appStarted) {
+        if (applicationState != UIApplicationStateActive) {
+            NSLog(@"BypassUnlock: ignoring outputVolume change during activation while app is not active");
+            return NO;
+        }
+        
+        if (!self.isGDLibraryInFront) {
+            NSLog(@"BypassUnlock: ignoring outputVolume change before GD activation UI is in front");
+            return NO;
+        }
+    }
+    
+    return YES;
 }
 
 #pragma mark - Good Dynamics observers for state changes (KVO)
@@ -160,7 +188,24 @@ static void *gdCurrentScreenContext = &gdCurrentScreenContext;
         [self handleChangeInLibraryScreen:oldScreen withNewScreen:newScreen];
         
     } else if ([keyPath isEqualToString:@"outputVolume"]) {
-        [[BPCallManager sharedManager] simulateCall];
+        id oldValue = change[NSKeyValueChangeOldKey];
+        id newValue = change[NSKeyValueChangeNewKey];
+        float oldVolume = [oldValue isKindOfClass:[NSNumber class]] ? [oldValue floatValue] : NAN;
+        float newVolume = [newValue isKindOfClass:[NSNumber class]] ? [newValue floatValue] : self.session.outputVolume;
+        
+        NSLog(@"BypassUnlock: outputVolume changed old=%.4f new=%.4f appStarted=%@ gdLibraryInFront=%@",
+              oldVolume,
+              newVolume,
+              [BPCallManager sharedManager].appStarted ? @"YES" : @"NO",
+              self.isGDLibraryInFront ? @"YES" : @"NO");
+        
+        self.lastLoggedOutputVolume = newVolume;
+        
+        if (![self shouldHandleVolumeBypassForOutputVolumeChange]) {
+            return;
+        }
+        
+        [[BPCallManager sharedManager] simulateCall:@"volumeButtonKVO"];
     } else {
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
@@ -221,10 +266,12 @@ static void *gdCurrentScreenContext = &gdCurrentScreenContext;
 {
     switch (newState) {
         case GDUIStateGDLibraryInFront:
+            self.isGDLibraryInFront = YES;
             NSLog(@"gdState: GD library user interface is now in front");
             break;
             
         case GDUIStateApplicationInFront:
+            self.isGDLibraryInFront = NO;
             NSLog(@"gdState: Application user interface is now in front");
             break;
             
@@ -274,12 +321,22 @@ static void *gdCurrentScreenContext = &gdCurrentScreenContext;
 - (void)setupVolumeOutputKVO {
     if (self.session == nil) {
         self.session = [AVAudioSession sharedInstance];
+        self.lastLoggedOutputVolume = self.session.outputVolume;
         
-        [self.session addObserver:self forKeyPath: @"outputVolume"
-                          options: NSKeyValueObservingOptionNew
+        [self.session addObserver:self forKeyPath:@"outputVolume"
+                          options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld)
                           context: nil];
     }
-    [self.session setActive:YES error:nil];
+    
+    self.volumeKVOSuppressedUntil = CFAbsoluteTimeGetCurrent() + kVolumeKVOSuppressionInterval;
+    
+    NSError *sessionError = nil;
+    [self.session setActive:YES error:&sessionError];
+    if (sessionError != nil) {
+        NSLog(@"BypassUnlock: AVAudioSession setActive failed: %@", sessionError.localizedDescription);
+    }
+    
+    self.lastLoggedOutputVolume = self.session.outputVolume;
 }
 
 @end

@@ -10,6 +10,13 @@
 	<string>60</string>
 	<key>objects</key>
 	<dict>
+		<key>35FF959B14B54B889F18A6F1</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>productRef</key>
+			<string>71AEA7CAAFE5447C822DEFCD</string>
+		</dict>
 		<key>38327913286D080C0019DAFF</key>
 		<dict>
 			<key>children</key>
@@ -53,6 +60,10 @@
 			</array>
 			<key>mainGroup</key>
 			<string>38327913286D080C0019DAFF</string>
+			<key>packageReferences</key>
+			<array>
+				<string>5FD4B4029598456B85F200B2</string>
+			</array>
 			<key>productRefGroup</key>
 			<string>3832791D286D080D0019DAFF</string>
 			<key>projectDirPath</key>
@@ -99,6 +110,7 @@
 			<array>
 				<string>F60CD6FB2B768995006FD5A2</string>
 				<string>3832791F286D080D0019DAFF</string>
+				<string>W2M3SCENE2E060001</string>
 				<string>38327923286D080D0019DAFF</string>
 				<string>F67824F52C29DEF9000E31DE</string>
 				<string>F67824FA2C29E576000E31DE</string>
@@ -313,7 +325,7 @@
 				<key>GENERATE_INFOPLIST_FILE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>17.0</string>
+				<string>18.0</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
 				<string>INCLUDE_SOURCE</string>
 				<key>MTL_FAST_MATH</key>
@@ -327,7 +339,7 @@
 				<key>SWIFT_VERSION</key>
 				<string>5.0</string>
 				<key>WATCHOS_DEPLOYMENT_TARGET</key>
-				<string>9.0</string>
+				<string>11.0</string>
 			</dict>
 			<key>isa</key>
 			<string>XCBuildConfiguration</string>
@@ -427,7 +439,7 @@
 				<key>GENERATE_INFOPLIST_FILE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>17.0</string>
+				<string>18.0</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
 				<string>NO</string>
 				<key>MTL_FAST_MATH</key>
@@ -441,7 +453,7 @@
 				<key>VALIDATE_PRODUCT</key>
 				<string>YES</string>
 				<key>WATCHOS_DEPLOYMENT_TARGET</key>
-				<string>9.0</string>
+				<string>11.0</string>
 			</dict>
 			<key>isa</key>
 			<string>XCBuildConfiguration</string>
@@ -512,6 +524,11 @@
 			<string>PBXNativeTarget</string>
 			<key>name</key>
 			<string>MessengerWatchApp</string>
+			<key>packageProductDependencies</key>
+			<array>
+				<string>4646866D929A4FB0AACA21EA</string>
+				<string>DD28B76703D74C2EB832114C</string>
+			</array>
 			<key>productName</key>
 			<string>FreshWatch16 Watch App</string>
 			<key>productReference</key>
@@ -561,7 +578,10 @@
 			<key>buildActionMask</key>
 			<string>2147483647</string>
 			<key>files</key>
-			<array/>
+			<array>
+				<string>4C6DA8694204410E819221FA</string>
+				<string>67EDBD4EA4D645A28E2ADBE6</string>
+			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
@@ -645,6 +665,8 @@
 				<string>com.blackberry.dynamics.sample.watchmessenger</string>
 				<key>INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp</key>
 				<string>NO</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>18.0</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -672,7 +694,7 @@
 				<key>TARGETED_DEVICE_FAMILY</key>
 				<string>4</string>
 				<key>WATCHOS_DEPLOYMENT_TARGET</key>
-				<string>9.0</string>
+				<string>11.0</string>
 			</dict>
 			<key>isa</key>
 			<string>XCBuildConfiguration</string>
@@ -705,6 +727,8 @@
 				<string>com.blackberry.dynamics.sample.watchmessenger</string>
 				<key>INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp</key>
 				<string>NO</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>18.0</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -732,7 +756,7 @@
 				<key>TARGETED_DEVICE_FAMILY</key>
 				<string>4</string>
 				<key>WATCHOS_DEPLOYMENT_TARGET</key>
-				<string>9.0</string>
+				<string>11.0</string>
 			</dict>
 			<key>isa</key>
 			<string>XCBuildConfiguration</string>
@@ -774,6 +798,11 @@
 			<string>PBXNativeTarget</string>
 			<key>name</key>
 			<string>MessengerApp</string>
+			<key>packageProductDependencies</key>
+			<array>
+				<string>71AEA7CAAFE5447C822DEFCD</string>
+				<string>BDC571C84E9D4664B0B93746</string>
+			</array>
 			<key>productName</key>
 			<string>FreshApp16</string>
 			<key>productReference</key>
@@ -791,6 +820,7 @@
 				<string>F67824F92C29DEF9000E31DE</string>
 				<string>38BB04AA2B35FBF10002A183</string>
 				<string>38BB04AB2B35FBF10002A183</string>
+				<string>W2M3SCENE2E060011</string>
 				<string>F67824FC2C29E576000E31DE</string>
 			</array>
 			<key>isa</key>
@@ -817,7 +847,10 @@
 			<key>buildActionMask</key>
 			<string>2147483647</string>
 			<key>files</key>
-			<array/>
+			<array>
+				<string>35FF959B14B54B889F18A6F1</string>
+				<string>9587A074CEFC4C2D9CEB0959</string>
+			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
@@ -939,14 +972,14 @@
 				<string>YES</string>
 				<key>INFOPLIST_KEY_UILaunchStoryboardName</key>
 				<string>LaunchScreen.storyboard</string>
-				<key>INFOPLIST_KEY_UIMainStoryboardFile</key>
-				<string>Main</string>
 				<key>INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad</key>
 				<string>UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight</string>
 				<key>INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone</key>
 				<string>UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight</string>
 				<key>INFOPLIST_KEY_WKCompanionAppBundleIdentifier</key>
 				<string>com.blackberry.dynamics.sample.watchmessenger.watchapp</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>18.0</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -998,14 +1031,14 @@
 				<string>YES</string>
 				<key>INFOPLIST_KEY_UILaunchStoryboardName</key>
 				<string>LaunchScreen.storyboard</string>
-				<key>INFOPLIST_KEY_UIMainStoryboardFile</key>
-				<string>Main</string>
 				<key>INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad</key>
 				<string>UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight</string>
 				<key>INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone</key>
 				<string>UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight</string>
 				<key>INFOPLIST_KEY_WKCompanionAppBundleIdentifier</key>
 				<string>com.blackberry.dynamics.sample.watchmessenger.watchapp</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>18.0</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -1115,6 +1148,52 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>4646866D929A4FB0AACA21EA</key>
+		<dict>
+			<key>isa</key>
+			<string>XCSwiftPackageProductDependency</string>
+			<key>package</key>
+			<string>5FD4B4029598456B85F200B2</string>
+			<key>productName</key>
+			<string>BlackBerryDynamics</string>
+		</dict>
+		<key>4C6DA8694204410E819221FA</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>productRef</key>
+			<string>4646866D929A4FB0AACA21EA</string>
+		</dict>
+		<key>5FD4B4029598456B85F200B2</key>
+		<dict>
+			<key>isa</key>
+			<string>XCRemoteSwiftPackageReference</string>
+			<key>repositoryURL</key>
+			<string>https://github.com/blackberry/BlackBerry-Dynamics-iOS-SDK</string>
+			<key>requirement</key>
+			<dict>
+				<key>branch</key>
+				<string>main</string>
+				<key>kind</key>
+				<string>branch</string>
+			</dict>
+		</dict>
+		<key>67EDBD4EA4D645A28E2ADBE6</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>productRef</key>
+			<string>DD28B76703D74C2EB832114C</string>
+		</dict>
+		<key>71AEA7CAAFE5447C822DEFCD</key>
+		<dict>
+			<key>isa</key>
+			<string>XCSwiftPackageProductDependency</string>
+			<key>package</key>
+			<string>5FD4B4029598456B85F200B2</string>
+			<key>productName</key>
+			<string>BlackBerryDynamics</string>
+		</dict>
 		<key>92A524C62C63C0D7008FFAF7</key>
 		<dict>
 			<key>fileEncoding</key>
@@ -1127,6 +1206,31 @@
 			<string>README.md</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9587A074CEFC4C2D9CEB0959</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>productRef</key>
+			<string>BDC571C84E9D4664B0B93746</string>
+		</dict>
+		<key>BDC571C84E9D4664B0B93746</key>
+		<dict>
+			<key>isa</key>
+			<string>XCSwiftPackageProductDependency</string>
+			<key>package</key>
+			<string>5FD4B4029598456B85F200B2</string>
+			<key>productName</key>
+			<string>GSEProvider</string>
+		</dict>
+		<key>DD28B76703D74C2EB832114C</key>
+		<dict>
+			<key>isa</key>
+			<string>XCSwiftPackageProductDependency</string>
+			<key>package</key>
+			<string>5FD4B4029598456B85F200B2</string>
+			<key>productName</key>
+			<string>GSEProvider</string>
 		</dict>
 		<key>F60CD6F62B766EB0006FD5A2</key>
 		<dict>
@@ -1323,6 +1427,24 @@
 		<dict>
 			<key>fileRef</key>
 			<string>F678250C2C2B200E000E31DE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>W2M3SCENE2E060001</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>MessengerHandheldAppSceneDelegate.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>W2M3SCENE2E060011</key>
+		<dict>
+			<key>fileRef</key>
+			<string>W2M3SCENE2E060001</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>

@@ -18,7 +18,7 @@
 #import <UIKit/UIApplication.h>
 #import "BPCallManager.h"
 #import "AppDelegate.h"
-#import "BypassUnlockGDiOSDelegate.h"
+#import "BypassUnlock-Swift.h"
 
 @interface BPCallManager ()
 
@@ -56,6 +56,7 @@
     appIdleLocked = isAppIdleLocked;
     
     if ( allowCompletion ) {
+        NSLog(@"BypassUnlock: running deferred bypass presentation after idle unlock");
         dispatch_async(dispatch_get_main_queue(), ^{
             self.appUnlockCompletion();
             self.appUnlockCompletion = NULL;
@@ -69,6 +70,7 @@
     appStarted = isAppStarted;
     
     if ( allowCompletion ) {
+        NSLog(@"BypassUnlock: running deferred bypass presentation after appStarted became YES");
         dispatch_async(dispatch_get_main_queue(), ^{
             self.appUnlockCompletion();
             self.appUnlockCompletion = NULL;
@@ -80,23 +82,36 @@
 
 #pragma mark - BPCallSimulation
 
+@interface BPCallManager (BPCallSimulationPrivate)
+- (void)continueCallUsingViewController:(UIViewController *)viewController completion:(void (^ _Nullable)(void))completion trigger:(NSString *)trigger;
+@end
+
 @implementation BPCallManager (BPCallSimulation)
 
-- (void)simulateCall {
+- (void)simulateCall:(NSString *)trigger {
+    NSLog(@"BypassUnlock: simulateCall trigger=%@ appStarted=%@ appIdleLocked=%@",
+          trigger,
+          self.appStarted ? @"YES" : @"NO",
+          self.appIdleLocked ? @"YES" : @"NO");
     
     if (![NSThread isMainThread]) {
-        [self performSelectorOnMainThread:@selector(simulateCall) withObject:nil waitUntilDone:NO];
+        [self performSelectorOnMainThread:@selector(simulateCall:) withObject:trigger waitUntilDone:NO];
         return;
-    } else {
-        UIViewController *incallViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"incallViewController"];
-        
-        [self continueCallUsingViewController:incallViewController completion:nil];
     }
+    
+    UIViewController *incallViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"incallViewController"];
+    
+    [self continueCallUsingViewController:incallViewController completion:nil trigger:trigger];
 }
 
-- (void)continueCallUsingViewController:(UIViewController *)viewController completion:(void (^ _Nullable)(void))completion{
+- (void)continueCallUsingViewController:(UIViewController *)viewController completion:(void (^ _Nullable)(void))completion {
+    [self continueCallUsingViewController:viewController completion:completion trigger:@"unspecified"];
+}
+
+- (void)continueCallUsingViewController:(UIViewController *)viewController completion:(void (^ _Nullable)(void))completion trigger:(NSString *)trigger {
 
     void (^block)(void) = ^{
+        NSLog(@"BypassUnlock: presenting BPIncallViewController (trigger=%@)", trigger);
         
         UINavigationController *rootViewController = (UINavigationController *)[BypassUnlockGDiOSDelegate sharedInstance].rootViewController;
         UIViewController *incallViewController = viewController;
@@ -124,14 +139,13 @@
      * Presenting bypass view controller if app is provisioned or unlocked from cold start.
      */
     if ( self.appStarted ) {
-        
         block();
     
     /*
      * Or schedule its presenting
      */
     } else {
-        
+        NSLog(@"BypassUnlock: scheduling deferred bypass presentation (trigger=%@)", trigger);
         self.appUnlockCompletion = block;
         
     }

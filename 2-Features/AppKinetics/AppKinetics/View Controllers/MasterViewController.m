@@ -22,6 +22,17 @@
 #import <BlackBerryDynamics/GD/GDFileManager.h>
 #import <BlackBerryDynamics/GD/GDCReadStream.h>
 #import "UIAccessibilityIdentifiers.h"
+#import "AppKinetics-Swift.h"
+
+
+static UIViewController *AKTopPresenterForWindow(UIWindow *window)
+{
+    UIViewController *vc = window.rootViewController;
+    while (vc.presentedViewController != nil) {
+        vc = vc.presentedViewController;
+    }
+    return vc;
+}
 
 
 @interface MasterViewController ()
@@ -392,8 +403,15 @@
     // We're only interested in OK action i.e. Overwrite, for Cancel we don't do anything.
     [alert prepareInvocationForOKButtonWithSelector:@selector(saveReceivedFile:filePath:)
                                          withObject:self andArguments:pathToSave, filePath, nil];
-    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    UIViewController *presenter = appDelegate.window.rootViewController;
+    AppKineticsSceneDelegate *sceneDelegate = [AppKineticsGDiOSDelegate sharedInstance].sceneDelegate;
+    UIWindow *sceneWindow = sceneDelegate.window;
+    UIViewController *presenter = sceneWindow ? AKTopPresenterForWindow(sceneWindow) : nil;
+    if (presenter == nil) {
+        presenter = self;
+        while (presenter.presentedViewController != nil) {
+            presenter = presenter.presentedViewController;
+        }
+    }
     [presenter presentViewController:alert animated:YES completion:nil];
 }
 

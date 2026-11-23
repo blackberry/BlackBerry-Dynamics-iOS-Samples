@@ -57,6 +57,23 @@
 	<string>Allow camera usage to scan a QR code</string>
 	<key>NSFaceIDUsageDescription</key>
 	<string>Enables authentication without a password.</string>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<false/>
+		<key>UISceneConfigurations</key>
+		<dict>
+			<key>UIWindowSceneSessionRoleApplication</key>
+			<array>
+				<dict>
+					<key>UISceneConfigurationName</key>
+					<string>DefaultConfiguration</string>
+					<key>UISceneDelegateClassName</key>
+					<string>GreetingsServerSceneDelegate</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiresFullScreen</key>

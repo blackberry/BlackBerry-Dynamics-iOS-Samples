@@ -16,7 +16,8 @@
 
 #import "BPStartViewController.h"
 #import "BPContactsViewController.h"
-#import "BypassUnlockGDiOSDelegate.h"
+#import "BypassUnlock-Swift.h"
+#import "LocalComplianceManager.h"
 #import "UIAccessibilityIdentifiers.h"
 
 @import BlackBerryDynamics.Runtime;

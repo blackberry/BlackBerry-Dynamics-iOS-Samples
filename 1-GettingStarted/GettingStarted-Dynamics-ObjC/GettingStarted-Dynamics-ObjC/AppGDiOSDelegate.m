@@ -17,15 +17,13 @@
 #import <Foundation/Foundation.h>
 @import BlackBerryDynamics.Runtime;
 #import "AppGDiOSDelegate.h"
-#import "RootViewController.h"
-#import "AppDelegate.h"
+#import "GettingStartedDynamicsObjCSceneDelegate.h"
 
 @interface AppGDiOSDelegate()
 
 @property(assign, nonatomic) BOOL hasAuthorized;
 
 -(instancetype)init;
--(void)didAuthorize;
 
 @end
 
@@ -47,26 +45,18 @@
     return self;
 }
 
--(void)setRootViewController:(RootViewController *)rootViewController
+-(void)setSceneDelegate:(GettingStartedDynamicsObjCSceneDelegate *)sceneDelegate
 {
-    _rootViewController = rootViewController;
-    [self didAuthorize];
+    _sceneDelegate = sceneDelegate;
+    [self onSceneDelegateAndAuthorizationReady];
 }
 
--(void)setAppDelegate:(AppDelegate *)appDelegate
+- (void)onSceneDelegateAndAuthorizationReady
 {
-    _appDelegate = appDelegate;
-    [self didAuthorize];
-}
-
--(void)didAuthorize
-{
-    if (self.hasAuthorized && self.rootViewController && self.appDelegate){
-        [self.appDelegate didAuthorize];
+    if (self.hasAuthorized && self.sceneDelegate) {
+        [self.sceneDelegate launchApplicationUI];
     }
 }
-
-
 
 -(void)handleEvent:(GDAppEvent *)anEvent {
     
@@ -155,18 +145,8 @@
         {
             if (!self.hasAuthorized)
             {
-                // launch application UI here
                 self.hasAuthorized = YES;
-
-                UIStoryboard *uiStoryboard =
-                [UIStoryboard storyboardWithName:@"Main"
-                                          bundle:nil]; UIViewController *uiViewController =
-                [uiStoryboard instantiateInitialViewController];
-                
-                self.appDelegate.window.rootViewController = uiViewController;
-                
-                [self didAuthorize];
-
+                [self onSceneDelegateAndAuthorizationReady];
             }
             break;
         }

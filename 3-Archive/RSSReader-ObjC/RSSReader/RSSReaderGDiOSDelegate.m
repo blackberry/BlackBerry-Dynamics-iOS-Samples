@@ -15,8 +15,7 @@
  */
 
 #import "RSSReaderGDiOSDelegate.h"
-#import "Utilities.h"
-#import "RSSManager.h"
+#import "RSSReaderObjCSceneDelegate.h"
 
 @interface RSSReaderGDiOSDelegate()
 
@@ -26,23 +25,24 @@
 
 @implementation RSSReaderGDiOSDelegate
 
--(void)setrssReaderAppDelegate:(AppDelegate *)rssReaderAppDelegate
+- (void)setSceneDelegate:(RSSReaderObjCSceneDelegate *)sceneDelegate
 {
-    _rssReaderAppDelegate = rssReaderAppDelegate;
-    [self didAuthorize];
+    _sceneDelegate = sceneDelegate;
+    [self onSceneDelegateAndAuthorizationReady];
 }
 
--(void)didAuthorize
+- (void)onSceneDelegateAndAuthorizationReady
 {
-    if (self.hasAuthorized && self.rssReaderAppDelegate) {
-        NSLog(@"%s", __FUNCTION__);
-    }
-    
-    GDAuthDelegateInfo* gdAuthDelegateInfo = [[GDiOS sharedInstance] getAuthDelegate];
+    if (self.hasAuthorized && self.sceneDelegate) {
+        GDAuthDelegateInfo* gdAuthDelegateInfo = [[GDiOS sharedInstance] getAuthDelegate];
 
-    NSLog(@"didAuthorize getAuthDelegate Name = %@, address = %@, applicationId = %@, isAuthenticationDelegated = %@",
-          gdAuthDelegateInfo.name, gdAuthDelegateInfo.address, gdAuthDelegateInfo.applicationId,
-          gdAuthDelegateInfo.isAuthenticationDelegated ? @"YES" : @"NO");
+        NSLog(@"%s getAuthDelegate Name = %@, address = %@, applicationId = %@, isAuthenticationDelegated = %@",
+              __FUNCTION__,
+              gdAuthDelegateInfo.name, gdAuthDelegateInfo.address, gdAuthDelegateInfo.applicationId,
+              gdAuthDelegateInfo.isAuthenticationDelegated ? @"YES" : @"NO");
+
+        [self.sceneDelegate launchApplicationUI];
+    }
 }
 
 +(instancetype)sharedInstance
@@ -60,7 +60,7 @@
 -(void)handleEvent:(GDAppEvent*)anEvent
 {
     /* Called from _good when events occur, such as system startup. */
-    
+
     switch (anEvent.type)
     {
         case GDAppEventAuthorized:
@@ -104,7 +104,7 @@
 -(void) onNotAuthorized:(GDAppEvent*)anEvent
 {
     /* Handle the Good Libraries not authorized event. */
-    
+
     switch (anEvent.code) {
         case GDErrorActivationFailed:
         case GDErrorProvisioningFailed:
@@ -133,40 +133,12 @@
 -(void) onAuthorized:(GDAppEvent*)anEvent
 {
     /* Handle the Good Libraries authorized event. */
-    
+
     switch (anEvent.code) {
         case GDErrorNone: {
             if (!self.hasAuthorized) {
-                // launch application UI here
-                UIWindow *appWindow = self.rssReaderAppDelegate.window;
-                appWindow.tintColor = RGB(52.f, 69.f, 84.f);
-                //Detect the device
-                if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
-                {
-                    /*
-                     *	iPhone start - based on single UINavigationController
-                     */
-                    // Setup the rootviewcontroller and a navigation controller (for the splitviewcontroller)
-                    self.navController = [[Utilities storyboard] instantiateViewControllerWithIdentifier:@"iPhoneNC"];
-                    
-                    appWindow.rootViewController = _navController;
-                }
-                else
-                {
-                    
-                    /*
-                     *	iPad start - based on UISplitViewController
-                     */
-                    self.splitViewController = [[Utilities storyboard] instantiateViewControllerWithIdentifier:@"SplitVC"];
-                    
-                    self.navController = [self.splitViewController.viewControllers firstObject];
-                    self.detailNavigationController = [self.splitViewController.viewControllers lastObject];
-                    self.rssReaderAppDelegate.window.rootViewController = self.splitViewController;
-                    
-                }
-                [[RSSManager sharedRSSManager] setAlertPresenter:self.navController];
                 self.hasAuthorized = YES;
-                [self didAuthorize];
+                [self onSceneDelegateAndAuthorizationReady];
             }
             break;
         }
@@ -175,6 +147,5 @@
             break;
     }
 }
-
 
 @end

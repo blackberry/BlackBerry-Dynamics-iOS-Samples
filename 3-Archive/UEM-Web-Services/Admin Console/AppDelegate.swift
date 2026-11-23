@@ -16,122 +16,23 @@
 
 import UIKit
 import GD.Runtime
-import IQKeyboardManagerSwift
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, GDiOSDelegate {
+@main
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
-    var good: GDiOS?
-    var started: Bool = false
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        
-        self.window = GDiOS.sharedInstance().getWindow()
-        self.good = GDiOS.sharedInstance()
-        
-        self.good!.delegate = self
-        self.started = false
-        
-        // Show the Good Authentication UI.
-        self.good!.authorize()
-        
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        GDiOS.sharedInstance().authorize(AdminConsoleGDiOSDelegate.shared)
         return true
     }
 
-    func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        let sceneConfig = UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+        sceneConfig.delegateClass = AdminConsoleSceneDelegate.self
+        sceneConfig.sceneClass = UIWindowScene.self
+        sceneConfig.storyboard = UIStoryboard(name: "Main", bundle: nil)
+        return sceneConfig
     }
 
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
     }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-    }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    }
-
-    func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
-    // MARK: - Good Dynamics Delegate Methods
-    
-    func handle(_ anEvent: GDAppEvent) {
-        
-        switch anEvent.type {
-        case .authorized:
-            onAuthorized(anEvent: anEvent)
-            break;
-            
-        case .notAuthorized:
-            self.onNotAuthorized(anEvent: anEvent)
-            break;
-            
-        case .remoteSettingsUpdate:
-            //A change to application-related configuration or policy settings.
-            break;
-            
-        case .servicesUpdate:
-            //A change to services-related configuration.
-            break;
-            
-        case .policyUpdate:
-            //A change to one or more application-specific policy settings has been received.
-            break;
-            
-        default:
-            print("handleEvent \(anEvent.message)")
-        }
-    }
-    
-    
-    func onNotAuthorized(anEvent:GDAppEvent ) {
-        /* Handle the Good Libraries not authorized event. */
-        switch anEvent.code {
-        case .errorActivationFailed: break
-        case .errorProvisioningFailed: break
-        case .errorPushConnectionTimeout: break
-        case .errorSecurityError: break
-        case .errorAppDenied: break
-        case .errorAppVersionNotEntitled: break
-        case .errorBlocked: break
-        case .errorWiped: break
-        case .errorRemoteLockout: break
-        case .errorPasswordChangeRequired:
-            // an condition has occured denying authorization, an application may wish to log these events
-            print("onNotAuthorized \(anEvent.message)")
-        case .errorIdleLockout:
-            // idle lockout is benign & informational
-            break
-            
-        default: assert(false, "Unhandled not authorized event");
-        }
-    }
-    
-    
-    func onAuthorized(anEvent:GDAppEvent ) {
-        /* Handle the Good Libraries authorized event. */
-        switch anEvent.code {
-        case .errorNone:
-            if !self.started {
-                self.started = true
-                // launch application UI here
-                IQKeyboardManager.sharedManager().enable = true
-                self.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "navigationController")
-            }
-        default:
-            assert(false, "Authorized startup with an error")
-            break
-        }
-    }
-
-
 }
-

@@ -17,7 +17,7 @@
 #import "InputBlockingHandler.h"
 
 #import "BBDInputBlocker.h"
-#import "AppDelegate.h"
+#import "AutoFillBlocking-Swift.h"
 #import "BBDAutoFillBlockerField.h"
 
 @implementation InputBlockingHandler
@@ -96,8 +96,8 @@
     [alertController addAction:[UIAlertAction actionWithTitle:@"OK"
                                                         style:UIAlertActionStyleDefault
                                                       handler:nil]];
-    AppDelegate* delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    [delegate.window.rootViewController presentViewController:alertController animated:YES completion:nil];
+    UIWindow *window = [AutoFillBlockingSceneDelegate presentationWindow];
+    [window.rootViewController presentViewController:alertController animated:YES completion:nil];
 }
 
 @end

@@ -20,11 +20,10 @@
 #import <BlackBerryDynamics/GD/GDServiceProvider.h>
 
 #import "ServiceController.h"
-#import "AppDelegate.h"
 #import "constants.h"
-#import "GreetingsClientGDiOsDelegate.h"
 #import "UIAccessibilityIdentifiers.h"
 #import <BlackBerryDynamics/GD/GDServices.h>
+#import "GreetingsClient-Swift.h"
 
 @interface ServiceInfo : NSObject
 @property (strong, nonatomic) NSString* serviceId;
@@ -92,9 +91,18 @@
     
     // Get available service providers for each service and update buttons.
     [self processProviderDetails];
-
-    [GreetingsClientGDiOSDelegate sharedInstance].rootViewController = self;
-    [GreetingsClientGDiOSDelegate sharedInstance].serviceController.delegate = self;
+    
+    [GreetingsClientGDiOSDelegate shared].serviceController.delegate = self;
+    
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        UIImage *gearImage = [UIImage imageNamed:@"SettingsImage"];
+        UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc]
+                                           initWithImage:gearImage
+                                           style:UIBarButtonItemStylePlain
+                                           target:self
+                                           action:@selector(showSettings:)];
+        self.navigationItem.rightBarButtonItem = settingsButton;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -175,7 +183,7 @@
                                                   style:UIAlertActionStyleDefault
                                                 handler:^(UIAlertAction * _Nonnull action) {
             NSError* serviceRequestError = nil;
-            ServiceController* serviceController = [GreetingsClientGDiOSDelegate sharedInstance].serviceController;
+            ServiceController* serviceController = [GreetingsClientGDiOSDelegate shared].serviceController;
             [serviceController sendRequest:&serviceRequestError
                                requestType:serviceController.lastRequest
                                     sendTo:kGreetingsServerAppId];
@@ -206,7 +214,7 @@
 {
     NSError* serviceRequestError = nil;
     
-    ServiceController* serviceController = [GreetingsClientGDiOSDelegate sharedInstance].serviceController;
+    ServiceController* serviceController = [GreetingsClientGDiOSDelegate shared].serviceController;
     
     // send a 'Greet me' request to the Greetings Server...
     BOOL didSendRequest;
@@ -229,7 +237,7 @@
 {
     NSError* serviceRequestError = nil;
 
-    ServiceController* serviceController = [GreetingsClientGDiOSDelegate sharedInstance].serviceController;
+    ServiceController* serviceController = [GreetingsClientGDiOSDelegate shared].serviceController;
     
     //Send a request to bring the Greetings Server app to the front
     BOOL didBringToFront = [serviceController sendRequest:&serviceRequestError requestType:BringServiceAppToFront sendTo:kGreetingsServerAppId];
@@ -244,7 +252,7 @@
 {
     NSError* serviceRequestError = nil;
 
-    ServiceController* serviceController = [GreetingsClientGDiOSDelegate sharedInstance].serviceController;
+    ServiceController* serviceController = [GreetingsClientGDiOSDelegate shared].serviceController;
     
     // request files be sent to the Greetings Server...
     BOOL didRequestFilesToBeSent = [serviceController sendRequest:&serviceRequestError requestType:SendFiles sendTo:kGreetingsServerAppId];
@@ -260,7 +268,7 @@
 {
     NSError* serviceRequestError = nil;
     
-    ServiceController* serviceController = [GreetingsClientGDiOSDelegate sharedInstance].serviceController;
+    ServiceController* serviceController = [GreetingsClientGDiOSDelegate shared].serviceController;
     
     // request date and Time from the service provider
     BOOL didRequestDateAndTime = [serviceController sendRequest:&serviceRequestError requestType:GetDateAndTime sendTo:kGreetingsServerAppId];
@@ -302,7 +310,7 @@
     for(ServiceInfo* serviceInfo in serviceButtons)
     {
         // query the service provider details for this service
-        NSArray* providers = [appDel getProvidersForService:serviceInfo.serviceId];
+        NSArray* providers = [appDel getProvidersForServiceWithServiceId:serviceInfo.serviceId];
         
         // enable button if service provider is available for this service
         if([providers count] > 0)
@@ -320,6 +328,19 @@
             [serviceInfo.button setAlpha:0.4];
             
             serviceInfo.applicationId = nil;
+        }
+    }
+}
+
+- (void)showSettings:(id)sender
+{
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        UISplitViewController *splitVC = self.splitViewController;
+        if (splitVC) {
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPad" bundle:nil];
+            UIViewController *settingsVC = [storyboard instantiateViewControllerWithIdentifier:@"SettingsViewController"];
+            UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:settingsVC];
+            [splitVC showDetailViewController:navController sender:self];
         }
     }
 }

@@ -50,7 +50,8 @@
 		8B2533141DD0D7D8007BDE5D /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B2533131DD0D7D8007BDE5D /* Entitlements.plist */; };
 		95CCA92628F4D3C3002C13CE /* CryptoTokenKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CCA92428F4D3C3002C13CE /* CryptoTokenKit.framework */; };
 		9915102F21DCE58E00190D05 /* DeviceCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9915102D21DCE58D00190D05 /* DeviceCheck.framework */; };
-		FBC130771E0030E600BA169C /* BypassUnlockGDiOSDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC130761E0030E600BA169C /* BypassUnlockGDiOSDelegate.m */; };
+		B1C233A41E10000600000001 /* BypassUnlockSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C233A41E10000600000002 /* BypassUnlockSceneDelegate.swift */; };
+		B1C233A41E10000600000003 /* BypassUnlockGDiOSDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C233A41E10000600000004 /* BypassUnlockGDiOSDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,9 +120,9 @@
 		3B5961251FD8378D00095062 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "BypassUnlock/Supporting Files/zh-Hans.lproj/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
 		3BFC786F1FE011CF00624EBE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "../BypassUnlock/Supporting Files/en.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		49D3D1BF2ED0DA6100A00F65 /* GSEProvider.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GSEProvider.xcframework; path = ../../../../../msdk/nexus/certicom/ios/GSEProvider.xcframework; sourceTree = "<group>"; };
-		5609A8B422456264009C6628 /* LocalComplianceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalComplianceManager.h; path = bypassunlock/Helpers/LocalComplianceManager.h; sourceTree = SOURCE_ROOT; };
-		5609A8B622456265009C6628 /* LocalComplianceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalComplianceManager.m; path = bypassunlock/Helpers/LocalComplianceManager.m; sourceTree = SOURCE_ROOT; };
-		62689BF31CB322CC006DC45A /* notifier.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = notifier.xcodeproj; path = bypassunlock/notifier/notifier.xcodeproj; sourceTree = "<group>"; };
+		5609A8B422456264009C6628 /* LocalComplianceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalComplianceManager.h; path = BypassUnlock/Helpers/LocalComplianceManager.h; sourceTree = SOURCE_ROOT; };
+		5609A8B622456265009C6628 /* LocalComplianceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalComplianceManager.m; path = BypassUnlock/Helpers/LocalComplianceManager.m; sourceTree = SOURCE_ROOT; };
+		62689BF31CB322CC006DC45A /* notifier.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = notifier.xcodeproj; path = BypassUnlock/notifier/notifier.xcodeproj; sourceTree = "<group>"; };
 		6268D10F1C97085F0073D9AC /* BypassUnlock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BypassUnlock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6268D1141C97085F0073D9AC /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		6268D1161C97085F0073D9AC /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -162,13 +163,14 @@
 		8102B58C1CC7D07C00292017 /* BPAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPAboutViewController.h; sourceTree = "<group>"; };
 		8102B58D1CC7D07C00292017 /* BPAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPAboutViewController.m; sourceTree = "<group>"; };
 		8B2533131DD0D7D8007BDE5D /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Entitlements.plist; path = BypassUnlock/Entitlements.plist; sourceTree = SOURCE_ROOT; };
-		92A524B82C6290AE008FFAF7 /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
+		92A524B82C6290AE008FFAF7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		92A524B92C6290AE008FFAF7 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		95CCA91528F4D1B1002C13CE /* BypassUnlock.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = BypassUnlock.entitlements; path = BypassUnlock/BypassUnlock.entitlements; sourceTree = SOURCE_ROOT; };
 		95CCA92428F4D3C3002C13CE /* CryptoTokenKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoTokenKit.framework; path = System/Library/Frameworks/CryptoTokenKit.framework; sourceTree = SDKROOT; };
 		9915102D21DCE58D00190D05 /* DeviceCheck.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeviceCheck.framework; path = System/Library/Frameworks/DeviceCheck.framework; sourceTree = SDKROOT; };
-		FBC130751E0030E600BA169C /* BypassUnlockGDiOSDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BypassUnlockGDiOSDelegate.h; path = BypassUnlock/BypassUnlockGDiOSDelegate.h; sourceTree = SOURCE_ROOT; };
-		FBC130761E0030E600BA169C /* BypassUnlockGDiOSDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BypassUnlockGDiOSDelegate.m; path = BypassUnlock/BypassUnlockGDiOSDelegate.m; sourceTree = SOURCE_ROOT; };
+		B1C233A41E10000600000002 /* BypassUnlockSceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BypassUnlockSceneDelegate.swift; path = BypassUnlock/BypassUnlockSceneDelegate.swift; sourceTree = SOURCE_ROOT; };
+		B1C233A41E10000600000004 /* BypassUnlockGDiOSDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BypassUnlockGDiOSDelegate.swift; path = BypassUnlock/BypassUnlockGDiOSDelegate.swift; sourceTree = SOURCE_ROOT; };
+		B1C233A41E10000600000005 /* BypassUnlock-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "BypassUnlock-Bridging-Header.h"; path = "BypassUnlock/BypassUnlock-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,7 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				92A524B92C6290AE008FFAF7 /* Podfile */,
-				92A524B82C6290AE008FFAF7 /* ReadMe.md */,
+				92A524B82C6290AE008FFAF7 /* README.md */,
 				62689BF31CB322CC006DC45A /* notifier.xcodeproj */,
 				6268D12A1C9708600073D9AC /* BypassUnlock */,
 				210B07001E80559A008C8E3A /* BypassUnlockUITests */,
@@ -299,15 +301,16 @@
 				8102B58A1CC7D04A00292017 /* ViewControllers */,
 				6268D12E1C9708600073D9AC /* AppDelegate.h */,
 				6268D12F1C9708600073D9AC /* AppDelegate.m */,
-				FBC130751E0030E600BA169C /* BypassUnlockGDiOSDelegate.h */,
-				FBC130761E0030E600BA169C /* BypassUnlockGDiOSDelegate.m */,
+				B1C233A41E10000600000002 /* BypassUnlockSceneDelegate.swift */,
+				B1C233A41E10000600000004 /* BypassUnlockGDiOSDelegate.swift */,
+				B1C233A41E10000600000005 /* BypassUnlock-Bridging-Header.h */,
 				629E3F611CC599D500BDB523 /* application_policy */,
 				629E3F5E1CC599B400BDB523 /* UI */,
 				6268D1351C9708600073D9AC /* Resources */,
 				6268D12B1C9708600073D9AC /* Supporting Files */,
 			);
 			name = BypassUnlock;
-			path = bypassunlock;
+			path = BypassUnlock;
 			sourceTree = "<group>";
 		};
 		6268D12B1C9708600073D9AC /* Supporting Files */ = {
@@ -403,7 +406,7 @@
 			dependencies = (
 			);
 			name = BypassUnlock;
-			productName = bypassunlock;
+			productName = BypassUnlock;
 			productReference = 6268D10F1C97085F0073D9AC /* BypassUnlock.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -518,7 +521,8 @@
 				62EA25DD1CA1F00100E77C4E /* BPStartViewController.m in Sources */,
 				62EA25DC1CA1F00100E77C4E /* BPIncallViewController.m in Sources */,
 				629E3F5D1CC3BAEE00BDB523 /* BPContactsViewController.m in Sources */,
-				FBC130771E0030E600BA169C /* BypassUnlockGDiOSDelegate.m in Sources */,
+				B1C233A41E10000600000001 /* BypassUnlockSceneDelegate.swift in Sources */,
+				B1C233A41E10000600000003 /* BypassUnlockGDiOSDelegate.swift in Sources */,
 				5609A8B722456265009C6628 /* LocalComplianceManager.m in Sources */,
 				62EA25E01CA1FB5900E77C4E /* BPCallManager.m in Sources */,
 				6268D12D1C9708600073D9AC /* main.m in Sources */,
@@ -590,7 +594,7 @@
 				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = BypassUnlockUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -619,7 +623,7 @@
 				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = BypassUnlockUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -680,7 +684,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -730,7 +734,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -752,8 +756,8 @@
 					"$(PROJECT_DIR)",
 				);
 				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = bypassunlock/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				INFOPLIST_FILE = BypassUnlock/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -762,6 +766,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.good.example.sdk.bypassunlock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "BypassUnlock/BypassUnlock-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -777,8 +783,8 @@
 					"$(PROJECT_DIR)",
 				);
 				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = bypassunlock/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				INFOPLIST_FILE = BypassUnlock/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -788,6 +794,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.good.example.sdk.bypassunlock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "BypassUnlock/BypassUnlock-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

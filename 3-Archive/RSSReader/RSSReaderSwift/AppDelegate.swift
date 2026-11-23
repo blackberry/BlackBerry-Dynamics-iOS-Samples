@@ -17,49 +17,33 @@
 import UIKit
 import BlackBerryDynamics.Runtime
 
-@UIApplicationMain
+@main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        
         disableAnimationsInUITests()
         RSSReaderGDiOSDelegate.sharedInstance.appDelegate = self
         GDiOS.sharedInstance().authorize(RSSReaderGDiOSDelegate.sharedInstance)
-        
         return true
     }
 
-    func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        let sceneConfig = UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+        sceneConfig.delegateClass = RSSReaderSceneDelegate.self
+        sceneConfig.sceneClass = UIWindowScene.self
+        sceneConfig.storyboard = UIStoryboard(name: "Main", bundle: nil)
+        return sceneConfig
     }
 
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
     }
 
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    }
-
-    func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
-
-    func didAuthorize() -> Void {
+    func didAuthorize() {
         print(#file, #function)
     }
-    
-    func disableAnimationsInUITests() -> Void {
-        if (CommandLine.arguments.contains("disableAnimations")) {
+
+    func disableAnimationsInUITests() {
+        if CommandLine.arguments.contains("disableAnimations") {
             print("Animations disabled in UITests")
             UIView.setAnimationsEnabled(false)
         }

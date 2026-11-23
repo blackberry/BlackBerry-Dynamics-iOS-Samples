@@ -10,6 +10,15 @@
 	<string>60</string>
 	<key>objects</key>
 	<dict>
+		<key>015E640E98004423A84183FB</key>
+		<dict>
+			<key>isa</key>
+			<string>XCSwiftPackageProductDependency</string>
+			<key>package</key>
+			<string>55D2D823CEFA4BC79BCBBA83</string>
+			<key>productName</key>
+			<string>GSEProvider</string>
+		</dict>
 		<key>33DB610B2357594800DB58DD</key>
 		<dict>
 			<key>isa</key>
@@ -29,6 +38,43 @@
 			<string>33DB610B2357594800DB58DD</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>345D738FA1344F748AB1D195</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>productRef</key>
+			<string>36A4FE28E8C3409EB7109A48</string>
+		</dict>
+		<key>36A4FE28E8C3409EB7109A48</key>
+		<dict>
+			<key>isa</key>
+			<string>XCSwiftPackageProductDependency</string>
+			<key>package</key>
+			<string>55D2D823CEFA4BC79BCBBA83</string>
+			<key>productName</key>
+			<string>BlackBerryDynamics</string>
+		</dict>
+		<key>40CE37A3AFD14DD7A3F79973</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>productRef</key>
+			<string>015E640E98004423A84183FB</string>
+		</dict>
+		<key>55D2D823CEFA4BC79BCBBA83</key>
+		<dict>
+			<key>isa</key>
+			<string>XCRemoteSwiftPackageReference</string>
+			<key>repositoryURL</key>
+			<string>https://github.com/blackberry/BlackBerry-Dynamics-iOS-SDK</string>
+			<key>requirement</key>
+			<dict>
+				<key>branch</key>
+				<string>main</string>
+				<key>kind</key>
+				<string>branch</string>
+			</dict>
 		</dict>
 		<key>6D58DFCE2AD480F10079F965</key>
 		<dict>
@@ -137,7 +183,7 @@
 			<key>lastKnownFileType</key>
 			<string>text.plist.entitlements</string>
 			<key>path</key>
-			<string>Crypto.entitlements</string>
+			<string>crypto.entitlements</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -158,6 +204,62 @@
 		<dict>
 			<key>fileRef</key>
 			<string>95CCA93128F4D448002C13CE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AC76A3C633EB41E7B6E1BBCB</key>
+		<dict>
+			<key>isa</key>
+			<string>XCSwiftPackageProductDependency</string>
+			<key>package</key>
+			<string>55D2D823CEFA4BC79BCBBA83</string>
+			<key>productName</key>
+			<string>BlackBerryDynamicsAutomatedTestSupportLibrary</string>
+		</dict>
+		<key>B2C3D412E060001</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AppDelegate.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B2C3D412E060002</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>CryptoSceneDelegate.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B2C3D412E060003</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Crypto-Bridging-Header.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B2C3D412E060011</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B2C3D412E060001</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>B2C3D412E060012</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B2C3D412E060002</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -628,6 +730,10 @@
 			</array>
 			<key>mainGroup</key>
 			<string>CCDABF621F28CD5B0011FCA8</string>
+			<key>packageReferences</key>
+			<array>
+				<string>55D2D823CEFA4BC79BCBBA83</string>
+			</array>
 			<key>productRefGroup</key>
 			<string>CCDABF6C1F28CD5B0011FCA8</string>
 			<key>projectDirPath</key>
@@ -663,8 +769,8 @@
 				<string>CC6FB36921F50FEC00CF41FE</string>
 				<string>CC6E9292235EE87D0024DBD9</string>
 				<string>CCFC1B1D21F807F50073A51F</string>
-				<string>CCDABF821F28CD5B0011FCA8</string>
-				<string>CCDABF7F1F28CD5B0011FCA8</string>
+				<string>B2C3D412E060011</string>
+				<string>B2C3D412E060012</string>
 				<string>CCEC6B3321F55D34008D8CE5</string>
 				<string>CCDABF881F28CD5B0011FCA8</string>
 				<string>CC8C712222011906008CE30B</string>
@@ -704,6 +810,8 @@
 				<string>CCDABF771F28CD5B0011FCA8</string>
 				<string>CCDABF751F28CD5B0011FCA8</string>
 				<string>33DB610C2357594800DB58DD</string>
+				<string>345D738FA1344F748AB1D195</string>
+				<string>40CE37A3AFD14DD7A3F79973</string>
 			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
@@ -750,6 +858,11 @@
 			<string>PBXNativeTarget</string>
 			<key>name</key>
 			<string>Crypto</string>
+			<key>packageProductDependencies</key>
+			<array>
+				<string>36A4FE28E8C3409EB7109A48</string>
+				<string>015E640E98004423A84183FB</string>
+			</array>
 			<key>productName</key>
 			<string>Crypto</string>
 			<key>productReference</key>
@@ -934,8 +1047,9 @@
 			<key>children</key>
 			<array>
 				<string>95CCA91928F4D215002C13CE</string>
-				<string>CCDABF801F28CD5B0011FCA8</string>
-				<string>CCDABF811F28CD5B0011FCA8</string>
+				<string>B2C3D412E060001</string>
+				<string>B2C3D412E060002</string>
+				<string>B2C3D412E060003</string>
 				<string>CCDABF861F28CD5B0011FCA8</string>
 				<string>CCDABF871F28CD5B0011FCA8</string>
 				<string>CC6FB36721F50FEC00CF41FE</string>
@@ -970,7 +1084,7 @@
 			<key>isa</key>
 			<string>PBXGroup</string>
 			<key>path</key>
-			<string>Crypto</string>
+			<string>crypto</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -982,7 +1096,6 @@
 				<string>CCDF00C022692C64004F7009</string>
 				<string>CCDF00BF22692C63004F7009</string>
 				<string>CCFC1B1E21F80E910073A51F</string>
-				<string>CCDABF7E1F28CD5B0011FCA8</string>
 				<string>CCDABF8A1F28CD5B0011FCA8</string>
 			</array>
 			<key>isa</key>
@@ -991,53 +1104,6 @@
 			<string>Supporting Files</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CCDABF7E1F28CD5B0011FCA8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>main.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CCDABF7F1F28CD5B0011FCA8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CCDABF7E1F28CD5B0011FCA8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CCDABF801F28CD5B0011FCA8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>AppDelegate.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CCDABF811F28CD5B0011FCA8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>AppDelegate.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CCDABF821F28CD5B0011FCA8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CCDABF811F28CD5B0011FCA8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
 		</dict>
 		<key>CCDABF861F28CD5B0011FCA8</key>
 		<dict>
@@ -1230,11 +1296,15 @@
 				<string>YES</string>
 				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
 				<string>YES</string>
+				<key>CODE_SIGN_ENTITLEMENTS[sdk</key>
+				<string>iphonesimulator10.*]=$(SRCROOT)/$(PROJECT_NAME)/Entitlements.plist</string>
 				<key>COPY_PHASE_STRIP</key>
 				<string>NO</string>
 				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
 				<string>YES</string>
 				<key>ENABLE_TESTABILITY</key>
+				<string>YES</string>
+				<key>ENTITLEMENTS_REQUIRED</key>
 				<string>YES</string>
 				<key>GCC_C_LANGUAGE_STANDARD</key>
 				<string>gnu99</string>
@@ -1264,7 +1334,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>17.0</string>
+				<string>18.0</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
 				<string>YES</string>
 				<key>ONLY_ACTIVE_ARCH</key>
@@ -1335,11 +1405,15 @@
 				<string>YES</string>
 				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
 				<string>YES</string>
+				<key>CODE_SIGN_ENTITLEMENTS[sdk</key>
+				<string>iphonesimulator10.*]=$(SRCROOT)/$(PROJECT_NAME)/Entitlements.plist</string>
 				<key>COPY_PHASE_STRIP</key>
 				<string>NO</string>
 				<key>ENABLE_NS_ASSERTIONS</key>
 				<string>NO</string>
 				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>ENTITLEMENTS_REQUIRED</key>
 				<string>YES</string>
 				<key>GCC_C_LANGUAGE_STANDARD</key>
 				<string>gnu99</string>
@@ -1360,7 +1434,7 @@
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>17.0</string>
+				<string>18.0</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
 				<string>NO</string>
 				<key>ONLY_ACTIVE_ARCH</key>
@@ -1400,11 +1474,17 @@
 				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
 				<string>AppIcon</string>
 				<key>CLANG_ENABLE_MODULES</key>
-				<string>NO</string>
+				<string>YES</string>
 				<key>CODE_SIGN_ENTITLEMENTS</key>
-				<string>Crypto/Crypto.entitlements</string>
+				<string>crypto/crypto.entitlements</string>
+				<key>CODE_SIGN_ENTITLEMENTS[sdk</key>
+				<string>iphonesimulator10.*]=$(SRCROOT)/$(PROJECT_NAME)/Entitlements.plist</string>
+				<key>ENTITLEMENTS_REQUIRED</key>
+				<string>YES</string>
 				<key>INFOPLIST_FILE</key>
-				<string>Crypto/Info.plist</string>
+				<string>crypto/Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>18.0</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -1414,6 +1494,10 @@
 				<string>com.good.gd.example.crypto</string>
 				<key>PRODUCT_NAME</key>
 				<string>$(TARGET_NAME)</string>
+				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
+				<string>crypto/Crypto-Bridging-Header.h</string>
+				<key>SWIFT_VERSION</key>
+				<string>5.0</string>
 			</dict>
 			<key>isa</key>
 			<string>XCBuildConfiguration</string>
@@ -1427,11 +1511,17 @@
 				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
 				<string>AppIcon</string>
 				<key>CLANG_ENABLE_MODULES</key>
-				<string>NO</string>
+				<string>YES</string>
 				<key>CODE_SIGN_ENTITLEMENTS</key>
-				<string>Crypto/Crypto.entitlements</string>
+				<string>crypto/crypto.entitlements</string>
+				<key>CODE_SIGN_ENTITLEMENTS[sdk</key>
+				<string>iphonesimulator10.*]=$(SRCROOT)/$(PROJECT_NAME)/Entitlements.plist</string>
+				<key>ENTITLEMENTS_REQUIRED</key>
+				<string>YES</string>
 				<key>INFOPLIST_FILE</key>
-				<string>Crypto/Info.plist</string>
+				<string>crypto/Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>18.0</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -1441,6 +1531,10 @@
 				<string>com.good.gd.example.crypto</string>
 				<key>PRODUCT_NAME</key>
 				<string>$(TARGET_NAME)</string>
+				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
+				<string>crypto/Crypto-Bridging-Header.h</string>
+				<key>SWIFT_VERSION</key>
+				<string>5.0</string>
 			</dict>
 			<key>isa</key>
 			<string>XCBuildConfiguration</string>
@@ -1647,7 +1741,9 @@
 			<key>buildActionMask</key>
 			<string>2147483647</string>
 			<key>files</key>
-			<array/>
+			<array>
+				<string>FF2D8A92B23141C4A9334067</string>
+			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
@@ -1687,6 +1783,10 @@
 			<string>PBXNativeTarget</string>
 			<key>name</key>
 			<string>CryptoUITests</string>
+			<key>packageProductDependencies</key>
+			<array>
+				<string>AC76A3C633EB41E7B6E1BBCB</string>
+			</array>
 			<key>productName</key>
 			<string>CryptoUITests</string>
 			<key>productReference</key>
@@ -1719,7 +1819,7 @@
 			<key>isa</key>
 			<string>PBXGroup</string>
 			<key>path</key>
-			<string>CryptoUITests</string>
+			<string>cryptoUITests</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -1730,7 +1830,7 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.objc</string>
 			<key>path</key>
-			<string>CryptoUITests.m</string>
+			<string>cryptoUITests.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -1790,12 +1890,18 @@
 				<string>YES</string>
 				<key>CLANG_WARN_UNGUARDED_AVAILABILITY</key>
 				<string>YES_AGGRESSIVE</string>
+				<key>CODE_SIGN_ENTITLEMENTS[sdk</key>
+				<string>iphonesimulator10.*]=$(SRCROOT)/$(PROJECT_NAME)/Entitlements.plist</string>
 				<key>DEBUG_INFORMATION_FORMAT</key>
 				<string>dwarf</string>
+				<key>ENTITLEMENTS_REQUIRED</key>
+				<string>YES</string>
 				<key>GCC_C_LANGUAGE_STANDARD</key>
 				<string>gnu11</string>
 				<key>INFOPLIST_FILE</key>
-				<string>CryptoUITests/Info.plist</string>
+				<string>cryptoUITests/Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>18.0</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -1836,12 +1942,18 @@
 				<string>YES</string>
 				<key>CLANG_WARN_UNGUARDED_AVAILABILITY</key>
 				<string>YES_AGGRESSIVE</string>
+				<key>CODE_SIGN_ENTITLEMENTS[sdk</key>
+				<string>iphonesimulator10.*]=$(SRCROOT)/$(PROJECT_NAME)/Entitlements.plist</string>
 				<key>DEBUG_INFORMATION_FORMAT</key>
 				<string>dwarf-with-dsym</string>
+				<key>ENTITLEMENTS_REQUIRED</key>
+				<string>YES</string>
 				<key>GCC_C_LANGUAGE_STANDARD</key>
 				<string>gnu11</string>
 				<key>INFOPLIST_FILE</key>
-				<string>CryptoUITests/Info.plist</string>
+				<string>cryptoUITests/Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>18.0</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<array>
 					<string>$(inherited)</string>
@@ -1954,6 +2066,13 @@
 			<string>FBA5095D208DFF5C008EAE16</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>FF2D8A92B23141C4A9334067</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>productRef</key>
+			<string>AC76A3C633EB41E7B6E1BBCB</string>
 		</dict>
 	</dict>
 	<key>rootObject</key>
